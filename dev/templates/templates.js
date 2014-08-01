@@ -55,6 +55,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.seriesId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.seriesId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "/comic";
+  if (helper = helpers.seriesId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.seriesId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   if (helper = helpers.panelId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.panelId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -81,7 +85,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h1>\n\n	<div class=\"container\" style=\"height:100%\">\n		<div class=\"row\">\n			<div class=\"col-md-12\">\n			<div class=\"row\">\n				<div class=\"col-md-12\" id=\"comicBook\"></div>\n\n				<div id=\"response_panel\"></div>\n			</div>\n\n			<div class=\"row\">\n				<div id=\"navigation\">\n					<a href=\"#\" class=\"comic-sliders inactive\" id=\"slide-left\" data-direction=\"left\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a>\n\n					<a href=\"#\" class=\"comic-refresh\"><span class=\"icomoon icon-refresh\"></span></a>\n\n					<a href=\"#\" class=\"comic-sliders inactive\" id=\"slide-right\" data-direction=\"right\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a>\n				</div>\n			</div>\n		</div>\n	</div>\n</div>";
+  buffer += "</h1>\n\n	<div class=\"container\" style=\"height:100%\">		\n		<div class=\"row\">\n			<div class=\"col-md-8\">\n				<div class=\"col-md-12\" id=\"comicBook\"></div>\n\n				<div id=\"navigation\">\n					<a href=\"#\" class=\"comic-sliders inactive\" id=\"slide-left\" data-direction=\"left\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a>\n\n					<a href=\"#\" class=\"comic-refresh\"><span class=\"icomoon icon-refresh\"></span></a>\n\n					<a href=\"#\" class=\"comic-sliders inactive\" id=\"slide-right\" data-direction=\"right\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a>\n				</div>\n			</div>\n\n			<div class=\"col-md-4\">\n				<div id=\"response_panel\"></div>\n			</div>\n		</div>\n	</div>\n</div>";
   return buffer;
   });
 

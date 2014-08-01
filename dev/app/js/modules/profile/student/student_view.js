@@ -169,7 +169,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    scrollToFrame:function(linkId) {
 	    	var that = this;
 
-	    	DukeApp.utils.profileView.current_frame = linkId;
+	    	Student.current_frame = linkId;
+
+	    	$(window).unbind('scroll');
 
 	    	var offset = ((linkId === 0)?100:60);
 

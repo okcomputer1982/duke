@@ -63,14 +63,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		]);
 	};
 
-	// {
-	// 	type:"comic", name:"comic",		content:{
-	// 		synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-	// 		instructions: 	"instruction text", 
-	// 		comic_id: 1
-	// 	}
-	// }
-
 	var initializeFrames = function(){
 		frames = [
 			//week 1
@@ -124,7 +116,14 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				heading: 'Learning about your Personality Type',
 				instructions: "Read an article about the Myers-Briggs Personality",
 				link: "http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm"
+			}},
+
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 0
 			}}
+
 		]),
 			//week 2
 			new Entities.FrameCollection([
@@ -185,6 +184,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
 					"You should also list the majors and careers paths in which you are most interested."
 				],
+			}},
+
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 1
 			}}
 		]),
 			//week 3
@@ -275,6 +280,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "Wrap up. In your journals,  list one school in each geographic region that you were unaware of and that you find interesting."
 			}},
+
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 2
+			}}
 		]),
 			//week 4
 			new Entities.FrameCollection([
@@ -375,6 +386,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "In your journal, begin to think about which colleges to which you would like to apply. List at least three colleges that you are seriously considering.  Next to each school on your list, write at  least three reasons why you feel you would want to attend the school."
+			}},
+
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 3
 			}}
 		]),
 			//week 5
@@ -493,8 +510,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{type:"assignment", name:"assignment",		content:{
 				subHeading: "Listing Your Preferences",
 				instuctionsHeader:"Put the schools on your list into the selective (“foundation”), very selective (“mid-range”) and highly selective (“reach or stretch”) categories. This list should be recorded in your journals.",
-			}}
+			}},
 
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 4
+			}}
 		]),
 			//week 7
 			new Entities.FrameCollection([
@@ -619,6 +641,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"assignment", name:"assignment",		content:{
 				instuctionsHeader:"Complete the following form to build your own extra-curricular resume.",
+			}},
+
+			{type:"comic", name:"comic",		content:{
+				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
+				instructions: 	"instruction text", 
+				comic_id: 5
 			}}
 
 		]),

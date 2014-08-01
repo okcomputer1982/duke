@@ -300,7 +300,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    	$(window).unbind('scroll');
 
-	    	DukeApp.utils.weekView.current_frame = linkId;
+	    	Week.current_frame = linkId;
 
 	    	var offset = ((linkId === 0)?100:60);
 
@@ -319,8 +319,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    scrollHandler: function(e) {
 	    	var currentScrollPos = $(window).scrollTop(),
 	    		scrollPos = Week.scrollPos;
-
-	    	console.log(scrollPos);
 
 	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
 	    		if (currentScrollPos + 110 >= scrollPos[linkId].pos && currentScrollPos + 110 < scrollPos[linkId+1].pos){
@@ -383,8 +381,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    //show comic backdrop
 	    handleComic: function(e){
 	    	e.preventDefault();
-	    	var comicId = $(e.currentTarget).data("comicid");
-	    	this.trigger("weekView:loadComic", {comicId:comicId});
+	    	var seriesId = $(e.currentTarget).data("comicid");
+	    	console.log("here");
+	    	this.trigger("weekView:loadComic", {seriesId:seriesId});
 	    }
 	});
 });
