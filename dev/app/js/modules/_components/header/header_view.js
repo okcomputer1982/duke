@@ -9,7 +9,6 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
 
     logoutRedirect:function(e){
     	e.preventDefault();
-        console.log("hit");
     	DukeApp.trigger("home:login");
     }
   });
