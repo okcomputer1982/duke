@@ -1,0 +1,10 @@
+<div class="topnav full">
+    <ul class="horiz-nav" role="navigation" aria-label="week links">
+      {{#each weeks}}
+        <li class="{{{this.active}}} week-link-listitem" data-weekId="{{{this.id}}}">
+          <a class="week-link" data-week="{{{this.weekId}}}" href="#">{{{this.id}}}</a>
+        </li>
+      {{/each}}
+    </ul>
+    <a class="expand-horiz" aria-expanded="false"></a>
+</div>

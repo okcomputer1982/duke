@@ -1,0 +1,20 @@
+<h1>Journal</h1>
+<div class="inner-wrap">
+	<div class="another-wrapper">
+
+		<h2 class="subHeading">{{{content.heading}}}</h2>
+
+		<p class="instructions">Instructions: {{{content.instructions}}}</p>
+		
+		<ol class="objectives">
+	      {{#each content.instructionList}}
+	        <li>{{{this}}}</li>
+	      {{/each}}
+	    </ol>
+	    
+		<textarea name="" id="" cols="20" rows="13"></textarea>
+		    <button type="submit" class="btn btn-large btn-primary">Submit</button>
+		    <span class="space">OR</span>
+		    <a href="" class="upload">Upload a text file</a>
+	</div>
+</div>

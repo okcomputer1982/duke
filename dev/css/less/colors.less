@@ -1,0 +1,135 @@
+/* colors from duke style guide */
+
+@ltgreen: #cbea60;
+@red: #cc3300;
+@orange: #f0885b;
+@profilebg: #f6eab8;
+@gold: #ffd960;
+@blue: #0680cd;
+@dukeblue: #235f9c;
+@ltblue: #cfeded;
+@purple: #4d005e;
+@black: #000;
+@gray: #a2a4a1;
+@drkgray: #333;
+@ltgray: #e8e5e3;
+@white: #fff;
+@sidebarpurple: #c88;
+@green: rgb( 16, 198, 123 );
+
+@overview: #ffffff;
+@article: @gold;
+@link: @gold;
+@game: @purple;
+@profile: @blue;
+@video: @purple;
+@image: @orange;
+@comic: @purple;
+@activity: @purple;
+@badge: @orange;
+@assignment: @ltgreen;
+@quiz: @ltgreen;
+@journal: @ltgreen;
+@wrap-up: @white;
+@lecture: @ltgreen;
+@discussion: @gold;
+@settings: @gold;
+@wrapup: @white;
+
+.section, .active {
+	&.overview, &.wrapup {
+		background: #fff;
+	}
+	&.activity, &.game, &.comic, &.progress {
+		background-color: #333;
+		h1,h2,h3,p,li,a {
+			color: white;
+		}
+		.moreButton {
+			color: #000;
+		}
+		span.hoverover {
+			color: @white !important;
+		}
+	}
+	&.video, &.videoLink {
+		* {
+			color: white;
+		}
+		video {
+			
+		}
+	}
+	&.discussion, &.journal, &.assignment {
+		background: @drkgray;
+	}
+	&.journal, &.assignment, &.discussion, &.quiz {
+		.inner-wrap .another-wrapper {
+			background: @orange;
+		}
+	}
+	&.comic {
+		.inner-wrap {
+			* {
+				color: @black;
+			}
+		}
+	}
+}
+
+.section.comic, .section.video, .section.videoLink {
+	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, rgba(0,0,0,0.9) 90%), 
+	url('../images/hatching2.png');
+	background-size:  100%, 200px 200px;
+
+	.sub {
+		color:white !important;
+	}
+}
+
+// .section.profile {
+// 	background-image:  
+// 	radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.5) 100%), 
+// 	url(../images/halftone-tile.png), 
+// 	linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.5) 100%);
+// 	background-size: 100%, 12px, 100%;
+// }
+.section.article, .section.articleLink, .section.attribute, .section.activity {
+	background-image: 
+	 radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.45) 100%),
+	radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, @blue 30%, @blue 40%, transparent 90%),
+	radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%), 
+	radial-gradient(ellipse farthest-corner at 12px 12px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%), 
+	radial-gradient(ellipse farthest-corner at 0px 12px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 40%), 
+	radial-gradient(ellipse farthest-corner at 12px 0px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%),  
+	radial-gradient(ellipse farthest-corner, rgba(135,135,135,0.8) 0%, rgba(0,0,0,0.9) 90%);
+  background-size: 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 100% 100%;
+}
+.section.journal textarea {
+	background-color: #fff; 
+	background-image: 
+	linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+	linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.2em;
+	line-height: 1.2em;
+	padding-top: 22px;
+}
+
+.section.discussion, .section.journal, .section.progress {
+	background-image: 
+	radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.45) 100%),
+	radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, rgba(155,155,155,0.8) 30%, rgba(155,155,155,0.8) 40%, transparent 90%),
+	radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, rgba(155,155,155,0.8) 15%, rgba(155,155,155,0.8) 20%, transparent 50%), 
+	radial-gradient(ellipse farthest-corner at 12px 12px, transparent 0%, transparent 20%, rgba(155,155,155,0.8) 15%, rgba(155,155,155,0.8) 20%, transparent 50%), 
+	radial-gradient(ellipse farthest-corner at 0px 12px, transparent 0%, transparent 20%, rgba(155,155,155,0.8) 15%, rgba(155,155,155,0.8) 20%, transparent 40%), 
+	radial-gradient(ellipse farthest-corner at 12px 0px, transparent 0%, transparent 20%, rgba(155,155,155,0.8) 15%, rgba(155,155,155,0.8) 20%, transparent 50%),  
+	radial-gradient(ellipse farthest-corner, rgba(135,135,135,0.8) 0%, rgba(0,0,0,0.9) 90%);
+  	background-size: 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 100% 100%;
+}
+
+.section.badge, .section.grades, .section.profile {
+	background-color: @drkgray;
+	background-image: radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.65) 100%),
+	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+	background-size: 100%, 2px 2px;
+}

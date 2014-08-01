@@ -1,0 +1,26 @@
+<h1 class="weekHeading">{{{content.title}}}</h1>
+
+<div class="inner-wrap">
+  <div class="another-wrapper">
+    <h2 class="subHeading">{{{content.subTitle}}}</h2>
+    {{#if content.overview}}
+      <h2 class="subHeading">Overview: {{{content.overview}}}</h2>
+    {{/if}}
+
+    <h3>You Will</h3>
+      <ol class="objectives">
+        {{#each content.objectives}}
+          <li>{{{this}}}</li>
+        {{/each}}
+      </ol>
+
+    <h3>Badges Available:</h3>
+    <div class="badges">
+      <ul>
+        {{#each content.badges}}
+          <li class="{{this}}"></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

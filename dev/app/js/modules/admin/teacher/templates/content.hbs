@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <nav id="admin-nav">
+    <a class="manage-instructors">Manage Instructors</a>
+    <a class="manage-students">Manage Students</a>
+    <a class="manage-guests">Manage Guests</a>
+    <a class="manage-classes">Manage Classes</a>  
+  </nav>
+  <div class="admin-top">
+    <input type="text" placeholder="student name">
+    <input type="text" placeholder="email address">
+    <input type="text" placeholder="select a class">
+    <button type="submit" name="add">Add</button>
+    <input type="search" value="class/student search">
+    <input type="submit" value="search">
+  </div>
+
+  <table id="admin-students" class="table table-responsive table-bordered table-striped">
+    <tbody>
+      <tr>
+        <th>Name</th><th>Email Address</th><th>Class</th><th>Edit</th>
+      </tr>
+      <tr>
+        <td>Student 1</td>
+        <td>student1@school.edu</td>
+        <td>Math 101</td>
+        <td><button>Edit</button><button>Reset Password</button></td>
+      </tr>
+      <tr>
+        <td>Student 2</td>
+        <td>student2@school.edu</td>
+        <td>Math 103</td>
+        <td><button>Edit</button><button>Reset Password</button></td>
+      </tr>
+      <tr>
+        <td>Student 3</td>
+        <td>student3@school.edu</td>
+        <td>Math 102</td>
+        <td><button>Edit</button><button>Reset Password</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="#week">Return to Week View</a>
+</div>

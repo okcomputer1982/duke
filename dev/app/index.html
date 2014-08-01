@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="ico/favicon.ico">
+	
+    <title>Duke Project</title>
+    <!--typekit script-->
+	<script type="text/javascript" src="//use.typekit.net/mde7osb.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+    <link href="../css/app.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic|Roboto+Condensed:300italic,400italic,400,300,700|Open+Sans+Condensed:300,700|Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+	<div id="content" class="container-fluid">
+		<h1>content</h1>
+	</div>
+	<div id="modal"></div>
+	
+	<script src="libs/jquery-2.1.0.min.js"></script>
+	<script src="libs/jquery.scrollTo.min.js"></script>
+	<script src="libs/jquery.easing.1.3.js"></script>
+	<script src="libs/underscore-min.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="libs/backbone.js"></script>
+	<script src="libs/backbone.marionette.min.js"></script>
+	<script src="libs/handlebars-v1.3.0.js"></script>
+	<script src="libs/easeljs/Ease.js"></script>
+	<script src="libs/easeljs/easeljs-0.6.1.g.min.js"></script>
+	<script src="libs/easeljs/preloadjs-0.4.0.min.js"></script>
+	<script src="libs/easeljs/Tween.js"></script>
+	<script src="libs/easeljs/tweenjs-0.5.1.min.js"></script>
+	
+	<!--base-->
+	<script type="text/javascript" src="../templates/templates.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/utilities.js"></script>
+	
+	<!--entities-->
+	<script type="text/javascript" src="js/entities/week.js"></script>
+	<script type="text/javascript" src="js/entities/comic.js"></script>
+	
+	<!--components-->
+	<script type="text/javascript" src="js/modules/_components/header/header_view.js"></script>
+	<script type="text/javascript" src="js/modules/_components/footer/footer_view.js"></script>
+	<script type="text/javascript" src="js/modules/_components/modal/modal_view.js"></script>
+	
+	<!--week explorer files-->
+	<script type="text/javascript" src="js/modules/weekExplorer/weekExplorer_app.js"></script>
+	<script type="text/javascript" src="js/modules/weekExplorer/week/week_controller.js"></script>
+	<script type="text/javascript" src="js/modules/weekExplorer/week/week_view.js"></script>
+
+	<!--comic interface files-->
+	<script type="text/javascript" src="js/modules/comic/show/comic_view.js"></script>
+	<script type="text/javascript" src="js/modules/comic/show/comic_controller.js"></script>
+	
+	<!--profile files-->
+	<script type="text/javascript" src="js/modules/profile/profile_app.js"></script>
+	<script type="text/javascript" src="js/modules/profile/student/student_controller.js"></script>
+	<script type="text/javascript" src="js/modules/profile/student/student_view.js"></script>
+
+	<!--admin files-->
+	<script type="text/javascript" src="js/modules/admin/admin_app.js"></script>
+	<script type="text/javascript" src="js/modules/admin/teacher/teacher_controller.js"></script>
+	<script type="text/javascript" src="js/modules/admin/teacher/teacher_view.js"></script>
+
+
+	<!--login files-->
+	<script type="text/javascript" src="js/modules/home/home_app.js"></script>
+	<script type="text/javascript" src="js/modules/home/login/login_controller.js"></script>
+	<script type="text/javascript" src="js/modules/home/login/login_view.js"></script>
+
+	<script type="text/javascript">
+		DukeApp.start();
+	</script>
+	
+</body>
+
+</html>

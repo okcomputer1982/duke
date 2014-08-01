@@ -1,0 +1,93 @@
+html, body { height:100%;width:100%; }
+
+body{
+  background-size: 100% 100%;
+}
+
+h1,h2,h3 {
+	text-align: center;
+}
+
+a {
+	color: @blue;
+	&:hover {
+		color: lighten(@blue, 25%);
+		cursor: pointer;
+		text-decoration: none;
+	}
+}
+
+img {border: 2px solid @drkgray;.box-sizing(border-box);}
+
+p {
+	color:black;
+	.rem(font-size,2);
+	text-align: center;
+	.rem(padding,2);
+	padding-top: 0;
+}
+
+textarea {
+	border: 2px inset #666;
+	float: none;
+	padding: 15px;
+	width: 93%;
+	.rem(max-width,120);
+	margin: 20px auto;
+
+}
+
+figure {
+	margin: 15px;
+}
+
+figcaption {
+	color: @drkgray;
+	.font(1.8,1,"Josefin Slab");
+	.rem(margin-top,1);
+}
+
+input {
+	border: 2px inset @ltblue;
+	padding: 5px;
+}
+
+strong {
+	font-weight: bolder;
+}
+
+#main-content{
+  width: 100%;
+  .rem(padding-top,6);
+  height:100%;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0;
+}
+
+.comment > div {
+  background: #fff;
+}
+
+.comment > div {
+  background: #fff;
+}
+
+.week-top {
+  top: 60px;
+}
+
+
+#sidebar + #content {
+	margin-left:13%;
+	margin-left:13vw;
+	width: 87%;
+	width: 87vw;
+	@media(max-width:768px) {
+		margin-left: 0;
+    	width: 100%;
+    	width: 100vw;
+  }	
+}

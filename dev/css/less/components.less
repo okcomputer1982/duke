@@ -1,0 +1,214 @@
+/* components */
+
+.wrap {
+	width: 100%;
+
+}
+
+.center {
+	display: table;
+	& > * {
+		display: table-cell;
+		text-align: center;
+	}
+}
+
+.fixed {  
+  position: fixed;
+  width:100%;
+  z-index:999;
+}
+
+.badges {
+	ul {
+		display: inline-block;
+		.rem(margin-bottom, 8);
+		.rem(margin-left,5.7);
+		padding: 0;
+		text-align: center;
+		.rem(width,50);
+		li {
+			display: inline-block;
+			.rem(height,13.5);
+			float: left;
+			margin:0;
+			position: relative;
+			text-align: center;
+			.rem(width,12);
+			a.badge {
+				background-size: 100%;
+				background-repeat: no-repeat;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 3;
+			}
+			a.shadow {
+				background: url(../images/badge-bg.png);
+				background-repeat: no-repeat;
+				background-size: 100%;
+				content: '';
+				height: 100%;
+				position: absolute;
+				right: -8px;
+				top: 8px;
+				width: 100%;
+				z-index: 1;
+			}
+			&.hive {
+				.rem(margin-left,-5.7);
+			}
+			&.hive, &.thread, &.fest, &.karaoke, &.network, &.olympics, &.thimble {
+				.rem(margin-top,-3);
+			}
+			&.network {
+				.rem(margin-left,0.3);
+			}
+			a {
+				.rem(font-size,3);
+				padding:0;
+				.rem(padding-top,6);
+			}
+			span {
+				.rem(line-height,4.5);
+			}
+		}
+	}
+}
+
+figure.left {
+	float: left;
+	.rem(margin-right,2);
+}
+
+.profile-pic {
+	.rem(margin-bottom,1.5);
+}
+.space { color: black; padding: 0 10px; }
+
+	a.moreButton {
+		box-shadow: 8px 8px #000;
+		color: @black;
+		font-family: 'arial narrow', helvetica, sans-serif;
+		font-weight: bold;
+	  	float: none;
+	  	display: block;
+	  	margin: 0 auto;
+	  	width: 17vw;
+}
+
+video {
+	width:100%;
+	max-height: 450px;
+}
+
+.full-width {
+	display:block;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+.block {
+	display: block;
+}
+
+.gone {
+	display: none;
+}
+
+.glyphicon {
+	color: #464646;
+	padding: 0;
+	.rem(font-size,2.5);
+	border-radius: 50%;
+	padding: 0;
+}
+
+/**************MODALS**************/
+#comic_modal {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.modal_close {
+	color:white;
+	font-size: 50px;
+	padding: 20px;
+	margin:0;
+}
+
+#comic_panels {
+	overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 90;
+}
+
+#comic_panels {
+	min-height: 415px;
+}
+
+#navigation {
+	position:relative;
+	color:red;
+	display: table;
+	text-align: center;
+	top: 100%;
+	width: 100%;
+	z-index: 100;
+	span {
+		display: inline-table;
+		.rem(margin,1);
+		vertical-align: inherit;
+	}
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.comic_panel, .thumbnail_panel {
+	display: inline-block;
+    height: 100px;
+    margin: 5px;
+}
+
+#comicBook {
+}
+
+#thumbnail {
+}
+
+#questionPanel {
+	background: rgba(255,255,255,0.6);
+	bottom: 0;
+	.rem(padding,2);
+	text-align: center;
+	color: black;
+	position: absolute;
+	.question_test {
+		font-size:16pt;
+	}
+}
+.modal-wrap {
+	background: white;
+}
+
+.comic-container {
+	position: relative;
+}
+
+.comic-wrap {
+	position: relative;
+}
+
+.box {
+	border: 1px solid #000;
+	box-shadow: 8px 8px #000;
+	margin-top: 0;
+	.rem(padding,0.1);
+}
