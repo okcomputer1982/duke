@@ -40,6 +40,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			Student.Controller.sidebar = sidebar;
 			Student.Controller.content = content;
 
+			this.scrollToFrame({linkId:0});
+			
 			sidebar.on("studentProfile:scrollto", Student.Controller.scrollToFrame);
 
 			content.on("studentProfile:showAssignment", Student.Controller.handleAssignmentModal);
@@ -47,7 +49,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 		scrollToFrame:function(obj){
-			//Student.Controller.sidebar.setActiveFrame(obj.linkId);
+			Student.Controller.sidebar.setActiveFrame(obj.linkId);
 			Student.Controller.content.scrollToFrame(obj.linkId);
 		},
 

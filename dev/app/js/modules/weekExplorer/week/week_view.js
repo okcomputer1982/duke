@@ -277,7 +277,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	var type = $(e.currentTarget).attr('class'),
 	    		currentScrollPos = $(window).scrollTop(),
 	    		linkId,
-	    		scrollPos = DukeApp.utils.weekView.scrollPos;
+	    		scrollPos = Week.scrollPos;
 
 	    	if (type === "cycle-down") {
 	    		for (linkId = 0; linkId < scrollPos.length && (scrollPos[linkId].pos-100) <= currentScrollPos; linkId++);
@@ -318,7 +318,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    //finds the active frame current scrolled to
 	    scrollHandler: function(e) {
 	    	var currentScrollPos = $(window).scrollTop(),
-	    		scrollPos = DukeApp.utils.weekView.scrollPos;
+	    		scrollPos = Week.scrollPos;
+
+	    	console.log(scrollPos);
 
 	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
 	    		if (currentScrollPos + 110 >= scrollPos[linkId].pos && currentScrollPos + 110 < scrollPos[linkId+1].pos){
@@ -351,13 +353,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	//cache scroll positions of all frames
 	    	var frames = $('section');
 	    	
-	    	DukeApp.utils.weekView.scrollPos = [];
+	    	Week.scrollPos = [];
 
 	    	_.map(frames, function(frame){
 	    		var itemClass = $(frame).attr('class').split(' ')[2],
 	    			linkId = Number(itemClass.replace("weekitem", ""));
 
-	    		DukeApp.utils.weekView.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
+	    		Week.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
 	    },
     	

@@ -132,40 +132,37 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 	    scrollHandler: function(e) {
-	    	console.log("here");
+	    	var currentScrollPos = $(window).scrollTop(),
+	    		scrollPos = Student.scrollPos;
 
-	    	// var currentScrollPos = $(window).scrollTop(),
-	    	// 	scrollPos = DukeApp.utils.profileView.scrollPos;
+	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
+	    		if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
+	    			break;
+	    		}
+	    	}
 
-	    	// for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
-	    	// 	if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
-	    	// 		break;
-	    	// 	}
-	    	// }
-
-	    	// this.trigger("profileView:setActiveLink", {linkId:linkId});
+	    	this.trigger("studentProfile:setActiveLink", {linkId:linkId});
 	    },
 
     	/******************DISPlAY***********************/
 		onShow:function() {
 	    	var that = this;
 
-	    	console.log("here");
-	    	// $(window).scroll(function(){
-	    	// 	that.scrollHandler.apply(that);
-	    	// });
+	    	$(window).scroll(function(){
+	    		that.scrollHandler.apply(that);
+	    	});
 
-	    	// //cache scroll positions of all frames
-	    	// var frames = $('section');
+	    	//cache scroll positions of all frames
+	    	var frames = $('section');
 	    	
-	    	// Student.scrollPos = [];
+	    	Student.scrollPos = [];
 
-	    	// _.map(frames, function(frame){
-	    	// 	var itemClass = $(frame).attr('class').split(' ')[2],
-	    	// 		linkId = Number(itemClass.replace("profileitem", ""));
+	    	_.map(frames, function(frame){
+	    		var itemClass = $(frame).attr('class').split(' ')[2],
+	    			linkId = Number(itemClass.replace("profileitem", ""));
 
-	    	// 	Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
-	    	// });
+	    		Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
+	    	});
 	    },
 
 	    //scrolls to a particuler frame
