@@ -131,27 +131,46 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			"click #dock_button": "handleDockButton"
 		},
 
+	    scrollHandler: function(e) {
+	    	console.log("here");
+
+	    	// var currentScrollPos = $(window).scrollTop(),
+	    	// 	scrollPos = DukeApp.utils.profileView.scrollPos;
+
+	    	// for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
+	    	// 	if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
+	    	// 		break;
+	    	// 	}
+	    	// }
+
+	    	// this.trigger("profileView:setActiveLink", {linkId:linkId});
+	    },
+
+    	/******************DISPlAY***********************/
 		onShow:function() {
 	    	var that = this;
 
-	    	//cache scroll positions of all frames
-	    	var frames = $('section');
+	    	console.log("here");
+	    	// $(window).scroll(function(){
+	    	// 	that.scrollHandler.apply(that);
+	    	// });
+
+	    	// //cache scroll positions of all frames
+	    	// var frames = $('section');
 	    	
-	    	Student.scrollPos = [];
+	    	// Student.scrollPos = [];
 
-	    	_.map(frames, function(frame){
-	    		var itemClass = $(frame).attr('class').split(' ')[2],
-	    			linkId = Number(itemClass.replace("profileitem", ""));
+	    	// _.map(frames, function(frame){
+	    	// 	var itemClass = $(frame).attr('class').split(' ')[2],
+	    	// 		linkId = Number(itemClass.replace("profileitem", ""));
 
-	    		Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
-	    	});
+	    	// 	Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
+	    	// });
 	    },
 
 	    //scrolls to a particuler frame
 	    scrollToFrame:function(linkId) {
 	    	var that = this;
-
-	    	$(window).scroll(null);
 
 	    	DukeApp.utils.profileView.current_frame = linkId;
 
@@ -166,20 +185,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		    		});
 		    	}
 		    });
-	    },
-
-	    //finds the active frame current scrolled to
-	    scrollHandler: function(e) {
-	    	var currentScrollPos = $(window).scrollTop(),
-	    		scrollPos = DukeApp.utils.profileView.scrollPos;
-
-	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
-	    		if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
-	    			break;
-	    		}
-	    	}
-
-	    	this.trigger("profileView:setActiveLink", {linkId:linkId});
 	    },
 
     	//retrieves the itemView related to the frame
