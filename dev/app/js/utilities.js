@@ -22,9 +22,11 @@ DukeApp.utils.profileView = {
 };
 
 DukeApp.utils.loadCommonViews = function() {
-	if (DukeApp.commonViews)
+
+	if (DukeApp.commonViews) {
 		return;
-	
+	}
+		
 	DukeApp.commonViews = {
 		header:new DukeApp.Components.Header.HeaderView(),
 		footer:new DukeApp.Components.Footer.FooterView()

@@ -23,6 +23,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			//show views
 			DukeApp.content.show(weekView);
 
+			console.log(DukeApp.commonViews.header);
 			weekView.header.show(DukeApp.commonViews.header);
 			weekView.top.show(top);
 

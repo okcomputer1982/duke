@@ -66,28 +66,6 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
         itemViewContainer:"#comic_panels",
         itemView:Show.ComicPanelView,
 
-        onShow:function() {
-            // var that = this;
-            // $("#comic_panels").scroll(function(e){
-            //     that.scrollHandler.apply(that);
-            // });
-
-            // var frames = $('section');
-
-            // Show.ComicBookView.scrollPos = [];
-
-            // _.map(frames, function(frame){
-            //     var itemClass = $(frame).attr('class').split(' ')[2],
-            //         linkId = Number(itemClass.replace("weekitem", ""));
-
-            //     Show.ComicBookView.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
-            // });
-        },
-
-        scrollHandler:function(e){
-            // var currentScrollPos = $("#comic_panels").scrollLeft()
-        },
-
         scrollToPanel:function(index) {
             var id = "#panel" + Show.Controller.activeSeries + index,
                 deferred = $.Deferred();
@@ -111,7 +89,6 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
             $('#panel' + model.get('seriesId') + model.get("panelId")).show();
 
             that.scrollToPanel(index).done(function(){
-            //fade in panel
                 $('#panel' + model.get('seriesId') + model.get("panelId")).fadeIn(3000, function() {
                     deferred.resolve();
                 });
