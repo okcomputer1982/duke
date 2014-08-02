@@ -175,6 +175,20 @@ function program9(depth0,data) {
   return buffer;
   });
 
+this["templates"]["game/show/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function";
+
+
+  buffer += "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">\n		<h1 id=\"game_title\">";
+  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h1>\n	\n		<canvas id=\"game_container\"></canvas>\n	</div>\n</div>";
+  return buffer;
+  });
+
 this["templates"]["home/login/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -478,14 +492,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function";
 
 
-  buffer += "<h1>Comic</h1>\n<div class=\"inner-wrap\">\n		<div class=\"comic-wrap\">\n		<h2 class=\"subheading\">";
+  buffer += "<h1>Comic</h1>\n<div class=\"inner-wrap\">\n	<div class=\"comic-wrap\">\n		<h2 class=\"subheading\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.synopsis)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "</h2>\n		<h2 class=\"instructions\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructions)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h2>\n		\n		<a class=\"moreButton show-comic\" data-comicId=\"";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.comic_id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  buffer += "</h2>\n		\n		<a class=\"moreButton show-comic\" data-id=\"";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\" href=\"#\">Read</a>\n	</div>\n</div>";
   return buffer;
@@ -536,10 +550,20 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["weekExplorer/week/frames/game"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function";
 
 
-  return "<h1>Game</h1>\n<div class=\"inner-wrap\">\n	<h2 class=\"subheading\"><span class=\"sub\">Choosing a College:</span> Factors to Consider when narrowing down your college choices.</h2>\n	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>\n\n	<a class=\"game-play\" href=\"#\">Play</a>\n</div>";
+  buffer += "<h1>Game</h1>\n<div class=\"inner-wrap\">\n	<div class=\"game-wrap\">\n		<h2 class=\"subheading\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h2>\n		<p>";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n		<a class=\"show-game\" data-id=\"";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" href=\"#\">Play</a>\n	</div>\n</div>";
+  return buffer;
   });
 
 this["templates"]["weekExplorer/week/frames/image"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

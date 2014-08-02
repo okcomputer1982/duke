@@ -118,10 +118,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				link: "http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm"
 			}},
 
+			{type:"game", name:"game",			content:{
+				name: "Choosing The Right College",
+				description: "Match the student's perfered climate, major, cost and other factors to find the perfect school.",
+				id: 0
+			}},
+
 			{type:"comic", name:"comic",		content:{
 				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
 				instructions: 	"instruction text", 
-				comic_id: 0
+				id: 0
 			}}
 
 		]),

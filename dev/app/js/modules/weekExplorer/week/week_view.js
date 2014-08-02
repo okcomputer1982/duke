@@ -267,7 +267,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    events:{
 	    	"click .cycle-up": 		"cycleHandler",
 	    	"click .cycle-down": 	"cycleHandler",
-	    	"click .show-comic": 	"handleComic"
+	    	"click .show-comic": 	"handleComic",
+	    	"click .show-game": 	"handleGame"
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons
@@ -381,9 +382,15 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    //show comic backdrop
 	    handleComic: function(e){
 	    	e.preventDefault();
-	    	var seriesId = $(e.currentTarget).data("comicid");
-	    	console.log("here");
+	    	var seriesId = $(e.currentTarget).data("id");
 	    	this.trigger("weekView:loadComic", {seriesId:seriesId});
+	    },
+
+	    //show game backdrop
+	    handleGame: function(e){
+	    	e.preventDefault();
+	    	var gameId = $(e.currentTarget).data("id");
+	    	this.trigger("weekView:loadGame", {gameId:gameId});
 	    }
 	});
 });

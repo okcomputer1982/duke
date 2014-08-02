@@ -23,7 +23,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			//show views
 			DukeApp.content.show(weekView);
 
-			console.log(DukeApp.commonViews.header);
 			weekView.header.show(DukeApp.commonViews.header);
 			weekView.top.show(top);
 
@@ -78,6 +77,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			views.content.on("weekView:scrollto", Week.Controller.scrollToFrame);
 			views.content.on("weekView:setActiveLink", Week.Controller.setActiveLink);
 			views.content.on("weekView:loadComic", Week.Controller.setComic);
+			views.content.on("weekView:loadGame", Week.Controller.setGame);
 		},
 
 		scrollToFrame:function(obj){
@@ -99,6 +99,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
   		setComic:function(options) {
   			DukeApp.Comic.Show.Controller.init(options);
+  		},
+
+  		setGame:function(options) {
+  			DukeApp.Game.Show.Controller.init(options);
   		}
 	};
 });
