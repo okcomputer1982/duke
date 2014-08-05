@@ -380,7 +380,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <div id=\"main-content\" data-spy=\"scroll\" data-target=\"#section_nav\">\n  	<nav id=\"content-cycle\">\n        <ul>\n          <li><a href=\"\" class=\"cycle-up\"></a></li>\n          <li><a href=\"\" class=\"cycle-down\"></a></li>\n        </ul>\n      </nav>\n  </div>\n</div>";
+  return "<div class=\"container-fluid\">\n  <div id=\"main-content\" data-spy=\"scroll\" data-target=\"#section_nav\">\n  	\n  </div>\n  <nav id=\"content-cycle\">\n        <ul>\n          <li><a href=\"\" class=\"cycle-up\"></a></li>\n          <li><a href=\"\" class=\"cycle-down\"></a></li>\n        </ul>\n      </nav>\n</div>";
   });
 
 this["templates"]["weekExplorer/week/frames/activity"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
