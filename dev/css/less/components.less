@@ -130,43 +130,6 @@ video {
 }
 
 /**************MODALS**************/
-#comic_modal {
-	background: rgba(0, 0, 0, 0.7);
-}
-
-.modal_close {
-	color:white;
-	font-size: 50px;
-	padding: 20px;
-	margin:0;
-}
-
-#comic_panels {
-	overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    z-index: 90;
-}
-
-#comic_panels {
-	min-height: 415px;
-}
-
-#navigation {
-	position:relative;
-	color:red;
-	display: table;
-	text-align: center;
-	top: 100%;
-	width: 100%;
-	z-index: 100;
-	span {
-		display: inline-table;
-		.rem(margin,1);
-		vertical-align: inherit;
-	}
-}
-
 .circle {
 	border-radius: 50%;
 }
@@ -184,29 +147,19 @@ video {
 }
 
 #questionPanel {
-	background: rgba(255,255,255,0.6);
+	background: rgba(255,255,255,0.8);
 	bottom: 0;
-	.rem(padding,2);
 	text-align: center;
-	color: black;
+	.rem(padding,2);
+	.rem(padding-bottom,4);
 	position: absolute;
+	width: 100%;
 	.question_test {
 		font-size:16pt;
 	}
 }
-.modal-wrap {
-	background: white;
-}
-
-.comic-container {
-	position: relative;
-}
 
 .comic-wrap {
-	position: relative;
-}
-
-.game-wrap {
 	position: relative;
 }
 

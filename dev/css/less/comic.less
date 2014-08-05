@@ -9,8 +9,8 @@
 	margin:0;
 }
 
-#comic_panels {
-	overflow-x: hidden;
+#comic_panels, #thumbnail_panels {
+	overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
     z-index: 90;
@@ -24,7 +24,7 @@
 #navigation {
 	position:relative;
 	color:red;
-	top: -10px;
+	top: 100%;
 	z-index: 100;
 	text-align:center;
 	
@@ -46,33 +46,22 @@
 #thumbnail {
 }
 
-
-
-#comic_title {
-	color:white;
-	font-size:25pt;
-	color:rgb(204, 28, 28);
-}
-
 #response_panel {
-	display: block;
-	position: relative;
-	width: 100%;
-	text-align: left;
-	left: 0;
-	
+	position: absolute;
+	bottom: -96px;
+	text-align: center;
 	color: @black;
+	left: 37%;
+	.rem(padding-top,4.2);
+	.rem(padding-bottom,3);
+	width: 28%;
+
+	background: rgba(255,255,255,0.8);
 	
-	
-	.question_test {
-		color:white;
-	}
 
 	#question_panel {
 		font-size:16pt;
-		position:relative;
-		top:12px;
-
+		.rem(padding-bottom,1);
 		button {
 			font-size: 12pt;
 		}
@@ -92,13 +81,7 @@
 	}
 }
 
-.comic-sliders {
-	color:none;
-	opacity:0.3;
-}
-
 .modal_close {
 	line-height: 30px;
 	padding-top:30px;
 }
-
