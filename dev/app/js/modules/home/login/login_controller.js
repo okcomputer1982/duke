@@ -13,19 +13,26 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 			DukeApp.content.show(loginView);
 			loginView.content.show(content);
 
-			content.on("loginView:checkLogin", this.checkLogin);
+			content.on("loginView:doLogin", this.doLogin);
+			content.on("loginView:doGuestLogin", this.doGuestLogin);
 		},
-		checkLogin:function(obj){
+
+		doGuestLogin:function(){
+			console.log("here");
 			
-			Parse.User.logIn(obj.username, obj.password, {
-  				success: function(user) {
-  					DukeApp.trigger("profile:student");
-    			},
-  				error: function(user, error) {
-    				Login.Controller.contentView.showAlert();
-  					
-  				}
+			DukeApp.utils.loginAsGuest();
+			DukeApp.trigger("profile:student");
+		},
+
+		doLogin:function(obj){	
+			DukeApp.utils.login(obj).done(function(pass){
+				if (pass) {
+					DukeApp.trigger("profile:student");
+				} else {
+					Login.Controller.contentView.showAlert();
+				}
 			});
+
 		}
 	};
 });

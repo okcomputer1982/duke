@@ -12,18 +12,22 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		template:templates["home/login/content"],
 		
 		events:{
-			'click .btn-login':"clickLogin"
+			'click #user_login':"clickLogin",
+			'click #guest_login':"clickGuest",
 		},
 
 		clickLogin:function(e) {
 			var user = $("#username_input").val();
 			var password = $("#password_input").val();
 
-			this.trigger("loginView:checkLogin", {username:user, password:password});
+			this.trigger("loginView:doLogin", {username:user, password:password});
+		},
+
+		clickGuest:function(e) {
+			this.trigger("loginView:doGuestLogin");
 		},
 
 		showAlert:function(e) {
-			console.log("here");
 			$("#login_alert").fadeIn(1000);
 		}
 	});
