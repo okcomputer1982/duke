@@ -195,7 +195,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"content\">\n    \n	<div class=\"container-fluid\">\n\n		<div class=\"login-logo\">\n	        <a href=\"\" class=\"logo replace\">Duke University</a>\n	        <p class=\"tagline\">A Student's Journey</p>\n      	</div>\n\n	    <div class=\"username\">\n	        <input type=\"text\" placeholder=\"username\" aria-label=\"user name\" aria-required=\"true\" required autofocus>\n	    </div>\n	    <div class=\"password\">\n	        <input type=\"text\" placeholder=\"password\" aria-label=\"password\" aria-required=\"true\" required>\n	    </div>\n	    <button class =\"btn btn-primary btn-login\" type=\"submit\">Log In</button>\n	</div>\n	\n</div>";
+  return "<div class=\"content\">\n    \n	<div class=\"container-fluid\">\n\n		<div class=\"login-logo\">\n	        <a href=\"\" class=\"logo replace\">Duke University</a>\n	        <p class=\"tagline\">A Student's Journey</p>\n\n\n    	    <div id=\"login_alert\">Not a correct username/password combination</div>\n      	</div>\n\n	    <div class=\"username\">\n	        <input type=\"text\" id=\"username_input\" placeholder=\"username\" aria-label=\"user name\" aria-required=\"true\" required autofocus>\n	    </div>\n	    <div class=\"password\">\n	        <input type=\"password\" id=\"password_input\" placeholder=\"password\" aria-label=\"password\" aria-required=\"true\" required>\n	    </div>\n\n	    <button class =\"btn btn-primary btn-login\" type=\"submit\">Log In</button>\n		\n	</div>\n</div>";
   });
 
 this["templates"]["home/login/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
