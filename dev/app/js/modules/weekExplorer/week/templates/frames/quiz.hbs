@@ -1,52 +1,32 @@
 <h1>Quiz</h1>
 <div class="inner-wrap">
-<form id="form_859947" class="appnitro" enctype="multipart/form-data" method="post" action="">
-	<div class="form_description">						
-	<ul>
-		<li id="li_3" >
-			<label class="description" for="element_3">Checkboxes </label>
-			<span>
-			<input id="element_3_1" name="element_3_1" class="element checkbox" type="checkbox" value="1" />
-			<label class="choice" for="element_3_1">First option</label>
-			<input id="element_3_2" name="element_3_2" class="element checkbox" type="checkbox" value="1" />
-			<label class="choice" for="element_3_2">Second option</label>
-			<input id="element_3_3" name="element_3_3" class="element checkbox" type="checkbox" value="1" />
-			<label class="choice" for="element_3_3">Third option</label>
 
-			</span> 
-		</li>
+<div class="quizItem" data-id="0">
+	<h2 class="subHeading">Quiz 1</h2>
+	<form>
+		<label for="male">Question 1</label><br/>
+		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
+		<input type="radio" name="q1" value="a2">A2<br>
+		
+		<label for="male">Question 2</label><br/>
+		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
+		<input type="radio" name="q1" value="a2">A2<br>
+		<input type="submit" value="Submit">
+	</form>
+</div>
 
-		<li id="li_1" >
-			<label class="description" for="element_1">Text </label>
-			<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
-			</div> 
-		</li>
+<div class="quizItem" data-id="1">
+	<h2 class="subHeading">Quiz 2</h2>
+	<form>
+		<label for="male">Question 1a</label><br/>
+		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
+		<input type="radio" name="q1" value="a2">A2<br>
+		
+		<label for="male">Question 2a</label><br/>
+		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
+		<input type="radio" name="q1" value="a2">A2<br>
+		<input type="submit" value="Submit">
+	</form>
+</div>
 
-		<li id="li_2" >
-			<label class="description" for="element_2">Upload a File </label>
-			<div>
-				<input id="element_2" name="element_2" class="element file" type="file"/> 
-			</div>  
-		</li>
-
-		<li id="li_4" >
-			<label class="description" for="element_4">Drop Down </label>
-			<div>
-				<select class="element select medium" id="element_4" name="element_4"> 
-					<option value="" selected="selected"></option>
-					<option value="1" >First option</option>
-					<option value="2" >Second option</option>
-					<option value="3" >Third option</option>
-				</select>
-			</div> 
-		</li>
-
-		<li class="buttons">
-			<input type="hidden" name="form_id" value="859947" />
-
-			<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-		</li>
-	</ul>
-</form>
 </div>

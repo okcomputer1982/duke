@@ -72,7 +72,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				subTitle:"The Differences Between the Chinese and American Education Systems. What is a “best-fit” school?",
 				overview:"Learn more about differences in educational systems",
 				objectives:[
-					"Understand the semester one course goals, objectives, deliverables (add syllabus review when it is complete)",
+					"Understand the semester one course goals, objectives, deliverables",
 					"Understand the differences between the Chinese and U.S. education systems",
 					"Understand the current college admission landscape for elite schools in the U.S.",
 					"Understand the “best-fit” school concept"
@@ -80,10 +80,28 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				badges:["code", "cool", "foxy"]
 			}},
 
+			{type:"journal", name:"journal",		content:{
+				heading: "Introduction to Journals",
+				instructions: "Throughout the semester you will:",
+				objectives:[
+					"Be asked to think and reflect about the topics covered in this course and to write about them.",
+					"Journal entries will be written on the computer and will be time stamped.",
+					"You will  examine your journals and assess how well you are doing by using the rubric. Make certain you score your work.",
+					"If you do not understand some of the words, please define the words in your journals. *Carefully review the rubric and make sure you understand all of it."
+				]
+			}},
+			
 			{type:"video", name:"video",			content:{
 				heading: 	"2 Million Minutes", 
 				subheading: "Factors to Consider when narrowing down your college choices.",
 				video: 		"Duke_ConEd_Class1"
+			}},
+
+
+
+			{type:"image", name:"image",		content:{
+				heading: "Journal Grading Rubric",
+				source: "../images/image_panels/rubricwrite2.gif"
 			}},
 
 			{type:"activity", name:"activity",		content:{
@@ -96,13 +114,30 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				],
 			}},
 
-			{type:"journal", name:"journal",		content:{
-				instructions: "You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-			}},
-			
 			{type:"video", name:"video",			content:{
 				heading: 	"Difference between the Chinese and American School systems", 
 				video: 		"test"
+			}},
+
+			{type:"discussion", 	name:"discussion", 	content:{
+				heading: "The Similarities and differences between the U.S. and Chinese educational systems:",
+				instructionTitle: "You will read and discuss the following questions with a partner:",
+				instructionList:[
+					"Name three similarities and three differences between the Chinese and American education systems.",
+					"Compare and contrast the ways in which Chinese and Americans  are assessed in school. For example how are  tests, homework,  and projects evaluated in both countries.",
+					"Are “extra-curricular” activities the same in China as in the U.S.? How are they different?",
+					"Compare and contrast how Chinese and Americans students  spend  time outside of school.",
+					"Generally, what is the average class size in an American high school? How might this impact the way in which American you learn as compared to the way in which Chinese you learn?",
+					"List three strengths of the Chinese educational system and three strengths of the American educational system."
+				]
+			}},
+			
+			{type:"article", name:"article",		content:{
+				id:0
+			}},
+
+			{type:"journal", 		name:"journal",	content:{
+				instructions: "In your journal make notes answering the above questions fron the previous discussion", 
 			}},
 
 

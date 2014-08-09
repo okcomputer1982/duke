@@ -22,11 +22,17 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	});
 
 	Week.ArticleView = Marionette.ItemView.extend({
-		template:templates["weekExplorer/week/frames/article"],
+		template:templates["weekExplorer/week/frames/articleFull"],
 		className:function(){
+			console.log(this.options.weekitemClass);
 			return("section article " + this.options.weekitemClass);
 		},
-		tagName:"section"
+		tagName:"section",
+
+		onShow:function(){
+			// $(".articleItem").hide();
+			// $(".articleItem[data-id=" +  this.model.get('content').id + "]").show();
+		}
 	});
 
 	Week.ArticleLinkView = Marionette.ItemView.extend({
@@ -154,7 +160,12 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		className:function(){
 			return("section quiz " + this.options.weekitemClass);
 		},
-		tagName:"section"
+		tagName:"section",
+
+		onShow:function() {
+			$(".quizItem").hide();
+			$(".quizItem[data-id=" +  this.model.get('content').id + "]").show();
+		}
 	});
 
 	Week.WrapupView = Marionette.ItemView.extend({
@@ -282,12 +293,12 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    	if (type === "cycle-down") {
 	    		for (linkId = 0; linkId < scrollPos.length && (scrollPos[linkId].pos-100) <= currentScrollPos; linkId++);
-	    		if (linkId === DukeApp.utils.weekView.current_frame) {
+	    		if (linkId === Week.Controller.views.weekView.current_frame) {
 	    			linkId ++;
 	    		}
 	    	} else {
 	    		for (linkId = scrollPos.length-1; linkId > 0 && (scrollPos[linkId].pos-100) >= currentScrollPos; linkId--);
-	    		if (linkId === DukeApp.utils.weekView.current_frame) {
+	    		if (linkId === Week.Controller.views.weekView.current_frame) {
 	    			linkId --;
 	    		}
 	    	}

@@ -414,20 +414,19 @@ function program1(depth0,data) {
 this["templates"]["weekExplorer/week/frames/article"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function";
+  
 
 
-  buffer += "<h1>Article</h1>\n<div class=\"inner-wrap\">\n	<h2 class=\"sub\">";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.heading)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h2>\n    <p class=\"synopsis\">";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.synopsis)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</p>\n    <div id=\"article_text\">\n    	";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n</div>";
-  return buffer;
+  return "<h1>Article</h1>\n<div class=\"inner-wrap\">\n\n<div class=\"articleItem another-wrapper box\" data-id=\"0\">\n<p>\n	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n</p>\n</div>\n\n<div class=\"articleItem another-wrapper box\" data-id=\"1\">\n<p>\n	Swine turkey turducken, sirloin venison biltong pork prosciutto bresaola shank ham hock. Drumstick meatloaf tenderloin ham, corned beef doner bresaola. Andouille chuck shank, tenderloin pork chop drumstick turkey salami brisket ham hock. Boudin meatloaf hamburger capicola strip steak drumstick porchetta. Biltong beef t-bone spare ribs pork chop turkey fatback chuck meatloaf filet mignon ribeye landjaeger. Turkey cow meatloaf doner spare ribs beef chuck jerky. Brisket shankle pork loin ham bresaola ham hock pastrami tail ground round cow porchetta ribeye venison meatball.\n</p>\n</div>\n\n</div>";
+  });
+
+this["templates"]["weekExplorer/week/frames/articleFull"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<h1>Article</h1>\n<div class=\"inner-wrap\">\n\n<div class=\"articleItem another-wrapper box\" data-id=\"0\">\n<p>\n	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n</p>\n</div>\n\n<div class=\"articleItem another-wrapper box\" data-id=\"1\">\n<p>\n	Swine turkey turducken, sirloin venison biltong pork prosciutto bresaola shank ham hock. Drumstick meatloaf tenderloin ham, corned beef doner bresaola. Andouille chuck shank, tenderloin pork chop drumstick turkey salami brisket ham hock. Boudin meatloaf hamburger capicola strip steak drumstick porchetta. Biltong beef t-bone spare ribs pork chop turkey fatback chuck meatloaf filet mignon ribeye landjaeger. Turkey cow meatloaf doner spare ribs beef chuck jerky. Brisket shankle pork loin ham bresaola ham hock pastrami tail ground round cow porchetta ribeye venison meatball.\n</p>\n</div>\n\n</div>";
   });
 
 this["templates"]["weekExplorer/week/frames/articleLink"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -529,7 +528,7 @@ function program1(depth0,data) {
   buffer += "</p>\n\n		<ol class=\"objectives\">\n	      ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	    </ol>\n    </div>\n	<script type=\"text/javascript\" src=\"http://9td6qf194y.embed.talkiforum.com/embed/1.js\"></script><div style=\"font-size:80%; text-align:center;\" id=\"9td6qf194yt4lk1prm0\">get your own <a href=\"http://talkiforum.com?utm_source=install&utm_medium=link&utm_campaign=get_your_own\">embeddable forum</a> with Talki</div>\n</div>";
+  buffer += "\n	    </ol>\n    </div>\n		\n	<textarea placeholder=\"\"></textarea>\n</div>";
   return buffer;
   });
 
@@ -569,12 +568,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["weekExplorer/week/frames/image"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, functionType="function";
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<h1>Big Image:</h1>\n<div class=\"inner-wrap\">\n	<img src=\"http://dummyimage.com/640x4:3\">\n	<p>";
-  if (helper = helpers.caption) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.caption); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += "<h1>Big Image:</h1>\n<div class=\"inner-wrap\">\n	<h2 class=\"subHeading\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.heading)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h2>\n	<img src=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.source)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n	<p>";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.caption)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "</p>\n</div>";
   return buffer;
@@ -703,7 +706,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<h1>Quiz</h1>\n<div class=\"inner-wrap\">\n<form id=\"form_859947\" class=\"appnitro\" enctype=\"multipart/form-data\" method=\"post\" action=\"\">\n	<div class=\"form_description\">						\n	<ul>\n		<li id=\"li_3\" >\n			<label class=\"description\" for=\"element_3\">Checkboxes </label>\n			<span>\n			<input id=\"element_3_1\" name=\"element_3_1\" class=\"element checkbox\" type=\"checkbox\" value=\"1\" />\n			<label class=\"choice\" for=\"element_3_1\">First option</label>\n			<input id=\"element_3_2\" name=\"element_3_2\" class=\"element checkbox\" type=\"checkbox\" value=\"1\" />\n			<label class=\"choice\" for=\"element_3_2\">Second option</label>\n			<input id=\"element_3_3\" name=\"element_3_3\" class=\"element checkbox\" type=\"checkbox\" value=\"1\" />\n			<label class=\"choice\" for=\"element_3_3\">Third option</label>\n\n			</span> \n		</li>\n\n		<li id=\"li_1\" >\n			<label class=\"description\" for=\"element_1\">Text </label>\n			<div>\n			<input id=\"element_1\" name=\"element_1\" class=\"element text medium\" type=\"text\" maxlength=\"255\" value=\"\"/> \n			</div> \n		</li>\n\n		<li id=\"li_2\" >\n			<label class=\"description\" for=\"element_2\">Upload a File </label>\n			<div>\n				<input id=\"element_2\" name=\"element_2\" class=\"element file\" type=\"file\"/> \n			</div>  \n		</li>\n\n		<li id=\"li_4\" >\n			<label class=\"description\" for=\"element_4\">Drop Down </label>\n			<div>\n				<select class=\"element select medium\" id=\"element_4\" name=\"element_4\"> \n					<option value=\"\" selected=\"selected\"></option>\n					<option value=\"1\" >First option</option>\n					<option value=\"2\" >Second option</option>\n					<option value=\"3\" >Third option</option>\n				</select>\n			</div> \n		</li>\n\n		<li class=\"buttons\">\n			<input type=\"hidden\" name=\"form_id\" value=\"859947\" />\n\n			<input id=\"saveForm\" class=\"button_text\" type=\"submit\" name=\"submit\" value=\"Submit\" />\n		</li>\n	</ul>\n</form>\n</div>";
+  return "<h1>Quiz</h1>\n<div class=\"inner-wrap\">\n\n<div class=\"quizItem\" data-id=\"0\">\n	<h2 class=\"subHeading\">Quiz 1</h2>\n	<form>\n		<label for=\"male\">Question 1</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		\n		<label for=\"male\">Question 2</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		<input type=\"submit\" value=\"Submit\">\n	</form>\n</div>\n\n<div class=\"quizItem\" data-id=\"1\">\n	<h2 class=\"subHeading\">Quiz 2</h2>\n	<form>\n		<label for=\"male\">Question 1a</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		\n		<label for=\"male\">Question 2a</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		<input type=\"submit\" value=\"Submit\">\n	</form>\n</div>\n\n</div>";
   });
 
 this["templates"]["weekExplorer/week/frames/video"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
