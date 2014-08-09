@@ -10,12 +10,25 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 
 	Login.ContentView = Marionette.ItemView.extend({
 		template:templates["home/login/content"],
+		
 		events:{
-			'click .btn-login':"clickLogin"
+			'click #user_login':"clickLogin",
+			'click #guest_login':"clickGuest",
 		},
 
-		clickLogin:function(e){
-			DukeApp.trigger("profile:student");
+		clickLogin:function(e) {
+			var user = $("#username_input").val();
+			var password = $("#password_input").val();
+
+			this.trigger("loginView:doLogin", {username:user, password:password});
+		},
+
+		clickGuest:function(e) {
+			this.trigger("loginView:doGuestLogin");
+		},
+
+		showAlert:function(e) {
+			$("#login_alert").fadeIn(1000);
 		}
 	});
 });
