@@ -674,7 +674,7 @@ function program5(depth0,data) {
   var buffer = "";
   buffer += "\n          <li class=\""
     + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
-    + "\"></li>\n        ";
+    + "\"><a class=\"badge\"></a></li>\n        ";
   return buffer;
   }
 

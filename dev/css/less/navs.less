@@ -15,9 +15,34 @@
 }
 
 .navbar-header {
-  width: 13vw;
+  width: 100%;
+  @media (min-width: 48em) {
+    width: 13%;
+    width: 13vw;
+  }
   .logo {
     margin: 0 auto;
+  }
+}
+
+.navbar-collapse {
+  background: #fff;
+  float: right;
+  text-align: right;
+  width: 50%;
+  @media(min-width: 48em) {
+    text-align: left;
+    width: auto;
+  }
+  ul {
+    li {
+      a {
+        padding-right: 40px;
+        @media(min-width: 48em) {
+          padding-right: 0;
+        }
+      }
+    }
   }
 }
 
