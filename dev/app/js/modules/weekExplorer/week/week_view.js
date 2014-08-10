@@ -22,7 +22,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	});
 
 	Week.ArticleView = Marionette.ItemView.extend({
-		template:templates["weekExplorer/week/frames/articleFull"],
+		template:templates["weekExplorer/week/frames/article"],
 		className:function(){
 			console.log(this.options.weekitemClass);
 			return("section article " + this.options.weekitemClass);
@@ -30,8 +30,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		tagName:"section",
 
 		onShow:function(){
-			// $(".articleItem").hide();
-			// $(".articleItem[data-id=" +  this.model.get('content').id + "]").show();
+			$(".articleItem").hide();
+			$(".articleItem[data-id=" +  this.model.get('content').id + "]").show();
 		}
 	});
 

@@ -132,39 +132,74 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				]
 			}},
 			
-			{type:"article", name:"article",		content:{
-				id:0
-			}},
 
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "In your journal make notes answering the above questions fron the previous discussion", 
 			}},
 
+			{type:"article", name:"article",		content:{
+				id:0
+			}},
 
-			{type:"articleLink",  	name:"article", 	content:{
+			{type:"videoLink", name:"video",			content:{
+				heading: 	"Best Fit School", 
+				synopsis: 	"Show “What type of students “Fits in Best at Duke” and two other similar videos. You are  to answer these questions:",
+				instructionList: [
+					"What characteristics do all of these students have in common?",
+					"How are these students different?",
+					"Are different schools looking for slightly different characteristics?"
+				],
+				link: "https://lmty.cfnc.org/videos/what-types-of-you-fit-in-best-at-duke"
+			}},
+
+			{type:"journal", 		name:"journal",	content:{
+				heading: "Introduction to the school “best-fit” concept.",
+				instructionsList: [
+					"Using your journals, you will write a brief explanation of what you think “best-fit school” means to you.",
+					"What types of things do you think you should consider as you develop your school lists?",
+					"What do you think schools consider when selecting you for admission?"
+				]
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
 				heading: 'Using the “My College Guide: Things to Consider When Choosing a College”',
-				instructions: "You will journal about what you think a best-fit college would be. You should not name schools but consider qualities like size, location, campus life, etc. You will reflect back on this entry at the end of the first semester.",
-				link: "http://mycollegeguide.org/guru/19/picking-the-right-school"
+				instructions: "This article will help you to learn what are the main qualities you want to look for in choosing a college.",
+				link: "http://mycollegeguide.org/articles/7/105/apply%20to%20the%20right%20school"
 			}},
 
-			{type:"articleLink",  	name:"article", 	content:{
-				heading: 'Learning about your Personality Type',
-				instructions: "Read an article about the Myers-Briggs Personality",
-				link: "http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm"
+			{type:"journal", 		name:"journal",	content:{
+				heading: "Things to Consider When Choosing a College",
+				instructions: "After reading about “My College Guide: Things to Consider When Choosing a College”",
+				instructionsList: [
+					"Journal about what you think a best-fit college would be.",
+					"You should not name schools but consider qualities like size, location, campus life, etc.",
+					"You will reflect back on this entry at the end of the first semester."
+				]
 			}},
 
-			{type:"game", name:"game",			content:{
-				name: "Choosing The Right College",
-				description: "Match the student's perfered climate, major, cost and other factors to find the perfect school.",
-				id: 0
+			{type:"article", name:"article",		content:{
+				id:1
 			}},
 
-			{type:"comic", name:"comic",		content:{
-				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-				instructions: 	"instruction text", 
-				id: 0
-			}}
+			{type:"assignment", name:"assignment",		content:{
+				subHeading: "Mapping out your Career Path",
+				instructionList:[
+					"Complete the CFNC Career Cluster Survey.",
+					"You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
+					"You should also list the majors and careers paths in which you are most interested."
+				],
+			}},
 
+			{type:"activity", name:"activity",		content:{
+				subHeading: "Introduction to Myers Briggs",
+				instruction:"Read one or both of the following articles regard the Myers Briggs Personality test.",
+				instructionList:[
+					"http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm",
+					" http://www.teamtechnology.co.uk/personality/intro/"
+				],
+			}},
+
+			
 		]),
 			//week 2
 			new Entities.FrameCollection([
@@ -187,7 +222,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"activity", name:"activity",		content:{
 				heading: "A Review of Myers-Briggs", 
-				instuctionsHeader: "Instructor will review the reading assignment about the MBTI. How the test will be administered and why the you are taking the test will be reviewed."
+				instuctionsHeader: "Review the reading assignment about the MBTI.  It is important you understand how the test will be administered and why you are taking the test.",
+				instructionList:
+
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
@@ -210,12 +247,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{type:"activity", name:"activity",		content:{
 				heading: "Populate Myers-Briggs Rating in Profile", 
 				instuctionsHeader: "You will populate your profiles using your MBTI results and the list of the academic accomplishments and extra-curricular interests."
-			}},
-
-			{type:"articleLink",  name:"article", 	content:{
-				heading: 'Register with CFNC',
-				instructions: "You will register with CFNC and locate the Cluster Survey.",
-				link: "https://www1.cfnc.org/Plan/For_A_Career/Learn_About_Yourself/Career_Cluster_Survey/Career_Cluster_Survey.aspx"
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
