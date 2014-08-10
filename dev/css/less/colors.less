@@ -51,6 +51,11 @@
 		span.hoverover {
 			color: @white !important;
 		}
+		.another-wrapper {
+			h1,h2,h3,p,li,a {
+				color: #000;
+			}
+		}
 	}
 	&.video, &.videoLink {
 		* {
@@ -95,7 +100,7 @@
 	padding-top: 22px;
 }
 
-.section:nth-child(5n + 3) {
+.section:nth-child(4n + 3) {
 	background-image: 
 	 radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.45) 100%),
 	radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, @blue 30%, @blue 40%, transparent 90%),
@@ -107,14 +112,14 @@
   	background-size: 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 100% 100%;
 }
 
-.section:nth-child(5n+2), .section:nth-child(2) {
+.section:nth-child(4n+2), .section:nth-child(2) {
 	background-color: @drkgray;
 	background-image: radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.65) 100%),
 	linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
 	background-size: 100%, 2px 2px;
 }
 
-.section:nth-child(5n+1), .section:nth-child(3) {
+.section:nth-child(4n+1), .section:nth-child(3) {
 	background-image: 
 	radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.45) 100%),
 	radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, rgba(155,155,155,0.8) 30%, rgba(155,155,155,0.8) 40%, transparent 90%),
@@ -126,7 +131,7 @@
   	background-size: 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 100% 100%;
 }
 
-.section:nth-child(5n+4), .section:nth-child(4) {
+.section:nth-child(4n+4), .section:nth-child(4) {
 	background-image: radial-gradient(ellipse farthest-corner, transparent 0%, rgba(0,0,0,0.9) 90%), 
 	url('../images/hatching2.png');
 	background-size:  100%, 200px 200px;

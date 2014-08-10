@@ -75,6 +75,21 @@
 				.rem(line-height,4.5);
 			}
 		}
+		@media (max-width: 48em) {
+			.rem(margin-left,1.7);
+			.rem(width,25);
+			li {
+				.rem(height,7);
+				.rem(margin-top,-1);
+				.rem(width,6.5);
+				&.hive, &.thread, &.fest, &.karaoke, &.network, &.olympics, &.thimble {
+					.rem(margin-top,-1);
+				}
+				&.hive {
+					.rem(margin-left,-3);
+				}
+			}
+		}
 	}
 }
 
