@@ -15,15 +15,34 @@
 }
 
 .navbar-header {
-  width: 13vw;
+  width: 100%;
+  @media (min-width: 48em) {
+    width: 13%;
+    width: 13vw;
+  }
   .logo {
     margin: 0 auto;
   }
 }
 
-@media (max-width: @screen-sm-min) {
-  .navbar-header {
-    width: 100%;
+.navbar-collapse {
+  background: #fff;
+  float: right;
+  text-align: right;
+  width: 50%;
+  @media(min-width: 48em) {
+    text-align: left;
+    width: auto;
+  }
+  ul {
+    li {
+      a {
+        padding-right: 40px;
+        @media(min-width: 48em) {
+          padding-right: 0;
+        }
+      }
+    }
   }
 }
 
@@ -31,10 +50,9 @@
   background: @black;
   height:40px;
   padding-left:19vw;
-  padding-top: 6px;
+  padding-top: 5px;
   position: absolute;
   white-space: nowrap;
-  overflow-x: hidden;
 
   li {
     display: inline;
@@ -48,7 +66,7 @@
       width: 48px;
       font-size:18px;
       font-family: 'Josefin Sans', arial, helvetica, sans-serif;
-      padding: 7px 15px;
+      padding: 10px 15px;
     }
 
     &.active, &:hover {
@@ -63,7 +81,7 @@
 .topnav {
   background: @black;
   height: 40px;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   position: relative;
   top: 60px;

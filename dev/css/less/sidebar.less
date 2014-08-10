@@ -56,7 +56,6 @@
     padding-left: 0;
     position: absolute;
     width: 100%;
-    overflow-y: scroll;
 
     li {
       -ms-transition: all 0.5s ease-in-out;
@@ -70,6 +69,20 @@
       a {
         // background-color: #a2a4a1;
         // box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2);
+         @media (max-width: 68.750em) {
+            text-align: center;
+            span {
+              clear: both;
+              &.icomoon {
+                display: block;
+                .rem(width,3.2);
+              }
+              &.hoverover {
+                display: block;
+                text-align: center;
+              }
+            }
+          }
         display: table;
         text-decoration: none;
         line-height:25px;
@@ -93,10 +106,12 @@
         span {
           color: #acacac;
           display: inline-table;
+         
           &.icomoon {
             box-shadow: inset -1px -1px 2px rgba(100,100,200,0.5), 3px 3px rgba(0,0,0,1);
             background: @red;
             color: #acacac;
+            display: inline-table;
             margin: 5px 15px 5px 10px;
             vertical-align: middle;
             &.icon-eye3, &.icon-lightning, &.icon-wallet {
@@ -272,6 +287,7 @@ ul#section_nav {
             margin-right: 20px;
             padding: 4px;
             border-radius: 50%;
+
             &.icon-eye3, &.icon-lightning, &.icon-wallet {
               font-size: 20px;
               padding: 5.5px;
@@ -295,6 +311,9 @@ ul#section_nav {
             &.icomoon {
               box-shadow: inset -1px -1px 2px rgba(100,100,200,0.5);
               color: @white;
+              @media (max-width: 68.750em) {
+                margin: 0 auto;
+              }
             }
             &.hoverover {
               color: @white;

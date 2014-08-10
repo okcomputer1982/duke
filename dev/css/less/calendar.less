@@ -1,52 +1,16 @@
 /* calendar widget */
 
 #calendar {
-	#calendar-inner {
-		position: relative;
-		background: #FFF;
-		border-radius: 2px;
-		height: 157px;
-		width: 161px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		-webkit-box-shadow: 0 4px 0 0 #dddddd;
-		box-shadow: 0 4px 0 0 #dddddd;
-		margin: 7px 7px 11px;
-		border: 1px solid #dddddd;
-		&:before, &:after {
-			content: "";
-			height: 6px;
-			width: 10px;
-			display: block;
-			position: absolute;
-			top: 10px;
-			left: 15px;
-			border-radius: 5px;
-			background: #075665;
-			border-top: 4px solid #dddddd;
-		}
-		&:after {
-			left: auto;
-			right: 15px;
-		}
-		.title {
-			text-align: center;
-			padding: 6px 0 3px;
-			font-size: 1em;
-			font-weight: bold;
-			color: #aaaaaa;
-			border-bottom: 1px solid #dddddd;
-		}
-		.week {
-			text-align: center;
-			padding-top: 0px;
-			color: #333333;
-			display:block;
-			font-weight: bold;
-			font-size: 4.5em;
-			line-height: 0.83211em;
-		}
+	background: #fff;
+	border:1px solid #000;
+	box-shadow: 8px 8px #000;
+	.rem(padding,1);
+	.rem(margin-right,2);
+	width: 26%;
+	float: left;
+	.rem(margin-left,1);
+	@media (max-width: 48em) {
+		display: none;
 	}
 }
 
@@ -76,15 +40,16 @@
 	position: relative;
 	background: #FFF;
 	border-radius: 2px;
-	height: 191px;
+	height: 120px;
 	width: 95%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-box-shadow: 0 4px 0 0 @drkgray;
 	box-shadow: 0 4px 0 0 @drkgray;
-	margin: 7px 7px 11px;
+	margin: 0;
 	border: 1px solid @drkgray;
+	width: 100%;
 }
 
 #calendar #calendar-inner .title {
@@ -99,11 +64,11 @@
 
 #calendar #calendar-inner .week {
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 5px;
 	color: #333333;
 	display:block;
 	font-weight: bold;
-	font-size: 6em;
+	font-size: 3em;
 	line-height: 0.83211em;
 }
 

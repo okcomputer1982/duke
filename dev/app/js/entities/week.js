@@ -223,7 +223,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{type:"activity", name:"activity",		content:{
 				heading: "A Review of Myers-Briggs", 
 				instuctionsHeader: "Review the reading assignment about the MBTI.  It is important you understand how the test will be administered and why you are taking the test.",
-				instructionList:
+				instructionList: [
+					"Take the MBTI to determine your individual personality profiles",
+					"Make a list of your academic accomplishments and strengths and your extracurricular interests",
+					"Use your MBTI results and academic and extracurricular interests to populate your profiles",
+					"Use the career Cluster Survey (CFNC) to identify objectives for future study"
+				]
 
 			}},
 
@@ -235,18 +240,39 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"activity", name:"activity",		content:{
 				heading: "Reflecting on Personality Types",
-				instuctionsHeader: "You will read about your personality types. Reflect on what your personality traits mean in your real life, for example, if you are an introvert, how can you chat more with people when you prefer to remain silent. Or, if you are an extrovert, how can you learn to listen more? Think of one or two activities that will challenge you to try new things.",
+				instuctionsHeader: "You will read:",
 				instructionList:[
+					"Read about your personality types.",
+					"Reflect on what your personality traits mean in your real life.",
+					"If you are an introvert, how can you chat more with people when you might prefer to remain silent?",
+					"If you are an extrovert, how can you learn to listen more?",
+					"Think of one or two activities that will challenge you to try new ways you might react in a social or academic setting."
 				],
 			}},
 
 			{type:"journal", 		name:"journal",	content:{
-				instructions: "What are three of your academic accomplishments? Have you taken any AP courses?  Have you won any mathematics, science or English awards? Do you play a sport? Do you play an instrument? Make a list of your academic accomplishments and your extracurricular activities.", 
+				instructions: "You will answer the following questions.", 
+				instructionList:[
+					"What are three of your academic accomplishments?",
+					"Have you taken any AP courses?",
+					"Have you won any mathematics, science or English awards?",
+					"Do you play a sport? Do you play an instrucment?",
+					"Make a list  in your journal of your academic accomplishments and your extracurricular activities."
+				]
 			}},
 
-			{type:"activity", name:"activity",		content:{
+			{type:"links", name:"links",		content:{
 				heading: "Populate Myers-Briggs Rating in Profile", 
-				instuctionsHeader: "You will populate your profiles using your MBTI results and the list of the academic accomplishments and extra-curricular interests."
+				instuctionsHeader: "You will populate your profiles using your MBTI results and the list of the academic accomplishments and extra-curricular interests.",
+				singleLinkhref:"/profile/student",
+				singleLinkHeading:"Click to proceed to heading"
+			}},
+
+			{type:"links", name:"links",		content:{
+				heading: "Register With CFNC",
+				instuctionsHeader: "You will register with CFNC and locate the Cluster Survey.",
+				singleLinkhref:"/profile/student",
+				singleLinkHeading:"Click to proceed to heading"
 			}},
 
 			{type:"assignment", name:"assignment",		content:{

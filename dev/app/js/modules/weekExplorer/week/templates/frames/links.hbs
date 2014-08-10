@@ -1,14 +1,11 @@
 <h1>Links</h1>
 <div class="inner-wrap">
-  <h2 class="subheading">Why and how you should develop a list of schools that fit you.</h2>
+  <h2 class="subheading">{{{content.heading}}}</h2>
+  <h3 class="instructions">{{{content.instructionHeader}}}</h3>
+  <a href="{{{content.singleLinkhref}}}">{{{content.singleLinkHeading}}}</a>
   <ol>
-    <li><a href="http://admissions.duke.edu/application/overview">Who We are Looking For</a></li>
-    <li><a href="http://studentaffairs.duke.edu/career-planning">International Application</a></li>
-    <li><a href="http://studentaffairs.duke.edu/campuslife">Career Planning</a></li>
-    <li><a href="http://admissions.duke.edu/application/checklist">Campus Life</a></li>
-    <li><a href="http://studentaffairs.duke.edu/ihouse">International House</a></li>
-    <li><a href="http://admissions.duke.edu/application/checklist">Campus Life</a></li>
-    <li><a href="http://studentaffairs.duke.edu/">Student Affair</a></li>
-    <li><a href="http://admissions.duke.edu/ ">Admissions</a></li>
+    {{#each content.linkList}}
+      <li><a href="this.href">this.heading</a></li>
+    {{/each}}
   </ol>
 </div>

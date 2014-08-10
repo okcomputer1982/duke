@@ -28,9 +28,16 @@
       margin-left: auto;
       .rem(width,36);
     }
+    @media ( max-width: 48em ) {
+      .badges {
+        ul {
+          .rem(width,20);
+        }
+      }
+    }
   }
+  
   &.attribute {
-
     .inner-wrap {
       .rem(padding-left,2.5);
       .rem(padding-right,2.5);
@@ -44,15 +51,13 @@
     text-align: left;
     float: left;
     .rem(font-size,3);
-    margin-left: 10px;
-    margin-top: 10px;
-
+    margin-left: 0;
+    margin-top: 30px;
     padding: 15px;
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
     &:after {
-
       border-bottom: 0;
       border-top: 60px solid black;
       border-right: 50px solid transparent;
@@ -72,11 +77,10 @@
 
   p {
     clear: both;
-    float: left;
   }
   h2 {
     clear: both;
-    color: @black !important;
+    color: @black;
     margin: 0 auto;
     .rem(margin-bottom,2);
     text-align: center;
@@ -94,6 +98,10 @@
     margin-left: 0;
     text-align: center;
     width: 100%;
+    @media ( max-width: 48em ) {
+      .rem(padding-left,2);
+      .rem(padding-right,2);
+    }
     @media ( min-width: 95em ) {
       & > p {
         margin: 0 auto;
@@ -116,7 +124,6 @@
   h2 {
     color:black;
     .rem(font-size,2.7);
-    font-style:italic;
     .rem(padding-bottom,1);
     margin-top:0px;
     &.subheading { 
@@ -141,6 +148,10 @@
         background-color: lighten(@green,10%);
         color: lighten(#000,10%);
         text-decoration: none;
+      }
+      @media (max-width: 48em) {
+        width: 50%;
+        .rem(font-size,2);
       }
     }
   }
@@ -181,12 +192,23 @@
       border-color: #292929;
       margin-bottom: 0;
       .rem(padding-bottom,2);
-      font-style: italic;
     }
   }
 }
 
 .form_description {
+  @media (max-width: 48em) {
+    border: 0px;
+    line-height: 0;
+    ul {
+      li {
+        width: 70%;
+      }
+    }
+    input.checkbox {
+      clear: left;
+    }
+  }
   ul {
     padding-left: 0;
   }
@@ -230,6 +252,9 @@
   margin: 20px auto;
   .rem(padding,2);
   width: 80%;
+  @media ( max-width: 48em ) {
+    width: 92%;
+  }
   h2.gray {
     background: @ltgray;
     color: white;
