@@ -97,8 +97,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				video: 		"Duke_ConEd_Class1"
 			}},
 
-
-
 			{type:"image", name:"image",		content:{
 				heading: "Journal Grading Rubric",
 				source: "../images/image_panels/rubricwrite2.gif"
@@ -191,11 +189,11 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"activity", name:"activity",		content:{
-				subHeading: "Introduction to Myers Briggs",
-				instruction:"Read one or both of the following articles regard the Myers Briggs Personality test.",
+				heading: "Introduction to Myers Briggs",
+				instuctionsHeader:"Read one or both of the following articles regard the Myers Briggs Personality test.",
 				instructionList:[
 					"http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm",
-					" http://www.teamtechnology.co.uk/personality/intro/"
+					"http://www.teamtechnology.co.uk/personality/intro/"
 				],
 			}},
 
@@ -281,7 +279,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"Complete the CFNC Career Cluster Survey.",
 					"You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
 					"You should also list the majors and careers paths in which you are most interested."
-				],
+				], 
 			}},
 
 			{type:"article", name:"article",		content:{
@@ -297,7 +295,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"Explore the different geographic regions in the U.S. (Northeast, Southeast, Midwest, Southwest, West Coast) and locate major cities and urban centers",
 					"Learn about the different cultures of the various in the U.S., e.g. weather, food, language, customs, activities",
 					"Locate major research universities and top liberal arts colleges around the country; ideally, you will be able to identify and locate at least one college in each of the 50 states.",
-					"Define the terms: lib arts, college, university, public and private, religious influences, BA and BS, selectivity"
+					"Learn about the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities",
+					"Locate major research universities and top liberal arts colleges around the country; ideally, you will be able to identify and locate at least one college in each of the 50 states.",
+					"Define the terms: liberal arts, college, university, public and private, religious affiliations, selectivity"
 				]
 			}},
 
@@ -311,8 +311,24 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				instructionTitle: "Instructor introduces the following Questions/Discussion starters",
 				instructionList:[
 					"You have just spent the first two lessons discovering what makes U.S. colleges and universities vary.",
-					"Now it is time to learn about how U.S. colleges and universities also have personalities of your own.",
-					"Here is a map of the U.S. It shows that, like China, the U.S. is made up of many different states (50) and several regions (Northeast, Southeast, Midwest, Southwest, West Coast). Although these regions do not have your own dialects (like China) they do have distinct cultures and climates. In this lesson you will explore the various regions in the U.S. and learn about the different colleges and universities in those regions. you will also learn about some differences in the types of schools they will be exploring.",
+					"Now it is time to learn about how U.S. colleges and universities also have personalities of your own."
+				]
+			}},
+
+			{type:"image", name:"image",		content:{
+				heading: "Journal Grading Rubric",
+				source: "../images/image_panels/rubricwrite2.gif",
+				caption: "This image shows that the U.S. is made up of many different states (50) and several regions (Northeast,  The South, The Midwest, and the West Coast). Do not be confused if you see these regions broken up into more than four parts.  These regions will just give you a general idea about the where the college you choose is located.  It will also help to determine the climate.  Although these regions do not have their own dialects (as they do in China), they do have distinct cultures and climates."
+			}},
+
+			{type:"discussion", 	name:"discussion", 	content:{
+				heading: "The Similarities and differences between the U.S. and Chinese educational systems:",
+				instructionTitle: "You will read and discuss the following questions with a partner:",
+				instructionList:[
+					"With a partner or in groups discuss the geography of the US and learn the following:",
+					"Explore the various regions in the U.S. .",
+					"Learn about the different colleges and universities in those regions and how the climate varies.",
+					"Learn about some differences in the types of schools you will be exploring. This may include how the geographical region affects the nature of the university atmosphere. For instance, in warmer climates more the the year is spent outside and the university social life may include pools and  more outdoor living."
 				]
 			}},
 
@@ -323,14 +339,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
-				instructionTitle: " Now that you have an idea of the geography and various regions of the U.S. let’s review what you’ve learned.",
+				instructionTitle: "Now that you have an idea of the geography and various regions of the U.S. let’s review what you’ve learned. Using a partner or in a group, answer the above questions. You will discuss the above questions in your groups.  After 20 minutes of discussion, the next 20 minutes will be spent with  the leader from each group or a few of the students orally reporting to the class their findings.",
 				instructionList:[
 					"Which U.S. region did you find most interesting?",
 					"In which region would you prefer not to live? Why?",
 					"What kind of climate do you want?",
 					"How was each region settled?",
-					"How easy is it to get to and from China from each region?",
-					"What is the climate of each region?"
+					"How easy is it to get to and from China from each region?"
 				]
 			}},
 
@@ -375,12 +390,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "Wrap up. In your journals,  list one school in each geographic region that you were unaware of and that you find interesting."
-			}},
-
-			{type:"comic", name:"comic",		content:{
-				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-				instructions: 	"instruction text", 
-				comic_id: 2
 			}}
 		]),
 			//week 4
@@ -390,10 +399,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				subTitle:"The College Search: Looking for the Right School for You, Including Great Schools You’ve Never Heard Of…",
 				overview:"Learn how to adjust easily and effectively to the first semester of college at an American college or university. You will also learn about the importance of scheduling your time wisely.",
 				objectives:[
-					"You will revisit your career cluster results and choose possible majors.",
-					"You will explore College Board’s Big Future and run it two or three different times.",
-					"You will develop a college list based on the results of College Board Big Future.",
-					"You will locate and mark your colleges on a map of the U.S."
+					"Revisit your career cluster results and choose possible majors.",
+					"Explore College Board’s Big Future and run it two or three different times.",
+					"Develop a college list based on the results of College Board Big Future.",
+					"Locate and mark your colleges on a map of the U.S."
 				]
 			}},
 
@@ -412,17 +421,19 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
-				instructionTitle: "Choosing the “best-fit school",
+				header: "Choosing the “best-fit school",
+				instructionTitle: "The instructor breaks up the class into four or five groups.",
 				instructionList:[
-					"The instructor leads a discussion about what types of things you are worried about as you begin your college planning.",
+					"Discuss what types of things you are worried about as you begin your college planning.",
 					"For example, is there pressure to get into a “top” school?",
-					"Who is the pressure coming from?",
-					"Do you have concerns about finding the right major, fitting in, etc.?"
+					"Decide who is the pressure coming from?",
+					"If you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?"
 				]
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
-				instructionTitle: "Priorities for your college search",
+				header: "Priorities for your college search",
+				instructionTitle: "Find a partner to discuss with your partner the following questions:",
 				instructionList:[
 					"What are you excited about when you think about college?",
 					"Examples might be making new friends, exploring new areas of interest.",
@@ -453,12 +464,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"journal", 		name:"journal",	content:{
-				instructions: "In your journals, you will record your list of schools and write at least two sentences about why you think each school is a “best fit” for you."
+				instructions: "In your journals, you will:",
+				instructionList:[
+					"Record your list of  ten possible schools",
+					"Write at least two sentences for each of them explaining  why you think each school is a “best fit” for you."
+				]				
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
 				subHeading: "Creating your list of Colleges",
-				instuctionsHeader:"you locate your schools on a map of the U.S. This can be done virtually or on paper.",
+				instuctionsHeader:"<p>Locate your schools on a map of the U.S. This can be done virtually or on paper.",
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
@@ -471,23 +486,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				]
 			}},
 
-			{type:"journal", 		name:"journal",	content:{
-				instructions: "Answer the above discussion questions."
-			}},
-
-			{type:"assignment", name:"assignment",		content:{
-				subHeading: "The College Admission Landscape",
-				instuctionsHeader:"You will read an article about the current landscape of college admissions and summarize it in your journals.",
-			}},
-
-			{type:"journal", 		name:"journal",	content:{
-				instructions: "In your journal, begin to think about which colleges to which you would like to apply. List at least three colleges that you are seriously considering.  Next to each school on your list, write at  least three reasons why you feel you would want to attend the school."
-			}},
-
-			{type:"comic", name:"comic",		content:{
-				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-				instructions: 	"instruction text", 
-				comic_id: 3
+			{type:"assignment", 		name:"assignment",	content:{
+				instructions: "Answer the discussion questions in your journals."
 			}}
 		]),
 			//week 5
@@ -497,9 +497,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				subTitle:"Learning about the Colleges on Your List",
 				overview:"Learn how to adjust easily and effectively to the first semester of college at an American college or university. You will also learn about the importance of scheduling your time wisely.",
 				objectives:[
-					"Do an online scavenger hunt of the college web sites of schools on your list.",
-					"Identify where and how to access information on college websites. e.g. admission information: deadlines, testing requirements, application process, admission statistics, and the application process for international students.",
-					"Complete the scavenger hunt questionnaire."
+					"Look carefully at several of the college websites of schools on your list.",
+					"Identify where and how to access information on college websites. For example, you will learn about admission information: deadlines, testing requirements, application process, admission statistics, and the application process for international students.",
+					"Answer several questions about your top two or three colleges.",
+					"Become more familiar with the schools on your college list and learn how to access critical information on school websites."
 				]
 			}},
 
@@ -507,6 +508,37 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				heading: 	"Keeping Track of Your College Applications", 
 				video: 		"Duke_ConEd_Class3"
 			}},
+
+			{type:"activity", name:"activity",		content:{
+				heading: "Searching for School Websites", 
+				instuctionsHeader: "Find and bookmark the website for each school on your list of preferred colleges or universities."
+			}},
+
+			{type:"activity", name:"activity",		content:{
+				heading: "Searching for School Websites", 
+				instuctionsHeader: "Explore the website of your favorite college on your list by completing the following questions:",
+				instructionList:[
+					"In what area of the country is your favorite college located?",
+					"How large is your favorite college? Is this the size you are comfortable with?",
+					"Does your favorite college have your major?",
+					"Where does your favorite college rank in your major?",
+					"Is it easy to get to your favorite college?  Try booking a flight from your hometown to your favorite college and see what the cost is and how easy is it to get to your favorite college.",
+					"Repeat questions 1-5 for at least one to two other colleges on your list of colleges you are considering."
+				]				
+			}},
+
+			{type:"videoLink", name:"video",			content:{
+				heading: 	"Best Fit School", 
+				synopsis: 	"This video describes how to choose a college which will suit your needs.",
+				link: 		"https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit"
+			}},
+
+			{type:"videoLink", name:"video",			content:{
+				heading: 	"Best Fit School", 
+				synopsis: 	"Yang Lan, a journalist and entrepreneur who has been called \"the Oprah of China,\" offers insight into the next generation of young Chinese citizens — urban, connected (via microblogs) and alert to injustice. While you are trying to find the best-fit college you should also think further down the road about your future and what role you will play.",
+				link: 		"https://www.ted.com/talks/yang_lan"
+			}},
+			
 
 			{type:"discussion", 	name:"discussion", 	content:{
 				instructionTitle: "Learn about colleges and how to access information on websites",
@@ -533,13 +565,38 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"videoLink", name:"video",			content:{
-				heading: 	"Best Fit School", 
+				heading: 	"Words from Yang Lan", 
 				synopsis: 	"Yang Lan, a journalist and entrepreneur who's been called \"the Oprah of China,\" offers insight into the next generation of young Chinese citizens — urban, connected (via microblogs) and alert to injustice.",
 				link: 		"https://www.ted.com/talks/yang_lan"
 			}},
 
 			{type:"journal", 		name:"journal",	content:{
-				instructions: "In your journals, you will record your list of schools and write at least two sentences about why you think each school is a “best fit” for you."
+				instructions: "In your journals, you will:",
+				instructionList:[
+					"Reflect about your life in the future.",
+					"Where do you think you will be ten years from now?",
+					"Where will you live?",
+					"What type of job do you think you will  have had?",
+					"Will you be married?",
+					"How many jobs do you think you will  have had?"
+				]
+			}},
+
+			{type:"article",  name:"article", 	content:{
+				id:3
+			}},
+
+			{type:"assignment", 		name:"assignment",	content:{
+				subHeading:"College Admissions",
+				instructions: "<a href='http://www.nytimes.com/2010/04/14/education/14waitlist.html?pagewanted=all&_r=0'>Read an article</a> about the current landscape of college admissions and summarize it in your journals."
+			}},
+
+			{type:"journal", 		name:"journal",	content:{
+				instructions: "In your journal you will:",
+				instructionList:[
+					"Begin to think about which colleges to which you would like to apply.",
+					"Next to each school on your list, write at  least three reasons why you feel you would want to attend the school."
+				]
 			}}
 		]),
 			//week 6
@@ -563,26 +620,36 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"discussion", 	name:"discussion", 	content:{
 				heading: "“Fit” vs Name Brand",
-				instructionTitle: "The instructor introduces this week’s class by reviewing the concept of “fit” vs name brand. This is important because colleges want to admit students that they feel are a good match for their school. In this class, you will be introduced to the realities of college admission and learn about some great schools with which you may not be familiar. You will share your summaries of the article you read for homework with your classmates."
+				instructionTitle: "You Will:",
+				instructionsList:[
+					"Review the concept of “fit” vs name brand: colleges want to admit students that they feel are a good match for their school.",
+					"Discuss some of   the realities of college admission.",
+					"Learn about some great schools with which you may not be familiar by sharing information with your classmates.",
+					"Share your summaries of the article you read for homework with your classmates by having a partner with whom you can discuss what you read."
+				]
 			}},
 
-			{type:"videoLink", name:"video",			content:{
-				heading: 	"Best Fit School", 
-				synopsis: 	"You will view a PPT about admission statistics and admission rates at the top schools. Focus will be on numbers from the Washington Post.",
-				link: 		"http://www.washingtonpost.com/local/education/college-admission-rates-for-class-of-2018-an-imperfect-but-closely-watched-metric/2014/04/03/820ff578-b6af-11e3-8cc3-d4bf596577eb_story.html"
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'College Board Big Future',
+				instructions: "This article shows the trend for acceptances from 2005 to present.  It also includes some specific facts about various colleges.",
+				link: "https://bigfuture.collegeboard.org/?navid=bf-cp"
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'College Board Big Future',
+				instructions: "This provides another list of acceptance rates. Compare this list with the previous information you have.  Compare this list with the previous information you have learned.  Are they similar or different?",
+				link: "http://www.ivywise.com/admission_statistics.html"
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
 				subHeading: "The College Admission Landscape",
-				instuctionsHeader:"You will do some online research to find admission rates for international students at various colleges. A questionnaire will be provided that guides you in your search (see questions below).",
-			}},
-
-			{type:"discussion", 	name:"discussion", 	content:{
-				heading: "Discuss findings from online research for admission rates for international students",
-				instructionTitle: "You will compare what you have found during the class discussion. The instructor leads a discussion and asks the following questions:",
+				instuctionsHeader:"Record in your journal  your findings from  your online research for admission rates for international students.",
 				instructionList:[
+					"Compare what you have found during the class discussion and your research online.",
+					"Learn the concepts of “foundation schools, “mid-range schools and “long- shot schools.",
 					"Is the admission rate the same for international students and American students at American universities?",
 					"From what countries are international students applying to U.S. colleges and universities?",
+					"What are the top three countries which are sending students to the U.S. to study?",
 					"How have admission rates for international students changed over the past ten years?",
 					"What are the top three majors for undergraduate international students?",
 					"Generally, are the admission requirements for international students different from the admission requirements for American students?"
@@ -590,28 +657,23 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"videoLink", name:"video",			content:{
-				heading: 	"Choosing colleges that will Fit You", 
-				synopsis: 	"You will watch  a video from Big Future by the College Board: “How Should You Choose Colleges to Apply to?",
-				link: 		"https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit "
-			}},
-
-			{type:"quiz", 	name:"quiz", 	content:{
+				heading: 	"Best Fit School", 
+				synopsis: 	"You will watch  a video from Big Future by the College Board: “How Should You Choose Colleges to Apply to?”",
+				link: 		"https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit"
 			}},
 
 			{type:"activity", name:"activity",		content:{
-				heading: "Research international student admission rates.", 
-				instuctionsHeader: " You will research international student admission rates and international student profiles at the schools on your lists. You are provided with a form to complete for this section."
+				heading: "Research international student admission rates.",
+				instuctionsHeader: "After your research on  international student admission rates and international student profiles at the schools on your lists create a spreadsheet to input the information you have found. Make certain you have at least 5 schools on your spreadsheet."
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
-				subHeading: "Listing Your Preferences",
-				instuctionsHeader:"Put the schools on your list into the selective (“foundation”), very selective (“mid-range”) and highly selective (“reach or stretch”) categories. This list should be recorded in your journals.",
-			}},
-
-			{type:"comic", name:"comic",		content:{
-				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-				instructions: 	"instruction text", 
-				comic_id: 4
+				subHeading: "Your Range of Choices",
+				instuctionsHeader:"Record in your journal  your findings from  your online research for admission rates for international students.",
+				instructionList:[
+					"Put the schools on your list of schools you are interested in into the selective (“foundation”), very selective (“mid-range”) and highly selective (“reach or stretch”) categories.",
+					"Record the list  in your journals. You may use the same  spreadsheet which you have created in the previous assignment."
+				]
 			}}
 		]),
 			//week 7
@@ -621,48 +683,56 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				subTitle:"The College Admission Process",
 				objective:"How to simplify the College Admission Process and keep track of which colleges you select.",
 				objectives:[
+					"Learn the value of an interview if the college allows one.",
+					"Learn what mistakes not to make in a college interview.",
 					"Learn how selective and highly selective colleges make admissions decisions.",
-					"Review the components of a college application on both common app vs school-specific applications: biographical information, academic transcript, personal statement.",
+					"Review the components of a college application on both the common application versus the school-specific applications.  Some of these components include biographical information, academic transcript, personal statement (essay), extracurricular activities, standardized testing, interviews and “hooks” that will get your application noticed.",
 					"Understand the difference between agents, educational consultants and college counselors and their roles.",
 					"Understand how colleges identify “agent-prepared” applications."
 				]
 			}},
-
+			
 			{type:"video", name:"video",			content:{
 				heading: 	"The Reality of College Admission in the United States",
 				video: 		"Duke_ConEd_Class3"
 			}},
 
-			{type:"image", name:"image",			content:{
-				image: 		"",
-				caption: 	"Instructor tells the class that this week’s lesson will help them learn more about how decisions are made in U.S."
-			}},
-			
 			{type:"activity", name:"activity",		content:{
 				heading: "College Application Types", 
-				instuctionsHeader: "Instructor introduces students to the different types of college applications: Common Application, Universal Application, School Specific Applications, Application supplements. Examples of each are given."
+				instuctionsHeader: "Students will learn about the different types of college applications: Common Application, Universal Application, School Specific Applications, and Application supplements. Search online to find these applications and bookmark them. Here is the link for the Universal Application to help you get started: <a href='https://www.universalcollegeapp.com'>here</a>"
 			}},
-			
-			{type:"activity", name:"activity",		content:{
-				heading: "What's Important on a College Application", 
-				instuctionsHeader: "Students view a PPT on how the different parts of an application are accumulated and weighed (e.g. how interviews are scored at the schools that use them). Examples of each part of the application are given."
+
+			{type:"article",  name:"article", 	content:{
+				id:4
+			}},
+
+			{type:"articleLink", name:"video",			content:{
+				heading: 	"Insights from a Harvard Graduate", 
+				synopsis: 	"Students will learn the mistakes that are often made during college interviews. Please note not all colleges will give interviews, but if they do it is best to make the effort to interview at the college if you have a chance to do so.",
+				link: 		"http://colleges.collegetoolkit.com/articles/harvardgrad/college_interview.aspx"
 			}},
 
 			{type:"videoLink", name:"video",			content:{
 				heading: 	"Behind the Scenes", 
-				synopsis: 	"The backroom of admission: the process in the admission office and how admission committees work. Now get a peek at what goes on in an admission committee meeting at a selective university in the Northeast. Are you surprised at how the admission process works?",
+				synopsis: 	"Watch a video which shows how Amherst makes admission decisions.",
+				instructionList:[
+					"Learn what is an admissions committee?",
+					"Who is on an admission committee",
+					"Who reads your application?",
+					"How are decisions made?"
+				],
 				link: 		"http://www.bing.com/videos/search?q=Brandies+You+tube+admission+committee&FOR"
 			}},
 
 			{type:"videoLink", name:"video",			content:{
-				heading: 	"Admissions Commitees", 
-				synopsis: 	"This is what admission committee looks like at a highly selective private college where admission is less than 30%.",
-				link: 		"http://www.bing.com/videos/search?q=Brandies+You+tube+admission+committee&FORM=VIRE1#view=detail&mid=B2E34CE8BDA769A7946CB2E34CE8BDA769A7946C"
+				heading: 	"Behind the Scenes", 
+				synopsis: 	"This is what  an admission committee looks like at a highly selective private college where admission is less than 30%.The backroom  process of admission: how the admission office and how admission committees work. Compare the two videos to see if the admission process is similar at both colleges.",
+				link: 		"http://www.bing.com/videos/search?q=Brandies+You+tube+admission+committee&FOR"
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
-				subHeading: "Listing Your Preferences",
-				instuctionsHeader:"Put the schools on your list into the selective (“foundation”), very selective (“mid-range”) and highly selective (“reach or stretch”) categories. This list should be recorded in your journals.",
+				subHeading: "Your Range of Choices",
+				instuctionsHeader:"Students complete all parts of the  Common Application except for the essays will be done at a later time. <a href='https://www.commonapp.org/Login'>link</a>",
 			}},
 
 			{type:"videoLink", name:"video",			content:{
@@ -685,9 +755,17 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				heading: 'Agents, Consultants and Counselors',
 				instructions: "The differences between agents, educational consultants and college counselors.",
 				link: "http://world.time.com/2012/07/26/forged-transcripts-and-fake-essays-how-unscrupulous-agents-get-chinese-students-into-u-s-schools/"
-			}}
-			
+			}},
 
+			{type:"journal", 		name:"journal",	content:{
+				instructions: "In your journal you will:",
+				instructionList:[
+					"Define the term “hook.”",
+					"Give three examples of a “hook.”",
+					"Write about what your “hooks” may be.",
+					"If you do not have a hook, you should review your profile from week two to brainstorm how you might develop a hook."
+				]
+			}}
 		]),
 			//week 8
 			new Entities.FrameCollection([
@@ -703,22 +781,30 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				]
 			}},
 
-			{type:"discussion", 	name:"discussion", 	content:{
-				heading: "The Importance of Extra-Curricular Activities",
-				instructions: "Instructor begins by telling students that this lesson is about the importance of building a strong extra-curriculars resume for the college application process. Students will explore the differences and similarities between extra-curricular activities offered to high school students in China and in the U.S. They will also gain an understanding of how and why some extra-curricular activities translate well to American college applications and some do not."
+			{type:"article",  name:"article", 	content:{
+				id:5
 			}},
 
-			{type:"videoLink", name:"video",			content:{
-				synopsis: 	"Students will watch clips from 5 MM (clip of Chinese students doing extra-curriculars, Indian girl talking about her tuitions on the weekend and the two American teens talking about their extracurriculars).",
-				link: 		"#"
+			{type:"article",  name:"article", 	content:{
+				id:6
+			}},
+
+			{type:"discussion", 	name:"discussion", 	content:{
+				heading: "The Importance of Extra-Curricular Activities",
+				instructions: "Instructor begins by telling students that this lesson is about the importance of building a strong extra-curriculars resume for the college application process. With a partner explore the differences and similarities between extracurricular activities offered to high school students in China and in the U.S. "
 			}},
 
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "In your journal, list at least four differences of how students in China, India and the U.S. use their time outside of school. Answer the following questions:",
 				instructionList:[
-					"How do you spend your time outside of school? * Do you participate in  extra-curricular activities?",
+					"How do you spend your time outside of school?",
+					"Do you participate in extra-curricular activities?",
 					"Do you think American students define extra-curricular activities the same way you do?"
 				]
+			}},
+
+			{type:"article",  name:"article", 	content:{
+				id:7
 			}},
 
 			{type:"videoLink", name:"video",			content:{
@@ -727,24 +813,28 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				link: 		"https://bigfuture.collegeboard.org/get-started/outside-the-classroom/extracurriculars-matter-to-you-and-to-colleges"
 			}},
 
+			{type:"article",  name:"article", 	content:{
+				id:8
+			}},
+
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "Answer the following questions in your journal:",
 				instructionList:[
 					"List all of your extra-curricular activities. Think broadly and include activities that take place both in and outside of school, during the summer, include service oriented travel. Beside each activity, include the weeks per year that you are involved in the activity. Begin listing your activities at grade 9.",
-					"Are there extra-curricular activity in which you excel?"
+					"Think broadly and include activities that take place both in and outside of school, during the summer, include service oriented travel.",
+					"Beside each activity, include the weeks per year that you are involved in the activity.",
+					"Begin listing your activities at grade 9.",
+					"Are there extracurricular activity in which you excel?"
 				]
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
-				instuctionsHeader:"Complete the following form to build your own extra-curricular resume.",
+				instuctionsHeader:"Complete the following form to build your own extra-curricular resume. <a href='http://www.bernardsboe.com/Guidance/CMFiles/Docs/Sample%20Student%20Activity%20Resume.pdf'>link</a>",
 			}},
 
-			{type:"comic", name:"comic",		content:{
-				synopsis: 	"You will be given a rubric from which your instructor will assess your journal. Your journal will be assessed for accuracy and quality of content. Carefully review the rubric and make sure you understand all of it.", 
-				instructions: 	"instruction text", 
-				comic_id: 5
+			{type:"journal", 		name:"journal",	content:{
+				instructions: "Complete your own extracurricular resume and save it in your journal.",
 			}}
-
 		]),
 			//week 9
 			new Entities.FrameCollection([
@@ -759,18 +849,28 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"articleLink",  name:"article", 	content:{
 				heading: 'You will read several college essays to determine what types of essays grab an admission officer’s attention.',
-				instructions: "What makes a college essay stand out? Read the following four essays and decide which ones are good and which are not. Make notes in your journal about why you liked an essay or what you think makes an essay uneffective.",
-				link: "#"
+				instructions: "Read the article to learn how colleges can tell if an essay is plagiarized and how important it is to do your own essay.",
+				link: "http://theivycoach.com/the-ivy-coach-blog/college-essays/plagiarized-college-essays/"
 			}},
 
-			{type:"journal", 		name:"journal",	content:{
-				instructions: "Based on the essays you just read, make a list of the attributes you think make a good essay."
+			{type:"article",  name:"article", 	content:{
+				id:9
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'Sample Essays',
+				instructions: "Read three or four of the sample college essays from the link below.",
+				link: "http://www.accepted.com/college/sampessay02.aspx"
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
 				heading: 'There are several mistakes you can  make on your college essay. Learn about the most common mistakes here.',
 				instructions: "Read the following article and make a list in your journal of the most common mistakes you should avoid in a college essay.",
 				link: "http://theivycoach.com/the-ivy-coach-blog/tag/college-essay-mistakes/"
+			}},
+
+			{type:"journal", 		name:"journal",	content:{
+				instructions: "Based on the essays you just read, make a list of the attributes you think make a good essay."
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
@@ -786,18 +886,26 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				subTitle:"College Application Essays: Pt. 2",
 				overview:"You will write sample college application essays and get feedback from a peer.",
 				objectives:[
-					"Explore essay topics on the Common Application, write a college application essay. A peer will review your essay."
+					"Explore essay topics on the Common Application, write a college application essay. A peer will review your essay.",
+					"Write a college application essay.",
+					"A peer will review your essay."
 				]
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
 				heading: 'Essay Questions on the Common Application',
 				instructions: "Go to the Common Application and choose two of the essay prompts.",
+
 				link: "https://appsupport.commonapp.org/link/portal/33011/33013/Article/1694/2014-15-Common-Application-Essay-Prompts"
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
-				instuctionsHeader:"Before you begin to write your essay, brainstorm some ideas for your essays. Think of topics that will not be covered in other parts of the application; for example, repeating something about an award or sport you have already mentioned. the topic should compelling and unique to you. If it is amusing, that always an added plus.",
+				instructionList:[
+					"Before you begin to write your essay, brainstorm some ideas for your essays you have chosen from the Common Application essays.",
+					"Think of topics that will not be covered in other parts of the application.",
+					"The topic should compelling and unique to you.",
+					"If it is amusing, that  is always an added plus."
+				]
 			}},
 
 			{type:"assignment", name:"assignment",		content:{
@@ -806,7 +914,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"discussion", 	name:"discussion", 	content:{
 				heading: "Peer review of essays",
-				instructions: "Instructor collects all of the essays and randomly distributes them. No student should be reviewing their own essays. Students will make written comments on the essays and after twenty minutes will pair up to give feedback. Students will do two pairings, one with the reviewer of their essays and one providing feedback for their peer."
+				instructions: "Instructor collects all of the essays and randomly distributes them. No student should be reviewing their own essays. Students will make written comments on the essays and after twenty minutes will pair up to give feedback. Students will do two pairings, one with the reviewer of their essays and one providing feedback for their peer.",
+				instructionList:[
+					"Think about  constructive comments to give to your partner about the essays.",
+					"After twenty minutes  you will  give  your partner  oral feedback. If you want to make notes about the feedback, you may also put the feedback into your journal and later share this feedback with your partner.",
+					"Students will do two pairings. They will give a review to their partner, and they will receive a review of their essay from the partner."
+				]
 			}},
 			
 			{type:"activity", name:"activity",		content:{
@@ -822,8 +935,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				overview:"Choose four out five of the following virtual college tours and look at different types of schools in different parts of the country.",
 				objectives:[
 					"Understand how to prepare for a visit by completing the “College Tour Checklist.",
-					"Take assigned virtual college tours",
-					"Learn the best times to visit colleges and universities",
 					"Take assigned virtual college tours",
 					"Learn the best times to visit colleges and universities"
 				]
@@ -854,9 +965,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}},
 
 			{type:"videoLink", name:"video",			content:{
+				heading: "The University of Colorado is a large, liberal arts university located in the Southeast. It is a collection of schools and colleges offering programs in specific subject area. You can choose from 13 colleges or school at the university.",
+				synopsis: 	"Take your time looking through the virtual tour of the University of Colorado. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, “Greek Life,” student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest.",
+				link: 		"http://www.scu.edu/ugrad/virtualtour/index.cfm"
+			}},
+
+
+			{type:"videoLink", name:"video",			content:{
 				heading: "Santa Clara University is a private institution in an urban setting located on the West Coast. The most popular major is business management and marketing. This school is considered selective.",
 				synopsis: 	"Take your time looking through the virtual tour of Santa Clara University. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, “Greek Life,” student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest.",
-				link: 		"http://www.scu.edu/ugrad/virtualtour/index.cfm"
+				link: 		"http://www.colorado.edu/about/visit"
 			}},
 
 
@@ -864,6 +982,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				heading: "Mt. Holyoke College is a private, all-women’s institution locate in New England. It is the first of the “seven sister schools and is a member of Five College Consortium that includes Amherst College, Smith College, Hampshire College and the University of Massachusetts. ",
 				synopsis: 	"Make your time looking through the virtual tour of Mount Holyoke College. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, “Greek Life,” student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest.",
 				link: 		"https://www.mtholyoke.edu/cic/tour/"
+			}},
+
+			{type:"article",  name:"article", 	content:{
+				id:10
 			}},
 
 			{type:"journal", 		name:"journal",	content:{
@@ -917,22 +1039,27 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				]
 			}},
 
+			{type:"article",  name:"article", 	content:{
+				id:11
+			}},
+
 			{type:"journal", 		name:"journal",	content:{
 				instructions: "In your journal, prepare a list of questions that you will use to interview your classmates. You will be provided with a rubric to score your interviews of your classmates."
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'Perparing for the Interview',
+				instructions: "Determine what type of questions you need to prepare and what is interesting information about yourself which you can tell the interviewer.",
+				link: "http://www.cbsnews.com/news/can-you-answer-these-13-college-interview-questions/"
 			}},
 			
 			{type:"activity", name:"activity",		content:{
 				heading: "Practicing the Interview",
-				instuctionsHeader: "Watch a mock interview given by admission professionals."
-			}},
-			
-			{type:"activity", name:"activity",		content:{
-				heading: "Paired Practice",
-				instuctionsHeader: "The instructor will pair you with three different classmates. you will do a mock interview each of your partners and they will interview you."
+				instuctionsHeader: "Pair up  with two different classmates. You will do a mock interview  with each of your partners. After you have done your interview, switch and interview your partners . Use the questions which you read about earlier in the class to focus your interviews."
 			}},
 
 			{type:"wrapup", name:"wrapup",		content:{
-				synopsis: "Students will review their interview feedback forms. Four students volunteer to perform two mock interviews.",
+				synopsis: "Four students volunteer to perform two mock interviews in front of the class.",
 				takeaways: "Students reflect in their journals about what worked well for them in their interviews and what did not. They develop a personal list of interview do’s and don’ts."
 			}}
 		]),
@@ -999,7 +1126,40 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				synopsis: 	"Subject Tests are hour-long, content-based tests that allow you to showcase achievement in specific subject areas where you excel. These are the only national admission tests where you choose the tests that best showcase your achievements and interests.",
 				instructions: "View the following video to learn about the SAT II, which are also known as the subject test. Look at the schools on your list to determine if you want to or need to take the SAT II.",
 				link: 		"http://sat.collegeboard.org/about-tests/sat-subject-tests"
-			}}
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'Create a College Board Account',
+				synopsis: "In order to complete the next two activities, you need to set up an account on the College Board Web site. It is called “My Organizer.”",
+				link: "https://account.collegeboard.org/iamweb/smartRegister?appId=247&DURL=http://sat.collegeboard.org/practice/sat-question-of-the-day"
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'The College Board offers an SAT study plan',
+				synopsis: "Answer the three questions on the College Board Web site to make your personalized study plan. Record your study plan in your journal.",
+				link: "http://sat.collegeboard.org/practice/sat-study-plan"
+			}},
+
+			{type:"articleLink",  name:"article", 	content:{
+				heading: 'Question of the day',
+				synopsis: "To help students prepare for the SAT, The College Board offers practice questions each day.",
+				instructions: "Go to the following link and take the practice questions for the last 10 days.",
+				link: "http://sat.collegeboard.org/practice/sat-question-of-the-day"
+			}},
+
+			{type:"articleLink", name:"article",		content:{
+				instructionList:[
+					"Choose the date you might want to take the International SAT.",
+					"Following these dates are the dates for the ACT.",
+					"Please note the following restrictions for taking the ACT"
+				],
+				link:"http://sat.collegeboard.org/register/sat-international-dates"
+			}},
+
+			{type:"articleLink", name:"article",		content:{
+				instructions:"ACt registration dates",
+				link:"http://www.actstudent.org/regist/outside/"
+			}},
 		]),
 			//week 14
 			new Entities.FrameCollection([
@@ -1012,6 +1172,28 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"View a video of how admission committees work.",
 					"Form admissions committees.",
 					"Make admission decisions as a committee"
+				]
+			}},
+
+			{type:"videoLink", name:"video",			content:{
+				heading: 	"How committees Work",
+				synopsis: 	"Learn how admission committees work at selective and highly selective colleges in the U.S.",
+				instructions: "View the following video to learn about the SAT II, which are also known as the subject test. Look at the schools on your list to determine if you want to or need to take the SAT II.",
+				link: 		"http://www.bing.com/videos/search?q=videos+for+college+admissions&FORM=VIRE3#view=detail&mid=6C59D32A7602A23A87AC6C59D32A7602A23A87AC"
+			}},
+			
+			{type:"activity", name:"activity",		content:{
+				heading: "International Student Admission",
+				instructionList: [
+					"Divide into groups of five to form “admission committees” for fictitious “Prestigious U.”",
+					"You will be given five case studies to review. ",
+					"After you have individually read all five case studies, you will get together into your “admission committee” to discuss each case study. ",
+					"Create a spreadsheet to keep track of what traits you think are important for admission.",
+					"Set up a ranking system from 1 to 5 to determine how you rank each of the students",
+					"If you choose to do so, you may also use the CS evaluation worksheet found on the link below.",
+					"Each one of you will “present” one case study each to your admission committee until all the cases have been presented.",
+					"Admission to “Prestigious” University should be offered to two of the five students only.",
+					"You can find your case studies <a href='http://www.admissions.upenn.edu/apply/admissions-case-studies-program'>here</a>"
 				]
 			}}
 		]),
@@ -1032,7 +1214,55 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{type:"video", name:"video",			content:{
 				heading: 	"Wrap-Up Multimedia College Prep",
 				video: 		"Duke_ConEd_Class3"
-			}}
+			}},
+
+			{type:"discussion", 	name:"discussion", 	content:{
+				heading: "Case Studies Admission Decisions",
+				instructions: "Instructor collects all of the essays and randomly distributes them. No student should be reviewing their own essays. Students will make written comments on the essays and after twenty minutes will pair up to give feedback. Students will do two pairings, one with the reviewer of their essays and one providing feedback for their peer.",
+				instructionList:[
+					"Each group will chose one student from your “admission committee” to explain the committee’s admission decisions.",
+					"A class representative compiles the result of the decision. ",
+					"How consistent were the admission committee decisions?",
+					"Was there a general agreement within the committees about who should be selected?",
+					"Or were there differences of opinion about who should be selected?",
+					"Which case studies prompted the most discussion?"
+				]
+			}},
+
+			{type:"articleLink", name:"article",		content:{
+				instructions:"Read about the Ten Common Myths about applying to college in the US.",
+				link:"http://mycollegeguide.org/articles/11/189"
+			}},
+
+			{type:"journal", 		name:"journal",	content:{
+				instructionList: [
+					"Review your journals and make a list of your top ten take-aways from Semester 1",
+					"A take-away is the main idea you have learned after exploring a topic.",
+					"Three students will volunteer to read their lists to the class."
+				]
+			}},
+
+			{type:"article",  name:"article", 	content:{
+				id:12
+			}},
+			
+			{type:"activity", name:"activity",		content:{
+				instructionList: [
+					"Look up the admission rates for every college or university on your final  list of colleges to which you want to apply.",
+					"Keep in mind that the admission rates for international students are much more competitive.",
+					"If you can find admission rates for international students at the schools on your list, that is even better.",
+					"Record these admission rates in your journal."
+				]
+			}},
+
+			{type:"assignment", name:"assignment",		content:{
+				instructionList:[
+					"Review your list of colleges and universities and based on their admission rates, group the schools on your list into the following categories: Most Likely, Selective/Likely; Very Selective and Reach.",
+					"Record your final school list in your journal."
+				]
+			}},
+
+
 		])];
 
 		frames.map(function(week, id){

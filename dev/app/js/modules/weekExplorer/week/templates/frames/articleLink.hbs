@@ -3,6 +3,11 @@
 	<div class="another-wrapper">
 		<h2 class="subheading">{{{content.heading}}}</h2>
 		<p>{{{content.instructions}}}</p>
+		<ol class="objectives">
+	      {{#each content.instructionList}}
+	        <li>{{{this}}}</li>
+	      {{/each}}
+	    </ol>
 		<a class="moreButton" href="{{{content.link}}}" target="_blank">Read More</a>
 	</div>
 </div>
