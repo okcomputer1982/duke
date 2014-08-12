@@ -80,6 +80,11 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				badges:["code", "cool", "foxy"]
 			}},
 
+			{type:"video", name:"video",			content:{
+				heading: 	"Introduction to the Class", 
+				video: 		"Duke_ConEd_Class0"
+			}},
+
 			{type:"journal", name:"journal",		content:{
 				heading: "Introduction to Journals",
 				instructions: "Throughout the semester you will:",
@@ -89,12 +94,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"You will  examine your journals and assess how well you are doing by using the rubric. Make certain you score your work.",
 					"If you do not understand some of the words, please define the words in your journals. *Carefully review the rubric and make sure you understand all of it."
 				]
-			}},
-			
-			{type:"video", name:"video",			content:{
-				heading: 	"2 Million Minutes", 
-				subheading: "Factors to Consider when narrowing down your college choices.",
-				video: 		"Duke_ConEd_Class1"
 			}},
 
 			{type:"image", name:"image",		content:{
@@ -110,11 +109,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"Provide you with a better understanding of who and what you are so that you can develop a list of of potential colleges and universities that are consistent with your educational goals and interests",
 					"Improve your interview and essay writing skills and provide tips for better college applications"
 				],
-			}},
-
-			{type:"video", name:"video",			content:{
-				heading: 	"Difference between the Chinese and American School systems", 
-				video: 		"test"
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
@@ -215,7 +209,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"Myers-Briggs", 
-				video: 		"Duke_ConEd_Class2"
+				video: 		"Duke_ConEd_Class1"
 			}},
 
 			{type:"activity", name:"activity",		content:{
@@ -303,7 +297,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"Colleges and Universities in the United States", 
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class2"
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
@@ -506,7 +500,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"Keeping Track of Your College Applications", 
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class4"
 			}},
 
 			{type:"activity", name:"activity",		content:{
@@ -615,7 +609,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"The Reality of College Admission in the United States",
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class5"
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{
@@ -694,7 +688,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			
 			{type:"video", name:"video",			content:{
 				heading: 	"The Reality of College Admission in the United States",
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class6"
 			}},
 
 			{type:"activity", name:"activity",		content:{
@@ -1018,7 +1012,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"Prepare and Practice for you College Interview",
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class12"
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
@@ -1081,7 +1075,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"The Role of Standardized Testing in the College Admission Process",
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class13"
 			}},
 
 			{type:"articleLink",  name:"article", 	content:{
@@ -1213,7 +1207,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			{type:"video", name:"video",			content:{
 				heading: 	"Wrap-Up Multimedia College Prep",
-				video: 		"Duke_ConEd_Class3"
+				video: 		"Duke_ConEd_Class15"
 			}},
 
 			{type:"discussion", 	name:"discussion", 	content:{

@@ -144,10 +144,25 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	this.trigger("studentProfile:setActiveLink", {linkId:linkId});
 	    },
 
+	    	    /******************RESIZING**********************/
+	    //handles resizing of the window
+	    resizeHandler:function() {
+      		var vpw = $(window).width(),
+          		vph = $(window).height();
+          	
+          	$('.section').css('min-height', vph);
+    	},
+
     	/******************DISPlAY***********************/
 		onShow:function() {
 	    	var that = this;
 
+	    	this.resizeHandler();
+	    	$(window).resize(this.resizeHandler);
+	    	$(window).scroll(function(){
+	    		that.scrollHandler.apply(that);
+	    	});
+	    	
 	    	$(window).scroll(function(){
 	    		that.scrollHandler.apply(that);
 	    	});
@@ -176,7 +191,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	var offset = ((linkId === 0)?100:60);
 
 		    $(window).scrollTo(".profileitem" + linkId, {
-		    	duration:500,
+		    	duration:0,
 		    	offset:-60,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){

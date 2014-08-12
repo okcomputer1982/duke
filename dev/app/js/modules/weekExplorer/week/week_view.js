@@ -317,7 +317,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	var offset = ((linkId === 0)?100:60);
 
 		    $(window).scrollTo(".weekitem" + linkId, {
-		    	duration:500,
+		    	duration:0,
 		    	offset:-100,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){
@@ -333,7 +333,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    		scrollPos = Week.scrollPos;
 
 	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
-	    		if (currentScrollPos + 110 >= scrollPos[linkId].pos && currentScrollPos + 110 < scrollPos[linkId+1].pos){
+	    		if (currentScrollPos + 130 >= scrollPos[linkId].pos && currentScrollPos + 130 < scrollPos[linkId+1].pos){
 	    			break;
 	    		}
 	    	}

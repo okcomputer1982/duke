@@ -674,7 +674,7 @@ function program1(depth0,data) {
 this["templates"]["weekExplorer/week/frames/overview"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, functionType="function", self=this;
 
 function program1(depth0,data) {
   
@@ -696,15 +696,6 @@ function program3(depth0,data) {
   return buffer;
   }
 
-function program5(depth0,data) {
-  
-  var buffer = "";
-  buffer += "\n          <li class=\""
-    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
-    + "\"><a class=\"badge\"></a></li>\n        ";
-  return buffer;
-  }
-
   buffer += "<h1 class=\"weekHeading\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -717,10 +708,7 @@ function program5(depth0,data) {
   buffer += "\n\n    <h3>You Will</h3>\n      <ol class=\"objectives\">\n        ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.objectives), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </ol>\n\n    <h3>Badges Available:</h3>\n    <div class=\"badges\">\n      <ul>\n        ";
-  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.badges), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </ul>\n    </div>\n  </div>\n</div>";
+  buffer += "\n      </ol>\n\n    <h3>Attributes Available:</h3>\n  </div>\n</div>";
   return buffer;
   });
 
@@ -739,7 +727,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<h1>Video</h1>\n<div class=\"inner-wrap\">\n    <h2 class=\"sub\">";
+  buffer += "<h1>Video</h1>\n\n    <h2 class=\"sub\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.heading)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "</h2>\n	<video id=\"video\" controls>\n    	<source src=\"videos/"
@@ -751,7 +739,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + ".webm\" type=\"video/webm\">\n  </video>\n  <h2 class=\"subheading\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.subheading)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h2>\n</div>\n";
+  buffer += "</h2>\n\n";
   return buffer;
   });
 
