@@ -816,10 +816,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.index) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.index); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n<span class=\"item-icon icomoon icon-";
+  buffer += "\">\n<!-- <span class=\"item-icon icomoon icon-";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.glyph)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"></span><span class=\"hoverover\">";
+  buffer += "\"></span> -->\n<span class=\"hoverover\">";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -833,7 +833,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n	<nav id=\"sidetop\">\n	  <a href=\"#\" class=\"arrow\" data-direction=\"left\"><span class=\"glyphicon glyphicon-circle-arrow-left\"></span></a>\n	  <h2>Week <span id=\"week_number\"></span></h2>\n	  <a href=\"#\" class=\"arrow\" data-direction=\"right\"><span class=\"glyphicon glyphicon-circle-arrow-right\"></span></a>\n	</nav>\n\n	<ul id=\"section_nav\" class=\"hidden-phone\">\n	</ul>\n</div>";
+  return "<div class=\"container-fluid\">\n	<nav id=\"sidetop\">\n		<h2>Week</h2>\n		<h2><span id=\"week_number\"></span></h2>\n	  	<a href=\"#\" class=\"arrow\" data-direction=\"left\"><span class=\"glyphicon glyphicon-circle-arrow-left\"></span></a>\n	  	<a href=\"#\" class=\"arrow\" data-direction=\"right\"><span class=\"glyphicon glyphicon-circle-arrow-right\"></span></a>\n	</nav>\n\n	<ul id=\"section_nav\" class=\"hidden-phone\">\n	</ul>\n</div>";
   });
 
 this["templates"]["weekExplorer/week/weekTop"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
