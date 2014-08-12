@@ -18,8 +18,6 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		},
 
 		doGuestLogin:function(){
-			console.log("here");
-			
 			DukeApp.utils.loginAsGuest();
 			DukeApp.trigger("profile:student");
 		},

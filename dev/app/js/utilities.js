@@ -24,7 +24,7 @@ DukeApp.utils.getCurrentUser = function() {
 };
 
 DukeApp.utils.getCurrentAdminType = function() {
-	return((DukeApp.utils.isGuest)?false:Parse.User.current().get('type'));
+	return((DukeApp.utils.isGuest)?DukeApp.utils.AdminTypes.guest:Parse.User.current().get('type'));
 };
 
 DukeApp.utils.getCurrentAdminID = function() {

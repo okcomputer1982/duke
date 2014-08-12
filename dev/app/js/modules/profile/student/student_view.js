@@ -144,7 +144,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	this.trigger("studentProfile:setActiveLink", {linkId:linkId});
 	    },
 
-	    	    /******************RESIZING**********************/
+	   	/******************RESIZING**********************/
 	    //handles resizing of the window
 	    resizeHandler:function() {
       		var vpw = $(window).width(),
@@ -162,7 +162,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	$(window).scroll(function(){
 	    		that.scrollHandler.apply(that);
 	    	});
-	    	
+
 	    	$(window).scroll(function(){
 	    		that.scrollHandler.apply(that);
 	    	});
