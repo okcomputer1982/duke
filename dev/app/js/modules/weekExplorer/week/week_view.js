@@ -24,7 +24,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	Week.ArticleView = Marionette.ItemView.extend({
 		template:templates["weekExplorer/week/frames/article"],
 		className:function(){
-			console.log(this.options.weekitemClass);
 			return("section article " + this.options.weekitemClass);
 		},
 		tagName:"section",

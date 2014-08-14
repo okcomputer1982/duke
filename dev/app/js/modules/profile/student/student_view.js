@@ -124,7 +124,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 		events:{
-			"click .moreButton": "handleContentClick",
 			"click .assignment_link": "handleAssignmentPopup",
 			"click .journal-entry": "removeJournalEntry",
 			"click .reload": "reloadJournals",

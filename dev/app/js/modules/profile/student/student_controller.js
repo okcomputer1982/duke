@@ -1,6 +1,16 @@
 DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionette, $, _){
 	Student.Controller = {
 		init:function() {
+			var that = this;
+
+			//get student Account
+			var studentObjectPromise = DukeApp.request("user:studentObject:entities");
+			studentObjectPromise.done(function(studentObject) {
+				that.loadDisplay(studentObject);
+			});
+		},
+
+		loadDisplay:function(studentObject) {
 			DukeApp.utils.setCurrentView("student-profile-view", Student.Controller);
 			DukeApp.utils.loadCommonViews();
 
@@ -11,12 +21,12 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 			var profileItems = new ProfileCollection([
 				// {index:0, type:"help", 			name:"help", 			glyph:"health"},
-				{index:0, type:"profile", 		name:"basic info", 		glyph:"profile"},
-				{index:1, type:"progress", 		name:"progress", 		glyph:"chart2"},
-				{index:2, type:"badge", 		name:"badges", 			glyph:"badge2"},
-				{index:3, type:"attribute", 	name:"attribute", 		glyph:"badge2"},
-				{index:4, type:"grades", 		name:"grades", 			glyph:"file"},
-				{index:5, type:"journals", 		name:"journals", 		glyph:"wallet"}
+				{index:0, type:"profile", 		name:"basic info", 		glyph:"profile", userData: studentObject},
+				{index:1, type:"progress", 		name:"progress", 		glyph:"chart2", userData: studentObject},
+				{index:2, type:"badge", 		name:"badges", 			glyph:"badge2", userData: studentObject},
+				{index:3, type:"attribute", 	name:"attribute", 		glyph:"badge2", userData: studentObject},
+				{index:4, type:"grades", 		name:"grades", 			glyph:"file", userData: studentObject},
+				{index:5, type:"journals", 		name:"journals", 		glyph:"wallet", userData: studentObject}
 			]);
 
 			var layout = new Student.LayoutView();
@@ -24,8 +34,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			var sidebar = new Student.SidebarListView({
 				collection:profileItems
 			});
+
 			var content = new Student.ContentListView({
-				collection:profileItems
+				collection:profileItems,
 			});
 
 			DukeApp.content.show(layout);

@@ -10,6 +10,7 @@ DukeApp.module("Home", function(Home, DukeApp, Backbone, Marionette, $, _){
 	};
 
 	DukeApp.on("home:login", function(){
+		DukeApp.utils.logout();
 		DukeApp.navigate("");
 		API.init();
 	});

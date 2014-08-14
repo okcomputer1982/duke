@@ -18,11 +18,14 @@ DukeApp.getCurrentRoute = function() {
 DukeApp.currentViewName = "";
 DukeApp.currentView = undefined;
 
-
 //initializer
 DukeApp.on("initialize:after", function() {
 	Parse.initialize("0GUnrQeUHPGhfJNLDzssuTUqUbJtvk1bib3mbas0", "zV8yxUl1QUs1efsUbhOU2LLiwTIN2bWfTK7GlxPN");
 
+	if (!DukeApp.utils.isLoggedIn) {
+		DukeApp.utils.initUserSettings();
+	}
+	
 	if(Backbone.history){
 		Backbone.history.start();
 

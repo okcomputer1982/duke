@@ -1,0 +1,34 @@
+[
+{	"index":0, "type":"overview", "name":"overview",	"content":{
+	"title":"Week 1 Overview:",
+	"subtitle":"The Differences Between the Chinese and American Education Systems. What is a “best-fit” school?",
+	"overview":"Learn more about differences in educational systems",
+	"objectives":[
+		"Understand the semester one course goals, objectives, deliverables",
+		"Understand the differences between the Chinese and U.S. education systems",
+		"Understand the current college admission landscape for elite schools in the U.S.",
+		"Understand the “best-fit” school concept"
+	]
+}},
+
+{	"index":1, "type":"video", "name":"video",			"content":{
+		"heading": 	"Introduction to the Class", 
+		"video": 		"Duke_ConEd_Class0"
+	}},
+
+	{"type":"journal", "name":"journal",		"content":{
+		"heading": "Introduction to Journals",
+		"instructions": "Throughout the semester you will:",
+		"objectives":[
+			"Be asked to think and reflect about the topics covered in this course and to write about them.",
+			"Journal entries will be written on the computer and will be time stamped.",
+			"You will  examine your journals and assess how well you are doing by using the rubric. Make certain you score your work.",
+			"If you do not understand some of the words, please define the words in your journals. *Carefully review the rubric and make sure you understand all of it."
+		]
+}},
+
+{	"index":2, "type":"image", "name":"image",		"content":{
+	"heading": "Journal Grading Rubric",
+	"source": "../images/image_panels/rubricwrite2.gif"
+}}
+]

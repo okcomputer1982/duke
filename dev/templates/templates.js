@@ -256,10 +256,131 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["profile/student/frames/attribute"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, helper, options, helperMissing=helpers.helperMissing;
 
 
-  return "<h1 class=\"clearfix\">Attributes</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-categories attributes\">\n      <div class=\"progress-wrap\">\n          <div class=\"attr-item \">\n            <div class=\"box\"  data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Process of learning something: the fact or process of finding out about something for the first time\">\n            <h4>Exploration</h4> \n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"4\"><span class=\"attr-value\">4</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"the ability to be precise and avoid errors\">\n              <h4>Accuracy</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"1\"><span class=\"attr-value\">1</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"careful thought, especially the process of reconsidering previous actions, events, or decisions\">\n              <h4>Reflection</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"3\"><span class=\"attr-value\">3</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-  item\" title=\"the examination of something in detail in order to understand it better or draw conclusions from it\">\n              <h4>Analysis</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"2\"><span class=\"attr-value\">2</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"The ability to understand a concept and apply it to a real world example.\">\n            <h4>Application</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"5\"><span class=\"attr-value\">5</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"general awareness or possession of information, facts, and ideas\">\n              <h4>Knowledge</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"4\"><span class=\"attr-value\">4</span></span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"extremely attentive to accuracy and detail\">\n              <h4>Thoroughness</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"1\"><span class=\"attr-value\">1</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"the capacity for understanding information fully.\">\n              <h4>Comprehension</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"3\"><span class=\"attr-value\">3</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"the ability to communicate effectively and appropriately with people of other cultures.\">\n              <h4 class=\"intercultural\">Intercultural Competence</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie intercultural\" data-value=\"3\"><span class=\"attr-value\">3</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"the detailed mental examination of your own feelings, thoughts, and motives.\">\n              <h4>Introspection</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"3\"><span class=\"attr-value\">3</span></span>\n              </div>\n            </div>\n          </div>\n      </div>\n    </div>\n  </div>\n</div>";
+  buffer += "<h1 class=\"clearfix\">Attributes</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-categories attributes\">\n      <div class=\"progress-wrap\">\n          <div class=\"attr-item \">\n            <div class=\"box\"  data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeDesc", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n            <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeName", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttribute", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttribute", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attrissbute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeDesc", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeName", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttribute", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttribute", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeDesc", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeName", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttribute", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttribute", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-  item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeDesc", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeName", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttribute", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttribute", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeDesc", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n            <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeName", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttribute", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttribute", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeDesc", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeName", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttribute", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttribute", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeDesc", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeName", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttribute", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttribute", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeDesc", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeName", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttribute", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttribute", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeDesc", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeName", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie intercultural\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttribute", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttribute", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeDesc", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">\n              <h4>";
+  stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeName", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttribute", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\"><span class=\"attr-value\">";
+  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttribute", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n      </div>\n    </div>\n  </div>\n</div>";
+  return buffer;
   });
 
 this["templates"]["profile/student/frames/badge"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -301,10 +422,32 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["profile/student/frames/profile"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function";
 
 
-  return "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-pic col-md-3 box\">\n    <h3>Warren Longmire</h3>\n    <div class=\"avatar\">\n      <div class=\"avatar-container\">\n      </div>\n      <a class=\"edit-avatar\">Change Avatar</a>\n      <img src=\"../images/avatar.png\" class=\"avatar\">\n    </div>\n    <div class=\"myers-briggs\"><h4>Myers-Briggs:</h4><h4>INTJ</h4></div>\n  </div>\n\n  <div class=\"profile-categories student-progress col-md-9\">\n    \n    <div class=\"progress-wrap\">\n      <div id=\"calendar\">\n        <div id=\"calendar-inner\">\n          <h3 class=\"title\">Week</h3>\n          <span class=\"week\">3</span>\n        </div>\n      </div>\n      <div class=\"progress-box box col-md-8 pull-right\">\n        <h3>Percent Completed</h3>\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"21\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 21%;\">\n            <span class=\"sr-only\">21%</span>\n          </div>\n          <span class=\"glyphicon glyphicon-bell\"></span>\n        </div>\n      \n      <p class=\"current-week\">You are currently in <label for=\"student-progress\">Week 3</label> of 15</p>\n\n      <div class=\"last-lesson clear\">\n        <label for=\"last-lesson\">Last Lesson Completed</label>\n        <ul id=\"section_nav\" class=\"hidden-phone\">\n        <li class=\"game clear\">\n          <a href=\"\"><span class=\"icomoon icon-gamepad clear\"></span><span class=\"hoverover\">game: Let's go to school!</span></a>\n        </li>\n        </ul>\n      </div>\n    </div>\n      <a href=\"\" class=\"moreButton\">Proceed to Week 3<span class=\"glyphicon glyphicon-play\"></span></a>\n    </div>\n  </div>\n</div>";
+  buffer += "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-pic col-md-3 box\">\n    <h3>";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " ";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h3>\n    <div class=\"avatar\">\n      <div class=\"avatar-container\">\n      </div>\n      <a class=\"edit-avatar\">Change Avatar</a>\n      <img src=\"../images/avatar.png\" class=\"avatar\">\n    </div>\n    <div class=\"myers-briggs\"><h4>Myers-Briggs:</h4><h4>";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.mb)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h4></div>\n  </div>\n\n  <div class=\"profile-categories student-progress col-md-9\">\n    \n    <div class=\"progress-wrap\">\n      <div id=\"calendar\">\n        <div id=\"calendar-inner\">\n          <h3 class=\"title\">Week</h3>\n          <span class=\"week\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span>\n        </div>\n      </div>\n      <div class=\"progress-box box col-md-8 pull-right\">\n        <h3>Percent Completed</h3>\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"21\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 21%;\">\n            <span class=\"sr-only\">21%</span>\n          </div>\n          <span class=\"glyphicon glyphicon-bell\"></span>\n        </div>\n      \n      <p class=\"current-week\">You are currently in <label for=\"student-progress\">Week ";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</label> of 15</p>\n\n      <div class=\"last-lesson clear\">\n        <label for=\"last-lesson\">Last Lesson Completed</label>\n        <ul id=\"section_nav\" class=\"hidden-phone\">\n        <li class=\"game clear\">\n          <a href=\"\"><span class=\"icomoon icon-gamepad clear\"></span><span class=\"hoverover\">game: Let's go to school!</span></a>\n        </li>\n        </ul>\n      </div>\n    </div>\n      <a href=\"#week/";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" id=\"gotoWeekButton\" class=\"moreButton\">Proceed to Week ";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "<span class=\"glyphicon glyphicon-play\"></span></a>\n    </div>\n  </div>\n</div>";
+  return buffer;
   });
 
 this["templates"]["profile/student/frames/progress"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
