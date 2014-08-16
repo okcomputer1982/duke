@@ -1,8 +1,6 @@
 DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _) {
 	Show.Controller = {
 		init:function(options) {
-			console.log(options);
-			
 			var comicModel = DukeApp.request("comic:entities", options.seriesId);
 			var panels = DukeApp.request("panel:entities");
 

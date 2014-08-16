@@ -8,8 +8,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		getStudentObject: function() {
 			var def = $.Deferred(), studentObject;
 
-			console.log(DukeApp.utils.isGuest());
-			
 			if (DukeApp.utils.isGuest()) {
 				studentObject = {
 					"class": 0,

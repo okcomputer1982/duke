@@ -1,16 +1,26 @@
 DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette, $, _) {
 	Week.Controller = {
 		init:function(id) {
-			var startingClass = 0;
+			var startingClass = 0,
+				that = this;
 
 			//load initial class stuff
 			DukeApp.utils.setCurrentView("week-view", Week.Controller);
 			DukeApp.utils.loadCommonViews();
 
 			//get data
-			Week.Controller.weeks = DukeApp.request("week:entities");
-			Week.Controller.curclass = DukeApp.request("class:entities", startingClass);
-			Week.Controller.curweek = id;
+			var classPromise = DukeApp.request("class:entities", startingClass),
+				weeksPromise = DukeApp.request("week:entities");
+
+			$.when(classPromise, weeksPromise).done(function(cResults, wResults){
+				that.loadDisplay(cResults, wResults, id);
+			});
+		},
+
+		loadDisplay:function(classResults, weekResults, weekId) {
+			Week.Controller.curweek = weekId;
+			Week.Controller.weeks = weekResults;
+			Week.Controller.curclass = classResults;
 
 			//initalize views
 			var weekView = new Week.WeekLayoutView(),
@@ -37,7 +47,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				top:top
 			};
 
-			this.refreshWeek(Week.Controller.curclass.get('weeks')[Week.Controller.curweek].weekId);
+			this.refreshWeek(Week.Controller.curclass.get('weeks')[Week.Controller.curweek]);
 
 			//set events
 			top.on("weekView:loadWeek", Week.Controller.setWeekContent);
@@ -53,7 +63,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			var views = Week.Controller.views,
 				weeks = Week.Controller.weeks;
 
-			var frameIndex = weeks.at(id).get("frameId"),
+			var frameIndex = weeks.at(id).get("id"),
 				frames = DukeApp.request("frame:entities", frameIndex);
 
 			views.content = new Week.ContentListView({

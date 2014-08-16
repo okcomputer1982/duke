@@ -9,3 +9,7 @@ Handlebars.registerHelper('getAttributeName', function(id) {
 Handlebars.registerHelper('getAttributeDesc', function(id) {
   	return DukeApp.utils.Attributes[id].desc;
 });
+
+Handlebars.registerHelper('getWeekLabel', function() {
+  	return this + 1;
+});

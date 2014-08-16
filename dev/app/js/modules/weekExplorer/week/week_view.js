@@ -228,6 +228,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		events:{
 			"click .week-link":"handleWeekLink"
 		},
+		
 		init:function(w){
 			this.active = $('.week-link-listitem[data-weekId="1"]');
 		},

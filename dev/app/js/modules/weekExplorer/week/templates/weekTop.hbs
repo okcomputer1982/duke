@@ -1,8 +1,8 @@
 <div class="topnav full">
     <ul class="horiz-nav" role="navigation" aria-label="week links">
       {{#each weeks}}
-        <li class="{{{this.active}}} week-link-listitem" data-weekId="{{{this.id}}}">
-          <a class="week-link" data-week="{{{this.weekId}}}" href="#">{{{this.id}}}</a>
+        <li class="week-link-listitem" data-weekId="{{{getWeekLabel}}}">
+          <a class="week-link" data-week="{{{this}}}" href="#">{{{getWeekLabel}}}</a>
         </li>
       {{/each}}
     </ul>

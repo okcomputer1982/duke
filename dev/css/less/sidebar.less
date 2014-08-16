@@ -28,21 +28,32 @@
   }
   
   #sidetop {
-    background: #bed1a1;
+    background: #343434;
     display: table;
     height: 50px;
     width: 13%;
     width: 20vw;
     position: fixed;
     text-align: left;
-    padding-left:25px;
+    padding-left:19px;
     z-index: 2000;
-    
+    border-bottom: 1px solid #777777;
+
     h2 {
-      color: white;
+      color: #97AF65;
       display: inline-table;
-      padding-top:9px;
+      letter-spacing: 1px;
+    }
+  
+    #label {
+      position:relative;
+      top:-3px;
+    }
+
+    #week_number {
+      color: #87ac3c;
       font-weight: bold;
+      font-size: 30pt;
     }
   }
 
@@ -52,7 +63,7 @@
   }
 
   ul#section_nav {
-    background: #ebf0cc;
+    background: grey;
     list-style:none;
     margin: 0px;
     padding-left: 0;
@@ -62,6 +73,7 @@
     overflow-y:scroll;
     
     li {
+      background-color:#1f1f1f;
       -ms-transition: all 0.5s ease-in-out;
       -moz-transition: all 0.5s ease-in-out;
       -webkit-transition: all 0.5s ease-in-out;
@@ -71,8 +83,6 @@
       padding: 0;
 
       a {
-        // background-color: #a2a4a1;
-        // box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2);
          @media (max-width: 68.750em) {
             text-align: center;
             span {
@@ -96,6 +106,9 @@
         .rem(padding,0.5);
         .rem(padding-left,1);
         width: 100%;
+
+        padding-left: 40px;
+
         &.active {
           background: @black;
           span {
@@ -153,27 +166,32 @@
   .weekItemLink {
     position: relative;
   }
+  
+  .arrows {
+    display: inline;
+    position: relative;
+  }
 
   .arrow {
     display: inline-table;
+    padding:0px !important;
     .rem(font-size,2);
-    .glyphicon {
+    .fa {
+        position:relative;
+        top:5px;
         background: transparent;
-        .rem(font-size,1.8);
-        &.glyphicon-circle-arrow-right {
-          box-shadow: inset 1px 2px 2px rgba(0,0,0,0.4);
-          color: #aaa;
+        color: #87ac3c;
+        .rem(font-size,4.5);
+
+        &.fa-caret-right {
           .rem(margin-left,1);
-          &:hover {
-            color: #efefef;
-          }
         }
-         &.glyphicon-circle-arrow-left {
-          color:#aaa;
+         &.fa-caret-left {
           .rem(margin-right,1);
-          &:hover {
-            color: #efefef;
-          }
+        }
+
+        &:hover {
+          color: #97AF65;
         }
     }
   }
@@ -242,14 +260,6 @@ ul#section_nav {
   position: relative;
 }
 
-.arrow {
-  display: inline-table;
-  font-size: 20px;
-  .glyphicon {
-      background: transparent;
-  }
-}
-
 ul#section_nav {
     list-style:none;
     margin: 0px;
@@ -309,7 +319,7 @@ ul#section_nav {
         }
         &.active {
           background: @black;
-          border-left: 8px solid @white;
+          border-left: 8px solid #87ac3c;
           span {
             &.icomoon {
               box-shadow: inset -1px -1px 2px rgba(100,100,200,0.5);
@@ -323,12 +333,12 @@ ul#section_nav {
             }
           }
           &:hover {
-            border-left: 8px solid @white;
+            // border-left: 8px solid @white;
           }
         }
         &:hover {
           background: @black;
-          border-left: 8px solid @black;
+          // border-left: 8px solid @black;
           span.icomoon, span.hoverover {
             color: @white;
           }
