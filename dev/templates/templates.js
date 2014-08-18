@@ -416,7 +416,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function";
 
 
-  buffer += "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"col-md-4 profile_section\">\n    <div class=\"profile_pic\">\n      <img src=\"../images/avatars/avatar1.png\" alt=\"\">\n\n      <p class=\"name\">";
+  buffer += "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"col-md-4 profile_section\">\n    <div class=\"profile_pic\">\n      <img src=\"../images/avatars/avatar1.png\" alt=\"\">\n      \n      <a class=\"edit-icon\" html=\"#\"><i class=\"fa fa-pencil-square-o\"></i></a>\n\n      <p class=\"name\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += " ";
@@ -425,7 +425,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   buffer += "</p>\n      <p class=\"mb\">";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.mb)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</p>\n    </div>\n  </div>\n\n  <div class=\"col-md-4\">\n    <img src=\"../images/avatar_bkg.png\" alt=\"\">\n  </div>\n\n  <div class=\"col-md-4\">\n    <img src=\"../images/avatar_bkg.png\" alt=\"\">\n  </div>\n\n  <!-- <div class=\"profile-pic col-md-3 box\">\n    <h3>";
+  buffer += " <a html=\"#\"><i class=\"fa fa-pencil-square-o\"></i></a></p>\n\n      <a class=\"profile_button\" href=\"#week/";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">Go to Class <i class=\"fa fa-caret-right\"></i></a>\n    </div>\n  </div>\n\n  <div class=\"col-md-4 progress_section\">\n      <div class=\"title_box\">\n          <p>Progress</p>\n      </div>\n  \n      <div class=\"progress_copy\">\n        <p class=\"semester_label\">SEMESTER <span class=\"class_number\">1</span></p>\n        <p class=\"week_label\">Week <span class=\"class_number\">3</span></p>\n\n        <div class=\"progress\">\n          <div class=\"progress-bar progress-bar-striped active\"  role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 45%\">\n          </div>\n        </div>\n\n        <p class=\"time_label\">Time Spent: <span class=\"class_number\">4:00:00</span></p>\n      </div>\n  </div>\n\n  <div class=\"col-md-4 metrics_section\">\n      <div class=\"title_box\">\n          <p>Metrics</p>\n      </div>\n\n      <div class=\"metrics_copy\">\n        <hr/>\n        <p class=\"grade_label\"><span class=\"l\">GRADES:</span> <span class=\"number\">80%</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">BADGES:</span> <span class=\"number\">6/10</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">ATTRIBUTES:</span> <span class=\"number\">34%</span></p>\n        <hr/>\n      </div>\n  </div>\n\n  <!-- <div class=\"profile-pic col-md-3 box\">\n    <h3>";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += " ";
