@@ -5,25 +5,52 @@
 	#main-content {
 		margin-top: 0;
 	}
-	.profile-pic {
-		background: #fff;
-		border: 1px solid @drkgray;
-		padding: 0px 20px 20px;
-		text-align: center;
-		h3 {
-			font-weight: 600;
-			margin: 0;
-			.rem(padding,0.5);
-			.rem(padding-left,1.5);
+
+	.profile_section {
+		.profile_pic {
+			background-image: url(../images/avatar_bkg.png);
+			width:256px;
+			height:362px;
+
+			img {
+				position:relative;
+				top:20px;
+			}
+
+			.name {
+				position: relative;
+				top: 30px;
+				font-size: 14pt;
+			}
+
+			.mb {
+				font-size: 12pt;
+			}
 		}
-		img.avatar {
-			border: 2em solid @gold;
-			border: 2rem solid @gold;
-			float: left;
-			.rem(margin-bottom,1);
-			width: 100%;
+
+		.profile_button {
+			padding:10px;
 		}
 	}
+	// .profile-pic {
+	// 	background: #fff;
+	// 	border: 1px solid @drkgray;
+	// 	padding: 0px 20px 20px;
+	// 	text-align: center;
+	// 	h3 {
+	// 		font-weight: 600;
+	// 		margin: 0;
+	// 		.rem(padding,0.5);
+	// 		.rem(padding-left,1.5);
+	// 	}
+	// 	img.avatar {
+	// 		border: 2em solid @gold;
+	// 		border: 2rem solid @gold;
+	// 		float: left;
+	// 		.rem(margin-bottom,1);
+	// 		width: 100%;
+	// 	}
+	// }
 
 	.section {
 		min-height: 500px;

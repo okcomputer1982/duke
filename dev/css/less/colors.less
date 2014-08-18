@@ -36,12 +36,17 @@
 @settings: @gold;
 @wrapup: @white;
 
+.section {
+	border:none !important;
+}
+
 .section, .active {
+
 	&.overview, &.wrapup {
 		background: #fff;
 	}
 	&.activity, &.comic, &.progress {
-		background-color: #333;
+		//background-color: #333;
 		h1,h2,h3,p,li,a {
 			color: white;
 		}
@@ -66,7 +71,7 @@
 		}
 	}
 	&.discussion, &.journal, &.assignment {
-		background: @drkgray;
+		// background: @drkgray;
 	}
 	&.journal, &.assignment, &.discussion, &.quiz {
 		.inner-wrap .another-wrapper {
@@ -92,16 +97,11 @@
 	padding-top: 22px;
 }
 
-.section:nth-child(4n + 3) {
-	background-image: 
-	 radial-gradient(ellipse farthest-corner, transparent 20%, rgba(0,0,0,0.45) 100%),
-	radial-gradient(ellipse farthest-corner, transparent 0%, transparent 35%, @blue 30%, @blue 40%, transparent 90%),
-	radial-gradient(ellipse farthest-corner at 0px 0px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%), 
-	radial-gradient(ellipse farthest-corner at 12px 12px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%), 
-	radial-gradient(ellipse farthest-corner at 0px 12px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 40%), 
-	radial-gradient(ellipse farthest-corner at 12px 0px, transparent 0%, transparent 20%, @blue 15%, @blue 20%, transparent 50%),  
-	radial-gradient(ellipse farthest-corner, rgba(135,135,135,0.8) 0%, rgba(0,0,0,0.9) 90%);
-  	background-size: 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 12px 12px, 100% 100%;
+.section:nth-child(odd) {
+	background-image: url('../images/section_bkg.png');
+	background-repeat: repeat-y;
+	background-color: #f2f2f2;
+	background-size: auto;
 }
 
 // .section:nth-child(4n+2), .section:nth-child(2) {

@@ -20,6 +20,8 @@ DukeApp.module("WeekExplorer", function(WeekExplorer, DukeApp, Backbone, Marione
 
 	//events for triggering navigation
 	DukeApp.on("weekExplorer:week", function(id, reRender) {
+		console.log("here");
+		
 		if (!id) {
 			id = 1;
 		}

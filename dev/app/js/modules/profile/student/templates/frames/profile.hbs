@@ -1,6 +1,25 @@
 <h1 class="profile-welcome clearfix">Student Profile</h1>
 <div class="inner-wrap">
-  <div class="profile-pic col-md-3 box">
+  <div class="col-md-4 profile_section">
+    <div class="profile_pic">
+      <img src="../images/avatars/avatar1.png" alt="">
+
+      <p class="name">{{{userData.first}}} {{{userData.last}}}</p>
+      <p class="mb">{{{userData.mb}}}</p>
+    </div>
+
+    <a class="profile_button" href="#week/{{{userData.currentWeek}}}">Go to Current Week</a>
+  </div>
+
+  <div class="col-md-4">
+    <img src="../images/avatar_bkg.png" alt="">
+  </div>
+
+  <div class="col-md-4">
+    <img src="../images/avatar_bkg.png" alt="">
+  </div>
+
+  <!-- <div class="profile-pic col-md-3 box">
     <h3>{{{userData.first}}} {{{userData.last}}}</h3>
     <div class="avatar">
       <div class="avatar-container">
@@ -41,6 +60,6 @@
       </div>
     </div>
       <a href="#week/{{{userData.currentWeek}}}" id="gotoWeekButton" class="moreButton">Proceed to Week {{{userData.currentWeek}}}<span class="glyphicon glyphicon-play"></span></a>
-    </div>
+    </div> -->
   </div>
 </div>

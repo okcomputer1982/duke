@@ -4,7 +4,7 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
     template: templates['_components/header/header'],
 
     onShow:function() {
-        $('.logout_button').click(this.logoutRedirect);
+        $('.header_link').click(this.handleHeaderLink);
         var adminType = DukeApp.utils.getCurrentAdminType();
 
         //check for current admin setting
@@ -14,9 +14,23 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
 
     },
 
-    logoutRedirect:function(e){
-    	e.preventDefault();
-    	DukeApp.trigger("home:login");
+    handleHeaderLink:function(e){
+        e.preventDefault();
+        var type = $(e.currentTarget).attr('id');
+
+        var links = {
+            "coursework_link":"weekExplorer:week",
+            "dashboard_link":"profile:student",
+            "logout_link":"home:login",
+        };
+
+        // $("a.active").removeClass("active");
+        // $(e.currentTarget).addClass("active");
+
+        if (type === "coursework_link")
+            DukeApp.trigger(links[type], 1, true);
+        else
+            DukeApp.trigger(links[type]);
     }
   });
 });

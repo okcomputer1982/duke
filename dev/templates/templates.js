@@ -24,7 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <!-- <p class=\"tagline\">A Student's Journey</p> -->\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"coursework_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"admin_link\" href=\"#admin/teacher\">Admin</a></li>\n        <li><a id=\"logout_link\"  href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
+  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <!-- <p class=\"tagline\">A Student's Journey</p> -->\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin/teacher\">Admin</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
   });
 
 this["templates"]["admin/teacher/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -416,7 +416,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function";
 
 
-  buffer += "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-pic col-md-3 box\">\n    <h3>";
+  buffer += "<h1 class=\"profile-welcome clearfix\">Student Profile</h1>\n<div class=\"inner-wrap\">\n  <div class=\"col-md-4 profile_section\">\n    <div class=\"profile_pic\">\n      <img src=\"../images/avatars/avatar1.png\" alt=\"\">\n\n      <p class=\"name\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " ";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n      <p class=\"mb\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.mb)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n    </div>\n  </div>\n\n  <div class=\"col-md-4\">\n    <img src=\"../images/avatar_bkg.png\" alt=\"\">\n  </div>\n\n  <div class=\"col-md-4\">\n    <img src=\"../images/avatar_bkg.png\" alt=\"\">\n  </div>\n\n  <!-- <div class=\"profile-pic col-md-3 box\">\n    <h3>";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += " ";
@@ -437,7 +446,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   buffer += "\" id=\"gotoWeekButton\" class=\"moreButton\">Proceed to Week ";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "<span class=\"glyphicon glyphicon-play\"></span></a>\n    </div>\n  </div>\n</div>";
+  buffer += "<span class=\"glyphicon glyphicon-play\"></span></a>\n    </div> -->\n  </div>\n</div>";
   return buffer;
   });
 
@@ -510,7 +519,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <div id=\"main-content\" data-spy=\"scroll\" data-target=\"#section_nav\">\n  	\n  </div>\n  <nav id=\"content-cycle\">\n        <ul>\n          <li><a href=\"\" class=\"cycle-up\"></a></li>\n          <li><a href=\"\" class=\"cycle-down\"></a></li>\n        </ul>\n      </nav>\n</div>";
+  return "<div class=\"container-fluid\">\n  <div id=\"main-content\" data-spy=\"scroll\" data-target=\"#section_nav\">\n  	\n  </div>\n  <nav id=\"content-cycle\">\n        <ul>\n          <li><a href=\"\" class=\"cycle cycle-up\"><i class=\"fa fa-caret-square-o-up\"></a></i></li>\n          <li><a href=\"\" class=\"cycle cycle-down\"><i class=\"fa fa-caret-square-o-down\"></i></a></li>\n        </ul>\n      </nav>\n</div>";
   });
 
 this["templates"]["weekExplorer/week/frames/activity"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -946,10 +955,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.index) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.index); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n<!-- <span class=\"item-icon icomoon icon-";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.glyph)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"></span> -->\n<span class=\"hoverover\">";
+  buffer += "\">\n<span class=\"hoverover\">";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -992,6 +998,6 @@ function program1(depth0,data) {
   buffer += "<div class=\"topnav full\">\n    <ul class=\"horiz-nav\" role=\"navigation\" aria-label=\"week links\">\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.weeks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </ul>\n    <a class=\"expand-horiz\" aria-expanded=\"false\"></a>\n</div>";
+  buffer += "\n    </ul>\n\n    <a class=\"expand-horiz\" aria-expanded=\"false\"></a>\n</div>";
   return buffer;
   });

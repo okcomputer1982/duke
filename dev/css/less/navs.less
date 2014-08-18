@@ -3,15 +3,6 @@
 .navbar ul.nav li {
   width: auto;
   display: inline;
-  padding-left: 10px;
-}
-
-.nav {
-  li {
-    a {
-      font-family: arial;
-    }
-  }
 }
 
 .navbar-header {
@@ -34,16 +25,6 @@
     text-align: left;
     width: auto;
   }
-  ul {
-    li {
-      a {
-        padding-right: 40px;
-        @media(min-width: 48em) {
-          padding-right: 0;
-        }
-      }
-    }
-  }
 }
 
 .horiz-nav {
@@ -59,7 +40,6 @@
     display: inline;
 
     a {
-      background: transparent;
       color: black;
       font-weight: bold;
       margin-right:5px;
@@ -95,31 +75,32 @@
 nav#content-cycle {
   position: fixed;
   right: 20px;
-  top: 50%;
+  top: 80%;
   z-index: 9;
   ul {
-    padding: 0;
     li {
       list-style-type: none;
+      margin-top: 15px;
       a {
-        background-color: transparent;
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        display: block;
         .rem(height,3.5);
         .rem(width,5);
         &:hover {
-          .opacity(75%);
+          -moz-opacity: 0.90 !important;
+          opacity: 0.90 !important;
+          color:white !important;
         }
-        &.cycle-up {
-          background-image: url('../images/arrow-up.png');
-          border-bottom: 0.1em solid white;
-          border-bottom: 0.1rem solid white;
-          .rem(margin-bottom,2);
-        }
-        &.cycle-down {
-          background-image: url('../images/arrow-down.png');
+        &.cycle {
+          font-size: 20pt;
+          padding:5px 10px;
+          color: #F2F2F2;
+          background-color:#87ac3c;
+          
+          -moz-opacity: 0.60;
+          opacity: 0.60;
+
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
         }
       }
     }

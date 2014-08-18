@@ -286,7 +286,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    cycleHandler:function(e) {
 	    	e.preventDefault();
 
-	    	var type = $(e.currentTarget).attr('class'),
+	    	var type = $(e.currentTarget).attr('class').split(" ")[1],
 	    		currentScrollPos = $(window).scrollTop(),
 	    		linkId,
 	    		scrollPos = Week.scrollPos;
@@ -317,7 +317,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	var offset = ((linkId === 0)?100:60);
 
 		    $(window).scrollTo(".weekitem" + linkId, {
-		    	duration:0,
+		    	duration:300,
 		    	offset:-100,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){

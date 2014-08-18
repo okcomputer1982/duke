@@ -190,7 +190,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	var offset = ((linkId === 0)?100:60);
 
 		    $(window).scrollTo(".profileitem" + linkId, {
-		    	duration:0,
+		    	duration:300,
 		    	offset:-60,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){
