@@ -28,13 +28,16 @@
 			letter-spacing: 2px;
 		}
 	}
-
-	.progress_section {
+	
+	.dashboard_box {
 		background-image: url(../images/progress_bkg.png);
 		background-repeat: no-repeat;
 		width: 305px;
 		height: 362px;
+	}
 
+	//basic info
+	.progress_section {
 		.progress_copy {
 			margin: auto;
 			position: absolute;
@@ -88,10 +91,6 @@
 	}
 
 	.metrics_section {
-		background-image: url(../images/progress_bkg.png);
-		background-repeat: no-repeat;
-		width: 305px;
-		height: 362px;
 		margin-left: 15px;
 
 		.metrics_copy {
@@ -188,25 +187,140 @@
 			}
 		}
 	}
-	// .profile-pic {
-	// 	background: #fff;
-	// 	border: 1px solid @drkgray;
-	// 	padding: 0px 20px 20px;
-	// 	text-align: center;
-	// 	h3 {
-	// 		font-weight: 600;
-	// 		margin: 0;
-	// 		.rem(padding,0.5);
-	// 		.rem(padding-left,1.5);
-	// 	}
-	// 	img.avatar {
-	// 		border: 2em solid @gold;
-	// 		border: 2rem solid @gold;
-	// 		float: left;
-	// 		.rem(margin-bottom,1);
-	// 		width: 100%;
-	// 	}
-	// }
+
+	//progress
+	.progress {
+		.week_title_box {
+			background-image: url(../images/textbox_arrow.png);
+			background-repeat:  no-repeat;
+			background-position: left bottom;
+			display:inline-block;
+			height:100px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			
+			p {
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				color:white;
+				background-color:#292929;
+				text-transform: capitalize;
+				padding: 5px 200px;
+				height: 77px;
+				border-radius: 5px;
+				letter-spacing: 2px;
+			}
+
+			.week_object {
+				position: relative;
+				top: -70px;
+				font-size: 30pt;
+				color: #87ac3c;
+				
+				.week_number {
+					padding-left:5px;
+				}
+				.fa {
+					color: #87ac3c;
+					font-size:30pt;
+					padding: 0 20px;				
+				}
+			}
+		}
+	
+		
+		.content_section {
+			margin-top:100px;
+
+			.progress_container {
+				.progress_amount {
+					color: #94999f;
+					font-size: 25pt;
+				}
+			}	
+		}
+		
+		.attribute_section {
+			margin-top:100px;
+			
+			.attr_icon img{
+				width: 40px;
+				padding-right: 10px
+			}
+			
+			.attr_name {
+
+			}
+
+			.attr_amount {
+				position: absolute;
+				right: 0px;
+				padding-right: 40px;
+				color:#99417b;
+			}
+
+			.heading {
+				margin-top:25px;
+				color:grey;
+				text-transform: uppercase;
+			}
+
+			ul {
+				list-style: none;
+				padding:0;
+				width:100%;
+			}
+
+			ul li {
+				color:black;
+				width:100%;
+				border-top: 1px solid #e7e8e9;
+			}
+
+			ul li:last-child
+			{
+				border-bottom: 1px solid #e7e8e9;
+			}
+		}
+
+		.other_section {
+			margin-top:100px;
+			margin-left: 15px;
+
+			ul {
+				margin-top:80px;
+				list-style: none;
+				padding:0;
+				width:100%;
+			}
+
+			ul li {
+				color:black;
+				width:100%;
+				border-top: 1px solid #e7e8e9;
+			}
+
+			ul li:last-child
+			{
+				border-bottom: 1px solid #e7e8e9;
+			}
+
+			.content_name {
+				color:#94999f;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+
+			.content_amount {
+				position:absolute;
+				right:0px;
+				padding-right:20px;
+				color:#99417b;
+			}
+		}
+	}
 
 	.section {
 		min-height: 500px;
@@ -1215,77 +1329,6 @@
 }
 .last-lesson .icon-gamepad {float: left;.rem(padding,1);}
 
-.pie {
-	background: gray;
-	border-radius: 50%;
-	clear:both;
-	height: 60px;
-	position: relative;
-	width: 60px;
-	display:block;
-	margin: 0 auto;
-	box-shadow:  0px 0px 0px 2px hsl(0,0%,100%), 0px 0px 0px 4px hsl(0,0%,45%);
-
-	&:before {
-		background: @blue;
-		border-radius: 90px 0 0 90px;
-		content:'';
-		height: 60px;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 30px;
-		.transform-origin(100% 50%);
-	}
-	&:after {
-		background: @blue;
-		border-radius: 0 60px 60px 0;
-		content:'';
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 60px;
-		width: 30px;
-	}
-	&[data-value="4"]:before {
-		.rotate(-72deg);
-		
-	}
-	
-	&[data-value="3"] {
-		&:before {
-			.rotate(-144deg);
-		}
-	}
-	&[data-value="2"] {
-		&:before {
-			background: gray;
-			.rotate(-36deg);
-			z-index:2;
-		}
-	}
-	&[data-value="1"] {
-		&:before {
-			background: gray;
-			.rotate(-118deg);
-			z-index:2;
-		}
-	}
-	.attr-value {
-		color: white;
-		position: absolute;
-		font-family: arial;
-		font-size: 24px;
-		font-weight: bold;
-		line-height: 60px;
-		left: 0;
-		top: 0;
-		width: 60px;
-		text-align: center;
-		z-index: 4;
-		text-shadow: hsl(0,0%,0%) 0px 1px, hsl(0,0%,0%) 1px 1px, hsl(0,0%,0%) 0px 2px, hsl(0,0%,0%) 2px 2px, hsl(0,0%,0%) 0px 3px, hsl(0,0%,0%) 3px 3px, hsl(0,0%,0%) 0px 4px, hsl(0,0%,0%) 4px 4px;
-	}
-}
 #assignmentModal {
 	.modal-dialog {
 		width: 90%;
