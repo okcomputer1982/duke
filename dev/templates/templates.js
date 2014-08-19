@@ -250,127 +250,67 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, options, helperMissing=helpers.helperMissing;
 
 
-  buffer += "<h1 class=\"clearfix\">Attributes</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-categories attributes\">\n      <div class=\"progress-wrap\">\n          <div class=\"attr-item \">\n            <div class=\"box\"  data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeDesc", 0, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n            <h4>";
+  buffer += "<h1 class=\"clearfix\">Attributes</h1>\n<div class=\"inner-wrap\">\n<ul>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeName", 0, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttribute", 0, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeDesc", 0, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttribute", 0, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attrissbute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeDesc", 1, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeName", 1, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttribute", 1, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeDesc", 1, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttribute", 1, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeDesc", 2, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeName", 2, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttribute", 2, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeDesc", 2, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttribute", 2, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-  item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeDesc", 3, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeName", 3, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttribute", 3, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeDesc", 3, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttribute", 3, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeDesc", 4, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n            <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n  \n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeName", 4, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttribute", 4, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeDesc", 4, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttribute", 4, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeDesc", 5, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeName", 5, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttribute", 5, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeDesc", 5, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttribute", 5, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeDesc", 6, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeName", 6, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttribute", 6, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeDesc", 6, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttribute", 6, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeDesc", 7, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeName", 7, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttribute", 7, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeDesc", 7, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttribute", 7, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item\">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeDesc", 8, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeName", 8, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie intercultural\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttribute", 8, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeDesc", 8, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttribute", 8, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"attr-item \">\n            <div class=\"box\" data-toggle=\"tooltip\" class=\"attribute-item\" title=\"";
-  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeDesc", 9, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">\n              <h4>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeName", 9, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h4>\n              <div class=\"col-md-12\">\n                <span class=\"pie\" data-value=\"";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttribute", 9, options));
+  buffer += ":</span>\n      <span class=\"attr_desc\">";
+  stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeDesc", 9, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\"><span class=\"attr-value\">";
-  stack1 = (helper = helpers.getAttribute || (depth0 && depth0.getAttribute),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttribute", 9, options));
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</span></span>\n              </div>\n            </div>\n          </div>\n      </div>\n    </div>\n  </div>\n</div>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n</ul>\n</div>";
   return buffer;
   });
 
@@ -380,7 +320,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<h1 class=\"clearfix\">Badges</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-categories badges\">\n    <ul>\n      <li class=\"code\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"cool\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"foxy\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"hive clear\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"thread\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"fest\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"karaoke unearned\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"network unearned\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"olympics unearned\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n      <li class=\"thimble unearned\"><a href=\"\" class=\"badge\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Lorem Ipsum Dolor Sit Amet.\"></a><a href=\"\" class=\"shadow\"></a></li>\n    </ul>\n  </div>\n</div>";
+  return "<h1 class=\"clearfix\">Badges</h1>\n<div class=\"inner-wrap\">\n  <div class=\"profile-categories badges\">\n    <ul>\n      <li class=\"code\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Exploration\" data-content=\"To complete this badge you must earn 90% of the Exploration attribute.\"></a></li>\n      \n      <li class=\"cool\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Accuracy\" data-content=\"To complete this badge you must earn 90% of the Accuracy attribute.\"></a></li>\n\n      <li class=\"foxy\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Thoroughness\" data-content=\"To complete this badge you must earn 90% of the Thoroughness attribute.\"></a></li>\n\n      <li class=\"hive clear\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Comprehension\" data-content=\"To complete this badge you must earn 90% of the Comprehension attribute.\"></a></li>\n\n      <li class=\"thread\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Knowledge\" data-content=\"To complete this badge you must earn 90% of the Knowledge attribute.\"></a></li>\n\n      <li class=\"fest\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Reflection\" data-content=\"To complete this badge you must earn 90% of the Reflection attribute.\"></a></li>\n\n      <li class=\"karaoke\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Analysis\" data-content=\"To complete this badge you must earn 90% of the Analysis attribute.\"></a></li>\n\n      <li class=\"network\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Introspection\" data-content=\"To complete this badge you must earn 90% of the Introspection attribute. \"></a></li>\n\n      <li class=\"olympics\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Intercultural competence\" data-content=\"To complete this badge you must earn 90% of the Intercultural competence attribute.  \"></a></li>\n\n      <li class=\"thimble\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Application\" data-content=\"To complete this badge you must earn 90% of the Application attribute.  \"></a></li>\n\n      <li class=\"karaoke\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Quizz Completion\" data-content=\"To complete this badge you must earn 80% on all quizzes.\"></a></li>\n\n      <li class=\"network\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Frame Completion\" data-content=\"See every frame in a single semester.\"></a></li>\n\n      <li class=\"olympics\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Attribute Complestion\" data-content=\"To complete this badge you must earn 90% on all attributes.\"></a></li>\n\n      <li class=\"thimble\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Discussion Complestion\" data-content=\"To complete this badge you must participate in 80% of discussions.\"></a></li>\n    </ul>\n  </div>\n</div>";
   });
 
 this["templates"]["profile/student/frames/grades"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

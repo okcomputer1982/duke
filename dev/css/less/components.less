@@ -13,10 +13,7 @@
 	}
 }
 
-.fixed {  
-  position: fixed;
-  width:100%;
-  z-index:999;
+.fixed {
 }
 
 .badges {
@@ -26,7 +23,7 @@
 		.rem(margin-left,5.7);
 		padding: 0;
 		text-align: center;
-		.rem(width,50);
+		
 		li {
 			display: inline-block;
 			.rem(height,13.5);
@@ -57,15 +54,6 @@
 				width: 100%;
 				z-index: 1;
 			}
-			&.hive {
-				.rem(margin-left,-5.7);
-			}
-			&.hive, &.thread, &.fest, &.karaoke, &.network, &.olympics, &.thimble {
-				.rem(margin-top,-3);
-			}
-			&.network {
-				.rem(margin-left,0.3);
-			}
 			a {
 				.rem(font-size,3);
 				padding:0;
@@ -79,7 +67,6 @@
 				-moz-filter: grayscale(100%);
 				-webkit-filter: grayscale(100%);
 				filter: grayscale(100%);
-				opacity: 0.5;
 			}
 		}
 		@media (max-width: 48em) {

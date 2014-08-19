@@ -19,10 +19,10 @@ DukeApp.utils.AdminTypes = {
 DukeApp.utils.Attributes = [
 		{name:"Accuracy", desc:"The ability to be precise and avoid errors"},
 		{name:"Analysis", desc:"The examination of something in detail in order to understand it better or draw"},
-		{name:"Application", desc:"The ability to understand a concept and apply it to a real world example."},
+		{name:"Application", desc:"The ability to understand a concept and apply it to a real world example"},
 		{name:"Comprehension", desc:"The capacity for understanding information fully."},
 		{name:"Exploration", desc:"Process of learning something: the fact or process of finding out about"},
-		{name:"Intercultural competence:", desc:"The examination of something in detail in order to understand it better or draw"},
+		{name:"Intercultural competence", desc:"The examination of something in detail in order to understand it better or draw"},
 		{name:"Introspection", desc:"Is the ability to communicate effectively and appropriately"},
 		{name:"Knowledge", desc:"General awareness or possession of information, facts, ideas"},
 		{name:"Reflection", desc:"Careful thought, especially the process of reconsidering previous actions"},

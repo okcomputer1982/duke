@@ -24,7 +24,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				{index:0, type:"profile", 		name:"basic info", 		glyph:"profile", userData: studentObject},
 				{index:1, type:"progress", 		name:"progress", 		glyph:"chart2", userData: studentObject},
 				{index:2, type:"badge", 		name:"badges", 			glyph:"badge2", userData: studentObject},
-				{index:3, type:"attribute", 	name:"attribute", 		glyph:"badge2", userData: studentObject},
+				{index:3, type:"attribute", 	name:"attributes", 		glyph:"badge2", userData: studentObject},
 				{index:4, type:"grades", 		name:"grades", 			glyph:"file", userData: studentObject},
 				{index:5, type:"journals", 		name:"journals", 		glyph:"wallet", userData: studentObject}
 			]);
