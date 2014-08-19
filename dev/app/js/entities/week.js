@@ -180,6 +180,11 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				],
 			}},
 
+			{"type":"comic", "week":0, "name":"comic",		"content":{
+				"id": 0,
+				"synopsis":"Introduction to Xin Xin"
+			}},
+
 			{"type":"activity", "week":0, "name":"activity",		"content":{
 				"heading": "Introduction to Myers Briggs",
 				"instuctionsHeader":"Read one or both of the following articles regard the Myers Briggs Personality test.",
@@ -1256,7 +1261,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		classes = new Entities.ClassCollection([
 			{
 				id: 0,
-				weeks: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+				weeks: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 			},
 			{
 				id: 1,
