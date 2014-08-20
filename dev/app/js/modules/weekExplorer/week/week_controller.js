@@ -21,7 +21,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			Week.Controller.curweek = weekId;
 			Week.Controller.weeks = weekResults;
 			Week.Controller.curclass = classResults;
-
+			
 			//initalize views
 			var weekView = new Week.WeekLayoutView(),
 				top = new Week.TopView({
