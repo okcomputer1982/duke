@@ -192,7 +192,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		init:function(id) {
-			this.active = $('.weekItemLink[data-weekItem="0"]');
+			var firstFrame = $('.weekItemLink[data-weekItem="0"]');
+			this.active = firstFrame;
+			firstFrame.addClass("active");
+
 			$("#week_number").text(id + 1);
 		},
 

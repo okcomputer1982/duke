@@ -38,7 +38,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return({name: m.get('name'), glyph: m.get('glyph')});
 	};
 
-	var initializeFrameTemplates = function(){
+	var initializeFrameTemplates = function() {
 		frameTemplates = new Entities.FrameTemplateCollection([
 			{name:"overview", 			glyph:"eye3"},
 			{name:"article", 			glyph:"book2"},
@@ -1271,7 +1271,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	};
 
 	var API = {
-		getFrameEntities: function(id){
+		getFrameEntities: function(id) {
+			var def = $.Deferred();
+
 			if (frames === undefined){
 				initializeFrameTemplates();
 				initializeFrames();
@@ -1281,9 +1283,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				return(obj.week === id);
 			});
 
-			var frameCollection = new Entities.FrameCollection(keyFrames);
+			keyFrames.map(function(obj, id){
+				obj.weekItem = id;
+			});
 
-			return frameCollection;
+			console.log(keyFrames);
+			
+			var frameCollection = new Entities.FrameCollection(keyFrames);
+			def.resolve(frameCollection);
+
+			return def.promise();
 		},
 
 		getWeekEntities: function(){

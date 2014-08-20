@@ -54,6 +54,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 		
 		refreshWeek:function(id) {
+			var that = this;
+
 			if (id < 0 || id > Week.Controller.curclass.get('weeks').length)
 				return;
 
@@ -64,30 +66,32 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				weeks = Week.Controller.weeks;
 
 			var frameIndex = weeks.at(id).get("id"),
-				frames = DukeApp.request("frame:entities", frameIndex);
+				framesPromise = DukeApp.request("frame:entities", frameIndex);
 
-			views.content = new Week.ContentListView({
-				collection:frames
+			framesPromise.done(function(frames) {
+				views.content = new Week.ContentListView({
+					collection:frames
+				});
+
+				views.sidebar = new Week.SidebarListView({
+					collection:frames
+				});
+
+				views.weekView.content.show(views.content);
+				views.weekView.sidebar.show(views.sidebar);
+				views.sidebar.init(id);
+				views.top.setWeekLink(id);
+
+				that.scrollToFrame({linkId:0});
+
+				views.sidebar.on("weekView:scrollto", Week.Controller.scrollToFrame);
+				views.sidebar.on("weekView:loadWeek", Week.Controller.setWeekContent);
+
+				views.content.on("weekView:scrollto", Week.Controller.scrollToFrame);
+				views.content.on("weekView:setActiveLink", Week.Controller.setActiveLink);
+				views.content.on("weekView:loadComic", Week.Controller.setComic);
+				views.content.on("weekView:loadGame", Week.Controller.setGame);
 			});
-
-			views.sidebar = new Week.SidebarListView({
-				collection:frames
-			});
-
-			views.weekView.content.show(views.content);
-			views.weekView.sidebar.show(views.sidebar);
-			views.sidebar.init(id);
-			views.top.setWeekLink(id);
-
-			this.scrollToFrame({linkId:0});
-
-			views.sidebar.on("weekView:scrollto", Week.Controller.scrollToFrame);
-			views.sidebar.on("weekView:loadWeek", Week.Controller.setWeekContent);
-
-			views.content.on("weekView:scrollto", Week.Controller.scrollToFrame);
-			views.content.on("weekView:setActiveLink", Week.Controller.setActiveLink);
-			views.content.on("weekView:loadComic", Week.Controller.setComic);
-			views.content.on("weekView:loadGame", Week.Controller.setGame);
 		},
 
 		scrollToFrame:function(obj){
