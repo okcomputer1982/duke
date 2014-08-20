@@ -398,7 +398,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    },
 
 	    //show game backdrop
-	    handleGame: function(e){
+	    handleGame: function(e) {
 	    	e.preventDefault();
 	    	var gameId = $(e.currentTarget).data("id");
 	    	this.trigger("weekView:loadGame", {gameId:gameId});
