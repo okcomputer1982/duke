@@ -68,7 +68,20 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		className:function(){
 			return("row-fluid section journal " + this.options.profileitemClass);
 		},
-		tagName:"section"
+		tagName:"section",
+		onShow:function() {
+			var userData = this.model.get('userData'),
+				journals = userData.journals;
+
+			Student.Controller.currentJournalIndex = 0;
+			Student.Controller.currentJournalWeek = 0;
+
+			this.trigger("studentProfile:getJournal");
+		},
+
+		displayJournal:function(){
+			console.log("showing journal");
+		}
 	});
 
 	//Sidebar

@@ -4,10 +4,15 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			var that = this;
 
 			//get student Account
-			var studentObjectPromise = DukeApp.request("user:studentObject:entities");
-			studentObjectPromise.done(function(studentObject) {
+			var studentObjectPromise = DukeApp.request("user:studentObject:entities"),
+				journalObjectPromise = DukeApp.request("journals:entities", DukeApp.utils.getCurrentUser().id);
+
+			$.when(studentObjectPromise, journalObjectPromise).done(function(studentObject, journals) {
+				studentObject.journals = journals;
+
 				that.loadDisplay(studentObject);
 			});
+
 		},
 
 		loadDisplay:function(studentObject) {
@@ -20,7 +25,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			});
 
 			var profileItems = new ProfileCollection([
-				// {index:0, type:"help", 			name:"help", 			glyph:"health"},
 				{index:0, type:"profile", 		name:"basic info", 		glyph:"profile", userData: studentObject},
 				{index:1, type:"progress", 		name:"progress", 		glyph:"chart2", userData: studentObject},
 				{index:2, type:"badge", 		name:"badges", 			glyph:"badge2", userData: studentObject},
@@ -57,6 +61,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 			content.on("studentProfile:showAssignment", Student.Controller.handleAssignmentModal);
 			content.on("studentProfile:setActiveLink", Student.Controller.setActiveLink);
+			content.con("studentProfile:getJournal", StudentController.getJournal);
 		},
 
 		scrollToFrame:function(obj){
@@ -67,6 +72,25 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		setActiveLink:function(obj){
  			Student.Controller.sidebar.setActiveFrame(obj.linkId);
   		},
+
+  		getJournal:function(){
+  			var currentJournal = ;
+  				currentWeek = 0;
+
+  			//lets say this is a one time thing...caches the current list of journals in the form of
+  				//week
+  					//journal 1, journal 2, journal 3
+  			//and it also sets the current WeekIndex to the lowest week of all saved journals
+  			//sets the display of weeks to this value (call to the view)
+  			//the of scrollable journals to 1/max journals for this week (call to the view)
+  			//and displays the journal for week 1, journal 1 (call to view)
+
+  			//all other calls grab these values and increment from the interface
+  			//will probally need to set those event handler here as well
+  			
+  			Student.Controller.currentWeekIndex = currentWeek;
+  			Student.Controller.currentJournalIndex = currentIndex;
+  		}
 
 		toggleHelp:function() {
 			$("#welcome-window").slideToggle();

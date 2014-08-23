@@ -2,11 +2,13 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
 	Show.Controller = {
 		init:function(options) {
 			var comicModel = DukeApp.request("comic:entities", options.seriesId);
-			var panels = DukeApp.request("panel:entities");
 
 			Show.Controller.activeSeries = comicModel.get('seriesId');
 	    	Show.Controller.activePanel = 0; //panel with last discision point
 	    	Show.Controller.onPanel = 0; //panel current viewing
+
+
+			var panels = DukeApp.request("panel:entities", Show.Controller.activeSeries);
 
 			var layoutView = new Show.ComicLayout({
 					model: comicModel

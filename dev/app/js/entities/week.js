@@ -67,7 +67,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return(def.promise());
 	};
 
-	var initializeFrames = function(id) {
+	var getFramesByWeek = function(id) {
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
@@ -76,6 +76,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		query.find(function(results) {
 			var frameObjectList = [],
 				frameCollection;
+			
 			results.map(function(obj, id){
 				frameObjectList.push({
 					"content": 	obj.get('content'),
@@ -89,6 +90,27 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			frameCollection = new Entities.FrameCollection(frameObjectList);
 			def.resolve(frameCollection);
+		});
+
+		return(def.promise());
+	};
+
+	var getFrameById = function(id) {
+		var def = $.Deferred(),
+			FrameTable = Parse.Object.extend("Frames"),
+			frame = new FrameTable();
+
+		frame.get(id, {
+			success:function(frame) {
+				def.resolve({
+					"content": 	frame.get('content'),
+					"name": 	frame.get('name'),
+					"type": 	frame.get('type'),
+					"week": 	frame.get('week'),
+					"weekItem": frame,
+					"template": makeTemplateObjectByName(obj.get('type'))
+				});
+			}
 		});
 
 		return(def.promise());
@@ -122,12 +144,23 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	};
 
 	var API = {
-		getFrameModels: function(id) {
+		getFrameById: function(id) {
 			var def = $.Deferred();
 
 			initializeFrameTemplates().done(function() {
+				getFramesByIndex(id).done(function(frameCollection) {
+					def.resolve(frameCollection);
+				});
+			});
 
-				initializeFrames(id).done(function(frameCollection) {
+			return def.promise();
+		},
+
+		getFramesByWeek: function(id) {
+			var def = $.Deferred();
+
+			initializeFrameTemplates().done(function() {
+				getFramesByWeek(id).done(function(frameCollection) {
 					def.resolve(frameCollection);
 				});
 			});
@@ -169,8 +202,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		}
 	};
 
-	DukeApp.reqres.setHandler("frame:entities", function(id){
-		return API.getFrameModels(id);
+
+	DukeApp.reqres.setHandler("frameById:entities", function(index){
+		return API.getFrameById(index);
+	});
+
+	DukeApp.reqres.setHandler("frameByWeek:entities", function(id){
+		return API.getFramesByWeek(id);
 	});
 
 	DukeApp.reqres.setHandler("week:entities", function(){

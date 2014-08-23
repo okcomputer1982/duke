@@ -66,7 +66,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				weeks = Week.Controller.weeks;
 
 			var frameIndex = weeks.at(id).get("id"),
-				framesPromise = DukeApp.request("frame:entities", frameIndex);
+				framesPromise = DukeApp.request("frameByWeek:entities", frameIndex);
 
 			framesPromise.done(function(frames) {
 				views.content = new Week.ContentListView({

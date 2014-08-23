@@ -13,3 +13,12 @@ Handlebars.registerHelper('getAttributeDesc', function(id) {
 Handlebars.registerHelper('getWeekLabel', function() {
   	return this + 1;
 });
+
+//student dashboard
+Handlebars.registerHelper('hasJournals', function(options) {
+	if (this.userData.journals && this.userData.journals.length > 0) {
+    	return options.fn(this);
+  	} else {
+    	return options.inverse(this);
+  	}
+});
