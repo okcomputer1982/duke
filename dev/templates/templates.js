@@ -349,7 +349,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  return "\n\n      <div class=\"journal_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n        Journal <span class=\"week_number\">1</span> / 1\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n    \n      <p class=\"heading\"></p>\n    \n      <div class=\"journal\"></div>\n    ";
+  return "\n\n      <div class=\"journal_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n        Journal <span class=\"journal_number\">1</span> / <span class=\"max_journal_number\">1</span>\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n    \n      <p class=\"heading\"></p>\n    \n      <div class=\"text\"></div>\n    ";
   }
 
 function program3(depth0,data) {

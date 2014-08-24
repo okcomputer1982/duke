@@ -51,6 +51,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 			sidebar.init();
 
+			//load indivisual profile items
+			this.loadJournals(studentObject.journals);
+
 			Student.Controller.layout = layout;
 			Student.Controller.sidebar = sidebar;
 			Student.Controller.content = content;
@@ -61,7 +64,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 			content.on("studentProfile:showAssignment", Student.Controller.handleAssignmentModal);
 			content.on("studentProfile:setActiveLink", Student.Controller.setActiveLink);
-			content.con("studentProfile:getJournal", StudentController.getJournal);
 		},
 
 		scrollToFrame:function(obj){
@@ -73,24 +75,95 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
  			Student.Controller.sidebar.setActiveFrame(obj.linkId);
   		},
 
-  		getJournal:function(){
-  			var currentJournal = ;
-  				currentWeek = 0;
+  		loadJournals:function(journals){
+  			var that = this,
+  				currentJournal = 0,
+  				currentWeek = 0,
+  				journalPromises = [];
 
-  			//lets say this is a one time thing...caches the current list of journals in the form of
-  				//week
-  					//journal 1, journal 2, journal 3
-  			//and it also sets the current WeekIndex to the lowest week of all saved journals
-  			//sets the display of weeks to this value (call to the view)
-  			//the of scrollable journals to 1/max journals for this week (call to the view)
-  			//and displays the journal for week 1, journal 1 (call to view)
+  			//grab all the frame referenced within this users journals
+  			_.map(journals, function(obj, idx){
+  				journalPromises.push(DukeApp.request("frameById:entities", obj.frameID));
+  			});
 
-  			//all other calls grab these values and increment from the interface
-  			//will probally need to set those event handler here as well
+  			$.when.apply($, journalPromises).then(function(){
+  				//when retieved, order all journals by week for easy scrolling
+  				var weekItems = arguments,
+  					journalList = {},
+  					contentView = Student.Controller.content;
+
+  				_.map(journals, function(obj, idx) {
+  					if (!journalList[weekItems[idx].week]) {
+  						journalList[weekItems[idx].week] = [];
+  					}
+
+  					obj.heading = weekItems[idx].content.heading;
+  					obj.instructions = weekItems[idx].content.instructions;
+  					journalList[weekItems[idx].week].push(obj);
+  				 });
+
+  				var minWeek = _.min(_.keys(journalList));
+  				Student.Controller.journalList = journalList;
+	  			Student.Controller.currentWeekIndex = Number(minWeek);
+  				Student.Controller.currentJournalIndex = 0;
+  				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentWeekIndex].length;
+
+
+  				console.log(journalList);
+
+  				//set and init week index
+  				contentView.setWeekIndex(Student.Controller.currentWeekIndex);
+
+  				//set and init journal index
+  				contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+
+  				//display current journal
+				contentView.showJournal(Student.Controller.journalList[Student.Controller.currentWeekIndex][Student.Controller.currentJournalIndex]);
+
+				contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
+				contentView.on("studentProfile:incrementWeek", that.incrementWeek);
+  			});
+  		},
+
+  		getMinWeek:function() {
+  			return(_.min(_.keys(Student.Controller.journalList)));
+  		},
+
+  		incrementJournal:function(direction) {
+  			var contentView = Student.Controller.content;
   			
-  			Student.Controller.currentWeekIndex = currentWeek;
-  			Student.Controller.currentJournalIndex = currentIndex;
-  		}
+  			if (direction === "right" && Student.Controller.currentJournalIndex < Student.Controller.maxJournalIndex-1) {
+  				Student.Controller.currentJournalIndex ++;
+  			} else if (direction === "left" && Student.Controller.currentJournalIndex > 0) {
+  				Student.Controller.currentJournalIndex --;
+  			}
+
+  			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+  			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentWeekIndex][Student.Controller.currentJournalIndex]);
+  		},
+
+  		incrementWeek:function(direction) {
+  			var contentView = Student.Controller.content,
+  				weeks = _.map(_.keys(Student.Controller.journalList), function(s){return(Number(s))}).sort(),
+  				index = weeks.indexOf(Student.Controller.currentWeekIndex);
+
+			if (direction === "right" && index < weeks.length -1){
+				index ++;
+				Student.Controller.currentWeekIndex = 0;
+			} else if (direction === "left" && index > 0) {
+				index --;
+				Student.Controller.currentWeekIndex = 0;
+				
+			}
+
+  			
+  			Student.Controller.currentWeekIndex = weeks[index];
+  			Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentWeekIndex].length;
+
+  			contentView.setWeekIndex(Student.Controller.currentWeekIndex);
+  			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+  			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentWeekIndex][Student.Controller.currentJournalIndex]);	
+  		},
 
 		toggleHelp:function() {
 			$("#welcome-window").slideToggle();

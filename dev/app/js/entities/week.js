@@ -98,9 +98,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	var getFrameById = function(id) {
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
-			frame = new FrameTable();
+			query = new Parse.Query(FrameTable);
 
-		frame.get(id, {
+		query.get(id, {
 			success:function(frame) {
 				def.resolve({
 					"content": 	frame.get('content'),
@@ -108,7 +108,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"type": 	frame.get('type'),
 					"week": 	frame.get('week'),
 					"weekItem": frame,
-					"template": makeTemplateObjectByName(obj.get('type'))
+					"template": makeTemplateObjectByName(frame.get('type'))
 				});
 			}
 		});
@@ -148,7 +148,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var def = $.Deferred();
 
 			initializeFrameTemplates().done(function() {
-				getFramesByIndex(id).done(function(frameCollection) {
+				getFrameById(id).done(function(frameCollection) {
 					def.resolve(frameCollection);
 				});
 			});

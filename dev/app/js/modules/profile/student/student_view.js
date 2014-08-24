@@ -72,15 +72,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		onShow:function() {
 			var userData = this.model.get('userData'),
 				journals = userData.journals;
-
-			Student.Controller.currentJournalIndex = 0;
-			Student.Controller.currentJournalWeek = 0;
-
-			this.trigger("studentProfile:getJournal");
-		},
-
-		displayJournal:function(){
-			console.log("showing journal");
 		}
 	});
 
@@ -138,9 +129,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 		events:{
 			"click .assignment_link": "handleAssignmentPopup",
-			"click .journal-entry": "removeJournalEntry",
-			"click .reload": "reloadJournals",
-			"click #dock_button": "handleDockButton"
+
+			"click .journal_object .arrow": "handleJournalClick",
+			"click .week_object .arrow": "handleWeekClick"
 		},
 
 	    scrollHandler: function(e) {
@@ -236,6 +227,36 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			return({profileitemClass: "profileitem" + index});
 	    },
 
+		/******************FRAMES***********************/
+	    //	journals
+	    setWeekIndex:function(week) {
+	    	$(".journal .week_number").text(week + 1);
+	    },
+
+	    setJournalIndex:function(current, max) {
+	    	$(".journal .journal_number").text(current + 1);
+	    	$(".journal .max_journal_number").text(max);
+	    },
+
+	    showJournal:function(journal) {
+	    	$(".journal_container .heading").html((journal.heading)?journal.heading:"");
+	    	$(".journal_container .text").html(journal.text);
+	    },
+
+	    handleJournalClick:function(e) {
+	    	e.preventDefault();
+	    	var direction = e.currentTarget.getAttribute("data-direction");
+
+			this.trigger("studentProfile:incrementJournal", direction);
+	    },
+
+	    handleWeekClick:function(e) {
+			e.preventDefault();
+	    	var direction = e.currentTarget.getAttribute("data-direction");
+
+	    	this.trigger("studentProfile:incrementWeek", direction);
+	    },
+
 		handleAssignmentPopup:function(e){
 			e.preventDefault();
 			var t = $(e.currentTarget);
@@ -248,22 +269,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		handleContentClick:function(e){
 			e.preventDefault();
 			DukeApp.trigger("weekExplorer:week");
-		},
-
-		removeJournalEntry:function(e){
-			e.preventDefault();
-			var t = $(e.currentTarget);
-			t.hide();
-		},
-
-		reloadJournals:function(e){
-			e.preventDefault();
-			$('.journal-entry').show();
-		},
-
-		handleDockButton:function(e){
-			e.preventDefault();
-			$("#welcome-window").slideToggle();
 		}
 	});
 
