@@ -132,10 +132,16 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   		incrementJournal:function(direction) {
   			var contentView = Student.Controller.content;
   			
-  			if (direction === "right" && Student.Controller.currentJournalIndex < Student.Controller.maxJournalIndex-1) {
+  			if (direction === "right") {
   				Student.Controller.currentJournalIndex ++;
-  			} else if (direction === "left" && Student.Controller.currentJournalIndex > 0) {
+  			} else if (direction === "left") {
   				Student.Controller.currentJournalIndex --;
+  			}
+
+  			if (Student.Controller.currentJournalIndex > Student.Controller.maxJournalIndex-1) {
+				Student.Controller.currentJournalIndex = 0;
+  			} else if (Student.Controller.currentJournalIndex < 0) {
+				Student.Controller.currentJournalIndex = Student.Controller.maxJournalIndex-1;
   			}
 
   			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
@@ -144,16 +150,21 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
   		incrementWeek:function(direction) {
   			var contentView = Student.Controller.content,
-  				weeks = _.map(_.keys(Student.Controller.journalList), function(s){return(Number(s))}).sort(),
+  				weeks = _.map(_.keys(Student.Controller.journalList), function(s){return(Number(s));}).sort(),
   				index = weeks.indexOf(Student.Controller.currentWeekIndex);
 
-			if (direction === "right" && index < weeks.length -1){
+			if (direction === "right"){
 				index ++;
-				Student.Controller.currentWeekIndex = 0;
-			} else if (direction === "left" && index > 0) {
+				Student.Controller.currentJournalIndex = 0;
+			} else if (direction === "left") {
 				index --;
-				Student.Controller.currentWeekIndex = 0;
-				
+				Student.Controller.currentJournalIndex = 0;	
+			}
+
+			if (index > weeks.length -1) {
+				index = 0;
+			} else if (index < 0) {
+				index = weeks.length-1;
 			}
 
   			
