@@ -12,17 +12,12 @@
     height: 60px;
     margin: 0 auto;
   }
-
-  .tagline {
-    color: @dukeblue;
-    float:left;
-    font-family: arial;
-    .rem( font-size, 2 );
-    line-height: 1.10;
-    padding: 8px 15px;
-    width: 120px;
-  }
   
+  a {
+    font-size: 18px;
+    top: 5px;
+  }
+
   a.active {
     color:#f67b00 !important;
     background-color: wheat !important;
@@ -30,5 +25,21 @@
 
   a:hover {
     color:#f67b00 !important;
+  }
+
+  #user_id {
+    z-index: 1000;
+    position: absolute;
+    top:5px;
+    right: 32px;
+    font-size: 10px;
+    color:grey;
+    border-bottom: 1px solid #eeeeee;
+
+    #username a {
+      font-weight:bold;
+      color:black;
+      font-size: 10px;
+    }
   }
 }

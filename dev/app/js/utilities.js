@@ -58,6 +58,10 @@ DukeApp.utils.getCurrentUser = function() {
 	return((DukeApp.utils.isGuest())?false:Parse.User.current());
 };
 
+DukeApp.utils.getCurrentUsername = function() {
+	return((DukeApp.utils.isGuest())?"Guest User":Parse.User.current().get('firstName') + ' ' + Parse.User.current().get('lastName') );
+};
+
 DukeApp.utils.getCurrentUserID = function() {
 	return((DukeApp.utils.isGuest())?false:Parse.User.current().id);
 };

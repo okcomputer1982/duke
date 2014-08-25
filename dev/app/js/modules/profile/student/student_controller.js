@@ -49,6 +49,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			layout.sidebar.show(sidebar);
 			layout.content.show(content);
 
+			DukeApp.commonViews.header.setUserName(DukeApp.utils.getCurrentUsername());
+			
 			sidebar.init();
 
 			//load indivisual profile items

@@ -35,7 +35,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			weekView.header.show(DukeApp.commonViews.header);
 			weekView.top.show(top);
-
+			DukeApp.commonViews.header.setUserName(DukeApp.utils.getCurrentUsername());
+			
 			top.init();
 			
 			//may need to get cleaned up on destruction

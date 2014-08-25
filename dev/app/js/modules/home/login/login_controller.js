@@ -5,7 +5,6 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 			DukeApp.utils.loadCommonViews();
 
 			var loginView = new Login.LayoutView(),
-				footer = new DukeApp.Components.Footer.FooterView(),
 				content = new Login.ContentView();
 
 			Login.Controller.contentView = content;
