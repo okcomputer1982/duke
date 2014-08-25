@@ -8,7 +8,7 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
         var adminType = DukeApp.utils.getCurrentAdminType();
 
         //check for current admin setting
-        if (adminType === DukeApp.utils.AdminTypes.student || adminType === DukeApp.utils.AdminTypes.guest) {
+        if (adminType === DukeApp.utils.AdminTypes.student || DukeApp.utils.isGuest()) {
             $("#admin_link").hide();
         }
 
@@ -23,9 +23,6 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
             "dashboard_link":"profile:student",
             "logout_link":"home:login",
         };
-
-        // $("a.active").removeClass("active");
-        // $(e.currentTarget).addClass("active");
 
         if (type === "coursework_link")
             DukeApp.trigger(links[type], 1, true);
