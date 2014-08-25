@@ -100,6 +100,8 @@ DukeApp.utils.login = function(obj) {
 			DukeApp.utils.setIsGuest(false);
 			DukeApp.utils.setIsLoggedIn(true);
 
+			console.log(DukeApp.utils.isGuest());
+
 			def.resolve(true);
 		},
 		error: function(user, error) {

@@ -15,7 +15,6 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
     },
 
     setUserName:function(name) {
-        console.log(name);
         $('#user_id #username a').text(name);
     },
 

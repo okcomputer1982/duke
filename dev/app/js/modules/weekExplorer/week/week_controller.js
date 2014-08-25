@@ -124,9 +124,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   		},
 
   		saveJournal:function(options) {
-  			console.log(DukeApp.utils.isGuest);
-  			
-  			if (DukeApp.utils.isGuest) {
+  			if (DukeApp.utils.isGuest()) {
   				alert("Sorry, can't save journals as a guest.");
 				return;
   			}
