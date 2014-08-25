@@ -123,6 +123,11 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   		},
 
   		saveJournal:function(options) {
+  			if (DukeApp.utils.isGuest) {
+  				alert("Sorry, can't save journals as a guest.");
+				return;
+  			}
+
   			var frameID = Week.Controller.frames.models[options.id].id;
 
   			var saveJournalPromise = DukeApp.request("save:journals:entities", {
