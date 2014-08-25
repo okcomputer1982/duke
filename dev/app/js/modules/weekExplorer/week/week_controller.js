@@ -77,6 +77,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 					collection:frames
 				});
 
+				Week.Controller.frames = frames;
+
 				views.weekView.content.show(views.content);
 				views.weekView.sidebar.show(views.sidebar);
 				views.sidebar.init(id);
@@ -91,6 +93,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:setActiveLink", Week.Controller.setActiveLink);
 				views.content.on("weekView:loadComic", Week.Controller.setComic);
 				views.content.on("weekView:loadGame", Week.Controller.setGame);
+				views.content.on("weekView:saveJournal", Week.Controller.saveJournal);
 			});
 		},
 
@@ -117,6 +120,18 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
   		setGame:function(options) {
   			DukeApp.Game.Show.Controller.init(options);
+  		},
+
+  		saveJournal:function(options) {
+  			var frameID = Week.Controller.frames.models[options.id].id;
+
+  			var saveJournalPromise = DukeApp.request("save:journals:entities", {
+  				frameID:frameID,
+  				userID:DukeApp.utils.getCurrentUserID(),
+  				text:options.text
+  			}).done(function() {
+  				alert("Journal Saved.");
+  			});
   		}
 	};
 });

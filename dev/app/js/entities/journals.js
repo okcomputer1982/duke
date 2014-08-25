@@ -22,10 +22,43 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
+		},
+
+		setJournal:function(journalObj) {
+			var def = $.Deferred(),
+				JournalTable = Parse.Object.extend("Journals"),
+				query = new Parse.Query(JournalTable);
+
+			query.equalTo("frameID", journalObj.frameID);
+			query.equalTo("userID", journalObj.userID);
+
+			query.find(function(results){
+				var journal;
+				
+				if (results.length === 0) {
+					journal = new JournalTable();
+				} else {
+					journal = results[0];
+				}
+
+				journal.save(journalObj,{
+					success:function(journal) {
+						def.resolve({success:true});
+					},
+					error:function(journal, error) {
+						def.resolve({success:false, error:error});
+					}
+				});
+			});
+			return(def.promise());
 		}
 	};
 
 	DukeApp.reqres.setHandler("journals:entities", function(userID) {
 		return API.getJournals(userID);
+	});
+
+	DukeApp.reqres.setHandler("save:journals:entities", function(journalObj) {
+		return API.setJournal(journalObj);
 	});
 });

@@ -81,6 +81,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				currentWeek = 0,
   				journalPromises = [];
 
+  			if (!journals || journals.length === 0)
+  				return;
+
   			//grab all the frame referenced within this users journals
   			_.map(journals, function(obj, idx){
   				journalPromises.push(DukeApp.request("frameById:entities", obj.frameID));
@@ -107,9 +110,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	  			Student.Controller.currentWeekIndex = Number(minWeek);
   				Student.Controller.currentJournalIndex = 0;
   				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentWeekIndex].length;
-
-
-  				console.log(journalList);
 
   				//set and init week index
   				contentView.setWeekIndex(Student.Controller.currentWeekIndex);

@@ -79,6 +79,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			
 			results.map(function(obj, id){
 				frameObjectList.push({
+					"id": 		obj.id,
 					"content": 	obj.get('content'),
 					"name": 	obj.get('name'),
 					"type": 	obj.get('type'),
@@ -103,6 +104,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		query.get(id, {
 			success:function(frame) {
 				def.resolve({
+					"id": 		frame.id,
 					"content": 	frame.get('content'),
 					"name": 	frame.get('name'),
 					"type": 	frame.get('type'),

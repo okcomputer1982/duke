@@ -15,7 +15,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	//frames
 	Week.OverviewView = Marionette.ItemView.extend({
 		template:templates["weekExplorer/week/frames/overview"],
-		className:function(){
+		className:function() {
 			return("section overview " + this.options.weekitemClass);
 		},
 		tagName:"section"
@@ -279,10 +279,11 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	        wrapup: 			Week.WrapupView
 	    },
 	    events:{
-	    	"click .cycle-up": 		"cycleHandler",
-	    	"click .cycle-down": 	"cycleHandler",
-	    	"click .show-comic": 	"handleComic",
-	    	"click .show-game": 	"handleGame"
+	    	"click .cycle-up": 			"cycleHandler",
+	    	"click .cycle-down": 		"cycleHandler",
+	    	"click .show-comic": 		"handleComic",
+	    	"click .show-game": 		"handleGame",
+	    	"click .journal .submit": 	"handleJournalSubmit"
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons
@@ -365,12 +366,23 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    	//cache scroll positions of all frames
 	    	var frames = $('section');
-	    	
 	    	Week.scrollPos = [];
+	    	
+	    	tinymce.init({
+	    		selector:'textarea',
+	    		plugins: [
+				     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+				     "visualblocks visualchars",
+				     "table contextmenu directionality emoticons template paste textcolor"
+				],
+	    		toolbar: "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l"
+	    	});
 
-	    	_.map(frames, function(frame){
+	    	_.map(frames, function(frame, idx){
 	    		var itemClass = $(frame).attr('class').split(' ')[2],
 	    			linkId = Number(itemClass.replace("weekitem", ""));
+
+	    		frame.setAttribute('data-index', idx);
 
 	    		Week.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
@@ -393,6 +405,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			return({weekitemClass: "weekitem" + index});
 	    },
 
+	    /******************Frame Items***********************/
 	    //show comic backdrop
 	    handleComic: function(e){
 	    	e.preventDefault();
@@ -405,6 +418,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	e.preventDefault();
 	    	var gameId = $(e.currentTarget).data("id");
 	    	this.trigger("weekView:loadGame", {gameId:gameId});
+	    },
+
+	    handleJournalSubmit:function(e) {
+	    	e.preventDefault();
+	    	
+	    	var target = $(e.currentTarget);
+	    	tinyMCE.triggerSave();
+	    	this.trigger("weekView:saveJournal", {id:target.closest("section").attr("data-index"), text:target.prev().val()});
 	    }
 	});
 });

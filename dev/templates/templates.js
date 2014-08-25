@@ -613,7 +613,7 @@ function program1(depth0,data) {
   buffer += "</p>\n\n		<ol class=\"objectives\">\n	      ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	    </ol>\n\n	    <textarea placeholder=\"\"></textarea>\n    </div>\n	\n</div>";
+  buffer += "\n	    </ol>\n\n	    <textarea class=\"journal_text\" placeholder=\"\"></textarea>\n    </div>\n	\n</div>";
   return buffer;
   });
 
@@ -692,7 +692,7 @@ function program1(depth0,data) {
   buffer += "</p>\n		\n		<ol class=\"objectives\">\n	      ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	    </ol>\n	    \n		<textarea name=\"\" id=\"\" cols=\"20\" rows=\"13\"></textarea>\n		    <button type=\"submit\" class=\"btn btn-large btn-primary\">Submit</button>\n		    <span class=\"space\">OR</span>\n		    <a href=\"\" class=\"upload\">Upload a text file</a>\n	</div>\n</div>";
+  buffer += "\n	    </ol>\n	    \n		<textarea name=\"\" id=\"\" cols=\"20\" rows=\"13\"></textarea>\n		    <button type=\"submit\" class=\"submit btn btn-large btn-primary\">Submit</button>\n		    <!-- <span class=\"space\">OR</span>\n		    <a href=\"\" class=\"upload\">Upload a text file</a> -->\n	</div>\n</div>";
   return buffer;
   });
 
