@@ -22,3 +22,12 @@ Handlebars.registerHelper('hasJournals', function(options) {
     	return options.inverse(this);
   	}
 });
+
+Handlebars.quizQuestionIndex = 0;
+Handlebars.registerHelper('setQuizIndex', function(options) {
+	quizQuestionIndex = this.id;
+});
+
+Handlebars.registerHelper('getQuizIndex', function(options) {
+	return(quizQuestionIndex);
+});

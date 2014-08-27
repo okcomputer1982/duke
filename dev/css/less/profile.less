@@ -382,16 +382,22 @@
 	}
 	
 	.grades {
+		.inner-wrap {
+			overflow-y:hidden;
+		}
+
 		.assignment_section {
 			margin-top: 80px;
-
+			overflow-y: scroll;
+	
 			ul {
+				padding-left: 10px;
 				list-style: none;
 				width:100%;
 			}
 			
 			.assign_name {
-				font-size: 18pt;
+				font-size: 12pt;
 				font-weight: bold;
 			}
 
@@ -410,7 +416,6 @@
 				padding-top: 29px;
 				font-size: 11pt;
 				border-radius: 5px;
-				border: 2px solid black;
 
 				&:hover {
 					background-color: black;
@@ -427,8 +432,11 @@
 			margin-left: 60px;
 			margin-top: 80px;
 
+			overflow-y: scroll;
+
 			ul {
 				list-style-type: none;
+				padding-left: 10px;
 				width:100%;
 
 				li {

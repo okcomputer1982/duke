@@ -63,6 +63,30 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		tagName:"section"
 	});
 
+	Student.GradesAssignmentItemView = Marionette.ItemView.extend({
+		template:templates['profile/student/frames/gradesAssignItem'],
+		tagName: 'li'
+	});
+
+	Student.GradesAssignmentListView = Marionette.CompositeView.extend({
+		template:templates['profile/student/frames/gradesAssignList'],
+		itemViewContainer:"#assignmentList",
+		itemView:Student.GradesAssignmentItemView
+	});
+
+	
+	Student.GradesQuizItemView = Marionette.ItemView.extend({
+		template:templates['profile/student/frames/gradesQuizItem'],
+		tagName: 'li'
+	});
+
+	Student.GradesQuizListView = Marionette.CompositeView.extend({
+		template:templates['profile/student/frames/gradesQuizList'],
+		itemViewContainer:"#quizList",
+		itemView:Student.GradesQuizItemView
+	});
+	
+
 	Student.JournalItemView = Marionette.ItemView.extend({
 		template:templates['profile/student/frames/journal'],
 		className:function(){
@@ -254,7 +278,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			e.preventDefault();
 	    	var direction = e.currentTarget.getAttribute("data-direction");
 
-	    	this.trigger("studentProfile:incrementWeek", direction);
+	    	//will need to make context sensitive now....goodie
+	    	this.trigger("studentProfile:incrementWeek", direction, "journal");
 	    },
 
 		handleAssignmentPopup:function(e){

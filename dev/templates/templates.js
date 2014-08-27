@@ -329,7 +329,80 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n      <p>Grades</p>\n\n      <div class=\"week_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n          Week <span class=\"week_number\">1</span>\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n      \n  </div>\n\n  <div class=\"col-md-4 assignment_section dashboard_long_box\">\n    <p class=\"heading\">Assignments</p>\n    \n    <ul>\n\n      <li>\n        <div class=\"assign_container\">\n          <div class=\"col-md-8\">\n            <span class=\"assign_name\">Assignment 1</span><br/>\n            <span class=\"assign_desc\">Description of Assignment</span><br/>\n           <span class=\"assign_score\">50/100</span>\n          </div>\n\n          <div class=\"col-md-4\">\n            <span class=\"assign_link\"><a href=\"#\">See Feedback</a></span>\n          </div>\n          \n        </div>\n      </li>\n\n      <li>\n        <div class=\"assign_container\">\n          <div class=\"col-md-8\">\n            <span class=\"assign_name\">Assignment 1</span><br/>\n            <span class=\"assign_desc\">Description of Assignment</span><br/>\n           <span class=\"assign_score\">50/100</span>\n          </div>\n\n          <div class=\"col-md-4\">\n            <span class=\"assign_link\"><a href=\"#\">See Feedback</a></span>\n          </div>\n          \n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <div class=\"col-md-4 quiz_section dashboard_box\">\n    <p class=\"heading\">Quizes</p>\n    <ul>\n      <li><span class=\"content_name\">Quiz 1:</span> <span class=\"content_amount\">40/50</span></li>\n\n      <li><span class=\"content_name\">Quiz 2:</span> <span class=\"content_amount\">45/50</span></li>\n\n      <li><span class=\"content_name\">Quiz 3:</span> <span class=\"content_amount\">48/5</span></li>\n\n    </ul>\n  </div>\n</div>";
+  return "<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n      <p>Grades</p>\n\n      <div class=\"week_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n          Week <span class=\"week_number\">1</span>\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n      \n  </div>\n\n  <div class=\"col-md-4 assignment_section dashboard_long_box\">\n    <div id=\"assignments\"></div>\n  </div>\n\n  <div class=\"col-md-4 quiz_section dashboard_box\">\n    <div id=\"quizes\"></div>\n  </div>\n</div>";
+  });
+
+this["templates"]["profile/student/frames/gradesAssignItem"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function", self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n   		<span class=\"assign_score\">";
+  if (helper = helpers.grade) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.grade); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "/100</span>\n   	";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "\n   		<span class=\"assign_score\">Not Graded</span>\n   	";
+  }
+
+  buffer += "<div class=\"row assign_container\">\n  <div class=\"col-md-8\">\n    <span class=\"assign_name\">";
+  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span><br/>\n    <!-- <span class=\"assign_desc\">";
+  if (helper = helpers.description) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.description); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span><br/> -->\n    ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.grade), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n\n  <div class=\"col-md-4\">\n    <span class=\"assign_link\"><a href=\"#\">See Feedback</a></span>\n  </div>\n</div>";
+  return buffer;
+  });
+
+this["templates"]["profile/student/frames/gradesAssignList"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<p class=\"heading\">Assignments</p>\n<ul id=\"assignmentList\">\n	\n</ul>";
+  });
+
+this["templates"]["profile/student/frames/gradesQuizItem"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function";
+
+
+  buffer += "<span class=\"content_name\">";
+  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ":</span> \n<span class=\"content_amount\">";
+  if (helper = helpers.grade) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.grade); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "/100</span>";
+  return buffer;
+  });
+
+this["templates"]["profile/student/frames/gradesQuizList"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<p class=\"heading\">Quizes</p>\n<ul id=\"quizList\">\n	\n</ul>";
   });
 
 this["templates"]["profile/student/frames/help"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -557,7 +630,7 @@ function program1(depth0,data) {
   buffer += "</p>\n		 \n		 <ul>\n		 	";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n		 </ul>\n	    <textarea placeholder=\"\"></textarea>\n    </div>\n</div>";
+  buffer += "\n		 </ul>\n		 \n	    <textarea placeholder=\"\"></textarea>\n\n	    <button type=\"submit\" class=\"submit btn btn-large btn-primary\">Submit</button>\n    </div>\n</div>";
   return buffer;
   });
 
@@ -692,7 +765,7 @@ function program1(depth0,data) {
   buffer += "</p>\n		\n		<ol class=\"objectives\">\n	      ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n	    </ol>\n	    \n		<textarea name=\"\" id=\"\" cols=\"20\" rows=\"13\"></textarea>\n		    <button type=\"submit\" class=\"submit btn btn-large btn-primary\">Submit</button>\n		    <!-- <span class=\"space\">OR</span>\n		    <a href=\"\" class=\"upload\">Upload a text file</a> -->\n	</div>\n</div>";
+  buffer += "\n	    </ol>\n	    \n		<textarea name=\"\" id=\"\" cols=\"20\" rows=\"13\"></textarea>\n		<button type=\"submit\" class=\"submit btn btn-large btn-primary\">Submit</button>\n	</div>\n</div>";
   return buffer;
   });
 
@@ -797,10 +870,54 @@ function program3(depth0,data) {
 this["templates"]["weekExplorer/week/frames/quiz"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1, helper;
+  buffer += "\n		";
+  if (helper = helpers.setQuizIndex) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.setQuizIndex); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\n\n		<div class=\"quizItem\" data-index=\"";
+  if (helper = helpers.getQuizIndex) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.getQuizIndex); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\">\n			<p>";
+  stack1 = ((stack1 = (depth0 && depth0.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n			";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.responses), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n		</div>\n		<hr/>\n	";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n				<input type=\"radio\" name=\"quiz";
+  if (helper = helpers.getQuizIndex) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.getQuizIndex); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" data-index=\"";
+  if (helper = helpers.getQuizIndex) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.getQuizIndex); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" value=\"this\">";
+  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "<br>\n			";
+  return buffer;
+  }
 
-
-  return "<h1>Quiz</h1>\n<div class=\"inner-wrap\">\n\n<div class=\"quizItem\" data-id=\"0\">\n	<h2 class=\"subHeading\">Quiz 1</h2>\n	<form>\n		<label for=\"male\">Question 1</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		\n		<label for=\"male\">Question 2</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		<input type=\"submit\" value=\"Submit\">\n	</form>\n</div>\n\n<div class=\"quizItem\" data-id=\"1\">\n	<h2 class=\"subHeading\">Quiz 2</h2>\n	<form>\n		<label for=\"male\">Question 1a</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		\n		<label for=\"male\">Question 2a</label><br/>\n		<input type=\"radio\" name=\"q1\" data-correct=\"true\" value=\"a1\">A1<br>\n		<input type=\"radio\" name=\"q1\" value=\"a2\">A2<br>\n		<input type=\"submit\" value=\"Submit\">\n	</form>\n</div>\n\n</div>";
+  buffer += "<h1>Quiz</h1>\n<div class=\"inner-wrap\">\n\n<h2 class=\"subHeading\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h2>\n\n<div class=\"quiz\"></div>\n	";
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.questions), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n	<button type=\"submit\" class=\"submit btn btn-large btn-primary\">Submit</button>\n</div>";
+  return buffer;
   });
 
 this["templates"]["weekExplorer/week/frames/video"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

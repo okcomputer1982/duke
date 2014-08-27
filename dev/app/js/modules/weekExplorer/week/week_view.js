@@ -162,8 +162,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		tagName:"section",
 
 		onShow:function() {
-			$(".quizItem").hide();
-			$(".quizItem[data-id=" +  this.model.get('content').id + "]").show();
+			console.log(this.model);
 		}
 	});
 

@@ -1,32 +1,20 @@
 <h1>Quiz</h1>
 <div class="inner-wrap">
 
-<div class="quizItem" data-id="0">
-	<h2 class="subHeading">Quiz 1</h2>
-	<form>
-		<label for="male">Question 1</label><br/>
-		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
-		<input type="radio" name="q1" value="a2">A2<br>
-		
-		<label for="male">Question 2</label><br/>
-		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
-		<input type="radio" name="q1" value="a2">A2<br>
-		<input type="submit" value="Submit">
-	</form>
-</div>
+<h2 class="subHeading">{{{content.title}}}</h2>
 
-<div class="quizItem" data-id="1">
-	<h2 class="subHeading">Quiz 2</h2>
-	<form>
-		<label for="male">Question 1a</label><br/>
-		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
-		<input type="radio" name="q1" value="a2">A2<br>
-		
-		<label for="male">Question 2a</label><br/>
-		<input type="radio" name="q1" data-correct="true" value="a1">A1<br>
-		<input type="radio" name="q1" value="a2">A2<br>
-		<input type="submit" value="Submit">
-	</form>
-</div>
+<div class="quiz"></div>
+	{{#each content.questions}}
+		{{setQuizIndex}}
 
+		<div class="quizItem" data-index="{{getQuizIndex}}">
+			<p>{{{this.title}}}</p>
+			{{#each this.responses}}
+				<input type="radio" name="quiz{{getQuizIndex}}" data-index="{{getQuizIndex}}" value="this">{{{this}}}<br>
+			{{/each}}
+		</div>
+		<hr/>
+	{{/each}}
+
+	<button type="submit" class="submit btn btn-large btn-primary">Submit</button>
 </div>

@@ -1,0 +1,15 @@
+<div class="row assign_container">
+  <div class="col-md-8">
+    <span class="assign_name">{{{title}}}</span><br/>
+    <!-- <span class="assign_desc">{{{description}}}</span><br/> -->
+    {{#if grade}}
+   		<span class="assign_score">{{{grade}}}/100</span>
+   	{{else}}
+   		<span class="assign_score">Not Graded</span>
+   	{{/if}}
+  </div>
+
+  <div class="col-md-4">
+    <span class="assign_link"><a href="#">See Feedback</a></span>
+  </div>
+</div>
