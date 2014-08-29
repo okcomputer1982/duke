@@ -25,45 +25,47 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
-		}
+		},
 
-		// getAssignment:function(journalObj) {
-		// 	var def = $.Deferred(),
-		// 		JournalTable = Parse.Object.extend("Journals"),
-		// 		query = new Parse.Query(JournalTable);
+		setAssignment:function(assignmentObj) {
+			var def = $.Deferred(),
+				AssignmentTable = Parse.Object.extend("Assignments"),
+				query = new Parse.Query(AssignmentTable);
 
-		// 	query.equalTo("frameID", journalObj.frameID);
-		// 	query.equalTo("userID", journalObj.userID);
+			assignment.isGraded = false;
+			
+			query.equalTo("frameID", assignmentObj.frameID);
+			query.equalTo("userID", assignmentObj.userID);
 
-		// 	query.find(function(results){
-		// 		var journal;
+			query.find(function(results){
+				var assignment;
 				
-		// 		if (results.length === 0) {
-		// 			journal = new JournalTable();
-		// 		} else {
-		// 			journal = results[0];
-		// 		}
+				if (results.length === 0) {
+					assignment = new AssignmentTable();
+				} else {
+					assignment = results[0];
+				}
 
-		// 		journal.save(journalObj,{
-		// 			success:function(journal) {
-		// 				def.resolve({success:true});
-		// 			},
-		// 			error:function(journal, error) {
-		// 				def.resolve({success:false, error:error});
-		// 			}
-		// 		});
-		// 	});
-		// 	return(def.promise());
-		// }
+				assignment.save(assignmentObj,{
+					success:function(journal) {
+						def.resolve({success:true});
+					},
+					error:function(journal, error) {
+						def.resolve({success:false, error:error});
+					}
+				});
+			});
+			return(def.promise());
+		}
 	};
 
 	DukeApp.reqres.setHandler("assignments:entities", function(userID) {
 		return API.getAssignments(userID);
 	});
 
-	// DukeApp.reqres.setHandler("save:assignments:entities", function(assignmentObj) {
-	// 	return API.setAssignment(assignmentObj);
-	// });
+	DukeApp.reqres.setHandler("save:assignments:entities", function(assignmentObj) {
+		return API.setAssignment(assignmentObj);
+	});
 
 	// DukeApp.reqres.setHandler("save:assignmentGrade:entities", function(assignmentObj) {
 	// 	return API.setAssignmentGrade(assignmentObj);

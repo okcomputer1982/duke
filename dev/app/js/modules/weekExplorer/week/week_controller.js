@@ -95,6 +95,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:loadComic", Week.Controller.setComic);
 				views.content.on("weekView:loadGame", Week.Controller.setGame);
 				views.content.on("weekView:saveJournal", Week.Controller.saveJournal);
+				views.content.on("weekView:saveAssignment", Week.Controller.saveAssignment);
 			});
 		},
 
@@ -137,6 +138,23 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				text:options.text
   			}).done(function() {
   				alert("Journal Saved.");
+  			});
+  		},
+
+  		saveAssignment:function(options) {
+  			if (DukeApp.utils.isGuest()) {
+  				alert("Sorry, can't save assignments as a guest.");
+				return;
+  			}
+
+  			var frameID = Week.Controller.frames.models[options.id].id;
+
+  			var saveAssignmentPromise = DukeApp.request("save:assignments:entities", {
+  				frameID:frameID,
+  				userID:DukeApp.utils.getCurrentUserID(),
+  				text:options.text
+  			}).done(function() {
+  				alert("Assignment Saved.");
   			});
   		}
 	};

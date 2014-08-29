@@ -159,11 +159,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		className:function(){
 			return("section quiz " + this.options.weekitemClass);
 		},
-		tagName:"section",
-
-		onShow:function() {
-			console.log(this.model);
-		}
+		tagName:"section"
 	});
 
 	Week.WrapupView = Marionette.ItemView.extend({
@@ -278,11 +274,12 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	        wrapup: 			Week.WrapupView
 	    },
 	    events:{
-	    	"click .cycle-up": 			"cycleHandler",
-	    	"click .cycle-down": 		"cycleHandler",
-	    	"click .show-comic": 		"handleComic",
-	    	"click .show-game": 		"handleGame",
-	    	"click .journal .submit": 	"handleJournalSubmit"
+	    	"click .cycle-up": 				"cycleHandler",
+	    	"click .cycle-down": 			"cycleHandler",
+	    	"click .show-comic": 			"handleComic",
+	    	"click .show-game": 			"handleGame",
+	    	"click .journal .submit": 		"handleJournalSubmit",
+	    	"click .assignment .submit": 	"handleAssignmentSubmit"
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons
@@ -425,6 +422,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	var target = $(e.currentTarget);
 	    	tinyMCE.triggerSave();
 	    	this.trigger("weekView:saveJournal", {id:target.closest("section").attr("data-index"), text:target.prev().val()});
+	    },
+
+	    handleAssignmentSubmit:function(e) {
+	    	e.preventDefault();
+			
+	    	var target = $(e.currentTarget);
+	    	tinyMCE.triggerSave();
+	    	this.trigger("weekView:saveAssignment", {id:target.closest("section").attr("data-index"), text:target.prev().val()});
 	    }
 	});
 });

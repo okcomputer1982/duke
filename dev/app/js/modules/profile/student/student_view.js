@@ -152,8 +152,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 		events:{
-			"click .assignment_link": "handleAssignmentPopup",
-
 			"click .journal_object .arrow": "handleJournalClick",
 			"click .week_object .arrow": "handleWeekClick"
 		},
@@ -251,8 +249,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			return({profileitemClass: "profileitem" + index});
 	    },
 
-		/******************FRAMES***********************/
-	    //	journals
+		/******************JOURNAL FRAMES***********************/
 	    setWeekIndex:function(week, type) {
 	    	switch(type){
 	    		case("journals"):
@@ -290,14 +287,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	this.trigger("studentProfile:incrementWeek", direction, t);
 	    },
 
-		handleAssignmentPopup:function(e){
-			e.preventDefault();
-			
-			var assignType = t.attr("data-assignType");
-			var assignId = t.attr("data-assignId");
+	    /******************GRADE FRAMES***********************/
 
-			this.trigger("studentProfile:showAssignment", {id:assignId, type:assignType});
-		},
+
 
 		handleContentClick:function(e){
 			e.preventDefault();
