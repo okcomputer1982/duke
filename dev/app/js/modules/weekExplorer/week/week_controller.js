@@ -96,6 +96,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:loadGame", Week.Controller.setGame);
 				views.content.on("weekView:saveJournal", Week.Controller.saveJournal);
 				views.content.on("weekView:saveAssignment", Week.Controller.saveAssignment);
+				views.content.on("weekView:saveQuiz", Week.Controller.saveQuiz);
 			});
 		},
 
@@ -155,6 +156,23 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				text:options.text
   			}).done(function() {
   				alert("Assignment Saved.");
+  			});
+  		},
+
+  		saveQuiz:function(options) {
+  			if (DukeApp.utils.isGuest()) {
+  				alert("Sorry, can't save quiz as a guest.");
+				return;
+  			}
+
+  			var frameID = Week.Controller.frames.models[options.id].id;
+
+  			var saveQuizPromise = DukeApp.request("save:quizes:entities", {
+  				frameID:frameID,
+  				userID:DukeApp.utils.getCurrentUserID(),
+  				response:options.response
+  			}).done(function() {
+  				alert("Quiz Submitted.");
   			});
   		}
 	};

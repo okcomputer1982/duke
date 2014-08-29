@@ -42,19 +42,21 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				
 				if (results.length === 0) {
 					assignment = new AssignmentTable();
+					
+					assignment.save(assignmentObj,{
+						success:function(journal) {
+							def.resolve({success:true});
+						},
+						error:function(journal, error) {
+							def.resolve({success:false, error:error});
+						}
+					});
 				} else {
-					assignment = results[0];
+					alert("Assignment already submitted.");
+					def.response({success:false});
 				}
-
-				assignment.save(assignmentObj,{
-					success:function(journal) {
-						def.resolve({success:true});
-					},
-					error:function(journal, error) {
-						def.resolve({success:false, error:error});
-					}
-				});
 			});
+
 			return(def.promise());
 		}
 	};

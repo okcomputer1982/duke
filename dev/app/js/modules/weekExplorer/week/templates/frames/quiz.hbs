@@ -9,8 +9,9 @@
 
 		<div class="quizItem" data-index="{{getQuizIndex}}">
 			<p>{{{this.title}}}</p>
+			{{setResponseIndex}}
 			{{#each this.responses}}
-				<input type="radio" name="quiz{{getQuizIndex}}" data-index="{{getQuizIndex}}" value="this">{{{this}}}<br>
+				<input type="radio" class="response" name="quiz{{getQuizIndex}}" data-index="{{getResponseIndex}}" value="this">{{{this}}}<br>
 			{{/each}}
 		</div>
 		<hr/>

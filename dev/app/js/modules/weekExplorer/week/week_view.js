@@ -279,7 +279,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	"click .show-comic": 			"handleComic",
 	    	"click .show-game": 			"handleGame",
 	    	"click .journal .submit": 		"handleJournalSubmit",
-	    	"click .assignment .submit": 	"handleAssignmentSubmit"
+	    	"click .assignment .submit": 	"handleAssignmentSubmit",
+	    	"click .quiz .submit": 			"handleQuizSubmit"
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons
@@ -430,6 +431,24 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	var target = $(e.currentTarget);
 	    	tinyMCE.triggerSave();
 	    	this.trigger("weekView:saveAssignment", {id:target.closest("section").attr("data-index"), text:target.prev().val()});
+	    },
+
+	    handleQuizSubmit:function(e) {
+	    	e.preventDefault();
+	    	var target = $(e.currentTarget),
+	    		quizItems = target.parent().find(".quizItem"),
+	    		responseItems = target.parent().find("input:checked"),
+	    		responses = [];
+
+	    	if (quizItems.length !== responseItems.length) {
+	    		alert("Please complete all the quiz items to submit.");
+	    	} else {
+	    		_.each(responseItems, function(obj, idx){
+	    			responses.push(Number(obj.getAttribute("data-index")) - 1);
+	    		});
+
+	    		this.trigger("weekView:saveQuiz", {id:target.closest("section").attr("data-index"), response:responses});
+	    	}
 	    }
 	});
 });

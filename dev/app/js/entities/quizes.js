@@ -22,45 +22,48 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
-		}
+		},
 
-		// getAssignment:function(journalObj) {
-		// 	var def = $.Deferred(),
-		// 		JournalTable = Parse.Object.extend("Journals"),
-		// 		query = new Parse.Query(JournalTable);
+		setQuiz:function(quizObj) {
+			var def = $.Deferred(),
+				QuizTable = Parse.Object.extend("Quizes"),
+				query = new Parse.Query(QuizTable);
 
-		// 	query.equalTo("frameID", journalObj.frameID);
-		// 	query.equalTo("userID", journalObj.userID);
+			query.equalTo("frameID", quizObj.frameID);
+			query.equalTo("userID", quizObj.userID);
 
-		// 	query.find(function(results){
-		// 		var journal;
+			query.find(function(results){
+				var quiz;
 				
-		// 		if (results.length === 0) {
-		// 			journal = new JournalTable();
-		// 		} else {
-		// 			journal = results[0];
-		// 		}
+				if (results.length === 0) {
+					quiz = new QuizTable();
+					
+					quiz.save(quizObj,{
+						success:function(journal) {
+							def.resolve({success:true});
+						},
+						error:function(journal, error) {
+							def.resolve({success:false, error:error});
+						}
+					});
+				} else {
+					quiz = results[0];
+					alert("Quiz already submitted.");
+					def.response({success:false});
+				}
+			});
 
-		// 		journal.save(journalObj,{
-		// 			success:function(journal) {
-		// 				def.resolve({success:true});
-		// 			},
-		// 			error:function(journal, error) {
-		// 				def.resolve({success:false, error:error});
-		// 			}
-		// 		});
-		// 	});
-		// 	return(def.promise());
-		// }
+			return(def.promise());
+		}
 	};
 
 	DukeApp.reqres.setHandler("quizes:entities", function(userID) {
 		return API.getQuizes(userID);
 	});
 
-	// DukeApp.reqres.setHandler("save:assignments:entities", function(assignmentObj) {
-	// 	return API.setAssignment(assignmentObj);
-	// });
+	DukeApp.reqres.setHandler("save:quizes:entities", function(quizObj) {
+		return API.setQuiz(quizObj);
+	});
 
 	// DukeApp.reqres.setHandler("save:assignmentGrade:entities", function(assignmentObj) {
 	// 	return API.setAssignmentGrade(assignmentObj);

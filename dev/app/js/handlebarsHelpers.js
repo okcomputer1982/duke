@@ -31,3 +31,13 @@ Handlebars.registerHelper('setQuizIndex', function(options) {
 Handlebars.registerHelper('getQuizIndex', function(options) {
 	return(quizQuestionIndex);
 });
+
+Handlebars.quizResponseIndex = 0;
+Handlebars.registerHelper('setResponseIndex', function(options) {
+  quizResponseIndex = 0;
+});
+
+Handlebars.registerHelper('getResponseIndex', function(options) {
+  quizResponseIndex += 1;
+  return(quizResponseIndex);
+});
