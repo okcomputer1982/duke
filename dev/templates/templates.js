@@ -431,7 +431,7 @@ function program3(depth0,data) {
   return "\n      <p class=\"heading\">You do not have any journals currently saved.</p>\n    ";
   }
 
-  buffer += "<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n    <p>Journals</p>\n\n    <div class=\"week_object\">\n      <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n        Week <span class=\"week_number\">1</span>\n      <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n    </div>\n    \n  </div>\n\n  <div class=\"journal_container\">\n    ";
+  buffer += "<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n    <p>Journals</p>\n\n    <div class=\"week_object\">\n      <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n        Week <span class=\"week_number\"></span>\n      <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n    </div>\n    \n  </div>\n\n  <div class=\"journal_container\">\n    ";
   options={hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data}
   if (helper = helpers.hasJournals) { stack1 = helper.call(depth0, options); }
   else { helper = (depth0 && depth0.hasJournals); stack1 = typeof helper === functionType ? helper.call(depth0, options) : helper; }

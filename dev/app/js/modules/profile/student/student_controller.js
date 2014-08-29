@@ -164,11 +164,11 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				var minWeek = that.getMinWeek(journalList);
   				Student.Controller.journalList = journalList;
 	  			Student.Controller.currentJournalIndex = 0;
-	  			Student.Controller.currentJournalWeekIndex = minWeek;
+	  			Student.Controller.currentJournalWeekIndex = Number(minWeek);
   				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentJournalWeekIndex].length;
 
   				//set and init week index
-  				contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex);
+  				contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, "journals");
 
   				//set and init journal index
   				contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
@@ -201,33 +201,43 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   		},
 
   		incrementWeek:function(direction, type) {
+  			var contentView = Student.Controller.content,
+  				that = this,
+  				weeks = _.map(_.keys((type==="journals")?Student.Controller.journalList:Student.Controller.gradeList), function(s){return(Number(s));}).sort(),
+  				index = weeks.indexOf((type==="journals")?Student.Controller.currentJournalWeekIndex:Student.Controller.currentGradeWeekIndex);
 
-  			if (type === "Journal") {
-	  			var contentView = Student.Controller.content,
-	  				weeks = _.map(_.keys(Student.Controller.journalList), function(s){return(Number(s));}).sort(),
-	  				index = weeks.indexOf(Student.Controller.currentJournalWeekIndex);
-
-				if (direction === "right"){
-					index ++;
+			
+			if (direction === "right"){
+				index ++;
+				if (type === "journals") 
 					Student.Controller.currentJournalIndex = 0;
-				} else if (direction === "left") {
-					index --;
+			} else if (direction === "left") {
+				index --;
+				if (type === "journals") 
 					Student.Controller.currentJournalIndex = 0;	
-				}
+			}
 
-				if (index > weeks.length -1) {
-					index = 0;
-				} else if (index < 0) {
-					index = weeks.length-1;
-				}
+			if (index > weeks.length -1) {
+				index = 0;
+			} else if (index < 0) {
+				index = weeks.length-1;
+			}
 
-	  			Student.Controller.currentJournalWeekIndex = weeks[index];
-	  			Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
+			switch (type){
+				case("journals"):
+  					Student.Controller.currentJournalWeekIndex = weeks[index];
+  					Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
 
-	  			contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex);
-	  			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-	  			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
-	  		}
+  					contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, type);
+  					contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+  					contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+  					break;
+  				case("grades"):
+  					Student.Controller.currentGradeWeekIndex = weeks[index];
+  					contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
+  					Student.Controller.displayGrades();
+  					break;
+  			}
   		},
 
   		//***************Grade Frame***************//
@@ -279,25 +289,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				Student.Controller.currentGradeWeekIndex = Number(minWeek);
 	  			that.displayGrades();
 
-				contentView.setGradeWeekIndex(Student.Controller.currentGradeWeekIndex);
+	  			var contentView = Student.Controller.content;
+				that.displayGrades();
 	  		});
-
-  		
-  		
-  		
-
-  		// 		//set and init week index
-  		
-
-  		// 		//set and init journal index
-  		// 		contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-
-  		// 		//display current journal
-				// contentView.showJournal(Student.Controller.journalList[Student.Controller.currentWeekIndex][Student.Controller.currentJournalIndex]);
-
-				// contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
-				// contentView.on("studentProfile:incrementWeek", that.incrementWeek);
-  		// 	});
   		},
 
   		displayGrades:function() {
@@ -317,7 +311,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   			var aListView = new Student.GradesAssignmentListView({
   				collection:assignments
   			});
-  			
+
   			aListView.render();
   			$("#assignments").html(aListView.el);
 
@@ -332,6 +326,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				collection:quizes
   			});
   			
+  			console.log(currentAssignments);
+  			console.log(currentQuizes);
+
   			qListView.render();
   			$("#quizes").html(qListView.el);
   		},

@@ -253,8 +253,16 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 		/******************FRAMES***********************/
 	    //	journals
-	    setWeekIndex:function(week) {
-	    	$(".journal .week_number").text(week + 1);
+	    setWeekIndex:function(week, type) {
+	    	switch(type){
+	    		case("journals"):
+	    			$(".journal .week_number").text(week + 1);
+	    			break;
+	    		case("grades"):
+	    			$(".grades .week_number").text(week + 1);
+	    			break;
+	    	} 
+	    	
 	    },
 
 	    setJournalIndex:function(current, max) {
@@ -275,16 +283,16 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    },
 
 	    handleWeekClick:function(e) {
-			e.preventDefault();
+	    	e.preventDefault();
 	    	var direction = e.currentTarget.getAttribute("data-direction");
+	    	var t = $(e.currentTarget).parent().prev().text().toLowerCase();
 
-	    	//will need to make context sensitive now....goodie
-	    	this.trigger("studentProfile:incrementWeek", direction, "journal");
+	    	this.trigger("studentProfile:incrementWeek", direction, t);
 	    },
 
 		handleAssignmentPopup:function(e){
 			e.preventDefault();
-			var t = $(e.currentTarget);
+			
 			var assignType = t.attr("data-assignType");
 			var assignId = t.attr("data-assignId");
 
