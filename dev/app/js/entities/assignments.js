@@ -17,7 +17,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						"text":obj.get('text'),
 						"isGraded":obj.get('isGraded'),
 						"grade":obj.get('grade'),
-						"feedback":obj.get('grade')
+						"feedback":obj.get('feedback')
 					});
 				});
 

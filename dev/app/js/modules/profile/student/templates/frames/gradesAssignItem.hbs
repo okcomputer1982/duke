@@ -10,6 +10,8 @@
   </div>
 
   <div class="col-md-4">
-    <span class="assign_link"><a href="#">See Feedback</a></span>
+    {{#if grade}}
+      <span class="assign_link"><a class="feedback_button" data-toggle="popover" title="Teacher Feedback" data-container=".grades" data-placement="right" data-content="{{{feedback}}}">See Feedback</a></span>
+    {{/if}}
   </div>
 </div>

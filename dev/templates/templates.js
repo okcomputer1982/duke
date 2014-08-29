@@ -354,6 +354,17 @@ function program3(depth0,data) {
   return "\n   		<span class=\"assign_score\">Not Graded</span>\n   	";
   }
 
+function program5(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n      <span class=\"assign_link\"><a class=\"feedback_button\" data-toggle=\"popover\" title=\"Teacher Feedback\" data-container=\".grades\" data-placement=\"right\" data-content=\"";
+  if (helper = helpers.feedback) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.feedback); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\">See Feedback</a></span>\n    ";
+  return buffer;
+  }
+
   buffer += "<div class=\"row assign_container\">\n  <div class=\"col-md-8\">\n    <span class=\"assign_name\">";
   if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
@@ -365,7 +376,10 @@ function program3(depth0,data) {
   buffer += "</span><br/> -->\n    ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.grade), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  </div>\n\n  <div class=\"col-md-4\">\n    <span class=\"assign_link\"><a href=\"#\">See Feedback</a></span>\n  </div>\n</div>";
+  buffer += "\n  </div>\n\n  <div class=\"col-md-4\">\n    ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.grade), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n</div>";
   return buffer;
   });
 

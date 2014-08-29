@@ -287,7 +287,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				var minWeek = _.min(_.keys(gradeList));
 	  			Student.Controller.gradeList = gradeList;
   				Student.Controller.currentGradeWeekIndex = Number(minWeek);
-	  			that.displayGrades();
 
 	  			var contentView = Student.Controller.content;
 				that.displayGrades();
@@ -300,6 +299,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				currentAssignments = _.where(currentGrades, {type:"assignment"}),
   				currentQuizes = _.where(currentGrades, {type:"quiz"});
   				currentQuizes = this.getGrades(currentQuizes);
+
+  			console.log(currentAssignments);
 
   			//so assignments first
   			var AssignmentModel = Backbone.Model.extend({}),
@@ -314,6 +315,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
   			aListView.render();
   			$("#assignments").html(aListView.el);
+  			$(".feedback_button").popover();
 
   			//then quizes
   			var QuizModel = Backbone.Model.extend({}),
@@ -326,9 +328,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
   				collection:quizes
   			});
   			
-  			console.log(currentAssignments);
-  			console.log(currentQuizes);
-
   			qListView.render();
   			$("#quizes").html(qListView.el);
   		},
