@@ -27,7 +27,8 @@
         "content": {
             "heading": "Introduction to the Class",
             "video": "Duke_ConEd_Class0"
-        }
+        },
+        "attributes":[3]
     },
     {
         "type": "journal",
@@ -42,7 +43,8 @@
                 "You will  examine your journals and assess how well you are doing by using the rubric. Make certain you score your work.",
                 "If you do not understand some of the words, please define the words in your journals. *Carefully review the rubric and make sure you understand all of it."
             ]
-        }
+        },
+        "attributes":[3]
     },
     {
         "type": "image",
@@ -51,7 +53,8 @@
         "content": {
             "heading": "Journal Grading Rubric",
             "source": "../images/image_panels/rubricwrite2.gif"
-        }
+        },
+        "attributes":[3, 7]
     },
     {
         "type": "activity",
@@ -82,7 +85,8 @@
                 "Generally, what is the average class size in an American high school? How might this impact the way in which American you learn as compared to the way in which Chinese you learn?",
                 "List three strengths of the Chinese educational system and three strengths of the American educational system."
             ]
-        }
+        },
+        "attributes":[5]
     },
     {
         "type": "journal",
@@ -90,7 +94,8 @@
         "name": "journal",
         "content": {
             "instructions": "In your journal make notes answering the above questions fron the previous discussion"
-        }
+        },
+        "attributes":[3]
     },
     {
         "type": "article",
@@ -98,7 +103,8 @@
         "name": "article",
         "content": {
             "id": 0
-        }
+        },
+        "attributes":[3]
     },
     {
         "type": "videoLink",
@@ -113,7 +119,8 @@
                 "Are different schools looking for slightly different characteristics?"
             ],
             "link": "https://lmty.cfnc.org/videos/what-types-of-you-fit-in-best-at-duke"
-        }
+        },
+        "attributes":[4]
     },
     {
         "type": "journal",
@@ -126,7 +133,14 @@
                 "What types of things do you think you should consider as you develop your school lists?",
                 "What do you think schools consider when selecting you for admission?"
             ]
-        }
+        },
+        "attributes":[8]
+    },
+    {
+        "type": "quiz",
+        "week": 0,
+        "name": "quiz",
+        "content": {"questions":[{"correct":0,"id":0,"responses":["response1","response2","response3"],"title":"title1"},{"correct":1,"id":1,"responses":["response1","response2","response3"],"title":"title2"},{"correct":2,"id":2,"responses":["response1","response2","response3"],"title":"title2"}],"title":"Quiz Title 1"}
     },
     {
         "type": "articleLink",
@@ -150,7 +164,8 @@
                 "You should not name schools but consider qualities like size, location, campus life, etc.",
                 "You will reflect back on this entry at the end of the first semester."
             ]
-        }
+        },
+        "attributes":[6]
     },
     {
         "type": "article",
@@ -158,7 +173,8 @@
         "name": "article",
         "content": {
             "id": 1
-        }
+        },
+        "attributes":[2]
     },
     {
         "type": "assignment",
@@ -171,7 +187,8 @@
                 "You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
                 "You should also list the majors and careers paths in which you are most interested."
             ]
-        }
+        },
+        "attributes":[4]
     },
     {
         "type": "activity",
@@ -184,7 +201,15 @@
                 "http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm",
                 "http://www.teamtechnology.co.uk/personality/intro/"
             ]
-        }
+        },
+        "attributes":[3]
+    },
+    {
+        "type": "comic",
+        "week": 0,
+        "name": "activity",
+        "content": {"id":0},
+        "attributes":[1]
     },
     {
         "type": "overview",
@@ -301,6 +326,12 @@
                 "You should also list the majors and careers paths in which you are most interested."
             ]
         }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {"questions":[{"correct":0,"id":0,"responses":["response1","response2","response3"],"title":"title1"},{"correct":1,"id":1,"responses":["response1","response2","response3"],"title":"title2"},{"correct":2,"id":2,"responses":["response1","response2","response3"],"title":"title2"}],"title":"Quiz Title 1"}
     },
     {
         "type": "article",
@@ -1773,5 +1804,6 @@
                 "Record your final school list in your journal."
             ]
         }
-    }
+    },
+    {}
 ]

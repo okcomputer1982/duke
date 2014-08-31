@@ -97,6 +97,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:saveJournal", Week.Controller.saveJournal);
 				views.content.on("weekView:saveAssignment", Week.Controller.saveAssignment);
 				views.content.on("weekView:saveQuiz", Week.Controller.saveQuiz);
+
+				views.content.on("weekView:logEvent", Week.Controller.savelogEvent);
 			});
 		},
 
@@ -164,8 +166,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				alert("Sorry, can't save quiz as a guest.");
 				return;
   			}
-
-  			var frameID = Week.Controller.frames.models[options.id].id;
+  			var contrl = Week.Controller,
+  				frameID = contrl.getFrameId(options.id);
 
   			var saveQuizPromise = DukeApp.request("save:quizes:entities", {
   				frameID:frameID,
@@ -174,6 +176,31 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			}).done(function() {
   				alert("Quiz Submitted.");
   			});
+  		},
+
+  		savelogEvent:function(options) {  	
+  			if (!DukeApp.utils.isStudent())
+  				return;
+
+  			var contrl = Week.Controller,
+  				frameID = contrl.getFrameId(options.id);
+
+  			DukeApp.request("frameById:entities", frameID).done(function(frame) {  			
+  				var eventLogData = {
+  					studentId:DukeApp.utils.getCurrentUserID(),
+  					eventType:frame.type,
+  					contentId:frameID,
+  					contentStatus:options.status,
+  					contentData:options.data
+  				}
+
+  				DukeApp.request("eventLog:entities", eventLogData);
+  			});
+  		},
+
+  		/*************Helper Functions**************/
+  		getFrameId:function(index) {
+  			return(Week.Controller.frames.models[index].id);
   		}
 	};
 });

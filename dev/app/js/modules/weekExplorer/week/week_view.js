@@ -280,7 +280,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	"click .show-game": 			"handleGame",
 	    	"click .journal .submit": 		"handleJournalSubmit",
 	    	"click .assignment .submit": 	"handleAssignmentSubmit",
-	    	"click .quiz .submit": 			"handleQuizSubmit"
+	    	"click .quiz .submit": 			"handleQuizSubmit",
+	    	"click .attributeTarget":		"handleAttributes",
+	    	"click .eventTarget":			"handleEvents",
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons
@@ -449,6 +451,18 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    		this.trigger("weekView:saveQuiz", {id:target.closest("section").attr("data-index"), response:responses});
 	    	}
+	    },
+
+	    handleAttributes:function(e) {
+	    	var target = $(e.currentTarget),
+	    		frameIndex = target.closest("section").attr("data-index");
+	    },
+
+	   	handleEvents:function(e) {
+			var target = $(e.currentTarget),
+	    		frameIndex = target.closest("section").attr("data-index");
+
+	    	this.trigger("weekView:logEvent", {id:frameIndex, status:"clicked"});
 	    }
 	});
 });

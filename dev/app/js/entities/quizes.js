@@ -37,7 +37,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				
 				if (results.length === 0) {
 					quiz = new QuizTable();
-					
+
 					quiz.save(quizObj,{
 						success:function(journal) {
 							def.resolve({success:true});
@@ -47,7 +47,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						}
 					});
 				} else {
-					quiz = results[0];
 					alert("Quiz already submitted.");
 					def.response({success:false});
 				}

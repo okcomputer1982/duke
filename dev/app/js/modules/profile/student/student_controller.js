@@ -80,257 +80,270 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 		setActiveLink:function(obj){
  			Student.Controller.sidebar.setActiveFrame(obj.linkId);
-  		},
+		},
 
-  		//***************Frame Helper functions***************//
-  		getFrameReferences:function(itemList) {
-  			//must get a list of items that includes frameID that refers to the Frame Table
-  			var def = $.Deferred(),
-  				framePromises = [];
+		//***************Frame Helper functions***************//
+		getFrameReferences:function(itemList) {
+			//must get a list of items that includes frameID that refers to the Frame Table
+			var def = $.Deferred(),
+				framePromises = [];
 
-  			_.map(itemList, function(obj, idx){
-  				framePromises.push(DukeApp.request("frameById:entities", obj.frameID));
-  			});
+			_.map(itemList, function(obj, idx){
+				framePromises.push(DukeApp.request("frameById:entities", obj.frameID));
+			});
 
-  			$.when.apply($, framePromises).then(function(){
-  				var frames = arguments;
-  				def.resolve(frames);
-  			});
+			$.when.apply($, framePromises).then(function(){
+				var frames = arguments;
+				def.resolve(frames);
+			});
 
-  			return(def.promise());
-  		},
+			return(def.promise());
+		},
 
-  		createWeekList:function(itemList, frameList, objectItemMap, type) {
-  			var weekList = {};
+		createWeekList:function(itemList, frameList, objectItemMap, type) {
+			var weekList = {};
 
-  			_.each(itemList, function(obj, idx) {
-  				var that = this;
+			_.each(itemList, function(obj, idx) {
+				var that = this;
 
-  				obj.type = type;
+				obj.type = type;
 
-  				if (!weekList[frameList[idx].week]){
-  					weekList[frameList[idx].week] = [];
-  				}
+				if (!weekList[frameList[idx].week]){
+					weekList[frameList[idx].week] = [];
+				}
 
-  				_.each(objectItemMap, function(mapObj, key){
-  					if (frameList[idx].content[mapObj]) {
-  						obj[key] = frameList[idx].content[mapObj];
-  					}
-  				});
+				_.each(objectItemMap, function(mapObj, key){
+					if (frameList[idx].content[mapObj]) {
+						obj[key] = frameList[idx].content[mapObj];
+					}
+				});
 
-  				weekList[frameList[idx].week].push(obj);
-  			});
+				weekList[frameList[idx].week].push(obj);
+			});
 
-  			return(weekList);
-  		},
+			return(weekList);
+		},
 
-  		getMinWeek:function(list) {
-  			return(_.min(_.keys(list)));
-  		},
+		getMinWeek:function(list) {
+			return(_.min(_.keys(list)));
+		},
 
-  		getGrades:function(quizes) {
-  			_.each(quizes, function(obj, idx){
-  				var responses = obj.response,
-  					questions = obj.questions,
-  					correct = 0;
-  					total = responses.length;
+		getGrades:function(quizes) {
+			_.each(quizes, function(obj, idx){
+				var responses = obj.response,
+					questions = obj.questions,
+					correct = 0;
+					total = responses.length;
 
-  				_.each(questions, function(obj, idx){
-  					if (obj.correct === responses[idx]) {
-  						correct += 1;
-  					}
-  				});
+				_.each(questions, function(obj, idx){
+					if (obj.correct === responses[idx]) {
+						correct += 1;
+					}
+				});
 
-  				obj.grade = Math.round(correct/total*100);
-  			});
+				obj.grade = Math.round(correct/total*100);
+			});
 
-  			return(quizes);
-  		},
+			return(quizes);
+		},
 
-  		//***************Journal Frame***************//
-  		loadJournals:function(journals){
-  			var that = this,
-  				journalPromises = [];
+		//***************Journal Frame***************//
+		loadJournals:function(journals){
+			var that = this,
+				journalPromises = [];
 
-  			if (!journals || journals.length === 0)
-  				return;
+			if (!journals || journals.length === 0)
+				return;
 
-  			this.getFrameReferences(journals).done(function(frames) {
-  				var journalList = {},
+			this.getFrameReferences(journals).done(function(frames) {
+				var journalList = {},
+					contentView = Student.Controller.content;
+
+				journalList = that.createWeekList(journals, frames, {heading:"heading", instructions:"instructions"}, "journal");
+
+				var minWeek = that.getMinWeek(journalList);
+				Student.Controller.journalList = journalList;
+  			Student.Controller.currentJournalIndex = 0;
+  			Student.Controller.currentJournalWeekIndex = Number(minWeek);
+				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentJournalWeekIndex].length;
+
+				//set and init week index
+				contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, "journals");
+
+				//set and init journal index
+				contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+
+				//display current journal
+			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+
+			contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
+			contentView.on("studentProfile:incrementWeek", that.incrementWeek);
+			});
+		},
+
+		incrementJournal:function(direction) {
+			var contentView = Student.Controller.content;
+			
+			if (direction === "right") {
+				Student.Controller.currentJournalIndex ++;
+			} else if (direction === "left") {
+				Student.Controller.currentJournalIndex --;
+			}
+
+			if (Student.Controller.currentJournalIndex > Student.Controller.maxJournalIndex-1) {
+			Student.Controller.currentJournalIndex = 0;
+			} else if (Student.Controller.currentJournalIndex < 0) {
+			Student.Controller.currentJournalIndex = Student.Controller.maxJournalIndex-1;
+			}
+
+			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+		},
+
+		incrementWeek:function(direction, type) {
+			var contentView = Student.Controller.content,
+				that = this,
+				weeks = _.map(_.keys((type==="journals")?Student.Controller.journalList:Student.Controller.gradeList), function(s){return(Number(s));}).sort(),
+				index = weeks.indexOf((type==="journals")?Student.Controller.currentJournalWeekIndex:Student.Controller.currentGradeWeekIndex);
+
+		
+		if (direction === "right"){
+			index ++;
+			if (type === "journals") 
+				Student.Controller.currentJournalIndex = 0;
+		} else if (direction === "left") {
+			index --;
+			if (type === "journals") 
+				Student.Controller.currentJournalIndex = 0;	
+		}
+
+		if (index > weeks.length -1) {
+			index = 0;
+		} else if (index < 0) {
+			index = weeks.length-1;
+		}
+
+		switch (type){
+			case("journals"):
+					Student.Controller.currentJournalWeekIndex = weeks[index];
+					Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
+
+					contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, type);
+					contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+					contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+					break;
+				case("grades"):
+					Student.Controller.currentGradeWeekIndex = weeks[index];
+					contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
+					Student.Controller.displayGrades();
+					break;
+			}
+		},
+
+		//***************Grade Frame***************//
+		loadGrades:function(assignments, quizes){
+			var that = this,
+				assignmentPromises = [],
+				quizPromises = [],
+				assignmentComplete = $.Deferred(),
+				gradeComplete = $.Deferred(),
+				gradeList = {};
+      
+  		//let's do assignments first
+  		if (assignments && assignments.length > 0) {
+			//grab all the frame referenced within this users journals
+  			this.getFrameReferences(assignments).done(function(frames) {
+  				var assignmentList = {},
   					contentView = Student.Controller.content;
 
-  				journalList = that.createWeekList(journals, frames, {heading:"heading", instructions:"instructions"}, "journal");
-
-  				var minWeek = that.getMinWeek(journalList);
-  				Student.Controller.journalList = journalList;
-	  			Student.Controller.currentJournalIndex = 0;
-	  			Student.Controller.currentJournalWeekIndex = Number(minWeek);
-  				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentJournalWeekIndex].length;
-
-  				//set and init week index
-  				contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, "journals");
-
-  				//set and init journal index
-  				contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-
-  				//display current journal
-				contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
-
-				contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
-				contentView.on("studentProfile:incrementWeek", that.incrementWeek);
+  				assignmentList = that.createWeekList(assignments, frames, {heading:"instructionHeader", instructions:"instructionList", title:"subHeading"}, "assignment");
+  				assignmentComplete.resolve(assignmentList);
   			});
-  		},
+  		} else {
+          assignmentComplete.resolve();
+      }
 
-  		incrementJournal:function(direction) {
-  			var contentView = Student.Controller.content;
-  			
-  			if (direction === "right") {
-  				Student.Controller.currentJournalIndex ++;
-  			} else if (direction === "left") {
-  				Student.Controller.currentJournalIndex --;
-  			}
+  		//then quizes
+  		if (quizes && quizes.length > 0) {
+  			this.getFrameReferences(quizes).done(function(frames) {
+  				var quizList = {},
+  					contentView = Student.Controller.content;
 
-  			if (Student.Controller.currentJournalIndex > Student.Controller.maxJournalIndex-1) {
-				Student.Controller.currentJournalIndex = 0;
-  			} else if (Student.Controller.currentJournalIndex < 0) {
-				Student.Controller.currentJournalIndex = Student.Controller.maxJournalIndex-1;
-  			}
+  				quizList = that.createWeekList(quizes, frames, {title:"title", questions:"questions"}, "quiz");
+  				gradeComplete.resolve(quizList);
+  			});
+  		} else {
+          gradeComplete.resolve();
+      }
 
-  			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-  			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
-  		},
+  		$.when(assignmentComplete, gradeComplete).done(function(assignmentList, quizList){
+  			//create a week list of both after processing
 
-  		incrementWeek:function(direction, type) {
-  			var contentView = Student.Controller.content,
-  				that = this,
-  				weeks = _.map(_.keys((type==="journals")?Student.Controller.journalList:Student.Controller.gradeList), function(s){return(Number(s));}).sort(),
-  				index = weeks.indexOf((type==="journals")?Student.Controller.currentJournalWeekIndex:Student.Controller.currentGradeWeekIndex);
+  			_.each([assignmentList, quizList], function(list) {
+  				_.each(list, function(obj, key) {
+  					if (!gradeList[key]) {
+  						gradeList[key] = obj;
+  					} else {
+  						gradeList[key] = _.union(obj, gradeList[key]);
+  					}
+  				});
+  			});
 
+        var minWeek = _.min(_.keys(gradeList));
+        Student.Controller.gradeList = gradeList;
+        Student.Controller.currentGradeWeekIndex = Number(minWeek);
+
+        var contentView = Student.Controller.content;
+        that.displayGrades();
+  		});
+		},
+
+		displayGrades:function() {
+			var curWeek = Student.Controller.currentGradeWeekIndex,
+				currentGrades = Student.Controller.gradeList[curWeek],
+				currentAssignments = _.where(currentGrades, {type:"assignment"}),
+				currentQuizes = _.where(currentGrades, {type:"quiz"});
+				currentQuizes = this.getGrades(currentQuizes);
+
+      console.log("here");
+			//so assignments first
+      if (_.isEmpty(currentAssignments)) {
+        $("#assignments").html("<p class='heading'>Assignments</p> <p class='heading'>You have no assignments saved for this week.</p>");
+      } else {
+        var AssignmentModel = Backbone.Model.extend({}),
+          AssignmentCollection = Backbone.Collection.extend({
+            model:AssignmentModel
+          }),
+          assignments = new AssignmentCollection(currentAssignments);
+
+        var aListView = new Student.GradesAssignmentListView({
+          collection:assignments
+        });
+
+        aListView.render();
+        $("#assignments").html(aListView.el);
+        $(".feedback_button").popover();
+      }
 			
-			if (direction === "right"){
-				index ++;
-				if (type === "journals") 
-					Student.Controller.currentJournalIndex = 0;
-			} else if (direction === "left") {
-				index --;
-				if (type === "journals") 
-					Student.Controller.currentJournalIndex = 0;	
-			}
 
-			if (index > weeks.length -1) {
-				index = 0;
-			} else if (index < 0) {
-				index = weeks.length-1;
-			}
+			//then quizes
+      if (_.isEmpty(currentQuizes)){
+        $("#quizes").html("<p class='heading'>Quizes</p> <p class='heading'>You have no quizes saved for this week.</p>");
+      } else {
+        var QuizModel = Backbone.Model.extend({}),
+          QuizCollection = Backbone.Collection.extend({
+            model:QuizModel
+          }),
+          quizes = new QuizCollection(currentQuizes);
 
-			switch (type){
-				case("journals"):
-  					Student.Controller.currentJournalWeekIndex = weeks[index];
-  					Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
-
-  					contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, type);
-  					contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-  					contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
-  					break;
-  				case("grades"):
-  					Student.Controller.currentGradeWeekIndex = weeks[index];
-  					contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
-  					Student.Controller.displayGrades();
-  					break;
-  			}
-  		},
-
-  		//***************Grade Frame***************//
-  		loadGrades:function(assignments, quizes){
-  			var that = this,
-  				assignmentPromises = [],
-  				quizPromises = [],
-  				assignmentComplete = $.Deferred(),
-  				gradeComplete = $.Deferred(),
-  				gradeList = {};
-
-	  		//let's do assignments first
-	  		if (assignments && assignments.length > 0) {
-				//grab all the frame referenced within this users journals
-	  			this.getFrameReferences(assignments).done(function(frames) {
-	  				var assignmentList = {},
-	  					contentView = Student.Controller.content;
-
-	  				assignmentList = that.createWeekList(assignments, frames, {heading:"instructionHeader", instructions:"instructionList", title:"subHeading"}, "assignment");
-	  				assignmentComplete.resolve(assignmentList);
-	  			});
-	  		}
-
-	  		//then quizes
-	  		if (quizes && quizes.length > 0) {
-	  			this.getFrameReferences(quizes).done(function(frames) {
-	  				var quizList = {},
-	  					contentView = Student.Controller.content;
-
-	  				quizList = that.createWeekList(quizes, frames, {title:"title", questions:"questions"}, "quiz");
-	  				gradeComplete.resolve(quizList);
-	  			});
-	  		}
-
-	  		$.when(assignmentComplete, gradeComplete).done(function(assignmentList, quizList){
-	  			//create a week list of both after processing
-	  			_.each([assignmentList, quizList], function(list) {
-	  				_.each(list, function(obj, key) {
-	  					if (!gradeList[key]) {
-	  						gradeList[key] = obj;
-	  					} else {
-	  						gradeList[key] = _.union(obj, gradeList[key]);
-	  					}
-	  				});
-	  			});
-
-				var minWeek = _.min(_.keys(gradeList));
-	  			Student.Controller.gradeList = gradeList;
-  				Student.Controller.currentGradeWeekIndex = Number(minWeek);
-
-	  			var contentView = Student.Controller.content;
-				that.displayGrades();
-	  		});
-  		},
-
-  		displayGrades:function() {
-  			var curWeek = Student.Controller.currentGradeWeekIndex,
-  				currentGrades = Student.Controller.gradeList[curWeek],
-  				currentAssignments = _.where(currentGrades, {type:"assignment"}),
-  				currentQuizes = _.where(currentGrades, {type:"quiz"});
-  				currentQuizes = this.getGrades(currentQuizes);
-
-  			console.log(currentAssignments);
-
-  			//so assignments first
-  			var AssignmentModel = Backbone.Model.extend({}),
-  				AssignmentCollection = Backbone.Collection.extend({
-  					model:AssignmentModel
-  				}),
-  				assignments = new AssignmentCollection(currentAssignments);
-
-  			var aListView = new Student.GradesAssignmentListView({
-  				collection:assignments
-  			});
-
-  			aListView.render();
-  			$("#assignments").html(aListView.el);
-  			$(".feedback_button").popover();
-
-  			//then quizes
-  			var QuizModel = Backbone.Model.extend({}),
-  				QuizCollection = Backbone.Collection.extend({
-  					model:QuizModel
-  				}),
-  				quizes = new QuizCollection(currentQuizes);
-
-  			var qListView = new Student.GradesQuizListView({
-  				collection:quizes
-  			});
-  			
-  			qListView.render();
-  			$("#quizes").html(qListView.el);
-  		},
+        var qListView = new Student.GradesQuizListView({
+          collection:quizes
+        });
+        
+        qListView.render();
+        $("#quizes").html(qListView.el);
+      }
+		},
 
 		toggleHelp:function() {
 			$("#welcome-window").slideToggle();

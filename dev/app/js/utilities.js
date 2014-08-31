@@ -41,6 +41,10 @@ DukeApp.utils.isGuest = function() {
 	return(localStorage.isGuest === "true");
 };
 
+DukeApp.utils.isStudent = function() {
+	return(DukeApp.utils.getCurrentAdminType() === "student");
+};
+
 DukeApp.utils.isLoggedIn = function() {
 	return(localStorage.isLoggedIn === "false");
 };
