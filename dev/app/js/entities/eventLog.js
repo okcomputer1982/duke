@@ -14,6 +14,21 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				EventLogTable = Parse.Object.extend("EventLog"),
 				eventLog = new EventLogTable();
 
+			if (!data.allowRepeat) {
+				var query = new Parse.Query(EventLogTable);
+				query.equalTo("contentId", 		data.contentId);
+				query.equalTo("contentStatus", 	data.contentStatus);
+				query.equalTo("studentId", 		data.studentId);
+				query.equalTo("eventType", 		data.eventType);
+
+				query.find(function(results){
+					if (results.length > 0) {
+						def.resolve({success:false, warning:"noRepeat flagged"});
+						return;
+					}
+				});
+			}
+
 			eventLog.save(data,{
 				success:function(eventLog){
 					def.resolve({success:true});
@@ -22,8 +37,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					def.resolve({success:false});
 				}
 			});
-
-			def.resolve();
 			
 			return def.promise();
 		}

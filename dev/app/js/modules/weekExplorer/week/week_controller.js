@@ -21,7 +21,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			Week.Controller.curweek = weekId;
 			Week.Controller.weeks = weekResults;
 			Week.Controller.curclass = classResults;
-			
+			Week.Controller.currentFrame = 0;
+
 			//initalize views
 			var weekView = new Week.WeekLayoutView(),
 				top = new Week.TopView({
@@ -105,8 +106,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		scrollToFrame:function(obj){
 			var views = Week.Controller.views;
 
-			views.sidebar.setActiveFrame(obj.linkId);
 			views.content.scrollToFrame(obj.linkId);
+			Week.Controller.setActiveLink(obj);
 		},
 
 		setWeekContent:function(obj){
@@ -115,8 +116,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		setActiveLink:function(obj){
- 			var views = Week.Controller.views;
- 			views.sidebar.setActiveFrame(obj.linkId);
+
+			if (Week.Controller.currentFrame !== obj.linkId) {
+				Week.Controller.currentFrame = obj.linkId;
+				var views = Week.Controller.views;
+ 				views.sidebar.setActiveFrame(obj.linkId);
+
+ 				Week.Controller.savelogEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
+			}
   		},
 
   		setComic:function(options) {
@@ -182,8 +189,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			if (!DukeApp.utils.isStudent())
   				return;
 
-  			var contrl = Week.Controller,
-  				frameID = contrl.getFrameId(options.id);
+  			_.defaults(options, {onRepeat:true});
+
+  			var frameID = Week.Controller.getFrameId(options.id);
 
   			DukeApp.request("frameById:entities", frameID).done(function(frame) {  			
   				var eventLogData = {
@@ -191,8 +199,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   					eventType:frame.type,
   					contentId:frameID,
   					contentStatus:options.status,
-  					contentData:options.data
-  				}
+  					contentData:options.data,
+  					allowRepeat:options.allowRepeat
+  				};
 
   				DukeApp.request("eventLog:entities", eventLogData);
   			});

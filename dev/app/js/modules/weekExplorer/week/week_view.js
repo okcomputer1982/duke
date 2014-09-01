@@ -315,8 +315,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    	$(window).unbind('scroll');
 
-	    	Week.current_frame = linkId;
-
 	    	var offset = ((linkId === 0)?100:60);
 
 		    $(window).scrollTo(".weekitem" + linkId, {
