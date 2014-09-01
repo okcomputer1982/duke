@@ -8,11 +8,24 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return({name: m.get('name'), glyph: m.get('glyph')});
 	};
 
+	var saveEventLog = function(data, def) {
+		var EventLogTable = Parse.Object.extend("EventLog"),
+			eventLog = new EventLogTable();
+
+		eventLog.save(data, {
+			success:function(eventLog){
+				def.resolve({success:true});
+			},
+			error:function(eventLog, error){
+				def.resolve({success:false});
+			}
+		});
+	};
+
 	var API = {
 		setEventLog: function(data) {
 			var def = $.Deferred(),
-				EventLogTable = Parse.Object.extend("EventLog"),
-				eventLog = new EventLogTable();
+				EventLogTable = Parse.Object.extend("EventLog");
 
 			if (!data.allowRepeat) {
 				var query = new Parse.Query(EventLogTable);
@@ -23,21 +36,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 				query.find(function(results){
 					if (results.length > 0) {
-						def.resolve({success:false, warning:"noRepeat flagged"});
+						def.resolve({success:false, warning:"noRepeat"});
 						return;
+					} else {
+						saveEventLog(data, def);
 					}
 				});
+			} else {
+				saveEventLog(data, def);
 			}
 
-			eventLog.save(data,{
-				success:function(eventLog){
-					def.resolve({success:true});
-				},
-				error:function(eventLog, error){
-					def.resolve({success:false});
-				}
-			});
-			
 			return def.promise();
 		}
 	};

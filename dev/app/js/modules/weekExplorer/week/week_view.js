@@ -281,7 +281,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	"click .journal .submit": 		"handleJournalSubmit",
 	    	"click .assignment .submit": 	"handleAssignmentSubmit",
 	    	"click .quiz .submit": 			"handleQuizSubmit",
-	    	"click .attributeTarget":		"handleAttributes",
 	    	"click .eventTarget":			"handleEvents",
 	    },
 	   	/******************SCROLLING EVENTS***********************/
@@ -451,16 +450,15 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	}
 	    },
 
-	    handleAttributes:function(e) {
-	    	var target = $(e.currentTarget),
-	    		frameIndex = target.closest("section").attr("data-index");
-	    },
-
 	   	handleEvents:function(e) {
 			var target = $(e.currentTarget),
 	    		frameIndex = target.closest("section").attr("data-index");
 
-	    	this.trigger("weekView:logEvent", {id:frameIndex, status:"clicked"});
+	    	if (target.hasClass("attributeTarget")) {
+	    		this.trigger("weekView:logAttributeEvent", {id:frameIndex, status:"added"});
+	    	}
+
+	    	//this.trigger("weekView:logFrameEvent", {id:frameIndex, status:"clicked"});
 	    }
 	});
 });

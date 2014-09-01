@@ -64,7 +64,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			return(def.promise());
 		},
 
-
 		getUserModel: function(){
 			var user = DukeApp.utils.getCurrentUser();
 
@@ -77,6 +76,31 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 			
 			return(userModel);
+		},
+
+		setStudentAttributes: function(attrs) {
+			var def = $.Deferred();
+
+			this.getStudentModel().done(function(student){
+				var currentAttributes = student.get('attributes');
+
+				_.each(attrs, function(val){
+					currentAttributes[val] += 1;
+				});
+
+				// student.save({
+				// 	attributes:currentAttributes
+				// }, {
+				// 	success:function(s) {
+				// 		def.resolve({success:true});
+				// 	},
+				// 	error:function(s, e) {
+				// 		def.resolve({success:false});
+				// 	}
+				// });
+			});
+
+			return(def.promise());
 		}
 	};
 
@@ -90,5 +114,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("user:studentObject:entities", function(){
 		return API.getStudentObject();
+	});
+
+	DukeApp.reqres.setHandler("user:saveAttributes:entities", function(attrs){
+		return API.setStudentAttributes(attrs);
 	});
 });

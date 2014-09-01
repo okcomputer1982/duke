@@ -99,7 +99,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:saveAssignment", Week.Controller.saveAssignment);
 				views.content.on("weekView:saveQuiz", Week.Controller.saveQuiz);
 
-				views.content.on("weekView:logEvent", Week.Controller.savelogEvent);
+				views.content.on("weekView:logFrameEvent", Week.Controller.saveFrameEvent);
+				views.content.on("weekView:logAttributeEvent", Week.Controller.saveAttributeEvent);
 			});
 		},
 
@@ -122,7 +123,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				var views = Week.Controller.views;
  				views.sidebar.setActiveFrame(obj.linkId);
 
- 				Week.Controller.savelogEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
+ 				//turning off visitation logging for now.
+ 				//Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
 			}
   		},
 
@@ -185,12 +187,11 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			});
   		},
 
-  		savelogEvent:function(options) {  	
+  		saveFrameEvent:function(options) {  	
   			if (!DukeApp.utils.isStudent())
   				return;
 
-  			_.defaults(options, {onRepeat:true});
-
+  			_.defaults(options, {allowRepeat:true});
   			var frameID = Week.Controller.getFrameId(options.id);
 
   			DukeApp.request("frameById:entities", frameID).done(function(frame) {  			
@@ -204,6 +205,32 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				};
 
   				DukeApp.request("eventLog:entities", eventLogData);
+  			});
+  		},
+
+		saveAttributeEvent:function(options) {  	
+  			if (!DukeApp.utils.isStudent())
+  				return;
+  			
+  			var frameID = Week.Controller.getFrameId(options.id);
+
+  			DukeApp.request("frameById:entities", frameID).done(function(frame) {
+
+  				var eventLogData = {
+  					studentId:DukeApp.utils.getCurrentUserID(),
+  					eventType:"attribute",
+  					contentId:frameID,
+  					contentStatus:options.status,
+  					contentData:options.data,
+  					allowRepeat:false
+  				};
+
+  				DukeApp.request("eventLog:entities", eventLogData).done(function(resp) {
+  					if (!resp.warning) {
+  						var attrs = frame.attributes;
+  						DukeApp.request("user:saveAttributes:entities", attrs);
+  					}
+  				});
   			});
   		},
 
