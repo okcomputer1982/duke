@@ -458,7 +458,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    		this.trigger("weekView:logAttributeEvent", {id:frameIndex, status:"added"});
 	    	}
 
-	    	//this.trigger("weekView:logFrameEvent", {id:frameIndex, status:"clicked"});
+	    	this.trigger("weekView:logFrameEvent", {id:frameIndex, status:"clicked"});
 	    }
 	});
 });

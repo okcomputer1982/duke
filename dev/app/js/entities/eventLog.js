@@ -24,7 +24,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	var API = {
 		setEventLog: function(data) {
-			var def = $.Deferred(),
+			var def = $.Deferred();
 				EventLogTable = Parse.Object.extend("EventLog");
 
 			if (!data.allowRepeat) {
@@ -45,7 +45,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			} else {
 				saveEventLog(data, def);
 			}
-
 			return def.promise();
 		}
 	};

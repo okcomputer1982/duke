@@ -221,12 +221,12 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   					eventType:"attribute",
   					contentId:frameID,
   					contentStatus:options.status,
-  					contentData:options.data,
+  					contentData:{attributes:frame.attributes},
   					allowRepeat:false
   				};
 
   				DukeApp.request("eventLog:entities", eventLogData).done(function(resp) {
-  					if (!resp.warning) {
+  					if (resp && !resp.hasOwnProperty("warning")) {
   						var attrs = frame.attributes;
   						DukeApp.request("user:saveAttributes:entities", attrs);
   					}

@@ -81,23 +81,23 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		setStudentAttributes: function(attrs) {
 			var def = $.Deferred();
 
-			this.getStudentModel().done(function(student){
+			DukeApp.utils.getCurrentStudentAccount().done(function(student){
 				var currentAttributes = student.get('attributes');
 
 				_.each(attrs, function(val){
 					currentAttributes[val] += 1;
 				});
 
-				// student.save({
-				// 	attributes:currentAttributes
-				// }, {
-				// 	success:function(s) {
-				// 		def.resolve({success:true});
-				// 	},
-				// 	error:function(s, e) {
-				// 		def.resolve({success:false});
-				// 	}
-				// });
+				student.set("attributes", currentAttributes);
+				
+				student.save(null, {
+					success:function(s) {
+						def.resolve({success:true});
+					},
+					error:function(s, e) {
+						def.resolve({success:false});
+					}
+				});
 			});
 
 			return(def.promise());
