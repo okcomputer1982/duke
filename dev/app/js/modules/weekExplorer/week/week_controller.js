@@ -117,14 +117,20 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		setActiveLink:function(obj){
-
 			if (Week.Controller.currentFrame !== obj.linkId) {
+				
 				Week.Controller.currentFrame = obj.linkId;
 				var views = Week.Controller.views;
  				views.sidebar.setActiveFrame(obj.linkId);
 
  				//turning off visitation logging for now.
- 				//Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
+ 				Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
+ 				
+ 				var cframe = Week.Controller.frames.models[obj.linkId];
+
+ 				if(cframe.get('template').attrTarget === "visit") {
+ 					Week.Controller.saveAttributeEvent({id:Week.Controller.currentFrame});
+ 				}
 			}
   		},
 
@@ -220,7 +226,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   					studentId:DukeApp.utils.getCurrentUserID(),
   					eventType:"attribute",
   					contentId:frameID,
-  					contentStatus:options.status,
+  					contentStatus:"added",
   					contentData:{attributes:frame.attributes},
   					allowRepeat:false
   				};

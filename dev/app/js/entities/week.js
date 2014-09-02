@@ -27,7 +27,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	var makeTemplateObjectById = function(id) {
 		var m = frameTemplates.at(id);
-		return({name: m.get('name'), glyph: m.get('glyph')});
+		return({name: m.get('name'), glyph: m.get('glyph'), attrTarget: m.get('attrTarget')});
 	};
 
 	var makeTemplateObjectByName = function(name) {
@@ -35,7 +35,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			return item.get('name') == name;
 		});
 
-		return({name: m.get('name'), glyph: m.get('glyph')});
+		return({name: m.get('name'), glyph: m.get('glyph'), attrTarget: m.get('attrTarget')});
 	};
 
 	var initializeFrameTemplates = function() {
@@ -52,7 +52,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					ftObjectList.push({
 						"glyph": obj.get('glyph'),
 						"name": obj.get('name'),
-						"index": obj.get('index')
+						"index": obj.get('index'),
+						"attrTarget": obj.get('attrTarget')
 					});
 				});
 
