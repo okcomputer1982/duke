@@ -24,16 +24,20 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			} else {
 				DukeApp.utils.getCurrentStudentAccount().done(function(student) {
 					var curUser = DukeApp.utils.getCurrentUser();
-					
+					var diffms = moment().diff(moment(curUser.createdAt));
+					var days = Math.floor(moment.duration(diffms).asDays());
+
 					studentObject = {
-						"class": student.get('class'),
-						"first": curUser.get('firstName'),
-						"last": curUser.get('lastName'),
-						"currentWeek": student.get('currentWeek'),
-						"lastLesson": student.get('lastLesson'),
-						"mb": student.get('myersBriggs'),
-						"attributes": student.get('attributes'),
-						"profileImage": curUser.get('profileImage')
+						"class": 	student.get('class'),
+						"first": 		curUser.get('firstName'),
+						"last": 		curUser.get('lastName'),
+						"currentWeek": 	student.get('currentWeek'),
+						"lastLesson": 	student.get('lastLesson'),
+						"mb": 			student.get('myersBriggs'),
+						"attributes": 	student.get('attributes'),
+						"profileImage": curUser.get('profileImage'),
+						"createdAt": 	moment(curUser.createdAt),
+						"daysCreated": 	days + ((days === 1)?" day":" days")
 					};
 
 					def.resolve(studentObject);

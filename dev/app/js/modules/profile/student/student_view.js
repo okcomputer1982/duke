@@ -288,13 +288,11 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    },
 
 	    /******************GRADE FRAMES***********************/
-
-
-
 		handleContentClick:function(e){
 			e.preventDefault();
 			DukeApp.trigger("weekExplorer:week");
 		}
+		
 	});
 
 	//Other	

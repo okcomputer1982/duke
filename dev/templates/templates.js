@@ -256,61 +256,121 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeDesc", 0, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeVal", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 0, options) : helperMissing.call(depth0, "getAttributeVal", 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n\n      </span>\n    </div>\n  </li>\n\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeName", 1, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeDesc", 1, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeVal", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 1, options) : helperMissing.call(depth0, "getAttributeVal", 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeName", 2, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeDesc", 2, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeVal", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 2, options) : helperMissing.call(depth0, "getAttributeVal", 2, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeName", 3, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeDesc", 3, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n  \n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeVal", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 3, options) : helperMissing.call(depth0, "getAttributeVal", 3, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n  \n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeName", 4, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeDesc", 4, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeVal", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 4, options) : helperMissing.call(depth0, "getAttributeVal", 4, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeName", 5, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeDesc", 5, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeVal", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 5, options) : helperMissing.call(depth0, "getAttributeVal", 5, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeName", 6, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeDesc", 6, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeVal", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 6, options) : helperMissing.call(depth0, "getAttributeVal", 6, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeName", 7, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeDesc", 7, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeVal", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 7, options) : helperMissing.call(depth0, "getAttributeVal", 7, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeName", 8, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeDesc", 8, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeVal", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 8, options) : helperMissing.call(depth0, "getAttributeVal", 8, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n  <li>\n    <div class=\"attr_container\">\n      <img class=\"attr_img\" src=\"../images/attrs/attr1.png\" alt=\"\">\n      <span class=\"attr_name\">";
   stack1 = (helper = helpers.getAttributeName || (depth0 && depth0.getAttributeName),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeName", 9, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += ":</span>\n      <span class=\"attr_desc\">";
   stack1 = (helper = helpers.getAttributeDesc || (depth0 && depth0.getAttributeDesc),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeDesc", 9, options));
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"active progress\" role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          </div>\n        </div>\n      </span>\n    </div>\n  </li>\n\n</ul>\n</div>";
+  buffer += ".</span>\n      <span class=\"attr_progress\">\n        <div class=\"progress\">\n          <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeVal", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" aria-valuemin=\"0\" aria-valuemax=\"10\" style=\"width: ";
+  stack1 = (helper = helpers.getAttributeVal || (depth0 && depth0.getAttributeVal),options={hash:{},data:data},helper ? helper.call(depth0, 9, options) : helperMissing.call(depth0, "getAttributeVal", 9, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "%;\">\n        </div>\n      </span>\n    </div>\n  </li>\n\n</ul>\n</div>";
   return buffer;
   });
 
@@ -476,7 +536,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   buffer += " <a html=\"#\"><i class=\"fa fa-pencil-square-o\"></i></a></p>\n\n      <a class=\"profile_button\" href=\"#week/";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\">Go to Class <i class=\"fa fa-caret-right\"></i></a>\n    </div>\n  </div>\n\n  <div class=\"col-md-4 progress_section dashboard_box\">\n      <div class=\"title_box\">\n          <p>Progress</p>\n      </div>\n  \n      <div class=\"progress_copy\">\n        <p class=\"semester_label\">SEMESTER <span class=\"class_number\">1</span></p>\n        <p class=\"week_label\">Week <span class=\"class_number\">1</span></p>\n\n        <div class=\"progress\">\n          <div class=\"progress-bar progress-bar-striped active\"  role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 45%\">\n          </div>\n        </div>\n\n        <p class=\"time_label\">Time Spent: <span class=\"class_number\">4:00:00</span></p>\n      </div>\n  </div>\n\n  <div class=\"col-md-4 metrics_section dashboard_box\">\n      <div class=\"title_box\">\n          <p>Metrics</p>\n      </div>\n\n      <div class=\"metrics_copy\">\n        <hr/>\n        <p class=\"grade_label\"><span class=\"l\">GRADES:</span> <span class=\"number\">80%</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">BADGES:</span> <span class=\"number\">6/10</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">ATTRIBUTES:</span> <span class=\"number\">34%</span></p>\n        <hr/>\n      </div>\n  </div>\n  </div>\n</div>";
+  buffer += "\">Go to Class <i class=\"fa fa-caret-right\"></i></a>\n    </div>\n  </div>\n\n  <div class=\"col-md-4 progress_section dashboard_box\">\n      <div class=\"title_box\">\n          <p>Progress</p>\n      </div>\n  \n      <div class=\"progress_copy\">\n        <p class=\"semester_label\">SEMESTER <span class=\"class_number\">1</span></p>\n        <p class=\"week_label\">Week <span class=\"class_number\">1</span></p>\n\n        <div class=\"progress\">\n          <div class=\"progress-bar progress-bar-striped active\"  role=\"progressbar\" aria-valuenow=\"45\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 45%\">\n          </div>\n        </div>\n\n        <p class=\"time_label\">Time Spent: <span class=\"class_number\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.daysCreated)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</span></p>\n      </div>\n  </div>\n\n  <div class=\"col-md-4 metrics_section dashboard_box\">\n      <div class=\"title_box\">\n          <p>Metrics</p>\n      </div>\n\n      <div class=\"metrics_copy\">\n        <hr/>\n        <p class=\"grade_label\"><span class=\"l\">GRADES:</span> <span class=\"number\">80%</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">BADGES:</span> <span class=\"number\">6/10</span></p>\n        <hr/>\n        <p class=\"badge_label\"><span class=\"l\">ATTRIBUTES:</span> <span class=\"number\">34%</span></p>\n        <hr/>\n      </div>\n  </div>\n  </div>\n</div>";
   return buffer;
   });
 

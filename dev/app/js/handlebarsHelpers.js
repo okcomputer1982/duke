@@ -10,6 +10,10 @@ Handlebars.registerHelper('getAttributeDesc', function(id) {
   	return DukeApp.utils.Attributes[id].desc;
 });
 
+Handlebars.registerHelper('getAttributeVal', function(id) {
+  return this.userData.attributes[Number(id)];
+});
+
 Handlebars.registerHelper('getWeekLabel', function() {
   	return this + 1;
 });
