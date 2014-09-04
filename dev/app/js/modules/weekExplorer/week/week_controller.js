@@ -4,10 +4,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			var startingClass = 0,
 				that = this;
 
-			//load initial class stuff
-			DukeApp.utils.setCurrentView("week-view", Week.Controller);
-			DukeApp.utils.loadCommonViews();
-
 			//get data
 			var classPromise = DukeApp.request("class:entities", startingClass),
 				weeksPromise = DukeApp.request("week:entities");
@@ -18,6 +14,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		loadDisplay:function(classResults, weekResults, weekId) {
+			DukeApp.utils.setCurrentView("week-view", Week.Controller);
+			DukeApp.utils.loadCommonViews();
+
 			Week.Controller.curweek = weekId;
 			Week.Controller.weeks = weekResults;
 			Week.Controller.curclass = classResults;
@@ -70,7 +69,23 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			var frameIndex = weeks.at(id).get("id"),
 				framesPromise = DukeApp.request("frameByWeek:entities", frameIndex);
 
+			//for later, allows week composition by week frames array
+
+			// var framePromises = [];
+			// _.each(weeks.at(id).get("frames"), function(idx) {
+			// 	framePromises.push(DukeApp.request("frameByIndex:entities", idx));
+			// });
+
+			// $.when.apply($, framePromises).done(function(){
+			// 	console.log(arguments);
+			// 	var f = arguments,
+			// 		frames = new DukeApp.Entities.FrameCollection(f);
+			// 	frames = frames;
+			// 	console.log(frames);
+			// });
+
 			framesPromise.done(function(frames) {
+				
 				views.content = new Week.ContentListView({
 					collection:frames
 				});
@@ -105,10 +120,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		scrollToFrame:function(obj){
-			var views = Week.Controller.views;
-
-			views.content.scrollToFrame(obj.linkId);
+			Week.Controller.views.content.scrollToFrame(obj.linkId);
 			Week.Controller.setActiveLink(obj);
+			// var views = Week.Controller.views;
+ 		// 		views.sidebar.setActiveFrame(obj.linkId);
 		},
 
 		setWeekContent:function(obj){
@@ -117,12 +132,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		setActiveLink:function(obj){
-			if (Week.Controller.currentFrame !== obj.linkId) {
-				
-				Week.Controller.currentFrame = obj.linkId;
-				var views = Week.Controller.views;
+			var views = Week.Controller.views;
  				views.sidebar.setActiveFrame(obj.linkId);
 
+			if (Week.Controller.currentFrame !== obj.linkId) {				
+				Week.Controller.currentFrame = obj.linkId;
+				console.log(Week.Controller.currentFrame);
+				
  				//turning off visitation logging for now.
  				Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
  				

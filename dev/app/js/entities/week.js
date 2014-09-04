@@ -16,14 +16,20 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	Entities.WeekCollection = Backbone.Collection.extend({
 		model:Entities.Week
 	});
-	
+
+	Entities.ClassTemplate = Backbone.Model.extend({});
+
+	Entities.ClassTempalteCollection = Backbone.Collection.extend({
+		model:Entities.ClassTemplate
+	});
+
 	Entities.Class = Backbone.Model.extend({});
 
 	Entities.ClassCollection = Backbone.Collection.extend({
 		model:Entities.Class
 	});
 
-	var frameTemplates, frames, weeks, classes;
+	var frameTemplates, frames, weeks, classes, classTemplates;
 
 	var makeTemplateObjectById = function(id) {
 		var m = frameTemplates.at(id);
@@ -36,6 +42,34 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		});
 
 		return({name: m.get('name'), glyph: m.get('glyph'), attrTarget: m.get('attrTarget')});
+	};
+
+	var initializeClassTemplates = function() {
+		var def = $.Deferred();
+
+		if (classTemplates === undefined) {
+			var ClassTemplateTable = Parse.Object.extend("ClassTemplates");
+
+			var query = new Parse.Query(ClassTemplateTable);
+			query.find(function(results) {
+				var ctObjectList = [];
+
+				results.map(function(obj, id){
+					ctObjectList.push({
+						"index": obj.get('index'),
+						"weeks": obj.get('weeks')
+					});
+				});
+
+				classTemplates = new Entities.FrameTemplateCollection(ctObjectList);
+
+				def.resolve();
+			});
+		} else {
+			def.resolve();
+		}
+
+		return(def.promise());
 	};
 
 	var initializeFrameTemplates = function() {
@@ -67,7 +101,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 		return(def.promise());
 	};
-
 	var getFramesByWeek = function(id) {
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
@@ -102,11 +135,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
-
+			query.ascending("index");
 		query.get(id, {
 			success:function(frame) {
 				def.resolve({
 					"id": 			frame.id,
+					"index": 		frame.index,
 					"content": 		frame.get('content'),
 					"name": 		frame.get('name'),
 					"type": 		frame.get('type'),
@@ -115,7 +149,32 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"weekItem": 	frame,
 					"template": 	makeTemplateObjectByName(frame.get('type'))
 				});
+			},
+			error:function(f, error) {
+				console.log(error);
 			}
+		});
+
+		return(def.promise());
+	};
+
+	var getFrameByIndex = function(index) {
+		var def = $.Deferred(),
+			FrameTable = Parse.Object.extend("Frames"),
+			query = new Parse.Query(FrameTable);
+			query.equalTo("index", index);
+
+		query.first(function(frame) {
+			def.resolve({
+				"id": 			frame.id,
+				"content": 		frame.get('content'),
+				"name": 		frame.get('name'),
+				"type": 		frame.get('type'),
+				"week": 		frame.get('week'),
+				"attributes": 	frame.get('attributes'),
+				"weekItem": 	frame,
+				"template": 	makeTemplateObjectByName(frame.get('type'))
+			});	
 		});
 
 		return(def.promise());
@@ -133,7 +192,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					var weekObjectList = [];
 					results.map(function(obj, id){
 						weekObjectList.push({
-							"id": obj.get('index')
+							"id": obj.get('index'),
+							"frames": obj.get('frames')
 						});
 					});
 
@@ -149,12 +209,24 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	};
 
 	var API = {
+		getFrameByIndex: function(index) {
+			var def = $.Deferred();
+
+			initializeFrameTemplates().done(function() {
+				getFrameByIndex(index).done(function(frame) {
+					def.resolve(frame);
+				});
+			});
+
+			return def.promise();
+		},
+
 		getFrameById: function(id) {
 			var def = $.Deferred();
 
 			initializeFrameTemplates().done(function() {
-				getFrameById(id).done(function(frameCollection) {
-					def.resolve(frameCollection);
+				getFrameById(id).done(function(frame) {
+					def.resolve(frame);
 				});
 			});
 
@@ -185,28 +257,38 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 		getClassModel: function(id) {
 			var def = $.Deferred(),
-				that = this,
-				ClassTable = Parse.Object.extend("Classes"),
-				query = new Parse.Query(ClassTable);
+				that = this;
 
-			query.equalTo("index", id);
-			
-			query.find({
-				success: function(results) {
-					//need to convert to a model
-					var classModel = new Entities.Class({
-						index:results[0].get('index'),
-						weeks:results[0].get('weeks')
-					});
+			initializeClassTemplates().done(function(){
+				var	ClassTable = Parse.Object.extend("Classes"),
+					query = new Parse.Query(ClassTable);
 
-					def.resolve(classModel);
-				}
+				query.equalTo("index", id);
+				
+				query.first({
+					success: function(result) {
+						//need to convert to a model
+						var template = classTemplates.models[result.get('template')];
+
+						var classModel = new Entities.Class({
+							index: 		result.get('index'),
+							template: 	result.get('template'),
+							weeks: 		template.get('weeks')
+						});
+
+						def.resolve(classModel);
+					}
+				});
 			});
 			
 			return def.promise();
 		}
 	};
 
+
+	DukeApp.reqres.setHandler("frameByIndex:entities", function(index){
+		return API.getFrameByIndex(index);
+	});
 
 	DukeApp.reqres.setHandler("frameById:entities", function(index){
 		return API.getFrameById(index);

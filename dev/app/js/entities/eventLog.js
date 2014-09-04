@@ -34,7 +34,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				query.equalTo("studentId", 		data.studentId);
 				query.equalTo("eventType", 		data.eventType);
 
-				query.find(function(results){
+				query.find(function(results) {
+					
 					if (results.length > 0) {
 						def.resolve({success:false, warning:"noRepeat"});
 						return;

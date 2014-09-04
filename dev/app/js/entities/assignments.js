@@ -32,7 +32,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				AssignmentTable = Parse.Object.extend("Assignments"),
 				query = new Parse.Query(AssignmentTable);
 
-			assignment.isGraded = false;
+			assignmentObj.isGraded = false;
 			
 			query.equalTo("frameID", assignmentObj.frameID);
 			query.equalTo("userID", assignmentObj.userID);

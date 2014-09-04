@@ -188,13 +188,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    		that.scrollHandler.apply(that);
 	    	});
 
-	    	$(window).scroll(function(){
-	    		that.scrollHandler.apply(that);
-	    	});
-
 	    	//cache scroll positions of all frames
 	    	var frames = $('section');
-	    	
 	    	Student.scrollPos = [];
 
 	    	_.map(frames, function(frame){
@@ -213,8 +208,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    //scrolls to a particuler frame
 	    scrollToFrame:function(linkId) {
 	    	var that = this;
-
-	    	Student.current_frame = linkId;
 
 	    	$(window).unbind('scroll');
 

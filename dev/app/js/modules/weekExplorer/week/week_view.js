@@ -187,9 +187,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		init:function(id) {
-			var firstFrame = $('.weekItemLink[data-weekItem="0"]');
-			this.active = firstFrame;
-			firstFrame.addClass("active");
+			this.active = $('.weekItemLink[data-weekItem="0"]');
+			//firstFrame.addClass("active");
 
 			$("#week_number").text(id + 1);
 		},
@@ -200,6 +199,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	        var target = $(e.currentTarget),
 	        	linkId = $(e.currentTarget).data('weekitem');
 		    
+
 		    this.trigger("weekView:scrollto", {linkId:linkId});
 		},
 
@@ -293,16 +293,17 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    		linkId,
 	    		scrollPos = Week.scrollPos;
 
+	    	
 	    	if (type === "cycle-down") {
-	    		for (linkId = 0; linkId < scrollPos.length && (scrollPos[linkId].pos-100) <= currentScrollPos; linkId++);
-	    		if (linkId === Week.Controller.views.weekView.current_frame) {
-	    			linkId ++;
-	    		}
+	    		linkId = Week.Controller.currentFrame + 1;
 	    	} else {
-	    		for (linkId = scrollPos.length-1; linkId > 0 && (scrollPos[linkId].pos-100) >= currentScrollPos; linkId--);
-	    		if (linkId === Week.Controller.views.weekView.current_frame) {
-	    			linkId --;
-	    		}
+	    		linkId = Week.Controller.currentFrame - 1;
+	    	}
+
+	    	if (linkId < 0) {
+	    		linkId = scrollPos.length;
+	    	} else if (linkId > scrollPos.length) {
+	    		linkId = 0;
 	    	}
 
 	    	this.trigger("weekView:scrollto", {linkId:linkId});
@@ -318,7 +319,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 		    $(window).scrollTo(".weekitem" + linkId, {
 		    	duration:300,
-		    	offset:-100,
+		    	offset:-60,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){
 		    			that.scrollHandler.apply(that);
@@ -333,13 +334,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    		scrollPos = Week.scrollPos;
 
 	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
-	    		if (currentScrollPos + 130 >= scrollPos[linkId].pos && currentScrollPos + 130 < scrollPos[linkId+1].pos){
+	    		if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
 	    			break;
 	    		}
 	    	}
 
-	    	this.trigger("weekView:setActiveLink", {linkId:linkId});
+	    	this.trigger("studentProfile:setActiveLink", {linkId:linkId});
 	    },
+
 
 	    /******************RESIZING**********************/
 	    //handles resizing of the window

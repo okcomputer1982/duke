@@ -156,6 +156,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				return;
 
 			this.getFrameReferences(journals).done(function(frames) {
+				
 				var journalList = {},
 					contentView = Student.Controller.content;
 
@@ -163,8 +164,8 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 				var minWeek = that.getMinWeek(journalList);
 				Student.Controller.journalList = journalList;
-  			Student.Controller.currentJournalIndex = 0;
-  			Student.Controller.currentJournalWeekIndex = Number(minWeek);
+  				Student.Controller.currentJournalIndex = 0;
+  				Student.Controller.currentJournalWeekIndex = Number(minWeek);
 				Student.Controller.maxJournalIndex = journalList[Student.Controller.currentJournalWeekIndex].length;
 
 				//set and init week index
@@ -174,10 +175,10 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
 
 				//display current journal
-			contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+				contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
 
-			contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
-			contentView.on("studentProfile:incrementWeek", that.incrementWeek);
+				contentView.on("studentProfile:incrementJournal", Student.Controller.incrementJournal);
+				contentView.on("studentProfile:incrementWeek", that.incrementWeek);
 			});
 		},
 
@@ -207,36 +208,36 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				index = weeks.indexOf((type==="journals")?Student.Controller.currentJournalWeekIndex:Student.Controller.currentGradeWeekIndex);
 
 		
-		if (direction === "right"){
-			index ++;
-			if (type === "journals") 
-				Student.Controller.currentJournalIndex = 0;
-		} else if (direction === "left") {
-			index --;
-			if (type === "journals") 
-				Student.Controller.currentJournalIndex = 0;	
-		}
+			if (direction === "right") {
+				index ++;
+				if (type === "journals") 
+					Student.Controller.currentJournalIndex = 0;
+			} else if (direction === "left") {
+				index --;
+				if (type === "journals") 
+					Student.Controller.currentJournalIndex = 0;	
+			}
 
-		if (index > weeks.length -1) {
-			index = 0;
-		} else if (index < 0) {
-			index = weeks.length-1;
-		}
+			if (index > weeks.length -1) {
+				index = 0;
+			} else if (index < 0) {
+				index = weeks.length-1;
+			}
 
-		switch (type){
-			case("journals"):
-					Student.Controller.currentJournalWeekIndex = weeks[index];
-					Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
+			switch (type){
+				case("journals"):
+						Student.Controller.currentJournalWeekIndex = weeks[index];
+						Student.Controller.maxJournalIndex = Student.Controller.journalList[Student.Controller.currentJournalWeekIndex].length;
 
-					contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, type);
-					contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
-					contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
-					break;
-				case("grades"):
-					Student.Controller.currentGradeWeekIndex = weeks[index];
-					contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
-					Student.Controller.displayGrades();
-					break;
+						contentView.setWeekIndex(Student.Controller.currentJournalWeekIndex, type);
+						contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);
+						contentView.showJournal(Student.Controller.journalList[Student.Controller.currentJournalWeekIndex][Student.Controller.currentJournalIndex]);
+						break;
+					case("grades"):
+						Student.Controller.currentGradeWeekIndex = weeks[index];
+						contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
+						Student.Controller.displayGrades();
+						break;
 			}
 		},
 
@@ -249,53 +250,53 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				gradeComplete = $.Deferred(),
 				gradeList = {};
       
-  		//let's do assignments first
-  		if (assignments && assignments.length > 0) {
-			//grab all the frame referenced within this users journals
-  			this.getFrameReferences(assignments).done(function(frames) {
-  				var assignmentList = {},
-  					contentView = Student.Controller.content;
+	  		//let's do assignments first
+	  		if (assignments && assignments.length > 0) {
+				//grab all the frame referenced within this users journals
+	  			this.getFrameReferences(assignments).done(function(frames) {
+	  				var assignmentList = {},
+	  					contentView = Student.Controller.content;
 
-  				assignmentList = that.createWeekList(assignments, frames, {heading:"instructionHeader", instructions:"instructionList", title:"subHeading"}, "assignment");
-  				assignmentComplete.resolve(assignmentList);
-  			});
-  		} else {
-          assignmentComplete.resolve();
-      }
+	  				assignmentList = that.createWeekList(assignments, frames, {heading:"instructionHeader", instructions:"instructionList", title:"subHeading"}, "assignment");
+	  				assignmentComplete.resolve(assignmentList);
+	  			});
+	  		} else {
+				assignmentComplete.resolve();
+	      	}
 
-  		//then quizes
-  		if (quizes && quizes.length > 0) {
-  			this.getFrameReferences(quizes).done(function(frames) {
-  				var quizList = {},
-  					contentView = Student.Controller.content;
+	  		//then quizes
+	  		if (quizes && quizes.length > 0) {
+	  			this.getFrameReferences(quizes).done(function(frames) {
+	  				var quizList = {},
+	  					contentView = Student.Controller.content;
 
-  				quizList = that.createWeekList(quizes, frames, {title:"title", questions:"questions"}, "quiz");
-  				gradeComplete.resolve(quizList);
-  			});
-  		} else {
-          gradeComplete.resolve();
-      }
+	  				quizList = that.createWeekList(quizes, frames, {title:"title", questions:"questions"}, "quiz");
+	  				gradeComplete.resolve(quizList);
+	  			});
+	  		} else {
+	          gradeComplete.resolve();
+	      	}
 
-  		$.when(assignmentComplete, gradeComplete).done(function(assignmentList, quizList){
+  			$.when(assignmentComplete, gradeComplete).done(function(assignmentList, quizList){
   			//create a week list of both after processing
 
-  			_.each([assignmentList, quizList], function(list) {
-  				_.each(list, function(obj, key) {
-  					if (!gradeList[key]) {
-  						gradeList[key] = obj;
-  					} else {
-  						gradeList[key] = _.union(obj, gradeList[key]);
-  					}
+	  			_.each([assignmentList, quizList], function(list) {
+	  				_.each(list, function(obj, key) {
+	  					if (!gradeList[key]) {
+	  						gradeList[key] = obj;
+	  					} else {
+	  						gradeList[key] = _.union(obj, gradeList[key]);
+	  					}
+	  				});
   				});
+
+	        	var minWeek = _.min(_.keys(gradeList));
+	        	Student.Controller.gradeList = gradeList;
+	        	Student.Controller.currentGradeWeekIndex = Number(minWeek);
+
+	        	var contentView = Student.Controller.content;
+	        	that.displayGrades();
   			});
-
-        var minWeek = _.min(_.keys(gradeList));
-        Student.Controller.gradeList = gradeList;
-        Student.Controller.currentGradeWeekIndex = Number(minWeek);
-
-        var contentView = Student.Controller.content;
-        that.displayGrades();
-  		});
 		},
 
 		displayGrades:function() {
@@ -305,44 +306,42 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				currentQuizes = _.where(currentGrades, {type:"quiz"});
 				currentQuizes = this.getGrades(currentQuizes);
 
-      console.log("here");
 			//so assignments first
-      if (_.isEmpty(currentAssignments)) {
-        $("#assignments").html("<p class='heading'>Assignments</p> <p class='heading'>You have no assignments saved for this week.</p>");
-      } else {
-        var AssignmentModel = Backbone.Model.extend({}),
-          AssignmentCollection = Backbone.Collection.extend({
-            model:AssignmentModel
-          }),
-          assignments = new AssignmentCollection(currentAssignments);
+	      	if (_.isEmpty(currentAssignments)) {
+	        	$("#assignments").html("<p class='heading'>Assignments</p> <p class='heading'>You have no assignments saved for this week.</p>");
+	      	} else {
+	        	var AssignmentModel = Backbone.Model.extend({}),
+	          		AssignmentCollection = Backbone.Collection.extend({
+	            		model:AssignmentModel
+	          		}),
+	          		assignments = new AssignmentCollection(currentAssignments);
 
-        var aListView = new Student.GradesAssignmentListView({
-          collection:assignments
-        });
+	        	var aListView = new Student.GradesAssignmentListView({
+	          		collection:assignments
+	        	});
 
-        aListView.render();
-        $("#assignments").html(aListView.el);
-        $(".feedback_button").popover();
-      }
-			
-
+	        	aListView.render();
+	        	$("#assignments").html(aListView.el);
+	        	$(".feedback_button").popover();
+	      	}
+				
 			//then quizes
-      if (_.isEmpty(currentQuizes)){
-        $("#quizes").html("<p class='heading'>Quizes</p> <p class='heading'>You have no quizes saved for this week.</p>");
-      } else {
-        var QuizModel = Backbone.Model.extend({}),
-          QuizCollection = Backbone.Collection.extend({
-            model:QuizModel
-          }),
-          quizes = new QuizCollection(currentQuizes);
+	      	if (_.isEmpty(currentQuizes)){
+	        	$("#quizes").html("<p class='heading'>Quizes</p> <p class='heading'>You have no quizes saved for this week.</p>");
+	      	} else {
+	        	var QuizModel = Backbone.Model.extend({}),
+	          		QuizCollection = Backbone.Collection.extend({
+	            		model:QuizModel
+	          		}),
+	          		quizes = new QuizCollection(currentQuizes);
 
-        var qListView = new Student.GradesQuizListView({
-          collection:quizes
-        });
-        
-        qListView.render();
-        $("#quizes").html(qListView.el);
-      }
+	        	var qListView = new Student.GradesQuizListView({
+	          		collection:quizes
+	        	});
+	        
+	        	qListView.render();
+	        	$("#quizes").html(qListView.el);
+	      }
 		},
 
 		toggleHelp:function() {
