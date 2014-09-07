@@ -13,7 +13,7 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		
 		events:{
 			'click #user_login':"clickLogin",
-			'click #guest_login':"clickGuest",
+			'click #guest_login':"clickGuest"
 		},
 
 		clickLogin:function(e) {

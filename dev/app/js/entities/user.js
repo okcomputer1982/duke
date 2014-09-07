@@ -68,6 +68,21 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			return(def.promise());
 		},
 
+		getTeacherModel: function() {
+			var def = $.Deferred();
+			DukeApp.utils.getCurrentTeacherAccount().done(function(teacher) {
+				var curUser = DukeApp.utils.getCurrentUser(),
+					teacherModel = new Entities.StudentModel({
+					"classes": teacher.get('classes'),
+					"first": curUser.get('firstName'),
+					"last": curUser.get('lastName')
+				});
+
+				def.resolve(teacherModel);
+			});
+
+			return(def.promise());
+		},
 		getUserModel: function(){
 			var user = DukeApp.utils.getCurrentUser();
 
@@ -110,6 +125,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("user:userModel:entities", function(){
 		return API.getUserModel();
+	});
+
+	DukeApp.reqres.setHandler("user:teacherModel:entities", function(){
+		return API.getTeacherModel();
 	});
 
 	DukeApp.reqres.setHandler("user:studentModel:entities", function(){

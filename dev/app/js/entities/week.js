@@ -44,6 +44,17 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return({name: m.get('name'), glyph: m.get('glyph'), attrTarget: m.get('attrTarget')});
 	};
 
+	var makeClassTemplateObjectById = function(id) {
+		var template = classTemplates.models[id],
+			model = {
+				title:template.get('title'),
+				index:template.get('index'),
+				weeks:template.get('weeks')
+			};
+
+			return model;
+	};
+
 	var initializeClassTemplates = function() {
 		var def = $.Deferred();
 
@@ -51,12 +62,15 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var ClassTemplateTable = Parse.Object.extend("ClassTemplates");
 
 			var query = new Parse.Query(ClassTemplateTable);
+			query.ascending("index");
+
 			query.find(function(results) {
 				var ctObjectList = [];
 
 				results.map(function(obj, id){
 					ctObjectList.push({
 						"index": obj.get('index'),
+						"title": obj.get('title'),
 						"weeks": obj.get('weeks')
 					});
 				});
@@ -264,16 +278,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					query = new Parse.Query(ClassTable);
 
 				query.equalTo("index", id);
-				
 				query.first({
 					success: function(result) {
 						//need to convert to a model
-						var template = classTemplates.models[result.get('template')];
-
 						var classModel = new Entities.Class({
 							index: 		result.get('index'),
-							template: 	result.get('template'),
-							weeks: 		template.get('weeks')
+							students: 	result.get('students'),
+							template: 	makeClassTemplateObjectById(result.get('template')),
 						});
 
 						def.resolve(classModel);
@@ -302,7 +313,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return API.getWeekModels();
 	});
 
-	DukeApp.reqres.setHandler("class:entities", function(id){
+	DukeApp.reqres.setHandler("class:entities", function(id){	
 		return API.getClassModel(id);
 	});
 });

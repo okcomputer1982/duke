@@ -5,11 +5,16 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
 
     onShow:function() {
         $('.header_link').click(this.handleHeaderLink);
+
         var adminType = DukeApp.utils.getCurrentAdminType();
 
         //check for current admin setting
         if (adminType === DukeApp.utils.AdminTypes.student || DukeApp.utils.isGuest()) {
             $("#admin_link").hide();
+        }
+
+        if (adminType === DukeApp.utils.AdminTypes.teacher || DukeApp.utils.isGuest()) {
+            $("#dashboard_link").hide();
         }
 
     },
@@ -26,6 +31,7 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
             "coursework_link":"weekExplorer:week",
             "dashboard_link":"profile:student",
             "logout_link":"home:login",
+            "admin_link":"admin:teacher",
         };
 
         if (type === "coursework_link")

@@ -18,13 +18,20 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 
 		doGuestLogin:function(){
 			DukeApp.utils.loginAsGuest();
-			DukeApp.trigger("profile:student");
+			DukeApp.trigger("weekExplorer:week", 1, true);
 		},
 
 		doLogin:function(obj){	
 			DukeApp.utils.login(obj).done(function(pass){
 				if (pass) {
-					DukeApp.trigger("profile:student");
+					switch(DukeApp.utils.getCurrentAdminType()){
+						case("student"):
+							DukeApp.trigger("profile:student");
+							break;
+						case("teacher"):
+							DukeApp.trigger("admin:teacher");
+							break;
+					}
 				} else {
 					Login.Controller.contentView.showAlert();
 				}

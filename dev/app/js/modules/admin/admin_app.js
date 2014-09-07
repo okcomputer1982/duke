@@ -13,7 +13,7 @@ DukeApp.module("Admin", function(Admin, DukeApp, Backbone, Marionette, $, _){
 
 	DukeApp.on("admin:teacher", function(){
 		DukeApp.navigate("admin/teacher");
-		API.init();
+		API.initTeacher();
 	});
 
 	DukeApp.addInitializer(function() {

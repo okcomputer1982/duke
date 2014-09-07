@@ -5,11 +5,32 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 		regions: {
 			header: "#header",
 			footer: "#footer",
-			content: "#content"
+			infoPanel: "#infoPanel",
+			classPanel: "#classPanel"
 		}
 	});
 
-	Teacher.ContentView = Marionette.ItemView.extend({
-		template:templates["admin/teacher/content"]
+	Teacher.InfoPanelView = Marionette.ItemView.extend({
+		template:templates["admin/teacher/infoPanel"],
+		events:{
+			'click .classButton':'handleClassClick'
+		},
+
+		setClassIndicator:function(index) {
+			$(".classButton[data-index='" + Teacher.Controller.currentClass + "']").removeClass('active');
+			$(".classButton[data-index='" + index + "']").addClass('active');
+			Teacher.Controller.currentClass = index;
+		},
+
+		handleClassClick:function(e) {
+			var index = Number(e.currentTarget.getAttribute("data-index"));
+			this.setClassIndicator(index);
+			this.trigger("teacherView:changeClass", {classId:index});
+		}
+	});
+
+
+	Teacher.ClassPanelView = Marionette.ItemView.extend({
+		template:templates["admin/teacher/classPanel"]
 	});
 });

@@ -97,6 +97,25 @@ DukeApp.utils.getCurrentStudentAccount = function() {
 	return(def.promise());
 };
 
+DukeApp.utils.getCurrentTeacherAccount = function() {
+	var def = $.Deferred();
+	//if we are a student
+	if (DukeApp.utils.getCurrentAdminType() === DukeApp.utils.AdminTypes.teacher) {
+
+		var teacherAccount = Parse.User.current().get('teacherAccount');
+		teacherAccount.fetch({
+			success:function(teacher){
+				def.resolve(teacher);
+			}
+		});
+
+	} else {
+		def.resolve(false);
+	}
+
+	return(def.promise());
+};
+
 DukeApp.utils.login = function(obj) {
 	var def = $.Deferred();
 	Parse.User.logIn(obj.username, obj.password, {

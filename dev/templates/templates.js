@@ -24,16 +24,53 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      \n      <div id=\"user_id\">\n        Welcome\n        <span id=\"username\">\n          <a href=\"#profile/student\"></a>\n        </span>\n      </div>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin/teacher\">Admin</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
+  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      \n      <div id=\"user_id\">\n        Welcome\n        <span id=\"username\">\n          <a href=\"#profile/student\"></a>\n        </span>\n      </div>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin/teacher\">Admin</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
   });
 
-this["templates"]["admin/teacher/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["templates"]["admin/teacher/classPanel"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function";
+
+
+  buffer += "<div class=\"classPanel\">\n\n<h2>Current Class</h2>\n<p class=\"className\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n\n<h2>Current Students</h2>\n\n</div>";
+  return buffer;
+  });
+
+this["templates"]["admin/teacher/infoPanel"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function", self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1;
+  buffer += "\n    <button type=\"button\" data-index=\"";
+  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\" class=\"classButton btn btn-default\">";
+  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</button>\n  ";
+  return buffer;
+  }
 
-
-  return "<div class=\"container-fluid\">\n  <nav id=\"admin-nav\">\n    <a class=\"manage-instructors\">Manage Instructors</a>\n    <a class=\"manage-students\">Manage Students</a>\n    <a class=\"manage-guests\">Manage Guests</a>\n    <a class=\"manage-classes\">Manage Classes</a>  \n  </nav>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"student name\">\n    <input type=\"text\" placeholder=\"email address\">\n    <input type=\"text\" placeholder=\"select a class\">\n    <button type=\"submit\" name=\"add\">Add</button>\n    <input type=\"search\" value=\"class/student search\">\n    <input type=\"submit\" value=\"search\">\n  </div>\n\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Edit</th>\n      </tr>\n      <tr>\n        <td>Student 1</td>\n        <td>student1@school.edu</td>\n        <td>Math 101</td>\n        <td><button>Edit</button><button>Reset Password</button></td>\n      </tr>\n      <tr>\n        <td>Student 2</td>\n        <td>student2@school.edu</td>\n        <td>Math 103</td>\n        <td><button>Edit</button><button>Reset Password</button></td>\n      </tr>\n      <tr>\n        <td>Student 3</td>\n        <td>student3@school.edu</td>\n        <td>Math 102</td>\n        <td><button>Edit</button><button>Reset Password</button></td>\n      </tr>\n    </tbody>\n  </table>\n\n  <a href=\"#week\">Return to Week View</a>\n</div>";
+  buffer += "<div class=\"infoPanel\">\n\n<nav id=\"admin-nav\">\n  <h2>Welcome ";
+  if (helper = helpers.first) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.first); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " ";
+  if (helper = helpers.last) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.last); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h2>\n</nav>\n\n<div class=\"btn-group\">\n  <h2>Pick A Class:</h2>\n  ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</div>\n\n\n</div>";
+  return buffer;
   });
 
 this["templates"]["admin/teacher/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -42,7 +79,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div id=\"header\"></div>\n<div id=\"content\"></div>\n<div id=\"footer\"></div>";
+  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<div id=\"infoPanel\"></div>\n	<div id=\"classPanel\"></div>\n</div>";
   });
 
 this["templates"]["comic/show/comicItem"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

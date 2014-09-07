@@ -1,4 +1,4 @@
 [
-	{"index":0, "template":0},
+	{"index":0, "template":0, "student":[0,1,2], "teacher":[0], "unlockedWeeks":[0,1,2,3,4]},
 	{}
 ]

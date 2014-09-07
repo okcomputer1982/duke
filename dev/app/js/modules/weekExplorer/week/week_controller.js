@@ -65,7 +65,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			var views = Week.Controller.views,
 				weeks = Week.Controller.weeks;
-
+			
 			var frameIndex = weeks.at(id).get("id"),
 				framesPromise = DukeApp.request("frameByWeek:entities", frameIndex);
 
@@ -137,7 +137,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			if (Week.Controller.currentFrame !== obj.linkId) {				
 				Week.Controller.currentFrame = obj.linkId;
-				console.log(Week.Controller.currentFrame);
 				
  				//turning off visitation logging for now.
  				Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
