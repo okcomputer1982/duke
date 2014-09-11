@@ -48,7 +48,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				top:top
 			};
 
-			this.refreshWeek(Week.Controller.curclass.get('weeks')[Week.Controller.curweek]);
+			this.refreshWeek(Week.Controller.curclass.get('template').weeks[Week.Controller.curweek]);
 
 			//set events
 			top.on("weekView:loadWeek", Week.Controller.setWeekContent);
@@ -57,7 +57,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		refreshWeek:function(id) {
 			var that = this;
 
-			if (id < 0 || id > Week.Controller.curclass.get('weeks').length)
+			if (id < 0 || id > Week.Controller.curclass.get('template').weeks.length)
 				return;
 
 			Week.Controller.curweek = id;

@@ -3,48 +3,56 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 		init:function() {
 			DukeApp.utils.setCurrentView("admin-teacher-view", Teacher.Controller);
 			DukeApp.utils.loadCommonViews();
-
-			DukeApp.request("user:teacherModel:entities").done(this.loadDisplay);
+			this.loadDisplay();
+			//DukeApp.request("user:teacherModel:entities").done(this.loadDisplay);
 		},
 
-		loadDisplay:function(teacherModel) {
-			var layout = new Teacher.LayoutView(),
-				infoPanel = new Teacher.InfoPanelView({
-					model:teacherModel
-				});
-			
-			DukeApp.content.show(layout);
-			layout.header.show(DukeApp.commonViews.header);
-			layout.infoPanel.show(infoPanel);
-
-
+		loadDisplay:function(teacherModel) {	
+			var layout = new Teacher.LayoutView();
 			Teacher.Controller.layout = layout;
-			Teacher.Controller.infoPanel = infoPanel;
 
-			$('.dropdown').dropdown();
+			DukeApp.content.show(layout);
+			layout.header.show(DukeApp.commonViews.header);			
+			DukeApp.commonViews.header.setUserName(DukeApp.utils.getCurrentUsername());
+			
+			this.handleMenuClick("class");
 
-			Teacher.Controller.currentClass = 0;
-
-			var firstClass = teacherModel.get('classes')[Teacher.Controller.currentClass];
-
-			infoPanel.setClassIndicator(Teacher.Controller.currentClass);
-			Teacher.Controller.loadClass({classId:firstClass});
-
-			infoPanel.on("teacherView:changeClass", Teacher.Controller.loadClass)
+			layout.on("teacherView:clickLink", this.handleMenuClick);
 		},
 
-		loadClass:function(obj) {
-			DukeApp.request("class:entities", obj.classId).done(function(classModel) {
-			
-				Teacher.Controller.classPanel = new Teacher.ClassPanelView({
-					model:classModel
-				});
+		handleMenuClick:function(type) {
+			var contentViewMap = {
+					"class": Teacher.EditClassView,
+					"students": Teacher.EditStudentView,
+					"schedule": Teacher.EditScheduleView
+				},
 
-				console.log(obj);
-				console.log(classModel.get('template').title);
-				var layout = Teacher.Controller.layout;
-				layout.classPanel.show(Teacher.Controller.classPanel);
-			});
+				layout = Teacher.Controller.layout,
+				contentView = new contentViewMap[type]();
+
+			console.log(type);
+			Teacher.Controller.content = contentView;
+			layout.content.show(contentView);
+
+			if (type === "students") {
+				contentView.on("teacherView:clickGradeLink", Teacher.Controller.handleGradeMenuClick);
+				Teacher.Controller.handleGradeMenuClick("assignments");
+			} else {
+				$("#grading").hide();
+			}
+		},
+
+		handleGradeMenuClick:function(type) {
+			var gradeViewMap = {
+					"assignments": Teacher.GradeAssignmentView,
+					"journal": Teacher.GradeJournalView,
+					"quizes": Teacher.GradeQuizesView
+				},
+				layout = Teacher.Controller.layout,
+				gradeView = new gradeViewMap[type]();
+
+			$("#grading").show();
+			layout.grading.show(gradeView);
 		}
 	};
 });

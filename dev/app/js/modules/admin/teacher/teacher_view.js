@@ -1,36 +1,52 @@
 DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette, $, _){
 	Teacher.LayoutView = Marionette.Layout.extend({
 		template:templates['admin/teacher/layout'],
-		className:"teacherProfileView",
 		regions: {
 			header: "#header",
-			footer: "#footer",
-			infoPanel: "#infoPanel",
-			classPanel: "#classPanel"
-		}
-	});
-
-	Teacher.InfoPanelView = Marionette.ItemView.extend({
-		template:templates["admin/teacher/infoPanel"],
+			content:"#content",
+			grading:"#grading"
+		},
 		events:{
-			'click .classButton':'handleClassClick'
+			"click .nav-link":"handleMenuLinks"
 		},
 
-		setClassIndicator:function(index) {
-			$(".classButton[data-index='" + Teacher.Controller.currentClass + "']").removeClass('active');
-			$(".classButton[data-index='" + index + "']").addClass('active');
-			Teacher.Controller.currentClass = index;
-		},
-
-		handleClassClick:function(e) {
-			var index = Number(e.currentTarget.getAttribute("data-index"));
-			this.setClassIndicator(index);
-			this.trigger("teacherView:changeClass", {classId:index});
+		handleMenuLinks:function(e) {
+			var linkType = e.currentTarget.getAttribute("data-link");
+			this.trigger("teacherView:clickLink", linkType);
 		}
 	});
 
+	Teacher.EditStudentView = Marionette.Layout.extend({
+		template:templates['admin/teacher/editStudent'],
+		regions: {
+			grading: "#grading"
+		},
+		events:{
+			"click .grade-link":"handleGradeLinks"
+		},
+		handleGradeLinks:function(e){
+			var linkType = e.currentTarget.getAttribute("data-link");
+			this.trigger("teacherView:clickGradeLink", linkType);
+		}
+	});
 
-	Teacher.ClassPanelView = Marionette.ItemView.extend({
-		template:templates["admin/teacher/classPanel"]
+	Teacher.EditClassView = Marionette.Layout.extend({
+		template:templates['admin/teacher/editClass']
+	});
+
+	Teacher.EditScheduleView = Marionette.Layout.extend({
+		template:templates['admin/teacher/editSchedule']
+	});
+
+	Teacher.GradeJournalView = Marionette.ItemView.extend({
+		template:templates['admin/teacher/gradeJournals']
+	});
+
+	Teacher.GradeAssignmentView = Marionette.ItemView.extend({
+		template:templates['admin/teacher/gradeAssignments'],
+	});
+
+	Teacher.GradeQuizesView = Marionette.ItemView.extend({
+		template:templates['admin/teacher/gradeQuizes'],
 	});
 });

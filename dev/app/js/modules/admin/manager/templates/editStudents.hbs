@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <h4>Manage Students</h4>
+
+  <hr/>
+  <h4>Add Student</h4>
+  <div class="admin-top">
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <input type="text" placeholder="Username">
+    <input type="text" placeholder="Email">
+    <select class="combobox">
+      <option>Select Class</option>
+      <option value="0">A Student's Journey: Semester 1</option>
+      <option value="1">A Student's Journey: Semester 2</option>
+    </select>
+    <br/>
+    <button type="submit" name="add">Add</button>
+  </div>
+
+  <hr/>
+  <h4>Edit Students</h4>
+  <table id="admin-students" class="table table-responsive table-bordered table-striped">
+    <tbody>
+      <tr>
+        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>
+      </tr>
+      <tr>
+        <td>Student 1</td>
+        <td>student1@school.edu</td>
+        <td>Math 101</td>
+        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
+      </tr>
+      <tr>
+        <td>Student 2</td>
+        <td>student2@school.edu</td>
+        <td>Math 103</td>
+        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
+      </tr>
+      <tr>
+        <td>Student 3</td>
+        <td>student3@school.edu</td>
+        <td>Math 102</td>
+        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

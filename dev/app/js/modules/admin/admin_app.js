@@ -1,19 +1,25 @@
 DukeApp.module("Admin", function(Admin, DukeApp, Backbone, Marionette, $, _){
 	Admin.Router = Marionette.AppRouter.extend({
 		appRoutes: {
-			"admin/teacher": "initTeacher"
+			"admin": "init",
 		}
 	});
 
 	var API = {
-		initTeacher: function(){
-			DukeApp.Admin.Teacher.Controller.init();
+		init: function(){
+			var currentUserType = DukeApp.utils.getCurrentAdminType();
+
+			if (currentUserType === "teacher") {
+				DukeApp.Admin.Teacher.Controller.init();
+			} else if (currentUserType === "admin") {
+				DukeApp.Admin.Manager.Controller.init();
+			}
 		}
 	};
 
-	DukeApp.on("admin:teacher", function(){
-		DukeApp.navigate("admin/teacher");
-		API.initTeacher();
+	DukeApp.on("admin:dashboard", function(){
+		DukeApp.navigate("admin");
+		API.init();
 	});
 
 	DukeApp.addInitializer(function() {

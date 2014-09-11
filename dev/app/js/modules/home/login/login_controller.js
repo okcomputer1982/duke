@@ -28,8 +28,8 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 						case("student"):
 							DukeApp.trigger("profile:student");
 							break;
-						case("teacher"):
-							DukeApp.trigger("admin:teacher");
+						default:
+							DukeApp.trigger("admin:dashboard");
 							break;
 					}
 				} else {

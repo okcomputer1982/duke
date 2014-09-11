@@ -118,11 +118,11 @@ DukeApp.utils.getCurrentTeacherAccount = function() {
 
 DukeApp.utils.login = function(obj) {
 	var def = $.Deferred();
+	
 	Parse.User.logIn(obj.username, obj.password, {
 		success: function(user) {
 			DukeApp.utils.setIsGuest(false);
 			DukeApp.utils.setIsLoggedIn(true);
-
 			def.resolve(true);
 		},
 		error: function(user, error) {

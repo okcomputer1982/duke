@@ -27,50 +27,103 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      \n      <div id=\"user_id\">\n        Welcome\n        <span id=\"username\">\n          <a href=\"#profile/student\"></a>\n        </span>\n      </div>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin/teacher\">Admin</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
   });
 
-this["templates"]["admin/teacher/classPanel"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["templates"]["admin/manager/editClasses"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function";
+  
 
 
-  buffer += "<div class=\"classPanel\">\n\n<h2>Current Class</h2>\n<p class=\"className\">";
-  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</p>\n\n<h2>Current Students</h2>\n\n</div>";
-  return buffer;
+  return "<div class=\"container-fluid\">\n  <h4>Manage Classes</h4>\n\n  <hr/>\n  <h4>Class A Class</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"Class Name\">\n    \n    <select class=\"combobox\">\n      <option>Select Class Template</option>\n      <option value=\"0\">A Student's Journey: Semester 1</option>\n      <option value=\"1\">A Student's Journey: Semester 2</option>\n    </select>\n\n    <select class=\"combobox\">\n      <option>Select A Instructor</option>\n      <option value=\"0\">teacher, one</option>\n      <option value=\"1\">teacher, two</option>\n      <option value=\"2\">teacher, three</option>\n    </select>\n\n    <button type=\"submit\" name=\"add\">Create</button>\n  </div>\n  \n  <hr/>\n  <h4>Edit Classes</h4>\n  <select class=\"combobox\">\n    <option>Select A Class</option>\n    <option value=\"0\">A Student's Journey: Semester 1</option>\n    <option value=\"1\">A Student's Journey: Semester 2</option>\n  </select>\n  <h5>Class Created:       <span>March 3rd 2015</span><h5>\n  <h5>Class Last Viewed:   <span>March 3rd 2015</span><h5>\n  <h5>Total Instructors:   <span>1</span><h5>\n  <h5>Total Students:      <span>5</span><h5>\n  <h5>Current Module:      <span>5</span><h5>\n\n  <button type=\"submit\" name=\"add\">Delete Class</button>\n\n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h4>Edit Teachers</h4>\n      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>Actions</th>\n          </tr>\n          <tr>\n            <td>Teacher 1</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n          <tr>\n            <td>Teacher 2</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n          <tr>\n            <td>Teacher 3</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"col-md-6\">\n      <h4>Edit Students</h4>\n      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>Actions</th>\n          </tr>\n          <tr>\n            <td>Student 1</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n          <tr>\n            <td>Student 2</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n          <tr>\n            <td>Student 3</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>";
   });
 
-this["templates"]["admin/teacher/infoPanel"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["templates"]["admin/manager/editGuests"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, functionType="function", self=this;
-
-function program1(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n    <button type=\"button\" data-index=\"";
-  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\" class=\"classButton btn btn-default\">";
-  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</button>\n  ";
-  return buffer;
-  }
 
-  buffer += "<div class=\"infoPanel\">\n\n<nav id=\"admin-nav\">\n  <h2>Welcome ";
-  if (helper = helpers.first) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.first); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " ";
-  if (helper = helpers.last) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.last); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h2>\n</nav>\n\n<div class=\"btn-group\">\n  <h2>Pick A Class:</h2>\n  ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</div>\n\n\n</div>";
-  return buffer;
+
+  return "<div class=\"container-fluid\">\n  <h4>Manage Guests</h4>\n\n  <hr/>\n  <h4>Add Guest</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option>Select Class</option>\n      <option value=\"0\">A Student's Journey: Semester 1</option>\n      <option value=\"1\">A Student's Journey: Semester 2</option>\n    </select>\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Guests</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>\n      </tr>\n      <tr>\n        <td>Student 1</td>\n        <td>student1@school.edu</td>\n        <td>Math 101</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 2</td>\n        <td>student2@school.edu</td>\n        <td>Math 103</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 3</td>\n        <td>student3@school.edu</td>\n        <td>Math 102</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n    </tbody>\n  </table>\n</div>";
+  });
+
+this["templates"]["admin/manager/editStudents"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h4>Manage Students</h4>\n\n  <hr/>\n  <h4>Add Student</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option>Select Class</option>\n      <option value=\"0\">A Student's Journey: Semester 1</option>\n      <option value=\"1\">A Student's Journey: Semester 2</option>\n    </select>\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Students</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>\n      </tr>\n      <tr>\n        <td>Student 1</td>\n        <td>student1@school.edu</td>\n        <td>Math 101</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 2</td>\n        <td>student2@school.edu</td>\n        <td>Math 103</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 3</td>\n        <td>student3@school.edu</td>\n        <td>Math 102</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n    </tbody>\n  </table>\n</div>";
+  });
+
+this["templates"]["admin/manager/editTeachers"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h4>Manage Teachers</h4>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option>Select Class</option>\n      <option value=\"0\">A Student's Journey: Semester 1</option>\n      <option value=\"1\">A Student's Journey: Semester 2</option>\n    </select>\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>\n      </tr>\n      <tr>\n        <td>Student 1</td>\n        <td>student1@school.edu</td>\n        <td>Math 101</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 2</td>\n        <td>student2@school.edu</td>\n        <td>Math 103</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n      <tr>\n        <td>Student 3</td>\n        <td>student3@school.edu</td>\n        <td>Math 102</td>\n        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>\n      </tr>\n    </tbody>\n  </table>\n</div>";
+  });
+
+this["templates"]["admin/manager/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<nav id=\"admin-nav\">\n		<a data-link=\"classes\" class=\"nav-link manage-classes\">Manage Classes</a>\n		<a data-link=\"teachers\" class=\"nav-link manage-instructors\">Manage Teachers</a>\n	    <a data-link=\"students\" class=\"nav-link manage-students\">Manage Students</a>\n	    <a data-link=\"guests\" class=\"nav-link manage-guests\">Manage Guests</a>\n	</nav>\n\n	<div id=\"content\">\n	</div>\n\n</div>";
+  });
+
+this["templates"]["admin/teacher/editClass"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Edit Class</h2>\n\n</div>";
+  });
+
+this["templates"]["admin/teacher/editSchedule"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Edit Schedule</h2>\n  \n</div>";
+  });
+
+this["templates"]["admin/teacher/editStudent"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Edit Student</h2>\n  \n  <hr/>\n  <nav id=\"admin-nav\">\n    	<a data-link=\"assignments\" class=\"grade-link manage-assignments\">Assignments</a>\n    	<a data-link=\"journal\" class=\"grade-link manage-journal\">Journals</a>\n      	<a data-link=\"quizes\" class=\"grade-link manage-quizes\">Quizes</a>\n  </nav>\n\n  <div class=\"grading\"></div>\n</div>";
+  });
+
+this["templates"]["admin/teacher/gradeAssignments"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Grade Assignments</h2>\n</div>";
+  });
+
+this["templates"]["admin/teacher/gradeJournals"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Grade Journals</h2>\n</div>";
+  });
+
+this["templates"]["admin/teacher/gradeQuizes"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"container-fluid\">\n  <h2>Grade Quizes</h2>\n</div>";
   });
 
 this["templates"]["admin/teacher/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -79,7 +132,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<div id=\"infoPanel\"></div>\n	<div id=\"classPanel\"></div>\n</div>";
+  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<nav id=\"admin-nav\">\n		<a data-link=\"class\" class=\"nav-link manage-instructors\">Edit Class</a>\n	    <a data-link=\"students\" class=\"nav-link manage-students\">Edit Students</a>\n	    <a data-link=\"schedule\" class=\"nav-link manage-guests\">Edit Schedule</a>\n	</nav>\n	\n	<div id=\"content\">\n	</div>\n	\n	<div id=\"grading\">\n	</div>\n</div>";
   });
 
 this["templates"]["comic/show/comicItem"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

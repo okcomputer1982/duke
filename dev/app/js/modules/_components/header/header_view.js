@@ -13,7 +13,7 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
             $("#admin_link").hide();
         }
 
-        if (adminType === DukeApp.utils.AdminTypes.teacher || DukeApp.utils.isGuest()) {
+        if (adminType !== DukeApp.utils.AdminTypes.student) {
             $("#dashboard_link").hide();
         }
 

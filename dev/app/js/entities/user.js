@@ -28,7 +28,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					var days = Math.floor(moment.duration(diffms).asDays());
 
 					studentObject = {
-						"class": 	student.get('class'),
+						"class": 		student.get('class'),
 						"first": 		curUser.get('firstName'),
 						"last": 		curUser.get('lastName'),
 						"currentWeek": 	student.get('currentWeek'),
@@ -120,6 +120,33 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
+		},
+
+		getStudentFromId:function(id) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				query = new Parse.Query(StudentTable);
+
+			query.equalTo("index", id);
+			query.first(function(result){
+				var user = result.get('user').fetch({
+					success:function(user) {
+						
+						var studentModel = {
+							currentWeek: 	result.get('currentWeek'),
+							lastLesson: 	result.get('lastLesson'),
+							first: 			result.get('user').get('firstName'),
+							last: 			result.get('user').get('lastName'),
+							profileImage: 	result.get('user').get('profileImage'),
+							username: 		result.get('user').get('username'),
+							email: 			result.get('user').get('email')
+						};
+						def.resolve(studentModel);
+					}
+				});
+			});
+
+			return(def.promise());
 		}
 	};
 
@@ -141,5 +168,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("user:saveAttributes:entities", function(attrs){
 		return API.setStudentAttributes(attrs);
+	});
+
+	DukeApp.reqres.setHandler("user:getStudentFromId:entities", function(id){
+		return API.getStudentFromId(id);
 	});
 });
