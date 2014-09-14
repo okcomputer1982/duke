@@ -78,7 +78,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <h2>Edit Class</h2>\n\n</div>";
+  return "<div class=\"container-fluid\">\n	<hr/>\n	<h4>Manage Classes</h4>\n	<div class=\"admin-top\">\n	    <select class=\"combobox\">\n	      <option>Select Class</option>\n	      <option value=\"0\">A Student's Journey: Semester 1</option>\n	      <option value=\"1\">A Student's Journey: Semester 2</option>\n	    </select>\n		\n		<h5>Class Created:       <span>March 3rd 2015</span><h5>\n		<h5>Class Last Viewed:   <span>March 3rd 2015</span><h5>\n		<h5>Total Students:      <span>5</span><h5>\n		<h5>Current Module:      <span>5</span><h5>\n		\n		<hr/>\n		<h4>Edit Students</h4>\n		<div class=\"row\">\n			<div class=\"col-md-6\">\n			      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n			        <tbody>\n			          <tr>\n			            <th>Name</th><th>Actions</th>\n			          </tr>\n			          <tr>\n			            <td>Student 1</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n			          </tr>\n			          <tr>\n			            <td>Student 2</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n			          </tr>\n			          <tr>\n			            <td>Student 3</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n		    	      </tr>\n		    	    </tbody>\n		      	</table>\n			</div>\n			<div class=\"col-md-6\">\n			\n			</div>\n\n		</div>\n	</div>\n\n</div>";
   });
 
 this["templates"]["admin/teacher/editSchedule"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -96,7 +96,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <h2>Edit Student</h2>\n  \n  <hr/>\n  <nav id=\"admin-nav\">\n    	<a data-link=\"assignments\" class=\"grade-link manage-assignments\">Assignments</a>\n    	<a data-link=\"journal\" class=\"grade-link manage-journal\">Journals</a>\n      	<a data-link=\"quizes\" class=\"grade-link manage-quizes\">Quizes</a>\n  </nav>\n\n  <div class=\"grading\"></div>\n</div>";
+  return "<div class=\"container-fluid\">\n	<hr/>\n  	<h4>Manage Students</h4>\n	<div class=\"admin-top\">\n	    <select class=\"combobox\">\n	      <option>Select Student</option>\n	      <option value=\"0\">Student One</option>\n	      <option value=\"1\">Student Two</option>\n	      <option value=\"1\">Student There</option>\n	      <option value=\"1\">Student Four</option>\n	    </select>\n	</div>  \n	<div class=\"row\">\n		<div class=\"col-md-3\">\n			<img src=\"../images/avatars/avatar.png\" class=\"avatar\">\n		</div>\n		<div class=\"col-md-9\">\n			<h5>Name:      				<span>Student One</span><h5>\n		  	<h5>Myers Brigs:      		<span>INTJ</span><h5>\n		  	<h5>Last Accessed:       	<span>March 3rd 2015</span><h5>\n		  	<h5>Last Module Visited:    <span><a html=\"#\">Week 4</a></span><h5>\n		  	<h5>Last Frame Visited:    	<span>Video</span><h5>\n			<h5>Completion:   			<span>96%</span><h5>\n			<h5>Total Students:      	<span>5</span><h5>\n			<h5>Current Module:      <span>5</span><h5>\n		</div>\n	</div>\n  	\n  	<nav id=\"admin-nav\">\n    	<a data-link=\"assignments\" class=\"grade-link manage-assignments\">Assignments</a>\n    	<a data-link=\"journal\" class=\"grade-link manage-journal\">Journals</a>\n      	<a data-link=\"quizes\" class=\"grade-link manage-quizes\">Quizes</a>\n  	</nav>\n\n  <div class=\"grading\"></div>\n</div>";
   });
 
 this["templates"]["admin/teacher/gradeAssignments"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -105,7 +105,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <h2>Grade Assignments</h2>\n</div>";
+  return "<div class=\"container-fluid\">\n	<h4>Grade Assignments</h4>\n\n    <select class=\"combobox\">\n      	<option>Select Module</option>\n      	<option value=\"0\">Week 1</option>\n      	<option value=\"1\">Week 2</option>\n      	<option value=\"2\">Week 3</option>\n      	<option value=\"3\">Week 4</option>\n    	<option value=\"4\">Week 5</option>\n      	<option value=\"5\">Week 6</option>\n      	<option value=\"6\">Week 7</option>\n      	<option value=\"7\">Week 8</option>\n    </select>\n	\n	<div class=\"assigment_entry\">\n		<h5>Title: Title of Assignment</h5>\n		<h6>Instructions: Lorem Ipsum lorem Ipsum</h6>\n		<h6>Date Submitted: March 14 2015 4:30pm</h6>\n		<textarea name=\"\" id=\"userData\" cols=\"30\" rows=\"10\" readonly>\n			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n		</textarea>\n\n		<h6>Input Grade (0-100) <input type=\"text\"/></h6> \n		<textarea name=\"\" id=\"feedback\" cols=\"30\" rows=\"10\">\n		</textarea>    \n		<br/>\n		<button>Submit</button>\n\n		<hr/>\n	</div>\n\n	<div class=\"assigment_entry\">\n		<h5>Title: Title of Journal</h5>\n		<h6>Instructions: Lorem Ipsum lorem Ipsum</h6>\n		<h6>Date Submitted: March 14 2015 4:30pm</h6>\n		<textarea name=\"\" id=\"userData\" cols=\"30\" rows=\"10\" readonly>\n			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n		</textarea>\n\n		<h6>Input Grade (0-100) <input type=\"text\"/></h6> \n		<textarea name=\"\" id=\"feedback\" cols=\"30\" rows=\"5\">\n		</textarea>\n		<br/>\n		<button>Submit</button>\n\n		<hr/>\n	</div>\n</div>";
   });
 
 this["templates"]["admin/teacher/gradeJournals"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -114,7 +114,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"container-fluid\">\n  <h2>Grade Journals</h2>\n</div>";
+  return "<div class=\"container-fluid\">\n	<select class=\"combobox\">\n	  	<option>Select Module</option>\n	  	<option value=\"0\">Week 1</option>\n	  	<option value=\"1\">Week 2</option>\n	  	<option value=\"2\">Week 3</option>\n	  	<option value=\"3\">Week 4</option>\n		<option value=\"4\">Week 5</option>\n	  	<option value=\"5\">Week 6</option>\n	  	<option value=\"6\">Week 7</option>\n	  	<option value=\"7\">Week 8</option>\n	</select>\n\n	<div class=\"assigment_entry\">\n		<h5>Title: Title of Journal</h5>\n		<h6>Instructions: Lorem Ipsum lorem Ipsum</h6>\n		<h6>Date Submitted: March 14 2015 4:30pm</h6>\n		<textarea name=\"\" id=\"userData\" cols=\"30\" rows=\"10\" readonly>\n			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n		</textarea>\n		<hr/>\n	</div>\n</div>";
   });
 
 this["templates"]["admin/teacher/gradeQuizes"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -929,8 +929,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  
-  return "\n      <li><a href=\"this.href\">this.heading</a></li>\n    ";
+  var buffer = "", stack1;
+  buffer += "\n      <li><a href=\"this.link\">";
+  stack1 = ((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</a></li>\n    ";
+  return buffer;
   }
 
   buffer += "<h1>Links</h1>\n<div class=\"inner-wrap attributeTarget\">\n  <h2 class=\"subheading\">";
@@ -1093,6 +1097,9 @@ function program1(depth0,data) {
   buffer += "</h2>\n	  	<p>";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.synopsis)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n	  	<p>";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instruction)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "</p>\n	  	<ol class=\"objectives\">\n	      ";
   stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructionList), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -1106,10 +1113,26 @@ function program1(depth0,data) {
 this["templates"]["weekExplorer/week/frames/wrapup"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1;
+  buffer += "\n    	<li>";
+  stack1 = (typeof depth0 === functionType ? depth0.apply(depth0) : depth0);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</li>\n    ";
+  return buffer;
+  }
 
-
-  return "<h1>Wrap-Up</h1>\n<div class=\"inner-wrap\">\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, aliquid, esse quae quasi reprehenderit pariatur minus neque perferendis ab eos ullam quidem necessitatibus eveniet quam itaque impedit laborum harum nesciunt.</p>\n    <a class=\"moreButton\" href=\"#\">Next Week &rarr;</a>\n</div>";
+  buffer += "<h1>Wrap-Up</h1>\n<div class=\"inner-wrap\">\n    <h2 class=\"subheading\">";
+  stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.synopsis)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</h2>\n    <ul>\n    ";
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.takeaways), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    </ul>\n</div>";
+  return buffer;
   });
 
 this["templates"]["weekExplorer/week/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1182,7 +1205,7 @@ function program1(depth0,data) {
   }
 
   buffer += "<div class=\"topnav full\">\n    <ul class=\"horiz-nav\" role=\"navigation\" aria-label=\"week links\">\n      ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.weeks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.weeks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </ul>\n\n    <a class=\"expand-horiz\" aria-expanded=\"false\"></a>\n</div>";
   return buffer;

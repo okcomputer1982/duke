@@ -22,6 +22,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			Week.Controller.curclass = classResults;
 			Week.Controller.currentFrame = 0;
 
+			console.log(Week.Controller.curclass);
 			//initalize views
 			var weekView = new Week.WeekLayoutView(),
 				top = new Week.TopView({
@@ -32,7 +33,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			//show views
 			DukeApp.content.show(weekView);
-
 			weekView.header.show(DukeApp.commonViews.header);
 			weekView.top.show(top);
 			DukeApp.commonViews.header.setUserName(DukeApp.utils.getCurrentUsername());
@@ -57,7 +57,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		refreshWeek:function(id) {
 			var that = this;
 
-			if (id < 0 || id > Week.Controller.curclass.get('template').weeks.length)
+			if (id < 0 || id >= Week.Controller.curclass.get('template').weeks.length)
 				return;
 
 			Week.Controller.curweek = id;
@@ -65,7 +65,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			var views = Week.Controller.views,
 				weeks = Week.Controller.weeks;
-			
+
 			var frameIndex = weeks.at(id).get("id"),
 				framesPromise = DukeApp.request("frameByWeek:entities", frameIndex);
 
@@ -127,7 +127,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		setWeekContent:function(obj){
-			var views = Week.Controller.views;
 			Week.Controller.refreshWeek(obj.weekId);
 		},
 

@@ -319,7 +319,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 		    $(window).scrollTo(".weekitem" + linkId, {
 		    	duration:300,
-		    	offset:-60,
+		    	offset:-100,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){
 		    			that.scrollHandler.apply(that);

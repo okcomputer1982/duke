@@ -1,12 +1,36 @@
 <div class="container-fluid">
-  <h2>Edit Student</h2>
-  
-  <hr/>
-  <nav id="admin-nav">
+	<hr/>
+  	<h4>Manage Students</h4>
+	<div class="admin-top">
+	    <select class="combobox">
+	      <option>Select Student</option>
+	      <option value="0">Student One</option>
+	      <option value="1">Student Two</option>
+	      <option value="1">Student There</option>
+	      <option value="1">Student Four</option>
+	    </select>
+	</div>  
+	<div class="row">
+		<div class="col-md-3">
+			<img src="../images/avatars/avatar.png" class="avatar">
+		</div>
+		<div class="col-md-9">
+			<h5>Name:      				<span>Student One</span><h5>
+		  	<h5>Myers Brigs:      		<span>INTJ</span><h5>
+		  	<h5>Last Accessed:       	<span>March 3rd 2015</span><h5>
+		  	<h5>Last Module Visited:    <span><a html="#">Week 4</a></span><h5>
+		  	<h5>Last Frame Visited:    	<span>Video</span><h5>
+			<h5>Completion:   			<span>96%</span><h5>
+			<h5>Total Students:      	<span>5</span><h5>
+			<h5>Current Module:      <span>5</span><h5>
+		</div>
+	</div>
+  	
+  	<nav id="admin-nav">
     	<a data-link="assignments" class="grade-link manage-assignments">Assignments</a>
     	<a data-link="journal" class="grade-link manage-journal">Journals</a>
       	<a data-link="quizes" class="grade-link manage-quizes">Quizes</a>
-  </nav>
+  	</nav>
 
   <div class="grading"></div>
 </div>

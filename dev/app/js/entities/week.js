@@ -121,10 +121,11 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			query = new Parse.Query(FrameTable);
 
 		query.equalTo("week", id);
+		query.ascending("index");
 		query.find(function(results) {
 			var frameObjectList = [],
-				frameCollection;
-			
+				frameCollpection;
+
 			results.map(function(obj, id){
 				frameObjectList.push({
 					"id": 			obj.id,
@@ -150,6 +151,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
 			query.ascending("index");
+
 		query.get(id, {
 			success:function(frame) {
 				def.resolve({
@@ -198,7 +200,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		var def = $.Deferred(),
 			that = this;
 				
-		if (weeks === undefined){
+		if (weeks === undefined) {
 			var WeekTable = Parse.Object.extend("Weeks"),
 			query = new Parse.Query(WeekTable);
 			query.find({
