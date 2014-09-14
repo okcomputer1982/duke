@@ -4,14 +4,22 @@
         "week": 0,
         "name": "overview",
         "content": {
-            "title": "week 1 Overview:",
-            "subTitle": "The Differences Between the Chinese and American Education Systems. What is a “best-fit” school?",
-            "overview": "Learn more about differences in educational systems",
+            "title": "Week One: Who and What Are You?",
+            "subTitle": "Who are you and what are you equals knowing yourself.",
+            "overview": "This lesson will help you to identify your personality, personal strengths and interests. Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. You will develop your character profile, which will help you create a plan for what you might want to study in high school and college.",
             "objectives": [
-                "Understand the semester one course goals, objectives, deliverables",
-                "Understand the differences between the Chinese and U.S. education systems",
-                "Understand the current college admission landscape for elite schools in the U.S.",
-                "Understand the “best-fit” school concept"
+                "Review course goals, objectives, and syllabus for both Semesters.",
+                "Understand WHO you are: What are your interests? What are your “likes? What is your personality profile?",
+                "Understand WHAT you are: Identify your academic and extra-curricular strengths.",
+                "Identify objectives for future college study."
+            ],
+            "attributes": [
+                4,
+                6,
+                8,
+                3,
+                0,
+                9
             ]
         }
     },
@@ -23,7 +31,305 @@
             "heading": "Introduction to the Class",
             "video": "Duke_ConEd_Class0"
         },
-        "attributes":[1,2,3]
+        "attributes": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "type": "activity",
+        "week": 0,
+        "name": "activity",
+        "content": {
+            "heading": "A Student’s Journey: To College and Beyond",
+            "instuctionsHeader": "Review the syllabus and take a quiz to check for understanding."
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 0,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 1",
+            "questions": [
+                {
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "To help the student have fun in the U.S.",
+                        "To please the students’ parents.",
+                        "To help the student become an American.",
+                        "To help the student apply and adjust to a U.S. University."
+                    ],
+                    "title": "What is the primary goal of A Student’s Journey?"
+                },
+                {
+                    "correct": 0,
+                    "id": 2,
+                    "responses": [
+                        "Week Nine",
+                        "Week Five",
+                        "Week Seven",
+                        "Week Ten"
+                    ],
+                    "title": "When will you learn how to write a college application essay?"
+                },
+                {
+                    "correct": 1,
+                    "id": 1,
+                    "responses": [
+                        "Quizzes",
+                        "Journals and Discussion Fourms",
+                        "Successful completion of tasks",
+                        "All of the above."
+                    ],
+                    "title": "The assessments include:"
+                }
+            ]
+        }
+    },
+    {
+        "type": "links",
+        "week": 0,
+        "name": "links",
+        "content": {
+            "heading": "U.S. Higher Education Glossary",
+            "synopsis": "The following article provides a glossary of important terms used specifically for International students while researching U.S. higher education.",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "linkList": [
+                {
+                    "name": "Article 1",
+                    "link": "http://admissions.wfu.edu/apply/international.php#application"
+                },
+                {
+                    "name": "Article 2",
+                    "link": "http://www.brandeis.edu/admissions/apply/international.html"
+                },
+                {
+                    "name": "Article 3",
+                    "link": "http://admissions.pages.tcnj.edu/resources-for/international-applicants"
+                }
+            ]
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 0,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 2",
+            "questions": [
+                {
+                    "title": "Who is the best source to use for academic advice and guidance at a U.S. University?",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "Dean",
+                        "Academic Advisor",
+                        "Parent",
+                        "Roommate"
+                    ]
+                },
+                {
+                    "title": "Which type of Visa allows an international student to attend a U.S. University?",
+                    "correct": 0,
+                    "id": 1,
+                    "responses": [
+                        "F1 and J1",
+                        "F1 and B2",
+                        "B2 and J1",
+                        "B1 and B2"
+                    ]
+                },
+                {
+                    "title": "Letters of Recommendation are most often written by:",
+                    "correct": 2,
+                    "id": 2,
+                    "responses": [
+                        "A Parent",
+                        "A Neighbor",
+                        "A Teacher or Counselor",
+                        "A BFF"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "video",
+        "week": 0,
+        "name": "video",
+        "content": {
+            "heading": "Myers Briggs Personality Type Indicator (MBTI)",
+            "synopsis": "This video will help you to learn about yourself, your personality traits, and your interests. It will also assist you in selecting your “best fit” school.",
+            "video": "Duke_ConEd_Class1"
+        },
+        "attributes": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "type": "links",
+        "week": 0,
+        "name": "links",
+        "content": {
+            "heading": "Myers Briggs Personality Type Indicator (MBTI)",
+            "synopsis": "Learn About the Myers Briggs Personality Type Indicator (MBTI)",
+            "instructions": "Learn about the Myers Briggs Personality Type Indicator by clicking on the link below and watch the slideshow by clicking on “Next” until you complete all 46 slides. Once complete you will take a quiz to check for understanding. ",
+            "linkList": [
+                {
+                    "name": "Article 1",
+                    "link": "http://admissions.wfu.edu/apply/international.php#application"
+                },
+                {
+                    "name": "Article 2",
+                    "link": "http://www.brandeis.edu/admissions/apply/international.html"
+                },
+                {
+                    "name": "Article 3",
+                    "link": "http://admissions.pages.tcnj.edu/resources-for/international-applicants"
+                }
+            ]
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 0,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 3",
+            "questions": [
+                {
+                    "title": "Personality questionnaires do not measure:",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "Emotion",
+                        "Behavior",
+                        "Intelligence",
+                        "All of the above"
+                    ]
+                },
+                {
+                    "title": "It is important for me to know my personality profile when considering which colleges to apply for because:",
+                    "correct": 0,
+                    "id": 1,
+                    "responses": [
+                        "This can help me chose a college or major that is a good fit for my personality.",
+                        "It’s fun to learn about myself.",
+                        "Colleges will ask for my personality profile.",
+                        "Test scores are important to college applications."
+                    ]
+                },
+                {
+                    "title": "Letters of Recommendation are most often written by:",
+                    "correct": 2,
+                    "id": 2,
+                    "responses": [
+                        "A Parent",
+                        "A Neighbor",
+                        "A Teacher or Counselor",
+                        "A BFF"
+                    ]
+                },
+                {
+                    "title": "How many codes does the personality code have?",
+                    "correct": 3,
+                    "id": 3,
+                    "responses": [
+                        "1",
+                        "2",
+                        "3",
+                        "4"
+                    ]
+                },
+                {
+                    "title": "The first letter of your code describes where you use your favorite mental muscle. In the inner world of ______ and ______ or the outer world of ______ and ______:",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "Actions and Words or Thoughts and Emotions",
+                        "Thoughts and Actions or Emotions and Words",
+                        "Thoughts and Emotions or Actions and Words"
+                    ]
+                },
+                {
+                    "title": "You have four mental muscles at your disposal, which you use to process information and make decisions. They are ______:",
+                    "correct": 1,
+                    "id": 4,
+                    "responses": [
+                        "Seeing/Hearing/Touching/Feeling",
+                        "Sensing/Intuition/Thinking/Feeling",
+                        "Speaking/Saying/Hearing/Listening"
+                    ]
+                },
+                {
+                    "title": "Thinking and Feeling are mental muscles used for making decisions or judgments. Thinking ______/Feeling ______:",
+                    "correct": 2,
+                    "id": 5,
+                    "responses": [
+                        "Participates/Observes",
+                        "Seeks to promote and uphold personal values/Seeks to understand and apply universal principles",
+                        "Asks: “Is it true and valid?”/Asks: “Is it important to me?”"
+                    ]
+                },
+                {
+                    "title": "Which of your preferred mental muscles do you use when dealing with people?",
+                    "correct": 0,
+                    "id": 6,
+                    "responses": [
+                        "The Judgment and Perception one",
+                        "Sensing and Intuition",
+                        "Thinking or Feeling"
+                    ]
+                },
+                {
+                    "title": "Sensing and Intuition are ways of perceiving or creating information. Sensing ______/Intuition ______:",
+                    "correct": 0,
+                    "id": 7,
+                    "responses": [
+                        "Looks for facts/Looks for possibilities",
+                        "Changes what’s there/Uses what’s there",
+                        "Asks: “Is it true and valid?”/Asks: “Is it important to me?”"
+                    ]
+                },
+                {
+                    "title": "Introverts tend to:",
+                    "correct": 2,
+                    "id": 8,
+                    "responses": [
+                        "Act first, think later",
+                        "Interact with the environment",
+                        "Think first, act later",
+                        "Express views"
+                    ]
+                },
+                {
+                    "title": "Extraverts tend to:",
+                    "correct": 1,
+                    "id": 9,
+                    "responses": [
+                        "Seek privacy",
+                        "Develops ideas ‘out loud’",
+                        "Concentrate on thoughts",
+                        "Think things through"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 0,
+        "name": "article",
+        "content": {
+            "heading": "Take the Myers-Briggs Test",
+            "instructions": "Click on the following link and take the MBTI by following the instructions.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
     },
     {
         "type": "journal",
@@ -31,120 +337,30 @@
         "name": "journal",
         "content": {
             "heading": "Introduction to Journals",
-            "instructions": "Throughout the semester you will:",
-            "objectives": [
-                "Be asked to think and reflect about the topics covered in this course and to write about them.",
-                "Journal entries will be written on the computer and will be time stamped.",
-                "You will  examine your journals and assess how well you are doing by using the rubric. Make certain you score your work.",
-                "If you do not understand some of the words, please define the words in your journals. *Carefully review the rubric and make sure you understand all of it."
-            ]
+            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
         },
-        "attributes":[3]
-    },
-    {
-        "type": "image",
-        "week": 0,
-        "name": "image",
-        "content": {
-            "heading": "Journal Grading Rubric",
-            "source": "../images/image_panels/rubricwrite2.gif"
-        },
-        "attributes":[3, 7]
-    },
-    {
-        "type": "activity",
-        "week": 0,
-        "name": "activity",
-        "content": {
-            "heading": "Instructor Overview of Class and Syllabus",
-            "instuctionsHeader": "Instructor introduces self and gives a broad overview of the two semester course:",
-            "instructionList": [
-                "Provide you with a better understanding of the differences between the U.S. and Chinese educational systems so that you can tailor your applications to the schools to which you are applying",
-                "Provide you with a better understanding of who and what you are so that you can develop a list of of potential colleges and universities that are consistent with your educational goals and interests",
-                "Improve your interview and essay writing skills and provide tips for better college applications"
-            ]
-        }
-    },
-    {
-        "type": "discussion",
-        "week": 0,
-        "name": "discussion",
-        "content": {
-            "heading": "The Similarities and differences between the U.S. and Chinese educational systems:",
-            "instructionTitle": "You will read and discuss the following questions with a partner:",
-            "instructionList": [
-                "Name three similarities and three differences between the Chinese and American education systems.",
-                "Compare and contrast the ways in which Chinese and Americans  are assessed in school. For example how are  tests, homework,  and projects evaluated in both countries.",
-                "Are “extra-curricular” activities the same in China as in the U.S.? How are they different?",
-                "Compare and contrast how Chinese and Americans students  spend  time outside of school.",
-                "Generally, what is the average class size in an American high school? How might this impact the way in which American you learn as compared to the way in which Chinese you learn?",
-                "List three strengths of the Chinese educational system and three strengths of the American educational system."
-            ]
-        },
-        "attributes":[5]
-    },
-    {
-        "type": "journal",
-        "week": 0,
-        "name": "journal",
-        "content": {
-            "instructions": "In your journal make notes answering the above questions fron the previous discussion"
-        },
-        "attributes":[3]
-    },
-    {
-        "type": "article",
-        "week": 0,
-        "name": "article",
-        "content": {
-            "id": 0
-        },
-        "attributes":[3]
-    },
-    {
-        "type": "videoLink",
-        "week": 0,
-        "name": "video",
-        "content": {
-            "heading": "Best Fit School",
-            "synopsis": "Show “What type of students “Fits in Best at Duke” and two other similar videos. You are  to answer these questions:",
-            "instructionList": [
-                "What characteristics do all of these students have in common?",
-                "How are these students different?",
-                "Are different schools looking for slightly different characteristics?"
-            ],
-            "link": "https://lmty.cfnc.org/videos/what-types-of-you-fit-in-best-at-duke"
-        },
-        "attributes":[4]
-    },
-    {
-        "type": "journal",
-        "week": 0,
-        "name": "journal",
-        "content": {
-            "heading": "Introduction to the school “best-fit” concept.",
-            "instructionsList": [
-                "Using your journals, you will write a brief explanation of what you think “best-fit school” means to you.",
-                "What types of things do you think you should consider as you develop your school lists?",
-                "What do you think schools consider when selecting you for admission?"
-            ]
-        },
-        "attributes":[8]
-    },
-    {
-        "type": "quiz",
-        "week": 0,
-        "name": "quiz",
-        "content": {"questions":[{"correct":0,"id":0,"responses":["response1","response2","response3"],"title":"title1"},{"correct":1,"id":1,"responses":["response1","response2","response3"],"title":"title2"},{"correct":2,"id":2,"responses":["response1","response2","response3"],"title":"title2"}],"title":"Quiz Title 1"}
+        "attributes": [
+            3
+        ]
     },
     {
         "type": "articleLink",
         "week": 0,
         "name": "article",
         "content": {
-            "heading": "Using the “My College Guide: Things to Consider When Choosing a College”",
-            "instructions": "This article will help you to learn what are the main qualities you want to look for in choosing a college.",
-            "link": "http://mycollegeguide.org/articles/7/105/apply%20to%20the%20right%20school"
+            "heading": "Learn About Your Interests and Strengths",
+            "instructions": "You will take an Interest Profiler and Career Cluster Survey about your strengths and interests. Register with CFNC by creating your own account. Click on the link below and follow the instructions. Once logged in, click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”. Take the Interest Profiler by clicking on > Interest Profiler.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 0,
+        "name": "article",
+        "content": {
+            "heading": "Learn About Your Interests and Strengths",
+            "instructions": "Now take the Career Cluster Survey about your strengths and interests. Click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”. Take the Career Cluster Survey by clicking on > Career Cluster Survey. Once complete, review your “Clusters” and make a Journal about what you’ve learned.",
+            "link": "http://www.16personalities.com/free-personality-test"
         }
     },
     {
@@ -152,73 +368,88 @@
         "week": 0,
         "name": "journal",
         "content": {
-            "heading": "Things to Consider When Choosing a College",
-            "instructions": "After reading about “My College Guide: Things to Consider When Choosing a College”",
-            "instructionsList": [
-                "Journal about what you think a best-fit college would be.",
-                "You should not name schools but consider qualities like size, location, campus life, etc.",
-                "You will reflect back on this entry at the end of the first semester."
-            ]
+            "heading": "Reflection on Interests and Strengths",
+            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
         },
-        "attributes":[6]
+        "attributes": [
+            3
+        ]
     },
     {
-        "type": "article",
+        "type": "wrapup",
         "week": 0,
-        "name": "article",
+        "name": "wrapup",
         "content": {
-            "id": 1
-        },
-        "attributes":[2]
-    },
-    {
-        "type": "assignment",
-        "week": 0,
-        "name": "assignment",
-        "content": {
-            "subHeading": "Mapping out your Career Path",
-            "instructionList": [
-                "Complete the CFNC Career Cluster Survey.",
-                "You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
-                "You should also list the majors and careers paths in which you are most interested."
+            "synopsis": "Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extra-curricular activities of interest and will be able to use this information in future years when choosing a college.",
+            "takeaways": [
+                "What the Course is about.",
+                "Who you are: Your personality type, your interests and strengths.",
+                "What you are: Your academic and extra curricular strengths.",
+                "What college major you might enjoy.",
+                "Knowing who and what you are will help you in finding the college that is the best fit for you.",
+                "What career you might enjoy."
             ]
-        },
-        "attributes":[4]
-    },
-    {
-        "type": "activity",
-        "week": 0,
-        "name": "activity",
-        "content": {
-            "heading": "Introduction to Myers Briggs",
-            "instuctionsHeader": "Read one or both of the following articles regard the Myers Briggs Personality test.",
-            "instructionList": [
-                "http://www.teamtechnology.co.uk/tt/t-articl/mb-simpl.htm",
-                "http://www.teamtechnology.co.uk/personality/intro/"
-            ]
-        },
-        "attributes":[3]
-    },
-    {
-        "type": "comic",
-        "week": 0,
-        "name": "activity",
-        "content": {"id":0},
-        "attributes":[1]
+        }
     },
     {
         "type": "overview",
         "week": 1,
         "name": "overview",
         "content": {
-            "title": "week 2 Overview:",
-            "subHeading": "Knowing Yourself: WHO are you and WHAT are you? Identifying personal strengths and interests and developing a plan.",
-            "overview": "Knowing yourself: Who are you and what are you equals knowing yourself. This lesson will help you to identifying your personal strengths and interests. WHO ARE YOU? What are your interests? What are your “likes?” WHAT ARE YOU? Helps you identify your academic and extra-curricular strengths.Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. After you develop your character profile, you will develop a plan for what you might want to study in high school and college.",
-            "objectives": [
-                "Take the MBTI to determine your individual personality profiles",
-                "Make a list of your academic accomplishments and strengths and your extracurricular interests",
-                "Use your MBTI results and academic and extracurricular interests to populate your profiles",
-                "Use the career Cluster Survey (CFNC) to identify objectives for future study"
+            "title": "Week Two: U.S. vs Chinese Educational Systems and “Best Fit”",
+            "subHeading": "Now that you understand about your personality type, let’s explore the differences between the U.S. and Chinese educational systems and learn something about the “best fit” school.",
+            "overview": "Understand the differences between the U.S. and Chinese educational systems. Understand “best-fit” school concept."
+        },
+        "attributes": [
+            5,
+            7,
+            3,
+            4,
+            6,
+            8,
+            9
+        ]
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "The Generation That’s Remaking China",
+            "synopsis": "Yang Lan offers her views on todays youth in China. She discusses how she believes todays generation is perceived by the outside world.",
+            "instruction": "Click on the link below and take a quiz to check for understanding.",
+            "link": "https://www.ted.com/talks/yang_lan"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 1",
+            "questions": [
+                {
+                    "title": "What percent of Blog users are under the age of 30?",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "90%",
+                        "25%",
+                        "80%",
+                        "50%"
+                    ]
+                },
+                {
+                    "title": "College graduates sharing limited living spaces in urban areas call themselves _______?",
+                    "correct": 3,
+                    "id": 1,
+                    "responses": [
+                        "Can of sardines",
+                        "Bottle of peas",
+                        "Tribe of Ants",
+                        "Bag of bread"
+                    ]
+                }
             ]
         }
     },
@@ -227,22 +458,72 @@
         "week": 1,
         "name": "video",
         "content": {
-            "heading": "Myers-Briggs",
-            "video": "Duke_ConEd_Class1"
+            "heading": "Watch the video to learn a bit about U.S. vs. Chinese Educational Systems.",
+            "video": "Duke_ConEd_Class3"
+        },
+        "attributes": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "Learn About the Differeneces Between the U.S. And Chinese Educational Systems",
+            "synopsis": "Watch the documentary “Two Million Minutes.”",
+            "link": "https://www.youtube.com/watch?v=05gbOwFRSeI"
         }
     },
     {
-        "type": "activity",
+        "type": "journal",
         "week": 1,
-        "name": "activity",
+        "name": "journal",
         "content": {
-            "heading": "A Review of Myers-Briggs",
-            "instuctionsHeader": "Review the reading assignment about the MBTI.  It is important you understand how the test will be administered and why you are taking the test.",
-            "instructionList": [
-                "Take the MBTI to determine your individual personality profiles",
-                "Make a list of your academic accomplishments and strengths and your extracurricular interests",
-                "Use your MBTI results and academic and extracurricular interests to populate your profiles",
-                "Use the career Cluster Survey (CFNC) to identify objectives for future study"
+            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 2",
+            "questions": [
+                {
+                    "title": "Which of the following is considered to be an extracurricular activity?",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "Volleyball and Fine Arts",
+                        "Cheerleading and Dance",
+                        "Volunteer Work and School Clubs",
+                        "All of the above"
+                    ]
+                },
+                {
+                    "title": "Public schools in the U.S. focus on a ________________:",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "Math Education",
+                        "Music Education",
+                        "Liberal Arts Education",
+                        "Athletic Education"
+                    ]
+                }
             ]
         }
     },
@@ -251,25 +532,374 @@
         "week": 1,
         "name": "article",
         "content": {
-            "heading": "Take the Myers-Briggs Test",
-            "instructions": "You will take the MBTI and review your test results and ask your instructor if you have any questions about the results.",
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
             "link": "http://www.16personalities.com/free-personality-test"
         }
     },
     {
-        "type": "activity",
+        "type": "quiz",
         "week": 1,
-        "name": "activity",
+        "name": "quiz",
         "content": {
-            "heading": "Reflecting on Personality types",
-            "instuctionsHeader": "You will read:",
-            "instructionList": [
-                "Read about your personality types.",
-                "Reflect on what your personality traits mean in your real life.",
-                "If you are an introvert, how can you chat more with people when you might prefer to remain silent?",
-                "If you are an extrovert, how can you learn to listen more?",
-                "Think of one or two activities that will challenge you to try new ways you might react in a social or academic setting."
+            "title": "Quiz 3",
+            "questions": [
+                {
+                    "title": "How do students gain admission to colleges in China?",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "The students submit applications to only their favorite colleges",
+                        "The students attend the same college as their parents",
+                        "The colleges use a lottery system",
+                        "The students are accepted according to their test results"
+                    ]
+                },
+                {
+                    "title": "At the end of every school year, Chinese secondary school students are tested for advancement to the next grade. If they are unable to pass the test, they are ______________________________.",
+                    "correct": 1,
+                    "id": 1,
+                    "responses": [
+                        "Often left unable to finish their education",
+                        "Held back until they can pass it"
+                    ]
+                }
             ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 3",
+            "questions": [
+                {
+                    "title": "What is the main focus of teachers in the U.S. and in China?",
+                    "correct": 1,
+                    "id": 0,
+                    "responses": [
+                        "In the U.S. they focus on homework and in China they focus on testing.",
+                        "In the U.S. they focus on the individual and in China they focus on the group.",
+                        "n the U.S. they focus on elementary school and in China they focus on college.",
+                        "There is no difference"
+                    ]
+                },
+                {
+                    "title": "Which of the following is NOT true?",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects",
+                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help",
+                        "In the U.S., education focuses on the group more than an individual student.",
+                        "Students in Chinese schools perceive their classroom environment to be competitive and teacher controlled."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 3",
+            "questions": [
+                {
+                    "title": "What is the main difference between the tracking systems and high stakes tests used in China and in the U.S.?",
+                    "correct": 1,
+                    "id": 0,
+                    "responses": [
+                        "In the U.S. they focus on homework and in China they focus on testing.",
+                        "In the U.S. they focus on the individual and in China they focus on the group.",
+                        "n the U.S. they focus on elementary school and in China they focus on college.",
+                        "There is no difference"
+                    ]
+                },
+                {
+                    "title": "High stakes tests used in the U.S. can achieve the following outcomes:",
+                    "correct": 3,
+                    "id": 1,
+                    "responses": [
+                        "Student promotion",
+                        "Placement in high ability classes.",
+                        "The school being labeled “successful”",
+                        "All of the above."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 4",
+            "questions": [
+                {
+                    "title": "Parental involvement is a critical component to a child's educational experience. What is the main difference between parents of U.S. and Chinese students?",
+                    "correct": 1,
+                    "id": 0,
+                    "responses": [
+                        "There is no difference.",
+                        "Chinese parents are more involved.",
+                        "U.S. parents are more involved.",
+                        "The teachers are equally involved in both countries."
+                    ]
+                },
+                {
+                    "title": "Which of the following is NOT true?",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects.",
+                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help.",
+                        "In the U.S., education focuses on the group more than an individual student.",
+                        "Students in Chinese schools perceive their classroom environments to be competitive and teacher-controlled"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 4",
+            "questions": [
+                {
+                    "title": "The Stedman study shows:",
+                    "correct": 2,
+                    "id": 0,
+                    "responses": [
+                        "Chinese students achieve the best reading scores in the world",
+                        "U.S. students show potential to win the next International Mathematics and Science Study.",
+                        "U.S. students often score high on science tests.",
+                        "U.S. students need to practice their math."
+                    ]
+                },
+                {
+                    "title": "U.S. and Chinese students standout in which of the following areas?",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "U.S.: Math/China: Reading",
+                        "China: International Studies/U.S.: Social Studies.",
+                        "U.S.: Reading and Science/China: Math and Science.",
+                        "They stand out in the same areas."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 4",
+            "questions": [
+                {
+                    "title": "Which of the following is NOT a strength of the Chinese educational system?",
+                    "correct": 3,
+                    "id": 0,
+                    "responses": [
+                        "Chinese teachers are given more respect than U.S. teachers",
+                        "Chinese schools have a hard work ethic, resulting in student success.",
+                        "Chinese schools do not segregate high achieving students from lower achieving students through tracking levels.",
+                        "Chinese schools help students pass high stakes tests, however, those who fail often drop out."
+                    ]
+                },
+                {
+                    "title": "What are some of the strengths of the Chinese educational system in comparison to the U.S. system?",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "Better pay for teachers, more school activities, fewer tests",
+                        "Longer school day, larger schools, more class choices.",
+                        "More respect for teachers, strong work ethic, belief in student potential.",
+                        "Better textbooks, holidays for teachers, more student effort."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "Best Fit School",
+            "synopsis": "Now let’s learn a bit about how to select colleges that will be the “best fit” for you!",
+            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 4",
+            "questions": [
+                {
+                    "title": "What does “Best Fit” mean in the video?",
+                    "correct": 1,
+                    "id": 0,
+                    "responses": [
+                        "Your favorite movie.",
+                        "The college/university that is the “best fit” for you.",
+                        "The clothes that “best fits” your personality."
+                    ]
+                },
+                {
+                    "title": "What should you NOT consider when developing your school list?",
+                    "correct": 2,
+                    "id": 1,
+                    "responses": [
+                        "If the school is famous.",
+                        "If the school offers a strong program in a major that interests you.",
+                        "If the school offer financial aid.",
+                        "All of the above."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "articleLink",
+        "week": 1,
+        "name": "article",
+        "content": {
+            "heading": "Finding the Right School for You",
+            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+            "link": "http://www.16personalities.com/free-personality-test"
+        }
+    },
+    {
+        "type": "quiz",
+        "week": 1,
+        "name": "quiz",
+        "content": {
+            "title": "Quiz 4",
+            "questions": [
+                {
+                    "title": "When gathering information, what is the best way to find out about a specific college or university?",
+                    "correct": 1,
+                    "id": 0,
+                    "responses": [
+                        "Ask a neighbor",
+                        "Contact the school directly or visit their website.",
+                        "Talk to your friends.",
+                        "Watch the news."
+                    ]
+                },
+                {
+                    "title": "What are some of the aspects you should consider when choosing the ‘right’ college/university?",
+                    "correct": 3,
+                    "id": 1,
+                    "responses": [
+                        "You prefer to live at home or on campus.",
+                        "Tuition, financial aid and scholarships available.",
+                        "You prefer to attend a large university or a smaller private college.",
+                        "All of the above."
+                    ]
+                },
+                {
+                    "title": "What is the best reason to choose one school over another?",
+                    "correct": 4,
+                    "id": 2,
+                    "responses": [
+                        "It’s located near the beach.",
+                        "Your friends will be going there.",
+                        "The tuition is affordable.",
+                        "The school offers a strong program in a major which interests you.",
+                        "The “best” reason comes down to what’s most important to you."
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "Best Fit School",
+            "synopsis": "Now let’s learn a bit about how to select colleges that will be the “best fit” for you!",
+            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery"
+        }
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "Best Fit School",
+            "synopsis": "Now let’s learn a bit about how to select colleges that will be the “best fit” for you!",
+            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery"
+        }
+    },
+    {
+        "type": "videoLink",
+        "week": 1,
+        "name": "video",
+        "content": {
+            "heading": "Best Fit School",
+            "synopsis": "Now let’s learn a bit about how to select colleges that will be the “best fit” for you!",
+            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery"
         }
     },
     {
@@ -277,63 +907,19 @@
         "week": 1,
         "name": "journal",
         "content": {
-            "instructions": "You will answer the following questions.",
-            "instructionList": [
-                "What are three of your academic accomplishments?",
-                "Have you taken any AP courses?",
-                "Have you won any mathematics, science or English awards?",
-                "Do you play a sport? Do you play an instrucment?",
-                "Make a list  in your journal of your academic accomplishments and your extracurricular activities."
+            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+        }
+    },
+    {
+        "type": "wrapup",
+        "week": 1,
+        "name": "wrapup",
+        "content": {
+            "synopsis": "Be able to identify up to ten differences between the U.S. and Chinese educational systems. Add to your understanding of who you are by better understanding the educational system of China. Use the knowledge about yourself and the educational system from which you came to identity schools that would be the best fit for you.",
+            "takeaways": [
+                "The differences between the U.S. and Chinese educational systems.",
+                "The “best-fit” school concept.."
             ]
-        }
-    },
-    {
-        "type": "links",
-        "week": 1,
-        "name": "links",
-        "content": {
-            "heading": "Populate Myers-Briggs Rating in Profile",
-            "instuctionsHeader": "You will populate your profiles using your MBTI results and the list of the academic accomplishments and extra-curricular interests.",
-            "singleLinkhref": "/profile/student",
-            "singleLinkHeading": "Click to proceed to heading"
-        }
-    },
-    {
-        "type": "links",
-        "week": 1,
-        "name": "links",
-        "content": {
-            "heading": "Register With CFNC",
-            "instuctionsHeader": "You will register with CFNC and locate the Cluster Survey.",
-            "singleLinkhref": "/profile/student",
-            "singleLinkHeading": "Click to proceed to heading"
-        }
-    },
-    {
-        "type": "assignment",
-        "week": 1,
-        "name": "assignment",
-        "content": {
-            "subHeading": "Mapping out your Career Path",
-            "instructionList": [
-                "Complete the CFNC Career Cluster Survey.",
-                "You will use your journals to list your personal strengths and interests, preferred courses, activities, free time activities, community service activities, extracurricular activities",
-                "You should also list the majors and careers paths in which you are most interested."
-            ]
-        }
-    },
-    {
-        "type": "quiz",
-        "week": 1,
-        "name": "quiz",
-        "content": {"questions":[{"correct":0,"id":0,"responses":["response1","response2","response3"],"title":"title1"},{"correct":1,"id":1,"responses":["response1","response2","response3"],"title":"title2"},{"correct":2,"id":2,"responses":["response1","response2","response3"],"title":"title2"}],"title":"Quiz Title 1"}
-    },
-    {
-        "type": "article",
-        "week": 1,
-        "name": "article",
-        "content": {
-            "id": 2
         }
     },
     {
