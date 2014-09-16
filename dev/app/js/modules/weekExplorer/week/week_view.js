@@ -274,14 +274,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	        wrapup: 			Week.WrapupView
 	    },
 	    events:{
-	    	"click .cycle-up": 				"cycleHandler",
-	    	"click .cycle-down": 			"cycleHandler",
-	    	"click .show-comic": 			"handleComic",
-	    	"click .show-game": 			"handleGame",
-	    	"click .journal .submit": 		"handleJournalSubmit",
-	    	"click .assignment .submit": 	"handleAssignmentSubmit",
-	    	"click .quiz .submit": 			"handleQuizSubmit",
-	    	"click .eventTarget":			"handleEvents",
+	    	"click .cycle-up": 					"cycleHandler",
+	    	"click .cycle-down": 				"cycleHandler",
+	    	"click .show-comic": 				"handleComic",
+	    	"click .show-game": 				"handleGame",
+	    	"click .journal .submitbtn": 		"handleJournalSubmit",
+	    	"click .assignment .submitbtn": 	"handleAssignmentSubmit",
+	    	"click .quiz .submitbtn": 			"handleQuizSubmit",
+	    	"click .eventTarget":				"handleEvents",
 	    },
 	   	/******************SCROLLING EVENTS***********************/
 	    //handles frame cycle arrow buttons

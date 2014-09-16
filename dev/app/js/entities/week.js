@@ -151,7 +151,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
 			query.ascending("index");
-
+			
 		query.get(id, {
 			success:function(frame) {
 				def.resolve({
