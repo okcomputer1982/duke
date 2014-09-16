@@ -1,18 +1,28 @@
-<h1>Journal</h1>
+<h1 class="title">Journal</h1>
+<h1 class="subtitle">{{{content.heading}}}</h1>
+
 <div class="inner-wrap">
-	<div class="another-wrapper">
+	
+	<div class="row">
+		<div class="col-md-3 textblock">
+			{{#if content.instructions}}
+				<h2 class="subheading">Instructions:</h2>
+				{{{content.instructions}}}
+			{{/if}}
 
-		<h2 class="subHeading">{{{content.heading}}}</h2>
-
-		<p class="instructions">Instructions: {{{content.instructions}}}</p>
-		
-		<ol class="objectives">
-	      {{#each content.instructionList}}
-	        <li>{{{this}}}</li>
-	      {{/each}}
-	    </ol>
-	    
-		<textarea name="" id="" cols="20" rows="13"></textarea>
-		<button type="submit" class="submit btn btn-large btn-primary attributeTarget eventTarget">Submit</button>
+			{{#if content.instructionList}}
+			<h2 class="subheading">Address the following:</h2>
+			<ul class="objectives">
+		  	{{#each content.instructionList}}
+		    	<li>{{{this}}}</li>
+		  	{{/each}}
+			</ul>
+			{{/if}}		
+		</div>
+		<div class="col-md-9">
+			<textarea name="" id="" cols="20" rows="13"></textarea>
+			<a type="submit" class="submitbtn btn btn-large btn-primary attributeTarget eventTarget">Submit</a>
+		</div>
 	</div>
+
 </div>

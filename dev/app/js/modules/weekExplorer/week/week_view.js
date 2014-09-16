@@ -183,7 +183,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		itemView:Week.SidebarItemView,
 		events: {
 			"click .weekItemLink":"clickWeekItemLink",
-			"click .arrow":"clickWeekArrow"
+			"click .arrow":"arrow"
 		},
 
 		init:function(id) {
@@ -315,11 +315,11 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    	$(window).unbind('scroll');
 
-	    	var offset = ((linkId === 0)?100:60);
+	    	var offset = ((linkId === 0)?100:50);
 
 		    $(window).scrollTo(".weekitem" + linkId, {
 		    	duration:300,
-		    	offset:-100,
+		    	offset:-110,
 		    	onAfter:function(){
 		    		$(window).scroll(function(){
 		    			that.scrollHandler.apply(that);

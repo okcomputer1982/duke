@@ -1,19 +1,28 @@
-<h1 class="weekHeading">{{{content.title}}}</h1>
+<h1 class="title">overview</h1>
+<h1 class="subtitle">{{{content.title}}}</h1>
 
 <div class="inner-wrap attributeTarget">
-  <div class="another-wrapper">
-    <h2 class="subHeading">{{{content.subTitle}}}</h2>
-    {{#if content.overview}}
-      <h2 class="subHeading">Overview: {{{content.overview}}}</h2>
-    {{/if}}
+  
+  <h2 class="heading">Overview:</h2>
+  {{#if content.overview}}
+    <div class="textblock">
+      {{{content.overview}}}
+    </div>
+  {{/if}}
 
-    <h3>You Will</h3>
-      <ol class="objectives">
+  <h2 class="heading">You Will:</h2>
+    <div class="textblock">
+      <ul class="objectives">
         {{#each content.objectives}}
           <li>{{{this}}}</li>
         {{/each}}
-      </ol>
+      </ul>
 
-    <h3>Attributes Available:</h3>
-  </div>
+    </div>
+  <h2 class="heading">Attributes Available:</h2>
+  <p class="textblock">
+    {{#each content.attributes}}
+      {{{this}}}
+    {{/each}}
+  </p>
 </div>

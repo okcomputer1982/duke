@@ -15,7 +15,6 @@ Handlebars.registerHelper('getAttributeVal', function(id) {
 });
 
 Handlebars.registerHelper('getWeekLabel', function() {
-    console.log(this);
   	return this + 1;
 });
 

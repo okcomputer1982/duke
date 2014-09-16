@@ -1,7 +1,14 @@
-<h1>Wrap-Up</h1>
+<h1 class="title">Wrap-Up</h1>
+<h1 class="subtitle">{{{content.title}}}</h1>
+
 <div class="inner-wrap">
-    <h2 class="subheading">{{{content.synopsis}}}</h2>
-    <ul>
+	<h2 class="heading">Take Aways:</h2>	
+	<div class="textblock">
+    	{{{content.synopsis}}}
+    </div>
+
+    <h2 class="heading">In this lesson, you have learned:</h2>
+    <ul class="textblock">
     {{#each content.takeaways}}
     	<li>{{{this}}}</li>
     {{/each}}

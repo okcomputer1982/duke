@@ -1,10 +1,19 @@
-<h1>Video</h1>
+<h1 class="title">video</h1>
+<h1 class="subtitle">{{{content.heading}}}</h1>
 
-    <h2 class="sub">{{{content.heading}}}</h2>
-	<video id="video" class="attributeTarget eventTarget" controls>
-    	<source src="videos/{{content.video}}.m4v" type="video/m4v">
-        <source src="videos/{{content.video}}.ogv" type="video/ogv">
-        <source src="videos/{{content.video}}.webm" type="video/webm">
-  </video>
-  <h2 class="subheading">{{{content.subheading}}}</h2>
+<div class="inner-wrap">
 
+	<div class="row">
+		<div class="col-md-3 textblock">
+			<h2 class="subheading">Summary:</h2>
+			{{{content.synopsis}}}
+		</div>
+		<div class="col-md-9">
+			<video id="video" class="attributeTarget eventTarget" controls>
+				<source src="videos/{{content.video}}.m4v" type="video/m4v">
+				<source src="videos/{{content.video}}.ogv" type="video/ogv">
+				<source src="videos/{{content.video}}.webm" type="video/webm">
+			</video>
+		</div>	
+	</div>
+</div>

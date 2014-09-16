@@ -1,11 +1,26 @@
-<h1>Links</h1>
-<div class="inner-wrap attributeTarget">
-  <h2 class="subheading">{{{content.heading}}}</h2>
-  <h3 class="instructions">{{{content.instructionHeader}}}</h3>
-  <a href="{{{content.singleLinkhref}}}">{{{content.singleLinkHeading}}}</a>
-  <ol>
-    {{#each content.linkList}}
-      <li><a href="this.link">{{{this.name}}}</a></li>
-    {{/each}}
-  </ol>
+<h1 class="title">Links</h1>
+<h1 class="subtitle">{{{content.heading}}}</h1>
+
+	<div class="inner-wrap attributeTarget">
+	<h2 class="heading">Summary:</h2>
+	<div class="textblock">
+		{{{content.synopsis}}}
+	</div>
+
+	<h2 class="heading">Instructions:</h2>
+	<div class="textblock">
+		{{{content.instructions}}}
+	</div>
+
+	{{#if content.singleLinkHeading}}
+		<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.singleLinkhref}}}">{{{content.singleLinkHeading}}}</a>
+	{{/if}}
+
+	{{#if content.linkList}}
+	<ul class="linklist">
+		{{#each content.linkList}}
+		<li><a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this.link}}}">{{{this.name}}}</a></li>
+		{{/each}}
+	</ul>
+	{{/if}}
 </div>

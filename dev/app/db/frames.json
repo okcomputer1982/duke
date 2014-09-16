@@ -4,22 +4,22 @@
         "week": 0,
         "name": "overview",
         "content": {
-            "title": "Week One: Who and What Are You?",
-            "subTitle": "Who are you and what are you equals knowing yourself.",
-            "overview": "This lesson will help you to identify your personality, personal strengths and interests. Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. You will develop your character profile, which will help you create a plan for what you might want to study in high school and college.",
             "objectives": [
-                "Review course goals, objectives, and syllabus for both Semesters.",
-                "Understand WHO you are: What are your interests? What are your “likes? What is your personality profile?",
-                "Understand WHAT you are: Identify your academic and extra-curricular strengths.",
+                "Review course goals, objectives, and syllabus for both Semesters.", 
+                "Understand WHO you are: What are your interests? What are your \u201clikes? What is your personality profile?", 
+                "Understand WHAT you are: Identify your academic and extra-curricular strengths.", 
                 "Identify objectives for future college study."
-            ],
+            ], 
+            "overview": "<p>Knowing yourself: Who are you and what are you equals knowing yourself. This lesson will help you to identify your personality, personal strengths and interests.</p> <p>Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. You will develop your character profile, which will help you create a plan for what you might want to study in high school and college.</p>",
+            "title": "Week One: Who and What Are You?",
             "attributes": [
-                4,
-                6,
-                8,
-                3,
-                0,
-                9
+                "Exploration,",
+                "Introspection,", 
+                "Knowledge,",
+                "Comprehension,",
+                "Thoroughness,",
+                "Reflection,",
+                "Accuracy"
             ]
         }
     },
@@ -28,7 +28,8 @@
         "week": 0,
         "name": "video",
         "content": {
-            "heading": "Introduction to the Class",
+            "heading": "Welcome and Overview",
+            "synopsis": "<p>This video will teach you a bit about the course and what you will be learning.</p>",
             "video": "Duke_ConEd_Class0"
         },
         "attributes": [
@@ -38,12 +39,13 @@
         ]
     },
     {
-        "type": "activity",
+        "type": "article",
         "week": 0,
-        "name": "activity",
+        "name": "article",
         "content": {
-            "heading": "A Student’s Journey: To College and Beyond",
-            "instuctionsHeader": "Review the syllabus and take a quiz to check for understanding."
+            "id": 0,
+            "title":"Class Syllabus",
+            "synopsis": "<p>Review the syllabus. Afterward, you will take a quiz on the information within.</p>"
         }
     },
     {
@@ -51,7 +53,7 @@
         "week": 0,
         "name": "quiz",
         "content": {
-            "title": "Quiz 1",
+            "title": "Introduction and Overview",
             "questions": [
                 {
                     "correct": 3,
@@ -95,22 +97,10 @@
         "name": "links",
         "content": {
             "heading": "U.S. Higher Education Glossary",
-            "synopsis": "The following article provides a glossary of important terms used specifically for International students while researching U.S. higher education.",
-            "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
-            "linkList": [
-                {
-                    "name": "Article 1",
-                    "link": "http://admissions.wfu.edu/apply/international.php#application"
-                },
-                {
-                    "name": "Article 2",
-                    "link": "http://www.brandeis.edu/admissions/apply/international.html"
-                },
-                {
-                    "name": "Article 3",
-                    "link": "http://admissions.pages.tcnj.edu/resources-for/international-applicants"
-                }
-            ]
+            "synopsis": "<p>The following article provides a glossary of important terms used specifically for International students while researching U.S. higher education.</p>",
+            "instructions": "<p>Click on the link, read the article and take a quiz to check for understanding.</p>",
+            "singleLinkHeading":"Article Link",
+            "singleLinkhref":"http://www.usnews.com/education/best-colleges/articles/2011/08/15/us-higher-education-glossary"
         }
     },
     {
@@ -162,7 +152,7 @@
         "name": "video",
         "content": {
             "heading": "Myers Briggs Personality Type Indicator (MBTI)",
-            "synopsis": "This video will help you to learn about yourself, your personality traits, and your interests. It will also assist you in selecting your “best fit” school.",
+            "synopsis": "<p>This video will help you to learn about yourself, your personality traits, and your interests. It will also assist you in selecting your “best fit” school.</p>",
             "video": "Duke_ConEd_Class1"
         },
         "attributes": [
@@ -177,22 +167,10 @@
         "name": "links",
         "content": {
             "heading": "Myers Briggs Personality Type Indicator (MBTI)",
-            "synopsis": "Learn About the Myers Briggs Personality Type Indicator (MBTI)",
-            "instructions": "Learn about the Myers Briggs Personality Type Indicator by clicking on the link below and watch the slideshow by clicking on “Next” until you complete all 46 slides. Once complete you will take a quiz to check for understanding. ",
-            "linkList": [
-                {
-                    "name": "Article 1",
-                    "link": "http://admissions.wfu.edu/apply/international.php#application"
-                },
-                {
-                    "name": "Article 2",
-                    "link": "http://www.brandeis.edu/admissions/apply/international.html"
-                },
-                {
-                    "name": "Article 3",
-                    "link": "http://admissions.pages.tcnj.edu/resources-for/international-applicants"
-                }
-            ]
+            "synopsis": "<p>Learn About the Myers Briggs Personality Type Indicator (MBTI)</p>",
+            "instructions": "<p>Learn about the Myers Briggs Personality Type Indicator by clicking on the link below and watch the slideshow by clicking on “Next” until you complete all 46 slides. Once complete you will take a quiz to check for understanding.</p>",
+            "singleLinkHeading":"Article Link",
+            "singleLinkhref":"http://www.teamtechnology.co.uk/personality/intro/"
         }
     },
     {
@@ -322,13 +300,15 @@
         }
     },
     {
-        "type": "articleLink",
+        "type": "links",
         "week": 0,
-        "name": "article",
+        "name": "links",
         "content": {
-            "heading": "Take the Myers-Briggs Test",
-            "instructions": "Click on the following link and take the MBTI by following the instructions.",
-            "link": "http://www.16personalities.com/free-personality-test"
+            "heading": "Take the Myers Briggs Personality Test",
+            "synopsis": "<p>Now that you've learned about Myers Briggs, it is your turn to take it yourself.</p>",
+            "instructions": "<p>Click on the following link and take the MBTI by following the instructions.</p>",
+            "singleLinkHeading":"Go To Test",
+            "singleLinkhref":"http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
         }
     },
     {
@@ -336,40 +316,57 @@
         "week": 0,
         "name": "journal",
         "content": {
-            "heading": "Introduction to Journals",
-            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+            "heading": "Reflections on Myers Briggs",
+            "instructionList":[
+                "What did you learn about Myers Briggs Personality Type Indicator?",
+                "What is your personality type?",
+                "What are the advantages and/or disadvantages of your personality type?",
+                "Please describe what you agree or disagree with from the findings.",
+                "How has it been helpful to know your personality and how the result can help you in choosing a college or major?"
+            ]
         },
         "attributes": [
             3
         ]
     },
     {
-        "type": "articleLink",
+        "type": "links",
         "week": 0,
-        "name": "article",
+        "name": "links",
         "content": {
-            "heading": "Learn About Your Interests and Strengths",
-            "instructions": "You will take an Interest Profiler and Career Cluster Survey about your strengths and interests. Register with CFNC by creating your own account. Click on the link below and follow the instructions. Once logged in, click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”. Take the Interest Profiler by clicking on > Interest Profiler.",
-            "link": "http://www.16personalities.com/free-personality-test"
+            "heading": "The Interest Profile",
+            "synopsis": "<p>Now that you know more about your personality, let's take a look at your personal interests and strengths.</p>",
+            "instructions": "<p>You will take an Interest Profiler. Register with CFNC by creating your own account. Click on the link below and follow the instructions. Once logged in, click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”.</p> <p><em>Take the Interest Profiler by clicking on > Interest Profiler.</em> </p>",
+            "singleLinkHeading":"Take the Profile",
+            "singleLinkhref":"http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
         }
     },
     {
-        "type": "articleLink",
+        "type": "links",
         "week": 0,
-        "name": "article",
+        "name": "links",
         "content": {
-            "heading": "Learn About Your Interests and Strengths",
-            "instructions": "Now take the Career Cluster Survey about your strengths and interests. Click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”. Take the Career Cluster Survey by clicking on > Career Cluster Survey. Once complete, review your “Clusters” and make a Journal about what you’ve learned.",
-            "link": "http://www.16personalities.com/free-personality-test"
+            "heading": "The Career Profile",
+            "synopsis": "<p>Personal and interest both play a large role in your ideal career. Let's use the information in this lesson to find one that best fits you.</p>",
+            "instructions": "<p>Now take the Career Cluster Survey about your strengths and interests. Click on “Plan” and scroll down to “Plan for A Career” and click on “Learn About Yourself”. Take the Career Cluster Survey by clicking on > Career Cluster Survey.</p> <p><em>Once complete, review your results and return to journal about your experience.</em></p>",
+            "singleLinkHeading":"Go To Profile",
+            "singleLinkhref":"http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
         }
     },
     {
+
         "type": "journal",
         "week": 0,
         "name": "journal",
         "content": {
             "heading": "Reflection on Interests and Strengths",
-            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+            "instructionList":[
+                "What did you learn from your Interest Profiler and Career Cluster Survey?",
+                "What are your top two interest areas and do you agree with the findings?",
+                "What careers best match your interests and do you agree with these career choices?",
+                "How can you take what you’ve learned and apply it to your High School and College experience?",
+                "Are there careers of interest to you other than those suggested to you by CFNC? If yes, what are they?"
+            ]
         },
         "attributes": [
             3
@@ -380,7 +377,8 @@
         "week": 0,
         "name": "wrapup",
         "content": {
-            "synopsis": "Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extra-curricular activities of interest and will be able to use this information in future years when choosing a college.",
+            "title":"Knowing Yourself",
+            "synopsis": "<p>Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extra-curricular activities of interest and will be able to use this information in future years when choosing a college.</p>",
             "takeaways": [
                 "What the Course is about.",
                 "Who you are: Your personality type, your interests and strengths.",

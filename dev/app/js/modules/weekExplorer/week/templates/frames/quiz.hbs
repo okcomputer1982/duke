@@ -1,21 +1,23 @@
-<h1>Quiz</h1>
-<div class="inner-wrap">
+<h1 class="title">quiz</h1>
+<h1 class="subtitle">{{{content.title}}}</h1>
 
-<h2 class="subHeading">{{{content.title}}}</h2>
+<div class="inner-wrap">
 
 <div class="quiz"></div>
 	{{#each content.questions}}
 		{{setQuizIndex}}
 
 		<div class="quizItem" data-index="{{getQuizIndex}}">
-			<p>{{{this.title}}}</p>
+			<h2 class="heading">{{{this.title}}}</h2>
 			{{setResponseIndex}}
+			<div class="textblock">
 			{{#each this.responses}}
-				<input type="radio" class="response" name="quiz{{getQuizIndex}}" data-index="{{getResponseIndex}}" value="this">{{{this}}}<br>
+				<input type="radio" class="response" name="quiz{{getQuizIndex}}" data-index="{{getResponseIndex}}" value="this"><span class="inputtext">{{{this}}}</span><br>
 			{{/each}}
+			</div>
 		</div>
 		<hr/>
 	{{/each}}
 
-	<button type="submit" class="submit btn btn-large btn-primary attributeTarget eventTarget">Submit</button>
+	<a type="submit" class="submitbtn btn btn-large btn-primary attributeTarget eventTarget">Submit</a>
 </div>
