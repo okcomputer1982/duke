@@ -9,6 +9,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				assignmentObjectPromise = DukeApp.request("assignments:entities", DukeApp.utils.getCurrentUser().id),
 				quizObjectPromise = DukeApp.request("quizes:entities", DukeApp.utils.getCurrentUser().id);
 
+			//load all student related data objects for display
 			$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise).done(function(studentObject, journals, assignments, quizes) {
 				studentObject.journals = journals;
 				studentObject.assignments = assignments;

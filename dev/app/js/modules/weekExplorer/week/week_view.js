@@ -192,8 +192,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 		init:function(id) {
 			this.active = $('.weekItemLink[data-weekItem="0"]');
-			//firstFrame.addClass("active");
-
+			 $('.weekItemLink[data-weekItem="0"]').addClass("active");
 			$("#week_number").text(id + 1);
 		},
 
@@ -202,7 +201,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	        var target = $(e.currentTarget),
 	        	linkId = $(e.currentTarget).data('weekitem');
-		    
 
 		    this.trigger("weekView:scrollto", {linkId:linkId});
 		},
@@ -218,6 +216,16 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			this.active.removeClass('active');
 		 	target.addClass('active');
 		 	this.active = target;
+
+		 	if (linkId >= 5) {
+		 		$("#section_nav").scrollTo('.weekItemLink[data-weekItem=' + (linkId - 5) + "]", {
+		    		duration:300,
+		    	});
+		 	} else if (this.active !== $(".weekItemLink[data-weekItem=0]")) {
+		 		$("#section_nav").scrollTo(".weekItemLink[data-weekItem=0]", {
+		    		duration:300,
+		    	});
+		 	}
 		}
 	});
 
@@ -291,34 +299,41 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    //handles frame cycle arrow buttons
 	    cycleHandler:function(e) {
 	    	e.preventDefault();
+	    	var that = this;
+			
+			if (!this.cycle) {
+				this.cycle = true;
 
-	    	var type = $(e.currentTarget).attr('class').split(" ")[1],
-	    		currentScrollPos = $(window).scrollTop(),
-	    		linkId,
-	    		scrollPos = Week.scrollPos;
+	    		var type = $(e.currentTarget).attr('class').split(" ")[1],
+		    		currentScrollPos = $(window).scrollTop(),
+		    		linkId,
+		    		scrollPos = Week.scrollPos;
 
-	    	
-	    	if (type === "cycle-down") {
-	    		linkId = Week.Controller.currentFrame + 1;
-	    	} else {
-	    		linkId = Week.Controller.currentFrame - 1;
-	    	}
+		    	
+		    	if (type === "cycle-down") {
+		    		linkId = Week.Controller.currentFrame + 1;
+		    	} else {
+		    		linkId = Week.Controller.currentFrame - 1;
+		    	}
 
-	    	if (linkId < 0) {
-	    		linkId = scrollPos.length;
-	    	} else if (linkId > scrollPos.length) {
-	    		linkId = 0;
-	    	}
+		    	if (linkId < 0) {
+		    		linkId = scrollPos.length-1;
+		    	} else if (linkId >= scrollPos.length) {
+		    		linkId = 0;
+		    	}
 
-	    	this.trigger("weekView:scrollto", {linkId:linkId});
+			    _.debounce(function(){that.cycle = false;}, 350)();
+		    	this.trigger("weekView:scrollto", {linkId:linkId});
+		    }
+    	
 	    },
 
 	    //scrolls to a particuler frame
 	    scrollToFrame:function(linkId) {
-	    	var that = this;
+	    	var that = this,
+	    		deferred = $.Deferred();
 
 	    	$(window).unbind('scroll');
-
 	    	var offset = ((linkId === 0)?100:50);
 
 		    $(window).scrollTo(".weekitem" + linkId, {
@@ -328,24 +343,55 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		    		$(window).scroll(function(){
 		    			that.scrollHandler.apply(that);
 		    		});
+
+		    		deferred.resolve();
 		    	}
 		    });
+
+		    return(deferred.promise());
 	    },
 
 	    //finds the active frame current scrolled to
 	    scrollHandler: function(e) {
-	    	var currentScrollPos = $(window).scrollTop(),
-	    		scrollPos = Week.scrollPos;
+	    	var that = this;
+	    	var currentPos = $(window).scrollTop();
 
-	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
-	    		if (currentScrollPos + 100 >= scrollPos[linkId].pos && currentScrollPos + 100 < scrollPos[linkId+1].pos){
-	    			break;
-	    		}
+	    	if (!this.isScrolling && currentPos !== this.lastPos) {
+	    		this.isScrolling = true;
+	    		this.scrollCheck = setInterval(this.checkForChange.bind(this), 5);
 	    	}
 
-	    	this.trigger("studentProfile:setActiveLink", {linkId:linkId});
+	    	this.lastPos = currentPos;
 	    },
 
+	    checkForChange: function(e) {
+	    	var that = this;
+	    	var currentScrollPos = $(window).scrollTop();
+	    	
+	    	if (currentScrollPos === this.lastPos) {
+	    		this.isScrolling = false;
+	    		clearInterval(this.scrollCheck);
+
+	    		this.setScrollPosition();
+	    	} else {
+	    		_.throttle(this.setScrollPosition, 5)();
+	    	}
+
+	    	this.lastPos = currentScrollPos;
+	    },
+
+	    setScrollPosition:function() {
+	    	var currentScrollPos = $(window).scrollTop(),
+    			scrollPos = Week.scrollPos;
+
+	    	for (var linkId = 0; linkId < scrollPos.length -1; linkId++){
+	    		if (currentScrollPos + 110 >= scrollPos[linkId].pos && currentScrollPos + 110 < scrollPos[linkId+1].pos){
+    				break;
+    			}
+    		}
+
+    		this.trigger("weekView:setActiveLink", {linkId:linkId});
+	    },
 
 	    /******************RESIZING**********************/
 	    //handles resizing of the window
@@ -365,6 +411,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	$(window).scroll(function(){
 	    		that.scrollHandler.apply(that);
 	    	});
+
+	    	this.isScrolling = false;
+	    	this.cycle = false;
 
 	    	//cache scroll positions of all frames
 	    	var frames = $('section');

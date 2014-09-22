@@ -121,8 +121,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		scrollToFrame:function(obj){
 			Week.Controller.views.content.scrollToFrame(obj.linkId);
 			Week.Controller.setActiveLink(obj);
-			// var views = Week.Controller.views;
- 		// 		views.sidebar.setActiveFrame(obj.linkId);
 		},
 
 		setWeekContent:function(obj){
@@ -131,12 +129,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 		setActiveLink:function(obj){
 			var views = Week.Controller.views;
- 				views.sidebar.setActiveFrame(obj.linkId);
+ 				
+ 			if (Week.Controller.currentFrame !== obj.linkId) {				
+				views.sidebar.setActiveFrame(obj.linkId);
 
-			if (Week.Controller.currentFrame !== obj.linkId) {				
+				//sends visitation event if active
 				Week.Controller.currentFrame = obj.linkId;
 				
- 				//turning off visitation logging for now.
  				Week.Controller.saveFrameEvent({id:Week.Controller.currentFrame, status:"visited", allowRepeat:false});
  				
  				var cframe = Week.Controller.frames.models[obj.linkId];
