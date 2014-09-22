@@ -28,9 +28,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 		tagName:"section",
 
-		onShow:function(){
-			$(".articleItem").hide();
-			$(".articleItem[data-id=" +  this.model.get('content').id + "]").show();
+		onShow:function() {
+			var id = this.model.get('content').id;
+			var weekitem = ".weekitem" + this.model.get("weekItem");
+
+			
+			$("section" + weekitem +  " .articleItem").hide();
+			$("section" + weekitem +  " .articleItem[data-id=" + id + "]").show();
 		}
 	});
 
@@ -384,6 +388,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    		Week.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
+
+    		// var heading = $($('.headingContainer')[0]);
+    		// heading.scrollToFixed({
+      //       	marginTop: 110,
+      //       	limit:200,
+      //       	zIndex: 999
+      //   	});
 	    },
     	
     	//retrieves the itemView related to the frame

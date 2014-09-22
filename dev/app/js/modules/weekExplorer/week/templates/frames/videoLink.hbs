@@ -1,16 +1,38 @@
-<h1 class="title">video</h1>
-<h1 class="subtitle">{{{content.heading}}}</h1>
+<div class="headingContainer">
+	<h1 class="title">video</h1>
+	<h1 class="subtitle">{{{content.heading}}}</h1>
+</div>
 
 <div class="inner-wrap">
-	<div class="another-wrapper">	  	
-	  	<p>{{{content.synopsis}}}</p>
-	  	<p>{{{content.instruction}}}</p>
-	  	<ol class="objectives">
-	      {{#each content.instructionList}}
-	        <li>{{{this}}}</li>
-	      {{/each}}
-	    </ol>
-	    
-	  	<a class="moreButton attributeTarget eventTarget" href="{{{content.link}}}" target="_blank">View Video</a>
-	</div>
+	<h2 class="subheading">Summary:</h2>
+	<div class="textblock">
+      {{{content.synopsis}}}
+    </div>
+  	
+  	<h2 class="subheading">Instructions:</h2>
+  	{{#if content.instruction}}
+  	<div class="textblock">
+  		{{{content.instruction}}}
+  	</div>
+  	{{/if}}
+	
+	{{#if content.instructionList}}
+  	<ul class="objectives">
+      {{#each content.instructionList}}
+        <li>{{{this}}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    
+    {{#if content.link}}
+		<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.link}}}">View Video</a>
+	{{/if}}
+
+	{{#if content.links}}
+	<ul class="linklist">
+      {{#each content.links}}
+        <li><a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this}}}">View Video</a></li>
+      {{/each}}
+    </ul>
+	{{/if}}
 </div>

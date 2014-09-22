@@ -1,15 +1,6 @@
 [
     {
         "content": {
-            "attributes": [
-                "Exploration,", 
-                "Introspection,", 
-                "Knowledge,", 
-                "Comprehension,", 
-                "Thoroughness,", 
-                "Reflection,", 
-                "Accuracy"
-            ], 
             "objectives": [
                 "Review course goals, objectives, and syllabus for both Semesters.", 
                 "Understand WHO you are: What are your interests? What are your \u201clikes? What is your personality profile?", 
@@ -33,7 +24,7 @@
         "content": {
             "heading": "Welcome and Overview", 
             "synopsis": "<p>This video will teach you a bit about the course and what you will be learning.</p>", 
-            "video": "Duke_ConEd_Class0"
+            "video": "/week1/welcome"
         }, 
         "index": 1, 
         "name": "video", 
@@ -97,15 +88,13 @@
     }, 
     {
         "content": {
-            "heading": "U.S. Higher Education Glossary", 
-            "instructions": "<p>Click on the link, read the article and take a quiz to check for understanding.</p>", 
-            "singleLinkHeading": "Article Link", 
-            "singleLinkhref": "http://www.usnews.com/education/best-colleges/articles/2011/08/15/us-higher-education-glossary", 
-            "synopsis": "<p>The following article provides a glossary of important terms used specifically for International students while researching U.S. higher education.</p>"
+            "id": 13, 
+            "synopsis": "<p>Review the syllabus. Afterward, you will take a quiz on the information within.</p>", 
+            "title": ""
         }, 
         "index": 4, 
-        "name": "links", 
-        "type": "links", 
+        "name": "article", 
+        "type": "article", 
         "week": 0
     }, 
     {
@@ -161,7 +150,7 @@
         "content": {
             "heading": "Myers Briggs Personality Type Indicator (MBTI)", 
             "synopsis": "<p>This video will help you to learn about yourself, your personality traits, and your interests. It will also assist you in selecting your \u201cbest fit\u201d school.</p>", 
-            "video": "Duke_ConEd_Class1"
+            "video": "week1/Myers-Briggs"
         }, 
         "index": 6, 
         "name": "video", 
@@ -207,36 +196,25 @@
                     "title": "It is important for me to know my personality profile when considering which colleges to apply for because:"
                 }, 
                 {
-                    "correct": 2, 
-                    "id": 2, 
-                    "responses": [
-                        "A Parent", 
-                        "A Neighbor", 
-                        "A Teacher or Counselor", 
-                        "A BFF"
-                    ], 
-                    "title": "Letters of Recommendation are most often written by:"
-                }, 
-                {
                     "correct": 3, 
-                    "id": 3, 
+                    "id": 2, 
                     "responses": [
                         "1", 
                         "2", 
                         "3", 
                         "4"
                     ], 
-                    "title": "How many codes does the personality code have?"
+                    "title": "How many codes does the personality type codes have?"
                 }, 
                 {
                     "correct": 2, 
-                    "id": 1, 
+                    "id": 3, 
                     "responses": [
                         "Actions and Words or Thoughts and Emotions", 
                         "Thoughts and Actions or Emotions and Words", 
                         "Thoughts and Emotions or Actions and Words"
                     ], 
-                    "title": "The first letter of your code describes where you use your favorite mental muscle. In the inner world of ______ and ______ or the outer world of ______ and ______:"
+                    "title": "The first letter of your personality type code describes where you use your favorite mental muscle. In the inner world of ______ and ______ or the outer world of ______ and ______:"
                 }, 
                 {
                     "correct": 1, 
@@ -310,7 +288,7 @@
     }, 
     {
         "content": {
-            "heading": "Take the Myers Briggs Personality Test", 
+            "heading": "Take the Myers Briggs Personality Type Indicator (MBTI)", 
             "instructions": "<p>Click on the following link and take the MBTI by following the instructions.</p>", 
             "singleLinkHeading": "Go To Test", 
             "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d", 
@@ -345,8 +323,7 @@
             "heading": "The Interest Profile", 
             "instructions": "<p>You will take an Interest Profiler. Register with CFNC by creating your own account. Click on the link below and follow the instructions. Once logged in, click on \u201cPlan\u201d and scroll down to \u201cPlan for A Career\u201d and click on \u201cLearn About Yourself\u201d.</p> <p><em>Take the Interest Profiler by clicking on > Interest Profiler.</em> </p>", 
             "singleLinkHeading": "Take the Profile", 
-            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d", 
-            "synopsis": "<p>Now that you know more about your personality, let's take a look at your personal interests and strengths.</p>"
+            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
         }, 
         "index": 11, 
         "name": "links", 
@@ -358,8 +335,7 @@
             "heading": "The Career Profile", 
             "instructions": "<p>Now take the Career Cluster Survey about your strengths and interests. Click on \u201cPlan\u201d and scroll down to \u201cPlan for A Career\u201d and click on \u201cLearn About Yourself\u201d. Take the Career Cluster Survey by clicking on > Career Cluster Survey.</p> <p><em>Once complete, review your results and return to journal about your experience.</em></p>", 
             "singleLinkHeading": "Go To Profile", 
-            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d", 
-            "synopsis": "<p>Personal and interest both play a large role in your ideal career. Let's use the information in this lesson to find one that best fits you.</p>"
+            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
         }, 
         "index": 12, 
         "name": "links", 
@@ -387,11 +363,11 @@
     }, 
     {
         "content": {
-            "synopsis": "<p>Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extra-curricular activities of interest and will be able to use this information in future years when choosing a college.</p>", 
+            "synopsis": "<p>Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extracurricular activities of interest and will be able to use this information in future years when choosing a college.</p>", 
             "takeaways": [
                 "What the Course is about.", 
                 "Who you are: Your personality type, your interests and strengths.", 
-                "What you are: Your academic and extra curricular strengths.", 
+                "What you are: Your academic and extracurricular strengths.", 
                 "What college major you might enjoy.", 
                 "Knowing who and what you are will help you in finding the college that is the best fit for you.", 
                 "What career you might enjoy."
@@ -404,18 +380,12 @@
         "week": 0
     }, 
     {
-        "attributes": [
-            5, 
-            7, 
-            3, 
-            4, 
-            6, 
-            8, 
-            9
-        ], 
         "content": {
-            "overview": "Understand the differences between the U.S. and Chinese educational systems. Understand \u201cbest-fit\u201d school concept.", 
-            "subHeading": "Now that you understand about your personality type, let\u2019s explore the differences between the U.S. and Chinese educational systems and learn something about the \u201cbest fit\u201d school.", 
+            "objectives": [
+                "Understand the differences between the U.S. and Chinese educational systems.", 
+                "Understand the \u201cbest-fit\u201d concept."
+            ], 
+            "overview": "<p>Now that you understand about your personality type, let\u2019s explore the differences between the U.S. and Chinese educational systems and learn something about the \u201cbest fit\u201d concept.</p>", 
             "title": "Week Two: U.S. vs Chinese Educational Systems and \u201cBest Fit\u201d"
         }, 
         "index": 15, 
@@ -426,13 +396,13 @@
     {
         "content": {
             "heading": "The Generation That\u2019s Remaking China", 
-            "instruction": "Click on the link below and take a quiz to check for understanding.", 
-            "link": "https://www.ted.com/talks/yang_lan", 
-            "synopsis": "Yang Lan offers her views on todays youth in China. She discusses how she believes todays generation is perceived by the outside world."
+            "instruction": "<p>Click on the link below to see Yang Lan\u2019s Ted Global talk. You will then take a quiz to check for understanding, and a journal for reflection.</p>", 
+            "synopsis": "<p>In this video, Yang Lan, a Chinese journalist, businesswoman and entrepreneur offers her views on todays youth in China. She discusses how she believes todays generation is perceived by the outside world.</p>", 
+            "video": "week2/Yang_Lan"
         }, 
         "index": 16, 
         "name": "video", 
-        "type": "videoLink", 
+        "type": "video", 
         "week": 1
     }, 
     {
@@ -470,15 +440,35 @@
     }, 
     {
         "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Reflection on Interests and Strengths", 
+            "instructionList": [
+                "Reflect about your life in the future.", 
+                "Where do you think you will be in ten years?", 
+                "Where will you live?", 
+                "What type of job do you think you will\u00a0have?", 
+                "Will you be married?", 
+                "How many jobs do you think you will\u00a0have had?"
+            ]
+        }, 
+        "index": 18, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 1
+    }, 
+    {
+        "attributes": [
             1, 
             2, 
             3
         ], 
         "content": {
-            "heading": "Watch the video to learn a bit about U.S. vs. Chinese Educational Systems.", 
-            "video": "Duke_ConEd_Class3"
+            "synopsis": "Watch the video to learn a bit about U.S. vs. Chinese Educational Systems.", 
+            "video": "week2/Differences_Bwt"
         }, 
-        "index": 18, 
+        "index": 19, 
         "name": "video", 
         "type": "video", 
         "week": 1
@@ -487,29 +477,40 @@
         "content": {
             "heading": "Learn About the Differeneces Between the U.S. And Chinese Educational Systems", 
             "link": "https://www.youtube.com/watch?v=05gbOwFRSeI", 
-            "synopsis": "Watch the documentary \u201cTwo Million Minutes.\u201d"
+            "synopsis": "<p>Watch the documentary \u201cTwo Million Minutes.\u201d</p>"
         }, 
-        "index": 19, 
+        "index": 20, 
         "name": "video", 
         "type": "videoLink", 
         "week": 1
     }, 
     {
+        "attributes": [
+            3
+        ], 
         "content": {
-            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+            "heading": "Reflection on Interests and Strengths", 
+            "instructionList": [
+                "Name three similarities and three differences between the Chinese and American educational systems.", 
+                "Compare and contrast the ways in which Chinese and American students are assessed in school. For example how are tests, homework, and projects evaluated in both countries?", 
+                "How are \u201cextracurricular\u201d activities the same in China as they are in the U.S.? How are they different?", 
+                "Compare and contrast how Chinese and American students spend time outside of school.", 
+                "Generally, what is the average class size in an American high school? How might this impact the way in which American students learn as compared to the way in which Chinese students learn?", 
+                "List three strengths of the Chinese educational system and three strengths of the American educational system."
+            ]
         }, 
-        "index": 20, 
+        "index": 21, 
         "name": "journal", 
         "type": "journal", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
-            "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "heading": "Synopsis of the U.S. School System", 
+            "instructions": "<p>Click on the link, read the article and take a quiz to check for understanding.</p>", 
+            "link": "http://sitemaker.umich.edu/vanschaack.356/synopsis_of_public_schools_in_the_u.s."
         }, 
-        "index": 21, 
+        "index": 22, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -537,23 +538,23 @@
                         "Liberal Arts Education", 
                         "Athletic Education"
                     ], 
-                    "title": "Public schools in the U.S. focus on a ________________:"
+                    "title": "Public schools in the U.S. focus on a(n) ________________:"
                 }
             ], 
             "title": "Quiz 2"
         }, 
-        "index": 22, 
+        "index": 23, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
+            "heading": "Synopsis of the Chinese School System", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/synopsis_of_public_schools_in_china"
         }, 
-        "index": 23, 
+        "index": 24, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -570,32 +571,32 @@
                         "The colleges use a lottery system", 
                         "The students are accepted according to their test results"
                     ], 
-                    "title": "How do students gain admission to colleges in China?"
+                    "title": "How do students gain admission to colleges/universities in China?"
                 }, 
                 {
-                    "correct": 1, 
+                    "correct": 0, 
                     "id": 1, 
                     "responses": [
-                        "Often left unable to finish their education", 
-                        "Held back until they can pass it"
+                        "True", 
+                        "False"
                     ], 
-                    "title": "At the end of every school year, Chinese secondary school students are tested for advancement to the next grade. If they are unable to pass the test, they are ______________________________."
+                    "title": "At the end of every school year, Chinese high school students are tested for advancement to the next grade. If they are unable to pass the test, they are often left unable to finish their education."
                 }
             ], 
             "title": "Quiz 3"
         }, 
-        "index": 24, 
+        "index": 25, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
+            "heading": "Teaching and Teaching Strategies in the U.S. and in China", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/comparison_of_teachers_and_teaching_strategies"
         }, 
-        "index": 25, 
+        "index": 26, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -610,7 +611,7 @@
                         "In the U.S. they focus on homework and in China they focus on testing.", 
                         "In the U.S. they focus on the individual and in China they focus on the group.", 
                         "n the U.S. they focus on elementary school and in China they focus on college.", 
-                        "There is no difference"
+                        "There is no difference."
                     ], 
                     "title": "What is the main focus of teachers in the U.S. and in China?"
                 }, 
@@ -618,8 +619,8 @@
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects", 
-                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help", 
+                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects.", 
+                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help.", 
                         "In the U.S., education focuses on the group more than an individual student.", 
                         "Students in Chinese schools perceive their classroom environment to be competitive and teacher controlled."
                     ], 
@@ -628,18 +629,18 @@
             ], 
             "title": "Quiz 3"
         }, 
-        "index": 26, 
+        "index": 27, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
+            "heading": "Comparison of Tracking Systems and High Stakes Testing", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/comparison_of_high_stakes_tests_and_tracking"
         }, 
-        "index": 27, 
+        "index": 28, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -651,10 +652,10 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "In the U.S. they focus on homework and in China they focus on testing.", 
-                        "In the U.S. they focus on the individual and in China they focus on the group.", 
-                        "n the U.S. they focus on elementary school and in China they focus on college.", 
-                        "There is no difference"
+                        "They are used in the U.S. to select the best students and in China they are used to promote students.", 
+                        "Both countries use different systems and tests.", 
+                        "In the U.S. they are used to separate students into groups according to their ability level and in China they are used to measure learning.", 
+                        "There is no difference in how they are used."
                     ], 
                     "title": "What is the main difference between the tracking systems and high stakes tests used in China and in the U.S.?"
                 }, 
@@ -672,18 +673,18 @@
             ], 
             "title": "Quiz 3"
         }, 
-        "index": 28, 
+        "index": 29, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
+            "heading": "Parental Involvement", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/comparison_of_parental_involvement"
         }, 
-        "index": 29, 
+        "index": 30, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -709,14 +710,14 @@
                         "Chinese teachers and parents expect that all students have the ability to succeed in all subjects.", 
                         "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help.", 
                         "In the U.S., education focuses on the group more than an individual student.", 
-                        "Students in Chinese schools perceive their classroom environments to be competitive and teacher-controlled"
+                        "Students in Chinese schools perceive their classroom environments to be competitive and teacher-controlled."
                     ], 
                     "title": "Which of the following is NOT true?"
                 }
             ], 
             "title": "Quiz 4"
         }, 
-        "index": 30, 
+        "index": 31, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
@@ -725,9 +726,9 @@
         "content": {
             "heading": "Finding the Right School for You", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/comparison_of_math_and_reading_scores"
         }, 
-        "index": 31, 
+        "index": 32, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -760,7 +761,7 @@
             ], 
             "title": "Quiz 4"
         }, 
-        "index": 32, 
+        "index": 33, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
@@ -769,9 +770,9 @@
         "content": {
             "heading": "Finding the Right School for You", 
             "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "link": "http://sitemaker.umich.edu/vanschaack.356/strenghts_and_weaknesses_of_both_systems"
         }, 
-        "index": 33, 
+        "index": 34, 
         "name": "article", 
         "type": "articleLink", 
         "week": 1
@@ -783,18 +784,18 @@
                     "correct": 3, 
                     "id": 0, 
                     "responses": [
-                        "Chinese teachers are given more respect than U.S. teachers", 
-                        "Chinese schools have a hard work ethic, resulting in student success.", 
-                        "Chinese schools do not segregate high achieving students from lower achieving students through tracking levels.", 
+                        "Chinese teachers are not given more respect than U.S. teachers", 
+                        "Chinese schools do not have a hard work ethic, resulting in student failure.", 
+                        "Chinese schools segregate high achieving students from lower achieving students through tracking levels.", 
                         "Chinese schools help students pass high stakes tests, however, those who fail often drop out."
                     ], 
-                    "title": "Which of the following is NOT a strength of the Chinese educational system?"
+                    "title": "Which of the following is a benefit of the Chinese educational system?"
                 }, 
                 {
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Better pay for teachers, more school activities, fewer tests", 
+                        "Better pay for teachers, more school activities, fewer tests.", 
                         "Longer school day, larger schools, more class choices.", 
                         "More respect for teachers, strong work ethic, belief in student potential.", 
                         "Better textbooks, holidays for teachers, more student effort."
@@ -804,7 +805,7 @@
             ], 
             "title": "Quiz 4"
         }, 
-        "index": 34, 
+        "index": 35, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
@@ -815,7 +816,7 @@
             "link": "https://bigfuture.collegeboard.org/get-started/video-gallery", 
             "synopsis": "Now let\u2019s learn a bit about how to select colleges that will be the \u201cbest fit\u201d for you!"
         }, 
-        "index": 35, 
+        "index": 36, 
         "name": "video", 
         "type": "videoLink", 
         "week": 1
@@ -834,33 +835,33 @@
                     "title": "What does \u201cBest Fit\u201d mean in the video?"
                 }, 
                 {
-                    "correct": 2, 
+                    "correct": 3, 
                     "id": 1, 
                     "responses": [
-                        "If the school is famous.", 
+                        "The size of the school.", 
                         "If the school offers a strong program in a major that interests you.", 
-                        "If the school offer financial aid.", 
+                        "If the school offers financial aid.", 
                         "All of the above."
                     ], 
-                    "title": "What should you NOT consider when developing your school list?"
+                    "title": "What should you consider when developing your school list?"
                 }
             ], 
             "title": "Quiz 4"
         }, 
-        "index": 36, 
+        "index": 37, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Finding the Right School for You", 
-            "instructions": "Click on the link, read the article and take a quiz to check for understanding.", 
-            "link": "http://www.16personalities.com/free-personality-test"
+            "id": 1, 
+            "synopsis": "<p>Read the following article and take a quiz to check for understanding.</p>", 
+            "title": "Picking the Right School"
         }, 
-        "index": 37, 
+        "index": 38, 
         "name": "article", 
-        "type": "articleLink", 
+        "type": "article", 
         "week": 1
     }, 
     {
@@ -903,27 +904,17 @@
             ], 
             "title": "Quiz 4"
         }, 
-        "index": 38, 
+        "index": 39, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 1
     }, 
     {
         "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery", 
-            "synopsis": "Now let\u2019s learn a bit about how to select colleges that will be the \u201cbest fit\u201d for you!"
-        }, 
-        "index": 39, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 1
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery", 
-            "synopsis": "Now let\u2019s learn a bit about how to select colleges that will be the \u201cbest fit\u201d for you!"
+            "heading": "Best Fit", 
+            "instructions:": "Click on the link below.", 
+            "link": "https://lmty.cfnc.org/videos/deciding-on-what-school-to-attend-my-journey", 
+            "synopsis": "Watch this video to see what students have to say!"
         }, 
         "index": 40, 
         "name": "video", 
@@ -932,9 +923,10 @@
     }, 
     {
         "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery", 
-            "synopsis": "Now let\u2019s learn a bit about how to select colleges that will be the \u201cbest fit\u201d for you!"
+            "heading": "Best Fit", 
+            "instructions:": "Click on the link below.", 
+            "link": "https://lmty.cfnc.org/videos/various-types-of-colleges", 
+            "synopsis": "Watch this video to see what students have to say!"
         }, 
         "index": 41, 
         "name": "video", 
@@ -943,22 +935,44 @@
     }, 
     {
         "content": {
-            "instructions": "As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters."
+            "heading": "Best Fit", 
+            "instructions:": "Click on the link below.", 
+            "link": "Https://lmty.Cfnc.Org/videos/choosing-the-right-college--2", 
+            "synopsis": "Watch this video to see what students have to say!"
         }, 
         "index": 42, 
+        "name": "video", 
+        "type": "videoLink", 
+        "week": 1
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Finding the Best School for You.", 
+            "instructionList": [
+                "You should not name schools but consider qualities like size, location, campus life, etc.", 
+                "Write a brief explanation of what you think \u201cbest-fit school\u201d means to you.", 
+                "What types of things do you think you should consider as you develop your school lists? (Remember what you learned about yourself in Week One)", 
+                "What do you think schools consider when selecting you for admission?"
+            ]
+        }, 
+        "index": 43, 
         "name": "journal", 
         "type": "journal", 
         "week": 1
     }, 
     {
         "content": {
-            "synopsis": "Be able to identify up to ten differences between the U.S. and Chinese educational systems. Add to your understanding of who you are by better understanding the educational system of China. Use the knowledge about yourself and the educational system from which you came to identity schools that would be the best fit for you.", 
+            "synopsis": "<p>Be able to identify up to ten differences between the U.S. and Chinese educational systems. Add to your understanding of who you are by better understanding the educational system of China. Use the knowledge about yourself and the educational system from which you came to identity schools that would be the best fit for you.</p>", 
             "takeaways": [
                 "The differences between the U.S. and Chinese educational systems.", 
-                "The \u201cbest-fit\u201d school concept.."
-            ]
+                "The \u201cbest-fit\u201d school concept."
+            ], 
+            "title": "Finding the Best School for You"
         }, 
-        "index": 43, 
+        "index": 44, 
         "name": "wrapup", 
         "type": "wrapup", 
         "week": 1
@@ -966,1595 +980,867 @@
     {
         "content": {
             "objectives": [
-                "Explore the different geographic regions in the U.S. (Northeast, Southeast, Midwest, Southwest, West Coast) and locate major cities and urban centers", 
-                "Learn about the different cultures of the various in the U.S., e.g. weather, food, language, customs, activities", 
-                "Locate major research universities and top liberal arts colleges around the country; ideally, you will be able to identify and locate at least one college in each of the 50 states.", 
-                "Learn about the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities", 
-                "Locate major research universities and top liberal arts colleges around the country; ideally, you will be able to identify and locate at least one college in each of the 50 states.", 
-                "Define the terms: liberal arts, college, university, public and private, religious affiliations, selectivity"
+                "Review the concepts of \u201cfit\u201d vs. name or ranking.", 
+                "Understand what \u201cselective\u201d and \u201chighly selective\u201d means.", 
+                "Assess your own chances of admission at a variety of colleges. \u00a0\u00a0", 
+                "Research application numbers and acceptance rates for international students as well as other important admissions application data.", 
+                "Understand the current college admissions landscape for elite schools in the U.S.", 
+                "Begin developing your School List.."
             ], 
-            "subTitle": "Getting to Know the U.S. and Colleges and Universities in the U.S.", 
-            "title": "week 3 Overview:"
+            "overview": "<p>Now that you have learned some interesting things about your personality, strengths and interests and how that relates to the \u201cbest fit\u201d concept, let\u2019s take a bit of time to review the \u201cbest fit\u201d concept and then explore the reality of the college admissions landscape in the United States.</p>", 
+            "title": "Week 3: The Reality of  U.S. College Admissions:"
         }, 
-        "index": 44, 
+        "index": 45, 
         "name": "overview", 
         "type": "overview", 
         "week": 2
     }, 
     {
         "content": {
-            "heading": "Colleges and Universities in the United States", 
-            "video": "Duke_ConEd_Class2"
+            "heading": "Reviewing Best Fit School", 
+            "instruction": "<p>Clink on the links and find three videos that help you understand how to find a university or college that is a good fit for you.</p>", 
+            "links": [
+                "https://bigfuture.collegeboard.org/get-started/video-gallery", 
+                "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit"
+            ], 
+            "synopsis": "<p>Review the concept of \u201cBest Fit\u201d by choosing three videos provided from the two links below.  Choose videos in which people talk about their experience in choosing a college or university  which is a good fit for them.  After you watch the three videos you chose, you will then journal about things to consider while looking for a \u201cbest fit\u201d school. There are many videos on the websites which may be of interest to you, so you might want to spend even more time exploring videos of interest.</p>"
         }, 
-        "index": 45, 
+        "index": 46, 
+        "name": "video", 
+        "type": "videoLink", 
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Reviewing Best Fit School", 
+            "instructionList": [
+                "Write a brief explanation of what you think \u201cbest-fit school\u201d means to you. ", 
+                "Describe what types of issues you are worried about as you begin your college planning.  For example, is there pressure to get into a \u201ctop\u201d school?", 
+                "If you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?", 
+                "What types of things do you think you should consider as you develop your school list?"
+            ]
+        }, 
+        "index": 47, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            1, 
+            2, 
+            3
+        ], 
+        "content": {
+            "heading": "The Reality of College Admissions", 
+            "synopsis": "<p>Let\u2019s start learning about different perspectives regarding the reality of College Admissions in the U.S. by watching a short video.</p>", 
+            "video": "week3/Anne_Sjostrom"
+        }, 
+        "index": 48, 
         "name": "video", 
         "type": "video", 
         "week": 2
     }, 
     {
         "content": {
-            "heading": "Learning More About US Colleges and Universities", 
-            "instructionList": [
-                "You have just spent the first two lessons discovering what makes U.S. colleges and universities vary.", 
-                "Now it is time to learn about how U.S. colleges and universities also have personalities of your own."
-            ], 
-            "instructionTitle": "Instructor introduces the following Questions/Discussion starters"
-        }, 
-        "index": 46, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "caption": "This image shows that the U.S. is made up of many different states (50) and several regions (Northeast,  The South, The Midwest, and the West Coast). Do not be confused if you see these regions broken up into more than four parts.  These regions will just give you a general idea about the where the college you choose is located.  It will also help to determine the climate.  Although these regions do not have their own dialects (as they do in China), they do have distinct cultures and climates.", 
-            "heading": "Journal Grading Rubric", 
-            "source": "../images/image_panels/rubricwrite2.gif"
-        }, 
-        "index": 47, 
-        "name": "image", 
-        "type": "image", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "heading": "The Similarities and differences between the U.S. and Chinese educational systems:", 
-            "instructionList": [
-                "With a partner or in groups discuss the geography of the US and learn the following:", 
-                "Explore the various regions in the U.S. .", 
-                "Learn about the different colleges and universities in those regions and how the climate varies.", 
-                "Learn about some differences in the types of schools you will be exploring. This may include how the geographical region affects the nature of the university atmosphere. For instance, in warmer climates more the the year is spent outside and the university social life may include pools and  more outdoor living."
-            ], 
-            "instructionTitle": "You will read and discuss the following questions with a partner:"
-        }, 
-        "index": 48, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "heading": "Geography of the United States", 
-            "instructions": "Play a geography game to learn the names of the various states and where they are located. After you learn the names and location of the states, click on the U. S. Regions link at the lower left hand side of the page to learn culture and history of each region. There are eight regions and the geography, politics and history of each region are quite different.", 
-            "link": "http://www.sheppardsoftware.com/web_games.htm"
+            "id": 2, 
+            "synopsis": "<p>Dispite high grades, elite colleges turn away as much as 95% of their applicants.</p> <p>Read the following article to get a better view of this perspective. A quiz will be provided afterwards to check your understanding.", 
+            "title": "Best, Brightest and Rejected"
         }, 
         "index": 49, 
         "name": "article", 
-        "type": "articleLink", 
+        "type": "article", 
         "week": 2
     }, 
     {
         "content": {
-            "instructionList": [
-                "Which U.S. region did you find most interesting?", 
-                "In which region would you prefer not to live? Why?", 
-                "What kind of climate do you want?", 
-                "How was each region settled?", 
-                "How easy is it to get to and from China from each region?"
+            "questions": [
+                {
+                    "correct": 1, 
+                    "id": 0, 
+                    "responses": [
+                        "increased/increased", 
+                        "increased/decreased", 
+                        "decreased/increased", 
+                        "decreased/decreased"
+                    ], 
+                    "title": "In recent years, prestigious schools have had a(n) ______ amount of college applications and a(n) ______ percentage of admission rate."
+                }, 
+                {
+                    "correct": 3, 
+                    "id": 1, 
+                    "responses": [
+                        "Students are sending out more college applications than ever AND Elite colleges are offering 20 percent less admission seats than a generation ago.", 
+                        "College outreach programs nowadays advertise increasingly aggressive to prospective students.", 
+                        "College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier AND Elite colleges are offering 20 percent less admission seats than a generation ago.", 
+                        "Students are sending out more college applications than ever AND College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier.", 
+                        "College outreach programs nowadays advertise increasingly aggressive to prospective students."
+                    ], 
+                    "title": "Choose the cause(s) for the new low college acceptance rate among elite universities:"
+                }, 
+                {
+                    "correct": 4, 
+                    "id": 2, 
+                    "responses": [
+                        "Most of the students these elite colleges turn down are indistinguishable from those who get in.", 
+                        "20% more students are applying to 7 or more colleges in 2011 compared to the percentage of the applicant pool in 1990.", 
+                        "Every school seems local to most college applicants because they have access to so much information online.", 
+                        "Several universities had admission rates this year that were more than half of those from a decade ago."
+                    ], 
+                    "title": "Which of the following statement is false?"
+                }
             ], 
-            "instructionTitle": "Now that you have an idea of the geography and various regions of the U.S. let\u2019s review what you\u2019ve learned. Using a partner or in a group, answer the above questions. You will discuss the above questions in your groups.  After 20 minutes of discussion, the next 20 minutes will be spent with  the leader from each group or a few of the students orally reporting to the class their findings."
+            "title": "Elite School Admissions"
         }, 
         "index": 50, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 2
-    }, 
-    {
-        "content": {}, 
-        "index": 51, 
         "name": "quiz", 
         "type": "quiz", 
         "week": 2
     }, 
     {
         "content": {
-            "heading": "Instructor Overview of Class and Syllabus", 
-            "instructionList": [
-                "college", 
-                "university", 
-                "liberal arts", 
-                "public university", 
-                "private university", 
-                "religiously affiliated schools", 
-                "Bachelor of Arts", 
-                "Bachelor of Science", 
-                "selectivity"
-            ], 
-            "instuctionsHeader": "Now that you have a general idea about  U.S. geography and regional cultures, you will begin to explore colleges and universities around the U.S. First, you need to acquaint  yourself with certain terms. In this part of the lesson, you will go on an internet scavenger hunt to define the following terms."
+            "heading": "The Reality of College Admissions", 
+            "instruction": "<p>Click on the link below, watch the video and take a quiz to check for understanding.</p>", 
+            "synopsis": "<p>There are many perspectives about college admissions and the probability of getting into a school of your choice.  Let\u2019s listen to John Katzman\u2019s presentation about his unique perspective of the U.S. College Admissions landscape.</p>", 
+            "video": "week3/John_Katzman"
         }, 
-        "index": 52, 
-        "name": "activity", 
-        "type": "activity", 
+        "index": 51, 
+        "name": "video", 
+        "type": "video", 
         "week": 2
     }, 
     {
         "content": {
-            "instructions": "Write the defintions of the words in the previous activity here. This can be used as a resource: https://bigfuture.collegeboard.org/find-colleges/college-101/types-of-colleges-the-basics"
-        }, 
-        "index": 53, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "heading": "Instructor Overview of Class and Syllabus", 
-            "instructionList": [
-                "Do an online scavenger hunt to find examples of the following types of colleges and universities in two of the eight geographic regions of the U.S. (New England, Mid-Atlantic, Southern, Great Lakes, Midwest, Southwest, Mountain and Pacific Coast).", 
-                "Find an example of the following types of schools in the Northeast/Mid-Atlantic:", 
-                "a liberal arts college in a small college town", 
-                "a large research university in or near a cit", 
-                "a religiously affiliated college or university", 
-                "a public college or university", 
-                "a private college or university", 
-                "a technical college or university", 
-                "a design college (focusing on art and design)"
-            ], 
-            "instuctionsHeader": "Now that you have a general idea about  U.S. geography and regional cultures, you will begin to explore colleges and universities around the U.S. First, you need to acquaint  yourself with certain terms. In this part of the lesson, you will go on an internet scavenger hunt to define the following terms."
-        }, 
-        "index": 54, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "instructions": "Wrap up. In your journals,  list one school in each geographic region that you were unaware of and that you find interesting."
-        }, 
-        "index": 55, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 2
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Revisit your career cluster results and choose possible majors.", 
-                "Explore College Board\u2019s Big Future and run it two or three different times.", 
-                "Develop a college list based on the results of College Board Big Future.", 
-                "Locate and mark your colleges on a map of the U.S."
-            ], 
-            "overview": "Learn how to adjust easily and effectively to the first semester of college at an American college or university. You will also learn about the importance of scheduling your time wisely.", 
-            "subTitle": "The College Search: Looking for the Right School for You, Including Great Schools You\u2019ve Never Heard Of\u2026", 
-            "title": "week 4 Overview:"
-        }, 
-        "index": 56, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "heading": "Choosing the Right School for you", 
-            "video": "Duke_ConEd_Class3"
-        }, 
-        "index": 57, 
-        "name": "video", 
-        "type": "video", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Open your your journal to revisit your earlier definition of \u201cbest-fit\u201d school.", 
-                "Has your understanding of best-fit changed?", 
-                "If so, you should revise your definition in your journal."
-            ], 
-            "instructionTitle": "Review of \u201cbest-fit\u201d school concept."
-        }, 
-        "index": 58, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "header": "Choosing the \u201cbest-fit school", 
-            "instructionList": [
-                "Discuss what types of things you are worried about as you begin your college planning.", 
-                "For example, is there pressure to get into a \u201ctop\u201d school?", 
-                "Decide who is the pressure coming from?", 
-                "If you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?"
-            ], 
-            "instructionTitle": "The instructor breaks up the class into four or five groups."
-        }, 
-        "index": 59, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "header": "Priorities for your college search", 
-            "instructionList": [
-                "What are you excited about when you think about college?", 
-                "Examples might be making new friends, exploring new areas of interest.", 
-                "Discuss how these ideas can be used to guide the college search."
-            ], 
-            "instructionTitle": "Find a partner to discuss with your partner the following questions:"
-        }, 
-        "index": 60, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/get-started/video-gallery", 
-            "synopsis": "You watch one or two videos about things to consider when looking for a best-fit school."
-        }, 
-        "index": 61, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "heading": "College Board Big Future", 
-            "instructions": "You will explore an amazing amount of material about colleges and universities in the U.S.", 
-            "link": "https://bigfuture.collegeboard.org/?navid=bf-cp"
-        }, 
-        "index": 62, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Go to College Board\u2019s College Search page:", 
-                "This search should be done at least three times, refining your list of schools.", 
-                "At the end of the exercise, you should have a list of no fewer than 10 and no more than 15 schools."
-            ], 
-            "instuctionsHeader": "Go to College Board\u2019s College Search page: <a href='https://bigfuture.collegeboard.org/college-search'>here</a>.", 
-            "subHeading": "Creating your list of Colleges"
-        }, 
-        "index": 63, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Record your list of  ten possible schools", 
-                "Write at least two sentences for each of them explaining  why you think each school is a \u201cbest fit\u201d for you."
-            ], 
-            "instructions": "In your journals, you will:"
-        }, 
-        "index": 64, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instuctionsHeader": "<p>Locate your schools on a map of the U.S. This can be done virtually or on paper.", 
-            "subHeading": "Creating your list of Colleges"
-        }, 
-        "index": 65, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "What have you learned about developing a college list?", 
-                "Are you surprised by some of the schools on your college list?", 
-                "Are there schools on your list with which you are unfamiliar?", 
-                "What would you like to know more about as you learn more about the schools on your list?"
-            ], 
-            "instructionTitle": "Wrap up: What have you learned about yourself and your college search? Instructor leads a discussion using the following questions:"
-        }, 
-        "index": 66, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "instructions": "Answer the discussion questions in your journals."
-        }, 
-        "index": 67, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 3
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Look carefully at several of the college websites of schools on your list.", 
-                "Identify where and how to access information on college websites. For example, you will learn about admission information: deadlines, testing requirements, application process, admission statistics, and the application process for international students.", 
-                "Answer several questions about your top two or three colleges.", 
-                "Become more familiar with the schools on your college list and learn how to access critical information on school websites."
-            ], 
-            "overview": "Learn how to adjust easily and effectively to the first semester of college at an American college or university. You will also learn about the importance of scheduling your time wisely.", 
-            "subTitle": "Learning about the Colleges on Your List", 
-            "title": "week 5 Overview:"
-        }, 
-        "index": 68, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Keeping Track of Your College Applications", 
-            "video": "Duke_ConEd_Class4"
-        }, 
-        "index": 69, 
-        "name": "video", 
-        "type": "video", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Searching for School Websites", 
-            "instuctionsHeader": "Find and bookmark the website for each school on your list of preferred colleges or universities."
-        }, 
-        "index": 70, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Searching for School Websites", 
-            "instructionList": [
-                "In what area of the country is your favorite college located?", 
-                "How large is your favorite college? Is this the size you are comfortable with?", 
-                "Does your favorite college have your major?", 
-                "Where does your favorite college rank in your major?", 
-                "Is it easy to get to your favorite college?  Try booking a flight from your hometown to your favorite college and see what the cost is and how easy is it to get to your favorite college.", 
-                "Repeat questions 1-5 for at least one to two other colleges on your list of colleges you are considering."
-            ], 
-            "instuctionsHeader": "Explore the website of your favorite college on your list by completing the following questions:"
-        }, 
-        "index": 71, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit", 
-            "synopsis": "This video describes how to choose a college which will suit your needs."
-        }, 
-        "index": 72, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://www.ted.com/talks/yang_lan", 
-            "synopsis": "Yang Lan, a journalist and entrepreneur who has been called \"the Oprah of China,\" offers insight into the next generation of young Chinese citizens \u2014 urban, connected (via microblogs) and alert to injustice. While you are trying to find the best-fit college you should also think further down the road about your future and what role you will play."
-        }, 
-        "index": 73, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Become more familiar with the schools on your college list.", 
-                "Learn how to access critical information on school websites."
-            ], 
-            "instructionTitle": "Learn about colleges and how to access information on websites"
-        }, 
-        "index": 74, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Searching for School Websites", 
-            "instuctionsHeader": "You will be directed to find and bookmark the website for each school on your list."
-        }, 
-        "index": 75, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Scavenger hunt Questionaire", 
-            "instuctionsHeader": "You will explore the websites of the colleges on your list by completing a scavenger hunt questionnaire."
-        }, 
-        "index": 76, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit", 
-            "synopsis": "This video describes how to choose a college which will suit your needs."
-        }, 
-        "index": 77, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "heading": "Words from Yang Lan", 
-            "link": "https://www.ted.com/talks/yang_lan", 
-            "synopsis": "Yang Lan, a journalist and entrepreneur who's been called \"the Oprah of China,\" offers insight into the next generation of young Chinese citizens \u2014 urban, connected (via microblogs) and alert to injustice."
-        }, 
-        "index": 78, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Reflect about your life in the future.", 
-                "Where do you think you will be ten years from now?", 
-                "Where will you live?", 
-                "What type of job do you think you will  have had?", 
-                "Will you be married?", 
-                "How many jobs do you think you will  have had?"
-            ], 
-            "instructions": "In your journals, you will:"
-        }, 
-        "index": 79, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "id": 3
-        }, 
-        "index": 80, 
-        "name": "article", 
-        "type": "article", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "instructions": "<a href='http://www.nytimes.com/2010/04/14/education/14waitlist.html?pagewanted=all&_r=0'>Read an article</a> about the current landscape of college admissions and summarize it in your journals.", 
-            "subHeading": "College Admissions"
-        }, 
-        "index": 81, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Begin to think about which colleges to which you would like to apply.", 
-                "Next to each school on your list, write at  least three reasons why you feel you would want to attend the school."
-            ], 
-            "instructions": "In your journal you will:"
-        }, 
-        "index": 82, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 4
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Understand the concepts of \u201cfit\u201d vs. \u201cname\u201d.", 
-                "Understand what selective and highly selective means.", 
-                "Assess your own chances of admission at a variety of colleges.", 
-                "Learn the concepts of \u201cfoundation schools, \u201cmid-range schools,\u201d and \u201clong shot schools,\u201d and learn how to \u201cshape\u201d a college list", 
-                "Use the college list you created in past lessons, and you will research application numbers and acceptance rates for international students as well as other important admissions application data"
-            ], 
-            "subTitle": "Reality of College Admissions in the US", 
-            "title": "week 6 Overview:"
-        }, 
-        "index": 83, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "The Reality of College Admission in the United States", 
-            "video": "Duke_ConEd_Class5"
-        }, 
-        "index": 84, 
-        "name": "video", 
-        "type": "video", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "\u201cFit\u201d vs \u201cname\u201d Brand", 
-            "instructionTitle": "You Will:", 
-            "instructionsList": [
-                "Review the concept of \u201cfit\u201d vs \u201cname\u201d brand: colleges want to admit students that they feel are a good match for their school.", 
-                "Discuss some of   the realities of college admission.", 
-                "Learn about some great schools with which you may not be familiar by sharing information with your classmates.", 
-                "Share your summaries of the article you read for homework with your classmates by having a partner with whom you can discuss what you read."
-            ]
-        }, 
-        "index": 85, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "College Board Big Future", 
-            "instructions": "This article shows the trend for acceptances from 2005 to present.  It also includes some specific facts about various colleges.", 
-            "link": "https://bigfuture.collegeboard.org/?navid=bf-cp"
-        }, 
-        "index": 86, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "College Board Big Future", 
-            "instructions": "This provides another list of acceptance rates. Compare this list with the previous information you have.  Compare this list with the previous information you have learned.  Are they similar or different?", 
-            "link": "http://www.ivywise.com/admission_statistics.html"
-        }, 
-        "index": 87, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Compare what you have found during the class discussion and your research online.", 
-                "Learn the concepts of \u201cfoundation schools, \u201cmid-range schools and \u201clong- shot schools.", 
-                "Is the admission rate the same for international students and American students at American universities?", 
-                "From what countries are international students applying to U.S. colleges and universities?", 
-                "What are the top three countries which are sending students to the U.S. to study?", 
-                "How have admission rates for international students changed over the past ten years?", 
-                "What are the top three majors for undergraduate international students?", 
-                "Generally, are the admission requirements for international students different from the admission requirements for American students?"
-            ], 
-            "instuctionsHeader": "Record in your journal  your findings from  your online research for admission rates for international students.", 
-            "subHeading": "The College Admission Landscape"
-        }, 
-        "index": 88, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "Best Fit School", 
-            "link": "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit", 
-            "synopsis": "You will watch a video from Big Future by the College Board: \u201cHow Should You Choose Colleges to Apply to?\u201d"
-        }, 
-        "index": 89, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "heading": "Research international student admission rates.", 
-            "instuctionsHeader": "After your research on  international student admission rates and international student profiles at the schools on your lists create a spreadsheet to input the information you have found. Make certain you have at least 5 schools on your spreadsheet."
-        }, 
-        "index": 90, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Put the schools on your list of schools you are interested in into the selective (\u201cfoundation\u201d), very selective (\u201cmid-range\u201d) and highly selective (\u201creach or stretch\u201d) categories.", 
-                "Record the list  in your journals. You may use the same  spreadsheet which you have created in the previous assignment."
-            ], 
-            "instuctionsHeader": "Record in your journal  your findings from  your online research for admission rates for international students.", 
-            "subHeading": "Your Range of Choices"
-        }, 
-        "index": 91, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 5
-    }, 
-    {
-        "content": {
-            "objective": "How to simplify the College Admission Process and keep track of which colleges you select.", 
-            "objectives": [
-                "Learn the value of an interview if the college allows one.", 
-                "Learn what mistakes not to make in a college interview.", 
-                "Learn how selective and highly selective colleges make admissions decisions.", 
-                "Review the components of a college application on both the common application versus the school-specific applications.  Some of these components include biographical information, academic transcript, personal statement (essay), extracurricular activities, standardized testing, interviews and \u201chooks\u201d that will get your application noticed.", 
-                "Understand the difference between agents, educational consultants and college counselors and their roles.", 
-                "Understand how colleges identify \u201cagent-prepared\u201d applications."
-            ], 
-            "subTitle": "The College Admission Process", 
-            "title": "week 7 Overview:"
-        }, 
-        "index": 92, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "The Reality of College Admission in the United States", 
-            "video": "Duke_ConEd_Class6"
-        }, 
-        "index": 93, 
-        "name": "video", 
-        "type": "video", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "College Application types", 
-            "instuctionsHeader": "Students will learn about the different types of college applications: Common Application, Universal Application, School Specific Applications, and Application supplements. Search online to find these applications and bookmark them. Here is the link for the Universal Application to help you get started: <a href='https://www.universalcollegeapp.com'>here</a>"
-        }, 
-        "index": 94, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "id": 4
-        }, 
-        "index": 95, 
-        "name": "article", 
-        "type": "article", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "Insights from a Harvard Graduate", 
-            "link": "http://colleges.collegetoolkit.com/articles/harvardgrad/college_interview.aspx", 
-            "synopsis": "Students will learn the mistakes that are often made during college interviews. Please note not all colleges will give interviews, but if they do it is best to make the effort to interview at the college if you have a chance to do so."
-        }, 
-        "index": 96, 
-        "name": "video", 
-        "type": "articleLink", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "Behind the Scenes", 
-            "instructionList": [
-                "Learn what is an admissions committee?", 
-                "Who is on an admission committee", 
-                "Who reads your application?", 
-                "How are decisions made?"
-            ], 
-            "link": "http://www.bing.com/videos/search?q=Brandies+You+tube+admission+committee&FOR", 
-            "synopsis": "Watch a video which shows how Amherst makes admission decisions."
-        }, 
-        "index": 97, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "Behind the Scenes", 
-            "link": "http://www.bing.com/videos/search?q=Brandies+You+tube+admission+committee&FOR", 
-            "synopsis": "This is what  an admission committee looks like at a highly selective private college where admission is less than 30%.The backroom  process of admission: how the admission office and how admission committees work. Compare the two videos to see if the admission process is similar at both colleges."
-        }, 
-        "index": 98, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "instuctionsHeader": "Students complete all parts of the  Common Application except for the essays will be done at a later time. <a href='https://www.commonapp.org/Login'>link</a>", 
-            "subHeading": "Your Range of Choices"
-        }, 
-        "index": 99, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "What is a \u201chook?", 
-            "link": "https://www.youtube.com/watch?v=9QfzmVmuGqQ."
-        }, 
-        "index": 100, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Define the term \u201chook.\u201d", 
-                "Give three examples of a \u201chook.\u201d", 
-                "Write about what their \u201chooks\u201d may be.", 
-                "If they do not have a hook, they should review their profile from week two to brainstorm how they might develop a hook."
-            ], 
-            "instuctionsHeader": "Students answer the following questions in their journal", 
-            "subHeading": "Defining a hook"
-        }, 
-        "index": 101, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "heading": "Agents, Consultants and Counselors", 
-            "instructions": "The differences between agents, educational consultants and college counselors.", 
-            "link": "http://world.time.com/2012/07/26/forged-transcripts-and-fake-essays-how-unscrupulous-agents-get-chinese-students-into-u-s-schools/"
-        }, 
-        "index": 102, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Define the term \u201chook.\u201d", 
-                "Give three examples of a \u201chook.\u201d", 
-                "Write about what your \u201chooks\u201d may be.", 
-                "If you do not have a hook, you should review your profile from week two to brainstorm how you might develop a hook."
-            ], 
-            "instructions": "In your journal you will:"
-        }, 
-        "index": 103, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 6
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Explore the variety of extra-curricular activities available to American high school students (athletics, student government, academic clubs, visual and performing arts, after-school jobs, community service) and the importance of leadership and persistence in these activities.", 
-                "Understand the importance of extracurricular activities in the college admissions process", 
-                "Understand the concept of well-rounded vs targeted interests.", 
-                "Build a personal activities resume based on your interests."
-            ], 
-            "overview": "In this lesson you will explore the variety of extra-curricular activities available to American high school students (athletics, student government, academic clubs, visual and performing arts, after-school jobs, community service) and learn the importance of leadership and persistence in these activities", 
-            "subTitle": "Using Your High School Years Wisely: How to Build Your Personal Resume", 
-            "title": "week 8 Overview:"
-        }, 
-        "index": 104, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "id": 5
-        }, 
-        "index": 105, 
-        "name": "article", 
-        "type": "article", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "id": 6
-        }, 
-        "index": 106, 
-        "name": "article", 
-        "type": "article", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "heading": "The Importance of Extra-Curricular Activities", 
-            "instructions": "Instructor begins by telling students that this lesson is about the importance of building a strong extra-curriculars resume for the college application process. With a partner explore the differences and similarities between extracurricular activities offered to high school students in China and in the U.S. "
-        }, 
-        "index": 107, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "How do you spend your time outside of school?", 
-                "Do you participate in extra-curricular activities?", 
-                "Do you think American students define extra-curricular activities the same way you do?"
-            ], 
-            "instructions": "In your journal, list at least four differences of how students in China, India and the U.S. use their time outside of school. Answer the following questions:"
-        }, 
-        "index": 108, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "id": 7
-        }, 
-        "index": 109, 
-        "name": "article", 
-        "type": "article", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "heading": "Words from the Deel of Yale", 
-            "link": "https://bigfuture.collegeboard.org/get-started/outside-the-classroom/extracurriculars-matter-to-you-and-to-colleges", 
-            "synopsis": "Watch the Dean of Undergraduate Admission at Yale University talk about the role of high school activities in a college application."
-        }, 
-        "index": 110, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "id": 8
-        }, 
-        "index": 111, 
-        "name": "article", 
-        "type": "article", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "List all of your extra-curricular activities. Think broadly and include activities that take place both in and outside of school, during the summer, include service oriented travel. Beside each activity, include the weeks per year that you are involved in the activity. Begin listing your activities at grade 9.", 
-                "Think broadly and include activities that take place both in and outside of school, during the summer, include service oriented travel.", 
-                "Beside each activity, include the weeks per year that you are involved in the activity.", 
-                "Begin listing your activities at grade 9.", 
-                "Are there extracurricular activity in which you excel?"
-            ], 
-            "instructions": "Answer the following questions in your journal:"
-        }, 
-        "index": 112, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "instuctionsHeader": "Complete the following form to build your own extra-curricular resume. <a href='http://www.bernardsboe.com/Guidance/CMFiles/Docs/Sample%20Student%20Activity%20Resume.pdf'>link</a>"
-        }, 
-        "index": 113, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "instructions": "Complete your own extracurricular resume and save it in your journal."
-        }, 
-        "index": 114, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 7
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "In this module, you will learn about the general types of college essays and how to distinguish yourself."
-            ], 
-            "overview": "You will write several essays and learn about what makes a good essay or poorly written essay.", 
-            "subTitle": "How to Write the Perfect College Essays", 
-            "title": "week 9 Overview:"
-        }, 
-        "index": 115, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "heading": "You will read several college essays to determine what types of essays grab an admission officer\u2019s attention.", 
-            "instructions": "Read the article to learn how colleges can tell if an essay is plagiarized and how important it is to do your own essay.", 
-            "link": "http://theivycoach.com/the-ivy-coach-blog/college-essays/plagiarized-college-essays/"
-        }, 
-        "index": 116, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "id": 9
-        }, 
-        "index": 117, 
-        "name": "article", 
-        "type": "article", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "heading": "Sample Essays", 
-            "instructions": "Read three or four of the sample college essays from the link below.", 
-            "link": "http://www.accepted.com/college/sampessay02.aspx"
-        }, 
-        "index": 118, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "heading": "There are several mistakes you can  make on your college essay. Learn about the most common mistakes here.", 
-            "instructions": "Read the following article and make a list in your journal of the most common mistakes you should avoid in a college essay.", 
-            "link": "http://theivycoach.com/the-ivy-coach-blog/tag/college-essay-mistakes/"
-        }, 
-        "index": 119, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "instructions": "Based on the essays you just read, make a list of the attributes you think make a good essay."
-        }, 
-        "index": 120, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "heading": "The following article are five examples of high level college admission essays with admission officers comments on the essays.", 
-            "instructions": "Choose three out of the five following essays and carefully examine the admission committee comments to determine what makes the essays good.", 
-            "link": "http://www.internationalstudent.com/essay_writing/college_essay/"
-        }, 
-        "index": 121, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 8
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Explore essay topics on the Common Application, write a college application essay. A peer will review your essay.", 
-                "Write a college application essay.", 
-                "A peer will review your essay."
-            ], 
-            "overview": "You will write sample college application essays and get feedback from a peer.", 
-            "subTitle": "College Application Essays: Pt. 2", 
-            "title": "week 10 Overview:"
-        }, 
-        "index": 122, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "heading": "Essay Questions on the Common Application", 
-            "instructions": "Go to the Common Application and choose two of the essay prompts.", 
-            "link": "https://appsupport.commonapp.org/link/portal/33011/33013/Article/1694/2014-15-Common-Application-Essay-Prompts"
-        }, 
-        "index": 123, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Before you begin to write your essay, brainstorm some ideas for your essays you have chosen from the Common Application essays.", 
-                "Think of topics that will not be covered in other parts of the application.", 
-                "The topic should compelling and unique to you.", 
-                "If it is amusing, that  is always an added plus."
-            ]
-        }, 
-        "index": 124, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "instuctionsHeader": "Write two well-developed essays on the topics you chose from the Common Application. Limit each essay to 650 words."
-        }, 
-        "index": 125, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "heading": "Peer review of essays", 
-            "instructionList": [
-                "Think about  constructive comments to give to your partner about the essays.", 
-                "After twenty minutes  you will  give  your partner  oral feedback. If you want to make notes about the feedback, you may also put the feedback into your journal and later share this feedback with your partner.", 
-                "Students will do two pairings. They will give a review to their partner, and they will receive a review of their essay from the partner."
-            ], 
-            "instructions": "Instructor collects all of the essays and randomly distributes them. No student should be reviewing their own essays. Students will make written comments on the essays and after twenty minutes will pair up to give feedback. Students will do two pairings, one with the reviewer of their essays and one providing feedback for their peer."
-        }, 
-        "index": 126, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "instuctionsHeader": "Two students volunteer to read their essays to the class, which they feel are good examples of a well-written college essay."
-        }, 
-        "index": 127, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 9
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Understand how to prepare for a visit by completing the \u201cCollege Tour Checklist.", 
-                "Take assigned virtual college tours", 
-                "Learn the best times to visit colleges and universities"
-            ], 
-            "overview": "Choose four out five of the following virtual college tours and look at different types of schools in different parts of the country.", 
-            "subTitle": "Visiting College Campuses: How, When and Why to Plan Your School Tour", 
-            "title": "week 11 Overview:"
-        }, 
-        "index": 128, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "The College Tour Checklist", 
-            "instructions": "Review the following college tour checklist before we begin our virtual college tours. We understand that you cannot answer all of the questions on a virtual tour, but this will get you thinking about what you need to look for as you begin your college tours.", 
-            "link": "https://bigfuture.collegeboard.org/find-colleges/campus-visit-guide/campus-visit-checklist"
-        }, 
-        "index": 129, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "The University of Michigan is a very large, liberal arts school located in the Midwest.", 
-            "link": "http://umich.edu/search.phpq/virtual%2520tour/", 
-            "synopsis": "Take your time looking through the virtual tour of the University of Michigan. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest. "
-        }, 
-        "index": 130, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "Wesleyan is a small, liberal arts university located in the Northeast.", 
-            "link": "http://www.wesleyan.edu/admission/videotour/", 
-            "synopsis": "Take your time looking through the virtual tour of Wesleyan University. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest."
-        }, 
-        "index": 131, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "North Carolina State University is a large University located in the Southeastern U.S. It specializes in engineering, design and textiles.", 
-            "link": "http://www.ncsu.edu/about-nc-state/campus-tour/", 
-            "synopsis": "Take your time looking through the virtual tour of the NCSU. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest."
-        }, 
-        "index": 132, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "The University of Colorado is a large, liberal arts university located in the Southeast. It is a collection of schools and colleges offering programs in specific subject area. You can choose from 13 colleges or school at the university.", 
-            "link": "http://www.scu.edu/ugrad/virtualtour/index.cfm", 
-            "synopsis": "Take your time looking through the virtual tour of the University of Colorado. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest."
-        }, 
-        "index": 133, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "Santa Clara University is a private institution in an urban setting located on the West Coast. The most popular major is business management and marketing. This school is considered selective.", 
-            "link": "http://www.colorado.edu/about/visit", 
-            "synopsis": "Take your time looking through the virtual tour of Santa Clara University. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest."
-        }, 
-        "index": 134, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "heading": "Mt. Holyoke College is a private, all-women\u2019s institution locate in New England. It is the first of the \u201cseven sister schools and is a member of Five College Consortium that includes Amherst College, Smith College, Hampshire College and the University of Massachusetts. ", 
-            "link": "https://www.mtholyoke.edu/cic/tour/", 
-            "synopsis": "Make your time looking through the virtual tour of Mount Holyoke College. While you explore make sure to look at the following : housing options, financial aid for international students, admission policies for international students, students organizations, \u201cGreek Life,\u201d student services, different majors, dining services, career center, events calendar and athletics. Feel free to explore your specific areas of interest."
-        }, 
-        "index": 135, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "id": 10
-        }, 
-        "index": 136, 
-        "name": "article", 
-        "type": "article", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "What size college or university are you looking for?", 
-                "Which location in the U.S. do you prefer?", 
-                "Are you looking for a liberal arts and sciences college?", 
-                "Is financial aid a consideration in your selection of colleges?", 
-                "Are athletics or arts programs important to you?", 
-                "Is convenient travel to your native country important to you?"
-            ], 
-            "instructions": "Answer the following questions in your journal:"
-        }, 
-        "index": 137, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 10
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Complete the College Board Interview guide", 
-                "Review how interviews are used in the college admission process", 
-                "The do\u2019s and don\u2019ts of college interviewing", 
-                "Re-visit the Web sites of colleges on your list", 
-                "Do mock interviews with your designated partners", 
-                "Learn about college interviews and practice doing one with a peer."
-            ], 
-            "overview": "Learn about college interviews and practice doing one with a peer.", 
-            "subTitle": "The College Interview: How to Prepare and Practice", 
-            "title": "week 12 Overview:"
-        }, 
-        "index": 138, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "heading": "Prepare and Practice for you College Interview", 
-            "video": "Duke_ConEd_Class12"
-        }, 
-        "index": 139, 
-        "name": "video", 
-        "type": "video", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "heading": "College Interviews: Practice and Strategies", 
-            "instructions": "Learn the basics about a college interviews. Answer the questions in your journal.", 
-            "link": "https://bigfuture.collegeboard.org/get-in/interviews/college-interviews-practice-questions-and-strategies"
-        }, 
-        "index": 140, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "What size college or university are you looking for?", 
-                "Which location in the U.S. do you prefer?", 
-                "Are you looking for a liberal arts and sciences college?", 
-                "Is financial aid a consideration in your selection of colleges?", 
-                "Are athletics or arts programs important to you?", 
-                "Is convenient travel to your native country important to you?"
-            ], 
-            "instructions": "Answer the questions on the link from College Board in your journal:"
-        }, 
-        "index": 141, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "id": 11
-        }, 
-        "index": 142, 
-        "name": "article", 
-        "type": "article", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "instructions": "In your journal, prepare a list of questions that you will use to interview your classmates. You will be provided with a rubric to score your interviews of your classmates."
-        }, 
-        "index": 143, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "heading": "Perparing for the Interview", 
-            "instructions": "Determine what type of questions you need to prepare and what is interesting information about yourself which you can tell the interviewer.", 
-            "link": "http://www.cbsnews.com/news/can-you-answer-these-13-college-interview-questions/"
-        }, 
-        "index": 144, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "heading": "Practicing the Interview", 
-            "instuctionsHeader": "Pair up  with two different classmates. You will do a mock interview  with each of your partners. After you have done your interview, switch and interview your partners . Use the questions which you read about earlier in the class to focus your interviews."
-        }, 
-        "index": 145, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "synopsis": "Four students volunteer to perform two mock interviews in front of the class.", 
-            "takeaways": "Students reflect in their journals about what worked well for them in their interviews and what did not. They develop a personal list of interview do\u2019s and don\u2019ts."
-        }, 
-        "index": 146, 
-        "name": "wrapup", 
-        "type": "wrapup", 
-        "week": 11
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Learn the role of standardized test scores in the college admission process.", 
-                "Learn that \u201ctest-optional\u201d colleges in the U.S. are not test optional for international students. We will discuss what tests you must take in order to apply to American colleges and universities.", 
-                "Learn the differences between the SAT and ACT, as well as SAT II: Subject Tests.", 
-                "Understand the prevalence of test prep courses and tutors in the US.", 
-                "Do mock interviews with your designated partners", 
-                "Develop a testing calendar to address the best times to take standardized college admissions tests."
-            ], 
-            "overview": "In this module you will learn about the various tests that college and universities use to screen students for admission. You will develop a calendar for your test preparation that will help you to plan and prepare for your tests. At the end of this module, you will watch some real admission committees at work and make some admission decisions of your own.", 
-            "subTitle": "The Role of Standardized testing in the College Admissions Process / Introduction to Case Studies", 
-            "title": "week 13 Overview:"
-        }, 
-        "index": 147, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "The Role of Standardized Testing in the College Admission Process", 
-            "video": "Duke_ConEd_Class13"
-        }, 
-        "index": 148, 
-        "name": "video", 
-        "type": "video", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "College Interviews: Practice and Strategies", 
-            "instructions": "Read the following article about the role of tests scores in the college admission process.", 
-            "link": "https://bigfuture.collegeboard.org/get-in/testing/the-real-role-of-tests-in-your-college-application#", 
-            "synopsis": "Most four-year colleges consider applicants\u2019 scores on college admission tests when deciding whom to accept. Test scores are just one part of your college application. College admission officers give the most weight and importance to your high school grades and whether you\u2019re challenging yourself."
-        }, 
-        "index": 149, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "College Interviews: Practice and Strategies", 
-            "instructions": "Look through the following admission sites and make some notes in your journal about what tests they require from international students.", 
-            "linkList": [
+            "questions": [
                 {
-                    "link": "http://admissions.wfu.edu/apply/international.php#application", 
-                    "name": "link 1"
+                    "correct": 0, 
+                    "id": 0, 
+                    "responses": [
+                        "Top universities are offering a higher rate of added seats compared to the lower rate of increased number of applicants.", 
+                        "State schools are getting more popular which leaves fewer college applicants to apply for elite schools.", 
+                        "High school graduates are better educated and can easily go into any schools they want.", 
+                        "Elite schools are trying to raise their ranking by increasing admission rate."
+                    ], 
+                    "title": "What is the reason that getting into an elite university is easier than it used to be?"
                 }, 
                 {
-                    "link": "http://www.brandeis.edu/admissions/apply/international.html", 
-                    "name": "link 2"
+                    "correct": 0, 
+                    "id": 1, 
+                    "responses": [
+                        "Admission rate equal the total number of students admitted minus the total number of applications.", 
+                        "Admission rate equal the total number of students admitted times the total number of applications.", 
+                        "Admission rate equal the total number of students admitted divided by the total number of applications.", 
+                        "Admission rate equal the total number of students admitted."
+                    ], 
+                    "title": "How is the admission rate calculated?"
                 }, 
                 {
-                    "link": "http://admissions.pages.tcnj.edu/resources-for/international-applicants", 
-                    "name": "link 3"
-                }, 
-                {
-                    "link": "http://admissions.tamu.edu/international/freshman/", 
-                    "name": "link 4"
+                    "correct": 4, 
+                    "id": 2, 
+                    "responses": [
+                        "An applicant should pick from 10 great schools that he/she is indifferent.", 
+                        "An applicant should use early options.", 
+                        "An applicant should harden his/her heart, ignore bad advice, and be his/her best self.", 
+                        "An applicant should simply apply to as many school as he/she can."
+                    ], 
+                    "title": "Which of the following is NOT suggested from the video to increase one\u2019s chance to get into a great school?"
                 }
             ], 
-            "synopsis": "There are now many \u201ctest optional\u201d colleges and universities in the U.S. However, the option not to submit tests scores does not apply to international students. The following links are some examples of colleges that are test-optional for American students but have different requirements for international students. As you can see, the test requirements are significantly different from school to school."
+            "title": "Elite School Admissions"
         }, 
-        "index": 150, 
-        "name": "links", 
-        "type": "links", 
-        "week": 12
+        "index": 52, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 2
     }, 
     {
         "content": {
-            "heading": "International Student Admission", 
-            "instuctionsHeader": "Look at the international student admission pages for the school on your list. Record the test requirements for the schools to which you will be applying and record those requirements in your journal."
+            "id": 3, 
+            "synopsis": "<p>Let\u2019s read an article from a perspective of a student on the waiting list.</p>", 
+            "title": "For Students, a Waiting List Is a Scant Hope"
         }, 
-        "index": 151, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "Video to Learn about the SAT", 
-            "link": "http://sat.collegeboard.org/about-tests/sat", 
-            "synopsis": "The SAT is a globally recognized college admission test that lets you show colleges what you know and how well you can apply that knowledge. It tests your knowledge of reading, writing and math \u2014 subjects that are taught every day in high school classrooms. Most students take the SAT during their junior or senior year of high school, and almost all colleges and universities use the SAT to make admission decisions."
-        }, 
-        "index": 152, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "Which Test is right for you? ACT or SAT.", 
-            "instructions": "Read the following articles and decide whether or not you think you would be a better candidate for the ACT or SAT. Make notes in your journal about test dates, locations and special support services available for international students. There are special rules for taking the ACT in each country. Make certain you investigate the rules for taking the ACT in your particular country and record the rules in your journal.", 
-            "link": "http://www.usnews.com/education/best-colleges/articles/2012/11/20/should-international-students-take-the-act", 
-            "synopsis": "Most international students take the SAT when preparing to apply to U.S. colleges. But the SAT is not the only test most colleges accept. Another test, the ACT, is also accepted. For international students, taking the ACT is not always easy, however."
-        }, 
-        "index": 153, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "Subject Tests", 
-            "instructions": "View the following video to learn about the SAT II, which are also known as the subject test. Look at the schools on your list to determine if you want to or need to take the SAT II.", 
-            "link": "http://sat.collegeboard.org/about-tests/sat-subject-tests", 
-            "synopsis": "Subject Tests are hour-long, content-based tests that allow you to showcase achievement in specific subject areas where you excel. These are the only national admission tests where you choose the tests that best showcase your achievements and interests."
-        }, 
-        "index": 154, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "Create a College Board Account", 
-            "link": "https://account.collegeboard.org/iamweb/smartRegister?appId=247&DURL=http://sat.collegeboard.org/practice/sat-question-of-the-day", 
-            "synopsis": "In order to complete the next two activities, you need to set up an account on the College Board Web site. It is called \u201cMy Organizer.\u201d"
-        }, 
-        "index": 155, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "The College Board offers an SAT study plan", 
-            "link": "http://sat.collegeboard.org/practice/sat-study-plan", 
-            "synopsis": "Answer the three questions on the College Board Web site to make your personalized study plan. Record your study plan in your journal."
-        }, 
-        "index": 156, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "heading": "Question of the day", 
-            "instructions": "Go to the following link and take the practice questions for the last 10 days.", 
-            "link": "http://sat.collegeboard.org/practice/sat-question-of-the-day", 
-            "synopsis": "To help students prepare for the SAT, The College Board offers practice questions each day."
-        }, 
-        "index": 157, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Choose the date you might want to take the International SAT.", 
-                "Following these dates are the dates for the ACT.", 
-                "Please note the following restrictions for taking the ACT"
-            ], 
-            "link": "http://sat.collegeboard.org/register/sat-international-dates"
-        }, 
-        "index": 158, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "instructions": "ACt registration dates", 
-            "link": "http://www.actstudent.org/regist/outside/"
-        }, 
-        "index": 159, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 12
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Gain a better understanding of how admission committee decisions are made.", 
-                "View a video of how admission committees work.", 
-                "Form admissions committees.", 
-                "Make admission decisions as a committee"
-            ], 
-            "overview": "How do colleges make their decisions about whom the admit? In this module you will learn about how college admission committees work. You will also form your own admission committee and make some difficult admission decision.", 
-            "subTitle": "Case Studies - The College Admission Committee", 
-            "title": "week 14 Overview:"
-        }, 
-        "index": 160, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 13
-    }, 
-    {
-        "content": {
-            "heading": "How committees Work", 
-            "instructions": "View the following video to learn about the SAT II, which are also known as the subject test. Look at the schools on your list to determine if you want to or need to take the SAT II.", 
-            "link": "http://www.bing.com/videos/search?q=videos+for+college+admissions&FORM=VIRE3#view=detail&mid=6C59D32A7602A23A87AC6C59D32A7602A23A87AC", 
-            "synopsis": "Learn how admission committees work at selective and highly selective colleges in the U.S."
-        }, 
-        "index": 161, 
-        "name": "video", 
-        "type": "videoLink", 
-        "week": 13
-    }, 
-    {
-        "content": {
-            "heading": "International Student Admission", 
-            "instructionList": [
-                "Divide into groups of five to form \u201cadmission committees\u201d for fictitious \u201cPrestigious U.\u201d", 
-                "You will be given five case studies to review. ", 
-                "After you have individually read all five case studies, you will get together into your \u201cadmission committee\u201d to discuss each case study. ", 
-                "Create a spreadsheet to keep track of what traits you think are important for admission.", 
-                "Set up a ranking system from 1 to 5 to determine how you rank each of the students", 
-                "If you choose to do so, you may also use the CS evaluation worksheet found on the link below.", 
-                "Each one of you will \u201cpresent\u201d one case study each to your admission committee until all the cases have been presented.", 
-                "Admission to \u201cPrestigious\u201d University should be offered to two of the five students only.", 
-                "You can find your case studies <a href='http://www.admissions.upenn.edu/apply/admissions-case-studies-program'>here</a>"
-            ]
-        }, 
-        "index": 162, 
-        "name": "activity", 
-        "type": "activity", 
-        "week": 13
-    }, 
-    {
-        "content": {
-            "objectives": [
-                "Report the results of your admission committee meeting to the class.", 
-                "Review the Top Ten Common Myths about the college application process in the US.", 
-                "Complete a list of your top ten take-aways.", 
-                "Hone your college list"
-            ], 
-            "overview": "In this lesson you will learn about the top ten myths about applying to college in the U.S. and hone the list of colleges to which you will apply.", 
-            "subTitle": "Common Myths and Wrap Up", 
-            "title": "week 15 Overview:"
-        }, 
-        "index": 163, 
-        "name": "overview", 
-        "type": "overview", 
-        "week": 14
-    }, 
-    {
-        "content": {
-            "heading": "Wrap-Up Multimedia College Prep", 
-            "video": "Duke_ConEd_Class15"
-        }, 
-        "index": 164, 
-        "name": "video", 
-        "type": "video", 
-        "week": 14
-    }, 
-    {
-        "content": {
-            "heading": "Case Studies Admission Decisions", 
-            "instructionList": [
-                "Each group will chose one student from your \u201cadmission committee\u201d to explain the committee\u2019s admission decisions.", 
-                "A class representative compiles the result of the decision. ", 
-                "How consistent were the admission committee decisions?", 
-                "Was there a general agreement within the committees about who should be selected?", 
-                "Or were there differences of opinion about who should be selected?", 
-                "Which case studies prompted the most discussion?"
-            ], 
-            "instructions": "Instructor collects all of the essays and randomly distributes them. No student should be reviewing their own essays. Students will make written comments on the essays and after twenty minutes will pair up to give feedback. Students will do two pairings, one with the reviewer of their essays and one providing feedback for their peer."
-        }, 
-        "index": 165, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 14
-    }, 
-    {
-        "content": {
-            "instructions": "Read about the Ten Common Myths about applying to college in the US.", 
-            "link": "http://mycollegeguide.org/articles/11/189"
-        }, 
-        "index": 166, 
-        "name": "article", 
-        "type": "articleLink", 
-        "week": 14
-    }, 
-    {
-        "content": {
-            "instructionList": [
-                "Review your journals and make a list of your top ten take-aways from Semester 1", 
-                "A take-away is the main idea you have learned after exploring a topic.", 
-                "Three students will volunteer to read their lists to the class."
-            ]
-        }, 
-        "index": 167, 
-        "name": "journal", 
-        "type": "journal", 
-        "week": 14
-    }, 
-    {
-        "content": {
-            "id": 12
-        }, 
-        "index": 168, 
+        "index": 53, 
         "name": "article", 
         "type": "article", 
-        "week": 14
+        "week": 2
     }, 
     {
         "content": {
-            "instructionList": [
-                "Look up the admission rates for every college or university on your final  list of colleges to which you want to apply.", 
-                "Keep in mind that the admission rates for international students are much more competitive.", 
-                "If you can find admission rates for international students at the schools on your list, that is even better.", 
-                "Record these admission rates in your journal."
-            ]
+            "questions": [
+                {
+                    "correct": 3, 
+                    "id": 0, 
+                    "responses": [
+                        "Being overwhelmed by the volume of admissions, officials simply ran out of time.", 
+                        "The admissions process is a complicated one.", 
+                        "Admission officials are hedging their bets by waiting to see how many of the students selected say yes.", 
+                        "All of the Above."
+                    ], 
+                    "title": "Waiting list increases are a result of ________________________."
+                }, 
+                {
+                    "correct": 1, 
+                    "id": 1, 
+                    "responses": [
+                        "The strength of  their college essay.", 
+                        "What the admissions office perceives as deficiencies in the next freshman class.", 
+                        "Their college major.", 
+                        "Their application date."
+                    ], 
+                    "title": "Students are ranked on the waiting list according to _________________."
+                }
+            ], 
+            "title": "Elite School Admissions"
         }, 
-        "index": 169, 
+        "index": 54, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "id": 4, 
+            "synopsis": "<p>In this article, we will explore the college admission rates for the class of 2018. As you will see, while imperfect, this metric is closely watched.</p> <p>Read the article for more information. Afterward, you will take a quiz to test your understanding.</p>", 
+            "title": "College Admission Rates: An Imperfect Metric"
+        }, 
+        "index": 55, 
+        "name": "article", 
+        "type": "article", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 0, 
+                    "id": 0, 
+                    "responses": [
+                        "True", 
+                        "False"
+                    ], 
+                    "title": "True or False: \u00a0Admissions rates don\u2019t really convey the chances for any one applicant."
+                }, 
+                {
+                    "correct": 1, 
+                    "id": 1, 
+                    "responses": [
+                        "75%", 
+                        "11%", 
+                        "33%", 
+                        "2%"
+                    ], 
+                    "title": "Duke University\u2019s admission rate for the class of 2018 is ______?"
+                }, 
+                {
+                    "correct": 3, 
+                    "id": 2, 
+                    "responses": [
+                        "15%", 
+                        "81%", 
+                        "1%", 
+                        "6%"
+                    ], 
+                    "title": "Harvard\u2019s admission rate for the class of 2018 is ________?"
+                }, 
+                {
+                    "correct": 3, 
+                    "id": 3, 
+                    "responses": [
+                        "The number of applicants accepted through early decision.", 
+                        "If the college requires a supplemental essay.", 
+                        "If the college counts anyone who starts the process and pays a fee or if they count applications in some other way.", 
+                        "All of the above."
+                    ], 
+                    "title": "The total number of applications rise and fall based on which of the following?"
+                }
+            ], 
+            "title": "Admissions Rates"
+        }, 
+        "index": 56, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "id": 5, 
+            "synopsis": "<p>Let\u2019s review some admissions data to understand the acceptance rates at some schools which might be of interest to you.</p> <p>Read the article for more information. Afterward, you will take a quiz to test your understanding.</p>", 
+            "title": "Admissions Data"
+        }, 
+        "index": 57, 
+        "name": "article", 
+        "type": "article", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 2, 
+                    "id": 0, 
+                    "responses": [
+                        "Duke University", 
+                        "Dartmouth College", 
+                        "Tufts University", 
+                        "Williams College"
+                    ], 
+                    "title": "In 2009, which school encouraged student to submit a short video as a part of the undergraduate application process?"
+                }, 
+                {
+                    "correct": 1, 
+                    "id": 1, 
+                    "responses": [
+                        "Alaska Bible College", 
+                        "Swarthmore College", 
+                        "Middlebury College", 
+                        "Pomona College"
+                    ], 
+                    "title": "Which school admits 100% of their applicants?"
+                }, 
+                {
+                    "correct": 3, 
+                    "id": 2, 
+                    "responses": [
+                        "Yale University", 
+                        "University of California, Berkeley", 
+                        "Stanford University", 
+                        "New York University"
+                    ], 
+                    "title": "In 2012, which school was the most selective public university in the U.S.?"
+                }
+            ], 
+            "title": "Admissions Rates Pt. 2"
+        }, 
+        "index": 58, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "heading": "Admissions Rates Internet Scavenger Hunt", 
+            "instructionsList": [
+                "<p>Choose one of the colleges/universities on your School list.</p>", 
+                "<p>The name of the school you choose will be your keyword to search on the internet</p>", 
+                "<p>Please check the site you are going to click on, and make sure it is not an ad. (Hint: does the address end in .edu?)</p>", 
+                "<p>Click into the school website, and explore:</p> <ul><li>Where on the home page can you find general information about the school?</li><li>Where on the home page can you find undergraduate admissions information?</li><li>Where on the home page can you find information on how to apply to the school?</li><li>Where on the home page can you find information related to international students?</li></ul>", 
+                "<p>Find the web page which provides the international students information section.</p> <p>For example, Duke University:<p><ul><li>Go to the Duke website</li><li>Click on \u201cAdmissions\u201d on the top left corner</li><li>Click on \u201cUndergraduate Admissions\u201d</li><li>Click on \u201cApplying\u201d</li><li>Click on\u201d Application Overview\u201d</li><li>Scroll down to the middle of the page and you will see \u201cView the class of 2018 profile\u201d</li><li>Click on \u201cView the class of 2018 profile\u201d</li><li>Scroll down the page and you will find the information such as: Acceptance/Enrollment Summary, Testing, Diversity, etc.</li></ul>"
+            ], 
+            "instuctionsHeader": "<p>Now it's time to use the your knowledge to find information around the internet related to you. Follow the instructions on how to search college acceptance rates for international students.</p>"
+        }, 
+        "index": 59, 
         "name": "activity", 
         "type": "activity", 
-        "week": 14
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Reviewing Best Fit School", 
+            "instructionList": [
+                "<p>Is the admission rate the same for international students and American students at American universities?</p>", 
+                "<p>From what countries are international students applying to U.S. colleges and universities?</p>", 
+                "<p>What are the top three countries which are sending students to the U.S. to study?</p>", 
+                "<p>What are the top three majors for undergraduate international students?</p>", 
+                "<p>Generally, are the admission requirements for international students different from the admission requirements for American students?</p>", 
+                "<p>If you can\u2019t find the answers by exploring the school web page, is there any other method you can use to find out the information you need? (Hint: Is there a phone number or email address of someone you could contact?)</p>"
+            ], 
+            "instructions": "<p>Use the information from the previous activity to answer the following questions.</p>"
+        }, 
+        "index": 60, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "forumLink": "http://littlebirdgames.proboards.com/thread/3/asynchronous-discussion", 
+            "instruction": "<p>You will enter the DISCUSSION FORUM and write your response to the following discussion prompts:</p>", 
+            "instructionList": [
+                "The most important thing I learned about admission rates for international students is:", 
+                "What are the most important aspects to choosing a college or university which will be a good fit for you?  For example, is the ranking or \u201cname\u201d of the college or university your guiding principle, or are you more interested in finding a college or university which offers the strongest program in your area of interest?  Is cost an issue when putting a college on your list?  Will it make a difference to you if your friends are applying to some of the schools on your list?  You will begin placing schools on your college list at the end of this lesson and continue adjusting your list as you learn more in the following lessons.", 
+                "What do you think schools consider when selecting you for admission?", 
+                "Which perspective about admission rates of colleges and universities do you agree with the most?"
+            ]
+        }, 
+        "index": 61, 
+        "name": "discussion", 
+        "type": "discussion", 
+        "week": 2
     }, 
     {
         "content": {
-            "instructionList": [
-                "Review your list of colleges and universities and based on their admission rates, group the schools on your list into the following categories: Most Likely, Selective/Likely; Very Selective and Reach.", 
-                "Record your final school list in your journal."
-            ]
+            "heading": "Interview with an Admissions Counselor", 
+            "synopsis": "<p>Let\u2019s listen to an interview with Anne Sjostrom, Associate Director, Undergraduate Admissions at Duke University as she talks about the liberal arts program and choosing majors, undergraduate research support, and combining studies and sports / athletics at Duke.</p>", 
+            "video": "week3/Anne_Sjostrom"
         }, 
-        "index": 170, 
-        "name": "assignment", 
-        "type": "assignment", 
-        "week": 14
+        "index": 62, 
+        "name": "video", 
+        "type": "video", 
+        "week": 2
     }, 
     {
-        "index": 171
+        "content": {
+            "heading": "Interview with an Admissions Counselor Pt. 2", 
+            "synopsis": "<p>Let\u2019s listen to an interview with Maxine Mendoza, an Admissions Officer at UPenn.  She gives advice about applying to college and she discusses opportunities for international students, such as research opportunities for undergraduate students and study abroad programs at the University of Pennsylvania.</p>", 
+            "video": "week3/Maxine_Mendoza"
+        }, 
+        "index": 63, 
+        "name": "video", 
+        "type": "video", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "heading": "Interview with an Admissions Counselor Pt. 3", 
+            "synopsis": "<p>Listen to Lauren Sutton, Associate Director of Admissions for Rhodes College in Memphis Tennessee share her thoughts on International Admissions.</p>", 
+            "video": "week3/Lauren_Sutton"
+        }, 
+        "index": 64, 
+        "name": "video", 
+        "type": "video", 
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Selective Vs. Highly Selective", 
+            "instructions": "<p>Now that you have had a chance to hear from a few college admissions counselors, please write about what you think the terms \u201cselective\u201d and \u201chighly selective\u201d mean.  You have learned a lot in this lesson about the reality of admissions rates in U.S. colleges and universities.  Assess your own chances of admission at a variety of colleges.</p> <p>Finally, let\u2019s start creating your School List!</p><p>Use your understanding of yourself, the \u201cbest fit\u201d concept, and the reality of the U.S. college admissions, please indicate your top FIVE colleges or universities to which you are most interested in applying.  You will continue to refine this list as you learn more in the following lessons.</p>"
+        }, 
+        "index": 65, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "synopsis": "<p>After this lesson, you will have a firm understanding of the reality of admissions in U.S. colleges and universities.</p>", 
+            "takeaways": [
+                "You have explored application numbers and acceptance rates specific to international students.", 
+                "You have learned a lot of information about admission rates for top colleges and universities.", 
+                "You have heard from different people regarding the admissions landscape in the United States.", 
+                "Hearing from college admissions counselors has increased your understanding of how to find schools that are the best fit for you.", 
+                "You have started your School List!"
+            ], 
+            "title": "Admissions and Selectivity"
+        }, 
+        "index": 66, 
+        "name": "wrapup", 
+        "type": "wrapup", 
+        "week": 2
+    }, 
+    {
+        "content": {
+            "objectives": [
+                "Explore the different geographic regions in the U.S. (Northeast, South, Midwest, and West).", 
+                "Locate major U.S. cities and urban centers.", 
+                "Learn about the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities.", 
+                "Continue to increase the number of colleges and universities on your College List."
+            ], 
+            "overview": "<p>You have learned a bit about yourself (Week One), the differences between U.S. and Chinese educational systems and the \u201cbest fit\u201d concept (Weeks Two & Three), and the reality of U.S. college admissions (Week Three).  Now in Week Four you will explore the different regions in the U.S. and understand the type of culture, climate and location of the colleges and universities on your list.</p>", 
+            "title": "Week 4: Getting to Know the Regions of the U.S."
+        }, 
+        "index": 67, 
+        "name": "overview", 
+        "type": "overview", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
+            1, 
+            2, 
+            3
+        ], 
+        "content": {
+            "heading": "Getting to Know the U.S. and Different U.S. Colleges and Universities", 
+            "synopsis": "<p>It is important to know where colleges and universities are located in the U.S. as you develop your College List.  Some students are surprised by the climate or culture of a location and we want you to choose colleges in locations where you will be comfortable and happy when attending your college or university.</p>", 
+            "video": "week4/Regions_of_US"
+        }, 
+        "index": 68, 
+        "name": "video", 
+        "type": "video", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "heading": "Getting to Know the Geography and Culture of the U.S. ", 
+            "instructions": "<p>Click on the links and practice learning the names and location of the different states, regions and lakes of the U.S.. Practice until you master it.</p><p>Happy exploring!</p>", 
+            "linkList": [
+                {
+                    "link": "http://www.sheppardsoftware.com/USA_Geography/USA_China_game_states.swf", 
+                    "name": "Identify U.S. States"
+                }, 
+                {
+                    "link": "http://www.sheppardsoftware.com/USA_Geography/USA_China_regions.swf", 
+                    "name": "Identify U.S. Regions"
+                }, 
+                {
+                    "link": "http://www.sheppardsoftware.com/USA_Geography/USA_China_lakes.swf\u2028", 
+                    "name": "Identify U.S. Lakes"
+                }
+            ], 
+            "synopsis": "<p>Let\u2019s learn a bit about the geography of the U.S. by playing this fun game to learn the names of the various states and where they are located. After you learn the names and location of the states, click on the U. S. regions link to learn about the culture and history of each region. In this game, there are eight regions. \u00a0It explains how the geography, politics and history of each region can be quite different.</p><p>Now that you have learned about how to find your best fit and how the admissions process works in the United States, it\u2019s time to start looking for a school that will be the best for you!</p><p>One of the first steps into finding your best fit is deciding where you will be most happy.  The United States is a large country with several different regions.  Next, you will have the opportunity to explore the geography of the United States.</p>"
+        }, 
+        "index": 69, 
+        "name": "links", 
+        "type": "links", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Exploring the Unitied States", 
+            "instructions": "<p>Please write one interesting fact from each of the regions in the U.S. and why that would cause you to (a) want to , or (b) NOT want to live in that region.</p>"
+        }, 
+        "index": 70, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 6, 
+            "synopsis": "<p>You will read the article written by Samuel Arbesman in small portions and answer questions to check for understanding. Samuel Arbesman  is\u00a0an applied mathematician and network scientist. He is a senior scholar at the Kauffman Foundation and a fellow at the Institute for Quantitative Social Science at\u00a0Harvard University. His writing has appeared in\u00a0The New York Times,\u00a0The Atlantic,\u00a0Wired,\u00a0New Scientist, and\u00a0The Boston Globe.</p>", 
+            "title": "Invisible Borders Pt. 2"
+        }, 
+        "index": 71, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 2, 
+                    "id": 0, 
+                    "responses": [
+                        "Diplomatic decisions.", 
+                        "Rivers, mountain ranges.", 
+                        "How we speak.", 
+                        "Political decisions."
+                    ], 
+                    "title": "Which one of these is not an administrative border?"
+                }, 
+                {
+                    "correct": 2, 
+                    "id": 1, 
+                    "responses": [
+                        "How we speak.", 
+                        "What sports teams we follow.", 
+                        "Diplomatic decisions.", 
+                        "Where we move."
+                    ], 
+                    "title": "Which of these is not an organic border?"
+                }
+            ], 
+            "title": "Invisible Borders Pt. 1 Quiz"
+        }, 
+        "index": 72, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 7, 
+            "synopsis": "<p>You will read the article written by Samuel Arbesman in small portions and answer questions to check for understanding. Samuel Arbesman  is\u00a0an applied mathematician and network scientist. He is a senior scholar at the Kauffman Foundation and a fellow at the Institute for Quantitative Social Science at\u00a0Harvard University. His writing has appeared in\u00a0The New York Times,\u00a0The Atlantic,\u00a0Wired,\u00a0New Scientist, and\u00a0The Boston Globe.</p>", 
+            "title": "Invisible Borders Pt. 2"
+        }, 
+        "index": 73, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 1, 
+                    "id": 0, 
+                    "responses": [
+                        "To find out where people move.", 
+                        "To find out how we create cultural and social borders.", 
+                        "To find out a region\u2019s favorite sports team.", 
+                        "To find out how we speak."
+                    ], 
+                    "title": "What was the purpose of the research conducted by the writer of the article?"
+                }, 
+                {
+                    "correct": 0, 
+                    "id": 1, 
+                    "responses": [
+                        "That sometimes political boundaries and social boundaries do not coincide.", 
+                        "That political boundaries are more important than social boundaries.", 
+                        "That social boundaries are more important than political boundaries.", 
+                        "That there is no difference between political and social boundaries."
+                    ], 
+                    "title": "What did the writer discover in his research?"
+                }
+            ], 
+            "title": "Invisible Borders Pt. 2 Quiz"
+        }, 
+        "index": 74, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 8, 
+            "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "Invisible Borders Pt. 3"
+        }, 
+        "index": 75, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 1, 
+                    "id": 0, 
+                    "responses": [
+                        "Sports and borders.", 
+                        "Migration and communication.", 
+                        "Diplomatic and political.", 
+                        "Cell phone and text use."
+                    ], 
+                    "title": "What kind of data did the researchers collect for their study?"
+                }, 
+                {
+                    "correct": 1, 
+                    "id": 1, 
+                    "responses": [
+                        "That when people move, they don\u2019t speak to people they used to know.", 
+                        "That when people move, they continue speaking to people they used to know.", 
+                        "That people don\u2019t move far away from their home state. ", 
+                        "That people don\u2019t speak to people in other states."
+                    ], 
+                    "title": "What did they conclude after analyzing this data?"
+                }
+            ], 
+            "title": "Invisible Borders Pt. 3 Quiz"
+        }, 
+        "index": 76, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 9, 
+            "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "Invisible Borders: Language"
+        }, 
+        "index": 77, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 10, 
+            "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "Invisible Borders: Voting"
+        }, 
+        "index": 78, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 11, 
+            "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "Invisible Borders: Sports"
+        }, 
+        "index": 79, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 1, 
+                    "id": 0, 
+                    "responses": [
+                        "Shopping for soft drinks, playing baseball, voting Democrat.", 
+                        "Words for soft drinks, voting, sports.", 
+                        "Drinking Coke, being a Yankees fan, being a Republican.", 
+                        "They did not find any other connections."
+                    ], 
+                    "title": "The researchers also found connections between where we live and\u2026"
+                }, 
+                {
+                    "correct": 1, 
+                    "id": 1, 
+                    "responses": [
+                        "Northern California and Southern California.", 
+                        "New England, New Jersey, Texas, and California.", 
+                        "New York, New England, and New Jersey.", 
+                        "They did not find any natural borders."
+                    ], 
+                    "title": "Where are the natural borders that the researchers found located?"
+                }
+            ], 
+            "title": "Invisible Borders Quiz"
+        }, 
+        "index": 80, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "id": 12, 
+            "synopsis": "<p>Finish reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "Invisible Borders: Conclusion"
+        }, 
+        "index": 81, 
+        "name": "article", 
+        "type": "article", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "questions": [
+                {
+                    "correct": 0, 
+                    "id": 0, 
+                    "responses": [
+                        "That our cultural similarities influence how we behave, how we communicate, and who we communicate with.", 
+                        "That our cultural similarities don\u2019t matter when we live in a complex society", 
+                        "That we need to learn more about other cultures.", 
+                        "That we don\u2019t communicate well with other cultures."
+                    ], 
+                    "title": "What does the author conclude from his research?"
+                }
+            ], 
+            "title": "Invisible Borders Quiz"
+        }, 
+        "index": 82, 
+        "name": "quiz", 
+        "type": "quiz", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "description": "Geography Game description", 
+            "id": 3, 
+            "instructions": "<p>Geography game instructions</p>", 
+            "title": "The Geography Matcher"
+        }, 
+        "index": 83, 
+        "name": "game", 
+        "type": "game", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "heading": "U.S. Geography Internet Scavenger Hunt", 
+            "instructionsList": [
+                "<p>Describe which U.S. region you found most interesting.</p>", 
+                "<p>In which region would you prefer to live? Why?\u2028</p>", 
+                "<p>What is the climate of each region?</p>", 
+                "<p>What kind of climate is most desirable to you?</p>", 
+                "<p>How easy is it to get to the region you choose from China? and from each state?</p>", 
+                "<p>What are the cultural nuances to this region?</p>"
+            ], 
+            "instuctionsHeader": "<p>Let\u2019s explore! Using the keywords and guiding questions, you will learn more details about each region of the U.S.  After learning specifics about each region or state of interest to you within a region, you will answer the following questions in your journal:</p>"
+        }, 
+        "index": 84, 
+        "name": "activity", 
+        "type": "activity", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Reviewing Best Fit School", 
+            "instructionList": [
+                "<p>Describe which U.S. region you found most interesting.</p>", 
+                "<p>In which region would you prefer to live? Why?\u2028</p>", 
+                "<p>What is the climate of each region?</p>", 
+                "<p>What kind of climate is most desirable to you?</p>", 
+                "<p>How easy is it to get to the region you choose from China? and from each state?</p>", 
+                "<p>What are the cultural nuances to this region?</p>"
+            ], 
+            "instructions": "<p>Use materials from your internet scavenger hunt to answer the following.</p>"
+        }, 
+        "index": 85, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
+            1, 
+            2, 
+            3
+        ], 
+        "content": {
+            "heading": "Getting to Know the U.S. and Different U.S. Colleges and Universities", 
+            "synopsis": "<p>Let\u2019s learn more about building your School List by watching the video.</p>", 
+            "video": "week4/Regions_of_US"
+        }, 
+        "index": 86, 
+        "name": "video", 
+        "type": "video", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
+            "heading": "Updating Your College List", 
+            "instructionList": [
+                "Are there any schools you want to remove from your list because the location doesn\u2019t appeal to you?", 
+                "What are some great schools within your favorite region that you will add to your school List?"
+            ], 
+            "instructions": "<p>Now that you know more about the culture, climate and geography and have a bit more information about building your School List, take some time to update your list.</p>"
+        }, 
+        "index": 87, 
+        "name": "journal", 
+        "type": "journal", 
+        "week": 3
+    }, 
+    {
+        "content": {
+            "synopsis": "<p>In this lesson, you learned about the culture, climate, and geographical regions of the U.S.  Having a good understanding of this information will help you to better choose colleges and universities in locations that are a good fit for you.</p>", 
+            "takeaways": [
+                "You explored the different geographic regions in the U.S. (Northeast, South, Midwest, and West) and familiarized yourself with the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities.", 
+                "You increased your vocabulary by defining several important terms.", 
+                "You can now locate major U.S. cities and urban centers.", 
+                "Your School list is growing!"
+            ], 
+            "title": "Exploring the United States"
+        }, 
+        "index": 88, 
+        "name": "wrapup", 
+        "type": "wrapup", 
+        "week": 3
+    }, 
+    {
+        "index": 89
     }
 ]

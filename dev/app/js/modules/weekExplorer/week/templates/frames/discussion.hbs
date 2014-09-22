@@ -1,17 +1,26 @@
-<h1 class="title">Discussion</h1>
-<h1 class="subtitle">{{{content.heading}}}</h1>
+<div class="headingContainer">
+	<!-- <h1 class="title">Discussion</h1>
+	<h1 class="subtitle">{{{content.heading}}}</h1> -->
+	<h1 class="title"> </h1>
+	<h1 class="subtitle">Discussion</h1>
+</div>
 
 <div class="inner-wrap">
-	<div class="another-wrapper">
-		<p>{{{content.instructions}}}</p>
+	<h2 class="subheading">Instructions:</h2>
+	<div class="textblock">
+		{{#if content.instruction}}
+		<p>{{{content.instruction}}}</p>
+		{{/if}}
 
-		<ol class="objectives">
+		{{#if content.instructionList}}
+		<ul class="objectives">
 	      {{#each content.instructionList}}
 	        <li>{{{this}}}</li>
 	      {{/each}}
-	    </ol>
+	    </ul>
+		{{/if}}
+	</div>
 
-	    <textarea class="journal_text attributeTarget eventTarget" placeholder=""></textarea>
-    </div>
-	
+    <a href="{{{content.forumLink}}}" class="submitbtn btn btn-large btn-primary attributeTarget eventTarget">Go To Fourm</a>
+
 </div>

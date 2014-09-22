@@ -1,11 +1,16 @@
 <h1 class="title">Game</h1>
-<h1 class="subtitle">{{{content.name}}}</h1>
+<h1 class="subtitle">{{{content.title}}}</h1>
 
-<div class="inner-wrap">
-	<div class="another-wrapper">
-		<div class="game-wrap">			
+<div class="inner-wrap textblock">
+		<h2 class="subheading">Summary:</h2>
+		<div class="textblock">
 			<p>{{{content.description}}}</p>
-			<a class="game-play attributeTarget eventTarget" data-id="{{{content.id}}}" href="#">Play</a>
 		</div>
-	</div>
+
+		<h2 class="subheading">Instructions:</h2>
+		<div class="textblock">
+			<p>{{{content.instructions}}}</p>
+		</div>
+		
+		<a class="game-play submitbtn btn btn-large btn-primary attributeTarget eventTarget" data-id="{{{content.id}}}" href="#">Play</a>
 </div>

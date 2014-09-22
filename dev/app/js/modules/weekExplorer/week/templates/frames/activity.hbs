@@ -1,14 +1,28 @@
-<h1 class="title">Activity</h1>
-<h1 class="subtitle">{{{content.heading}}}</h1>
+<div class="headingContainer">
+	<h1 class="title">Activity</h1>
+	<h1 class="subtitle">{{{content.heading}}}</h1>
+</div>
 
 <div class="inner-wrap attributeTarget">
-	<div class="another-wrapper box">
-		 <p class="instructions">{{{content.instuctionsHeader}}}</p>
-		 
-		 <ul>
-		 	{{#each content.instructionList}}
-		 		<li>{{{this}}}</li>
-		 	{{/each}}
-		 </ul>
+	<h2 class="heading">Summary:</h2>
+	<div class="textblock">
+		{{{content.instuctionsHeader}}}
 	</div>
+	 
+	<h2 class="heading">Instructions:</h2>
+	<ul class="textblock">
+	 	{{#each content.instructionsList}}
+	 		<li>{{{this}}}</li>
+	 	{{/each}}
+	</ul>
+	
+	{{#if content.questions}}
+	<h2 class="heading">Keep in the Mind the Following Questions:</h2>
+	<ul class="textblock">
+	 	{{#each content.questions}}
+	 		<li>{{{this}}}</li>
+	 	{{/each}}
+	</ul>
+	{{/if}}
+	
 </div>

@@ -1,0 +1,198 @@
+{
+    "type": "overview",
+    "week": 2,
+    "name": "overview",
+    "content": {
+        "title": "Week 3: The Reality of  U.S. College Admissions:",
+        "overview": "Now that you have learned some interesting things about your personality, strengths and interests and how that relates to the “best fit” concept, let’s take a bit of time to review the “best fit” concept and then explore the reality of the college admissions landscape in the United States.",
+        "objectives": [
+            "Review the concepts of “fit” vs. name or ranking.",
+            "Understand what “selective” and “highly selective” means.",
+            "Assess your own chances of admission at a variety of colleges.   ",
+            "Research application numbers and acceptance rates for international students as well as other important admissions application data.",
+            "Understand the current college admissions landscape for elite schools in the U.S.",
+            "Begin developing your School List.."
+        ]
+    }
+},
+
+{
+    "type": "article",
+    "week": 2,
+    "name": "article",
+    "content": {
+        "id": 3,
+        "title":"Best, Brightest and Rejected",
+        "synopsis": "<p>Dispite high grades, elite colleges turn away as much as 95% of their applicants.</p> <p>Read the following article to get a better view of this perspective. A quiz will be provided afterwards to check your understanding."
+    }
+},
+
+{
+    "type": "articleLink",
+    "week": 1,
+    "name": "article",
+    "content": {
+        "heading": "Finding the Right School for You",
+        "instructions": "Click on the link, read the article and take a quiz to check for understanding.",
+        "link": "http://sitemaker.umich.edu/vanschaack.356/synopsis_of_public_schools_in_the_u.s."
+    }
+},
+
+{
+    "type": "activity",
+    "week": 2,
+    "name": "activity",
+    "content": {
+        "heading": "Admissions Rates Internet Scavenger Hunt",
+        "instuctionsHeader": "Now it's time to use the your knowledge to find information around the internet related to you. Follow the instructions on how to search college acceptance rates for international students.",
+        "instructionsList":[
+            "<p>Choose one of the colleges/universities on your School list.</p>",
+            "<p>The name of the school you choose will be your keyword to search on the internet</p>",
+            "<p>Please check the site you are going to click on, and make sure it is not an ad. (Hint: does the address end in .edu?)</p>",
+            "<p>Click into the school website, and explore:</p> <ul><li>Where on the home page can you find general information about the school?</li><li>Where on the home page can you find undergraduate admissions information?</li><li>Where on the home page can you find information on how to apply to the school?</li><li>Where on the home page can you find information related to international students?</li></ul>",
+            "<p>Find the web page which provides the international students information section.</p> <p>For example, Duke University:<p><ul><li>Go to the Duke website</li><li>Click on “Admissions” on the top left corner</li><li>Click on “Undergraduate Admissions”</li><li>Click on “Applying”</li><li>Click on” Application Overview”</li><li>Scroll down to the middle of the page and you will see “View the class of 2018 profile”</li><li>Click on “View the class of 2018 profile”</li><li>Scroll down the page and you will find the information such as: Acceptance/Enrollment Summary, Testing, Diversity, etc.</li></ul>",
+        ]
+    }
+},
+
+{
+    "type": "discussion",
+    "week": 2,
+    "name": "discussion",
+    "content": {
+    },
+    "attributes": [
+        3
+    ]
+},
+
+{
+    "type": "game",
+    "week": 2,
+    "name": "game",
+    "content": {
+        "id": 3,
+        "title":"Best, Brightest and Rejected",
+        "description": "",
+        "instructions": ""
+    }
+},
+
+{
+    "type": "videoLink",
+    "week": 2,
+    "name": "video",
+    "content": {
+        "heading": "Reviewing Best Fit School",
+        "synopsis": "<p>Review the concept of “Best Fit” by choosing three videos provided from the two links below.  Choose videos in which people talk about their experience in choosing a college or university  which is a good fit for them.  After you watch the three videos you chose, you will then journal about things to consider while looking for a “best fit” school. There are many videos on the websites which may be of interest to you, so you might want to spend even more time exploring videos of interest.</p>",
+        "instruction":"<p>Clink on the links and find three videos that help you understand how to find a university or college that is a good fit for you.</p>",
+        "links": [
+            "https://bigfuture.collegeboard.org/get-started/video-gallery",
+            "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit"
+        ]
+    }
+},
+
+{
+    "type": "journal",
+    "week": 2,
+    "name": "journal",
+    "content": {
+        "heading": "Reviewing Best Fit School",
+        "instructions":"single instructions"
+        "instructionList":[
+            "Write a brief explanation of what you think “best-fit school” means to you. ",
+            "Describe what types of issues you are worried about as you begin your college planning.  For example, is there pressure to get into a “top” school?",
+            "If you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?",
+            "What types of things do you think you should consider as you develop your school list?"
+        ]
+    },
+    "attributes": [
+        3
+    ]
+},
+
+{
+    "type": "quiz",
+    "week": 2,
+    "name": "quiz",
+    "content": {
+        "title": "Elite School Admissions",
+        "questions": [
+            {
+                "title": "In recent years, prestigious schools have had a(n) ______ amount of college applications and a(n) ______ percentage of admission rate.",
+                "correct": 1,
+                "id": 0,
+                "responses": [
+                    "increased/increased",
+                    "increased/decreased",
+                    "decreased/increased",
+                    "decreased/decreased"
+                ]
+            },
+            {
+                "title": "Choose the cause(s) for the new low college acceptance rate among elite universities:",
+                "correct": 3,
+                "id": 1,
+                "responses": [
+                    "Students are sending out more college applications than ever AND Elite colleges are offering 20 percent less admission seats than a generation ago.",
+                    "College outreach programs nowadays advertise increasingly aggressive to prospective students.",
+                    "College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier AND Elite colleges are offering 20 percent less admission seats than a generation ago.",
+                    "Students are sending out more college applications than ever AND College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier.",
+                    "College outreach programs nowadays advertise increasingly aggressive to prospective students."
+                ]
+            }
+        ]
+    }
+},
+{
+        "type": "links",
+        "week": 0,
+        "name": "links",
+        "content": {
+            "heading": "U.S. Higher Education Glossary",
+            "synopsis": "<p>The following article provides a glossary of important terms used specifically for International students while researching U.S. higher education.</p>",
+            "instructions": "<p>Click on the link, read the article and take a quiz to check for understanding.</p>",
+            "singleLinkHeading": "Article Link",
+            "singleLinkhref": "http://www.usnews.com/education/best-colleges/articles/2011/08/15/us-higher-education-glossary",
+            "linkList":[
+                {
+                "name":"name",
+                "link": "link"
+                }
+            ]
+        }
+    },
+
+{
+    "type": "video",
+    "week": 2,
+    "name": "video",
+    "content": {
+        "heading": "The Reality of College Admissions",
+        "synopsis": "Let’s start learning about different perspectives regarding the reality of College Admissions in the U.S. by watching a short video.",
+        "video": "Duke_ConEd_Class3"
+    },
+    "attributes": [
+        1,
+        2,
+        3
+    ]
+},
+
+{
+    "type": "wrapup",
+    "week": 2,
+    "name": "wrapup",
+    "content": {
+        "title":"Admissions and Selectivity",
+        "synopsis": "<p>After this lesson, you will have a firm understanding of the reality of admissions in U.S. colleges and universities.</p>",
+        "takeaways": [
+            "You have explored application numbers and acceptance rates specific to international students.",
+            "You have learned a lot of information about admission rates for top colleges and universities.",
+            "You have heard from different people regarding the admissions landscape in the United States.",
+            "Hearing from college admissions counselors has increased your understanding of how to find schools that are the best fit for you.",
+            "You have started your School List!"
+        ]
+    }
+}
