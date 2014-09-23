@@ -2,21 +2,22 @@
   <h4>Manage Classes</h4>
 
   <hr/>
-  <h4>Class A Class</h4>
+  <h4>Create A Class</h4>
   <div class="admin-top">
     <input type="text" placeholder="Class Name">
     
     <select class="combobox">
       <option>Select Class Template</option>
-      <option value="0">A Student's Journey: Semester 1</option>
-      <option value="1">A Student's Journey: Semester 2</option>
+      {{#each classTemplates}}
+        <option value="{{this.index}}">{{this.title}}</option>
+      {{/each}}
     </select>
 
     <select class="combobox">
       <option>Select A Instructor</option>
-      <option value="0">teacher, one</option>
-      <option value="1">teacher, two</option>
-      <option value="2">teacher, three</option>
+      {{#each teachers}}
+      <option value="{{this.index}}">{{this.last}}, {{this.first}}</option>
+      {{/each}}
     </select>
 
     <button type="submit" name="add">Create</button>
@@ -26,14 +27,15 @@
   <h4>Edit Classes</h4>
   <select class="combobox">
     <option>Select A Class</option>
-    <option value="0">A Student's Journey: Semester 1</option>
-    <option value="1">A Student's Journey: Semester 2</option>
+    {{#each classes}}
+    <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+    {{/each}}
   </select>
-  <h5>Class Created:       <span>March 3rd 2015</span><h5>
-  <h5>Class Last Viewed:   <span>March 3rd 2015</span><h5>
-  <h5>Total Instructors:   <span>1</span><h5>
-  <h5>Total Students:      <span>5</span><h5>
-  <h5>Current Module:      <span>5</span><h5>
+  <h5>Class Created:       <span>------</span><h5>
+  <h5>Class Last Viewed:   <span>------</span><h5>
+  <h5>Total Instructors:   <span>-</span><h5>
+  <h5>Total Students:      <span>-</span><h5>
+  <h5>Current Module:      <span>-</span><h5>
 
   <button type="submit" name="add">Delete Class</button>
 
@@ -44,18 +46,21 @@
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
-            <th>Name</th><th>Actions</th>
+            <th>Name</th><th>Class Assignments</th><th>Actions</th>
           </tr>
           <tr>
             <td>Teacher 1</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
           <tr>
             <td>Teacher 2</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
           <tr>
             <td>Teacher 3</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
         </tbody>
@@ -66,18 +71,21 @@
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
-            <th>Name</th><th>Actions</th>
+            <th>Name</th><th>Class Assignments</th><th>Actions</th>
           </tr>
           <tr>
             <td>Student 1</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
           <tr>
             <td>Student 2</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
           <tr>
             <td>Student 3</td>
+            <td>0,1,2</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
         </tbody>

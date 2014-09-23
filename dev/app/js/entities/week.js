@@ -19,7 +19,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	Entities.ClassTemplate = Backbone.Model.extend({});
 
-	Entities.ClassTempalteCollection = Backbone.Collection.extend({
+	Entities.ClassTemplateCollection = Backbone.Collection.extend({
 		model:Entities.ClassTemplate
 	});
 
@@ -29,7 +29,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		model:Entities.Class
 	});
 
-	var frameTemplates, frames, weeks, classes, classTemplates;
+	var frameTemplates, frames, weeks, classTemplates;
 
 	var makeTemplateObjectById = function(id) {
 		var m = frameTemplates.at(id);
@@ -178,8 +178,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
-			query.equalTo("index", index);
 
+		query.equalTo("index", index);
 		query.first(function(frame) {
 			def.resolve({
 				"id": 			frame.id,
@@ -295,6 +295,54 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 			
 			return def.promise();
+		},
+
+		getAllClassModel: function() {
+			var def = $.Deferred(),
+				that = this;
+
+			initializeClassTemplates().done(function(){
+				var	ClassTable = Parse.Object.extend("Classes"),
+					query = new Parse.Query(ClassTable);
+
+				query.find({
+					success: function(results) {
+						var cObjectList = [];
+
+						results.map(function(obj, id){
+							cObjectList.push({
+								index: 		obj.get('index'),
+								students: 	obj.get('students'),
+								template: 	makeClassTemplateObjectById(obj.get('template')),
+							});
+						});
+
+						def.resolve(cObjectList);
+					}
+				});
+			});
+			
+			return def.promise();
+		},
+
+		getAllClassTemplatesModel: function() {
+			var def = $.Deferred();
+
+			initializeClassTemplates().done(function(){
+				//console.log(classTemplates.models);
+				var ctObjectList = [];
+				classTemplates.models.map(function(obj){
+					ctObjectList.push({
+						index:obj.get('index'),
+						title:obj.get('title'),
+						weeks:obj.get('weeks')
+					});
+				});
+
+				def.resolve(ctObjectList);
+			});
+
+			return(def.promise());
 		}
 	};
 
@@ -317,5 +365,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("class:entities", function(id){	
 		return API.getClassModel(id);
+	});
+
+	DukeApp.reqres.setHandler("all:class:entities", function(){
+		return API.getAllClassModel();
+	});
+
+	DukeApp.reqres.setHandler("all:classTemplates:entities", function(){
+		return API.getAllClassTemplatesModel();
 	});
 });

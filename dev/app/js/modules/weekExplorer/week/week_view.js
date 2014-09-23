@@ -212,20 +212,24 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		},
 
 		setActiveFrame:function(linkId) {
-			var target = $('.weekItemLink[data-weekItem=' + linkId + "]");
+			var target = $('.weekItemLink[data-weekItem=' + linkId + "]"),
+				scrollLink,
+				scrollLimit = 4;
+
 			this.active.removeClass('active');
 		 	target.addClass('active');
 		 	this.active = target;
 
-		 	if (linkId >= 5) {
-		 		$("#section_nav").scrollTo('.weekItemLink[data-weekItem=' + (linkId - 5) + "]", {
-		    		duration:300,
-		    	});
+		 	if (linkId >= scrollLimit) {
+		 		scrollLink = $('.weekItemLink[data-weekItem=' + (linkId - scrollLimit) + ']');
 		 	} else if (this.active !== $(".weekItemLink[data-weekItem=0]")) {
-		 		$("#section_nav").scrollTo(".weekItemLink[data-weekItem=0]", {
-		    		duration:300,
-		    	});
+		 		scrollLink = $('.weekItemLink[data-weekItem=0]');
 		 	}
+
+		 	$("#section_nav").scrollTo(scrollLink, {
+		    	duration:200,
+		    });
+
 		}
 	});
 

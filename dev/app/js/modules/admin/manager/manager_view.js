@@ -19,7 +19,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 	});
 
 	Manager.EditClassesView = Marionette.ItemView.extend({
-		template:templates["admin/manager/editClasses"]
+		template:templates["admin/manager/editClasses"],
+		onShow:function(){
+			console.log(this.model);
+		}
 	});
 
 	Manager.EditGuestsView = Marionette.ItemView.extend({

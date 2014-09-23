@@ -68,21 +68,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			var frameIndex = weeks.at(id).get("id"),
 				framesPromise = DukeApp.request("frameByWeek:entities", frameIndex);
 
-			//for later, allows week composition by week frames array
-
-			// var framePromises = [];
-			// _.each(weeks.at(id).get("frames"), function(idx) {
-			// 	framePromises.push(DukeApp.request("frameByIndex:entities", idx));
-			// });
-
-			// $.when.apply($, framePromises).done(function(){
-			// 	console.log(arguments);
-			// 	var f = arguments,
-			// 		frames = new DukeApp.Entities.FrameCollection(f);
-			// 	frames = frames;
-			// 	console.log(frames);
-			// });
-
 			framesPromise.done(function(frames) {
 				
 				views.content = new Week.ContentListView({

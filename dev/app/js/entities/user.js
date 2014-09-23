@@ -2,7 +2,16 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	Entities.UserModel = Backbone.Model.extend({});
 
 	Entities.StudentModel = Backbone.Model.extend({});
+	Entities.TeacherModel = Backbone.Model.extend({});
+	Entities.AdminModel = Backbone.Model.extend({});
 
+	Entities.StudentCollection = Backbone.Collection.extend({
+		model:Entities.StudentModel
+	});
+
+	Entities.TeacherCollection = Backbone.Collection.extend({
+		model:Entities.TeacherModel
+	});
 
 	var API = {
 		getStudentObject: function() {
@@ -71,18 +80,61 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		getTeacherModel: function() {
 			var def = $.Deferred();
 			DukeApp.utils.getCurrentTeacherAccount().done(function(teacher) {
+
 				var curUser = DukeApp.utils.getCurrentUser(),
-					teacherModel = new Entities.StudentModel({
-					"classes": teacher.get('classes'),
-					"first": curUser.get('firstName'),
-					"last": curUser.get('lastName')
-				});
+					teacherModel = new Entities.TeacherModel({
+						"classes": teacher.get('classes'),
+						"first": curUser.get('firstName'),
+						"last": curUser.get('lastName')
+					});
 
 				def.resolve(teacherModel);
 			});
 
 			return(def.promise());
 		},
+		
+		getAllTeacherModel: function() {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				query = new Parse.Query(TeacherTable);
+
+			query.find({
+				success:function(results) {
+					var tObjectList = [],
+						tpromises = [];
+
+					results.map(function(obj, idx) {
+						var p = $.Deferred();
+						obj.get('user').fetch({
+							success:function(user) {
+								tObjectList.push({
+									"classes": obj.get('classes'),
+									"first": user.get("firstName"),
+									"last": user.get("lastName"),
+									"index": idx,
+									"id": obj.id,
+									"userId": user.id,
+									"profileImage": user.get("profileImage")
+								});
+
+								p.resolve();
+							}
+						});
+
+						tpromises.push(p);
+					});
+					
+					$.when.apply($, tpromises).done(function(){
+						def.resolve(tObjectList);
+					});
+				}
+			
+			});
+			
+			return(def.promise());
+		},
+
 		getUserModel: function(){
 			var user = DukeApp.utils.getCurrentUser();
 
@@ -157,6 +209,15 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	DukeApp.reqres.setHandler("user:teacherModel:entities", function(){
 		return API.getTeacherModel();
 	});
+
+	DukeApp.reqres.setHandler("user:teacherModel:entities", function(){
+		return API.getTeacherModel();
+	});
+
+	DukeApp.reqres.setHandler("all:user:teacherModel:entities", function(){
+		return API.getAllTeacherModel();
+	});
+
 
 	DukeApp.reqres.setHandler("user:studentModel:entities", function(){
 		return API.getStudentModel();

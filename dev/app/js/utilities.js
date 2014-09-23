@@ -116,6 +116,25 @@ DukeApp.utils.getCurrentTeacherAccount = function() {
 	return(def.promise());
 };
 
+DukeApp.utils.getCurrentAdminAccount = function() {
+	var def = $.Deferred();
+	//if we are a student
+	if (DukeApp.utils.getCurrentAdminType() === DukeApp.utils.AdminTypes.admin) {
+
+		var adminAccount = Parse.User.current().get('adminAccount');
+		adminAccount.fetch({
+			success:function(admin){
+				def.resolve(admin);
+			}
+		});
+
+	} else {
+		def.resolve(false);
+	}
+
+	return(def.promise());
+};
+
 DukeApp.utils.login = function(obj) {
 	var def = $.Deferred();
 	
