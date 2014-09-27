@@ -15,13 +15,23 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		handleMenuLinks:function(e) {
 			var linkType = e.currentTarget.getAttribute("data-link");
 			this.trigger("managerView:clickLink", linkType);
+		},
+
+		handleMessage:function(e) {
+			alert(e.msg);
 		}
 	});
 
 	Manager.EditClassesView = Marionette.ItemView.extend({
 		template:templates["admin/manager/editClasses"],
-		onShow:function(){
-			console.log(this.model);
+		events:{
+			"click #createBtn": "handleCreateClass"
+		},
+		handleCreateClass:function(e) {
+			var classTemplate = Number($('#templateCombo').val()),
+				teacherTemplate = Number($('#instructorCombo').val());
+
+			this.trigger("managerView:createClass", {classTemplate:classTemplate, teacherTemplate:teacherTemplate});
 		}
 	});
 

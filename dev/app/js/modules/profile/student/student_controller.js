@@ -90,7 +90,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				framePromises = [];
 
 			_.map(itemList, function(obj, idx){
-				framePromises.push(DukeApp.request("frameById:entities", obj.frameID));
+				framePromises.push(DukeApp.request("frameByIndex:entities", obj.frameIndex));
 			});
 
 			$.when.apply($, framePromises).then(function(){
@@ -157,13 +157,13 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				return;
 
 			this.getFrameReferences(journals).done(function(frames) {
-				
 				var journalList = {},
 					contentView = Student.Controller.content;
 
 				journalList = that.createWeekList(journals, frames, {heading:"heading", instructions:"instructions"}, "journal");
 
 				var minWeek = that.getMinWeek(journalList);
+
 				Student.Controller.journalList = journalList;
   				Student.Controller.currentJournalIndex = 0;
   				Student.Controller.currentJournalWeekIndex = Number(minWeek);
@@ -185,7 +185,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 		incrementJournal:function(direction) {
 			var contentView = Student.Controller.content;
-			
+		
 			if (direction === "right") {
 				Student.Controller.currentJournalIndex ++;
 			} else if (direction === "left") {
@@ -193,9 +193,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			}
 
 			if (Student.Controller.currentJournalIndex > Student.Controller.maxJournalIndex-1) {
-			Student.Controller.currentJournalIndex = 0;
+				Student.Controller.currentJournalIndex = 0;
 			} else if (Student.Controller.currentJournalIndex < 0) {
-			Student.Controller.currentJournalIndex = Student.Controller.maxJournalIndex-1;
+				Student.Controller.currentJournalIndex = Student.Controller.maxJournalIndex-1;
 			}
 
 			contentView.setJournalIndex(Student.Controller.currentJournalIndex, Student.Controller.maxJournalIndex);

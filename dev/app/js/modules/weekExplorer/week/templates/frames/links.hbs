@@ -4,10 +4,13 @@
 </div>
 
 <div class="inner-wrap attributeTarget">
+
+	{{#if content.synopsis}}
 	<h2 class="heading">Summary:</h2>
 	<div class="textblock">
 		{{{content.synopsis}}}
 	</div>
+	{{/if}}
 	
 	{{#if content.instructions}}
 	<h2 class="heading">Instructions:</h2>

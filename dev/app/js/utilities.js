@@ -13,7 +13,7 @@ DukeApp.utils.AdminTypes = {
 	"teacher":"teacher",
 	"admin":"admin",
 	"student":"student",
-	"guest":"guest",
+	"guest":"guest"
 };
 
 DukeApp.utils.Attributes = [
@@ -108,7 +108,6 @@ DukeApp.utils.getCurrentTeacherAccount = function() {
 				def.resolve(teacher);
 			}
 		});
-
 	} else {
 		def.resolve(false);
 	}
@@ -140,9 +139,14 @@ DukeApp.utils.login = function(obj) {
 	
 	Parse.User.logIn(obj.username, obj.password, {
 		success: function(user) {
-			DukeApp.utils.setIsGuest(false);
-			DukeApp.utils.setIsLoggedIn(true);
-			def.resolve(true);
+			if (user.get('type') !== "guest") {
+				DukeApp.utils.setIsGuest(false);
+				DukeApp.utils.setIsLoggedIn(true);
+				def.resolve(true);
+			} else {
+				def.resolve(false);
+			}
+			
 		},
 		error: function(user, error) {
 			def.resolve(false);
@@ -152,9 +156,26 @@ DukeApp.utils.login = function(obj) {
 	return(def);
 };
 
-DukeApp.utils.loginAsGuest = function() {
-	DukeApp.utils.setIsGuest(true);
-	DukeApp.utils.setIsLoggedIn(true);
+DukeApp.utils.loginAsGuest = function(obj) {
+	var def = $.Deferred();
+
+	Parse.User.logIn(obj.username, obj.password, {
+		success: function(user) {
+			if (user.get('type') === "guest") {
+				DukeApp.utils.setIsGuest(true);
+				DukeApp.utils.setIsLoggedIn(true);
+				def.resolve(true);
+			} else {
+				def.resolve(false);
+			}
+
+		},
+		error: function(user, error) {
+			def.resolve(false);
+		}
+	});
+
+	return(def);
 };
 
 
@@ -176,4 +197,19 @@ DukeApp.utils.loadCommonViews = function() {
 		header:new DukeApp.Components.Header.HeaderView(),
 		footer:new DukeApp.Components.Footer.FooterView()
 	};
+};
+
+DukeApp.utils.findNextIndex = function(tableName) {
+	var Table = Parse.Object.extend(tableName),
+		query = new Parse.Query(Table),
+		def = $.Deferred();
+
+	query.descending("index");
+	query.first({
+		success: function(result){
+			def.resolve(result.get('index') + 1);
+		}
+	});
+
+	return(def.promise());
 };

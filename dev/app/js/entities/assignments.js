@@ -13,7 +13,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				var assignments = [];
 				_.map(results, function(obj, id) {
 					assignments.push({
-						"frameID":obj.get('frameID'),
+						"frameIndex":obj.get('frameIndex'),
 						"text":obj.get('text'),
 						"isGraded":obj.get('isGraded'),
 						"grade":obj.get('grade'),
@@ -34,7 +34,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			assignmentObj.isGraded = false;
 			
-			query.equalTo("frameID", assignmentObj.frameID);
+			query.equalTo("frameIndex", assignmentObj.frameIndex);
 			query.equalTo("userID", assignmentObj.userID);
 
 			query.find(function(results){

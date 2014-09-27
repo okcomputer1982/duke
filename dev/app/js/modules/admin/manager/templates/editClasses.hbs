@@ -4,90 +4,78 @@
   <hr/>
   <h4>Create A Class</h4>
   <div class="admin-top">
-    <input type="text" placeholder="Class Name">
-    
-    <select class="combobox">
-      <option>Select Class Template</option>
+    <select class="combobox" id="templateCombo">
+      <option value="-99">Select Class Template</option>
       {{#each classTemplates}}
         <option value="{{this.index}}">{{this.title}}</option>
       {{/each}}
     </select>
 
-    <select class="combobox">
-      <option>Select A Instructor</option>
+    <select class="combobox" id="instructorCombo">
+      <option value="-99">Select A Instructor</option>
       {{#each teachers}}
       <option value="{{this.index}}">{{this.last}}, {{this.first}}</option>
       {{/each}}
     </select>
 
-    <button type="submit" name="add">Create</button>
+    <button type="submit" id="createBtn" name="add">Create</button>
   </div>
   
   <hr/>
-  <h4>Edit Classes</h4>
-  <select class="combobox">
-    <option>Select A Class</option>
-    {{#each classes}}
-    <option value="this.index">{{this.index}} - {{this.template.title}}</option>
-    {{/each}}
-  </select>
-  <h5>Class Created:       <span>------</span><h5>
-  <h5>Class Last Viewed:   <span>------</span><h5>
-  <h5>Total Instructors:   <span>-</span><h5>
-  <h5>Total Students:      <span>-</span><h5>
-  <h5>Current Module:      <span>-</span><h5>
-
-  <button type="submit" name="add">Delete Class</button>
-
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Edit Classes</h4>
+      <select class="combobox">
+        <option value="-99">Select A Class</option>
+        {{#each classes}}
+          <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="col-md-6">
+      <h5>Class Created:       <span>------</span></h5>
+      <h5>Class Last Viewed:   <span>------</span></h5>
+      <h5>Total Instructors:   <span>-</span></h5>
+      <h5>Total Students:      <span>-</span></h5>
+      <h5>Current Module:      <span>-</span></h5>
+      <button type="submit" name="add">Delete Class</button>
+    </div>
+  </div> 
+  
   <hr/>
   <div class="row">
     <div class="col-md-6">
-      <h4>Edit Teachers</h4>
+      <h5>Teachers</h5>
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
-            <th>Name</th><th>Class Assignments</th><th>Actions</th>
+            <th>Name</th><th>In Class</th><th>Actions</th>
           </tr>
+          {{#each teachers}}
           <tr>
-            <td>Teacher 1</td>
-            <td>0,1,2</td>
+            <td>{{this.last}}, {{this.first}}</td>
+            <td>-</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
-          <tr>
-            <td>Teacher 2</td>
-            <td>0,1,2</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
-          </tr>
-          <tr>
-            <td>Teacher 3</td>
-            <td>0,1,2</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
-          </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
+
     <div class="col-md-6">
-      <h4>Edit Students</h4>
+      <h5>Students</h5>
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
-            <th>Name</th><th>Class Assignments</th><th>Actions</th>
+            <th>Name</th><th>In Class</th><th>Actions</th>
           </tr>
+          {{#each students}}
           <tr>
-            <td>Student 1</td>
-            <td>0,1,2</td>
+            <td>{{this.last}}, {{this.first}}</td>
+            <td>-</td>
             <td><button>Add to Class</button><button>Remove from Class</button></td>
           </tr>
-          <tr>
-            <td>Student 2</td>
-            <td>0,1,2</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
-          </tr>
-          <tr>
-            <td>Student 3</td>
-            <td>0,1,2</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
-          </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>

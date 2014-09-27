@@ -145,10 +145,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				return;
   			}
 
-  			var frameID = Week.Controller.frames.models[options.id].id;
+  			var frameIndex = Week.Controller.getFrameIndex(options.id);
 
   			var saveJournalPromise = DukeApp.request("save:journals:entities", {
-  				frameID:frameID,
+  				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
   				text:options.text
   			}).done(function() {
@@ -162,10 +162,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				return;
   			}
 
-  			var frameID = Week.Controller.frames.models[options.id].id;
+  			var frameIndex = Week.Controller.getFrameIndex(options.id);
 
   			var saveAssignmentPromise = DukeApp.request("save:assignments:entities", {
-  				frameID:frameID,
+  				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
   				text:options.text
   			}).done(function() {
@@ -178,11 +178,10 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				alert("Sorry, can't save quiz as a guest.");
 				return;
   			}
-  			var contrl = Week.Controller,
-  				frameID = contrl.getFrameId(options.id);
+  			var frameIndex = Week.Controller.getFrameIndex(options.id);
 
   			var saveQuizPromise = DukeApp.request("save:quizes:entities", {
-  				frameID:frameID,
+  				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
   				response:options.response
   			}).done(function() {
@@ -195,13 +194,13 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				return;
 
   			_.defaults(options, {allowRepeat:true});
-  			var frameID = Week.Controller.getFrameId(options.id);
+  			var frameID = Week.Controller.getFrameIndex(options.id);
 
   			DukeApp.request("frameById:entities", frameID).done(function(frame) {  			
   				var eventLogData = {
   					studentId:DukeApp.utils.getCurrentUserID(),
   					eventType:frame.type,
-  					contentId:frameID,
+  					contentIndex:frameIndex,
   					contentStatus:options.status,
   					contentData:options.data,
   					allowRepeat:options.allowRepeat
@@ -215,14 +214,14 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			if (!DukeApp.utils.isStudent())
   				return;
   			
-  			var frameID = Week.Controller.getFrameId(options.id);
+  			var frameID = Week.Controller.getFrameIndex(options.id);
 
   			DukeApp.request("frameById:entities", frameID).done(function(frame) {
 
   				var eventLogData = {
   					studentId:DukeApp.utils.getCurrentUserID(),
   					eventType:"attribute",
-  					contentId:frameID,
+  					contentIndex:frameIndex,
   					contentStatus:"added",
   					contentData:{attributes:frame.attributes},
   					allowRepeat:false
@@ -239,7 +238,11 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
   		/*************Helper Functions**************/
   		getFrameId:function(index) {
-  			return(Week.Controller.frames.models[index].id);
+  			return(Week.Controller.frames.models[index].get('id'));
+  		},
+
+  		getFrameIndex:function(index) {
+  			return(Week.Controller.frames.models[Number(index)].get('index'));
   		}
 	};
 });

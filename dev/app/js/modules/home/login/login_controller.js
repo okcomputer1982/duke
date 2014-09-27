@@ -16,9 +16,14 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 			content.on("loginView:doGuestLogin", this.doGuestLogin);
 		},
 
-		doGuestLogin:function(){
-			DukeApp.utils.loginAsGuest();
-			DukeApp.trigger("weekExplorer:week", 1, true);
+		doGuestLogin:function(obj){
+			DukeApp.utils.loginAsGuest(obj).done(function(pass){
+				if (pass) {
+					DukeApp.trigger("weekExplorer:week", 1, true);
+				} else {
+					Login.Controller.contentView.showAlert();
+				}
+			});
 		},
 
 		doLogin:function(obj){	

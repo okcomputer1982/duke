@@ -9,10 +9,11 @@
     <input type="text" placeholder="Username">
     <input type="text" placeholder="Email">
     <select class="combobox">
-      <option>Select Class</option>
-      <option value="0">A Student's Journey: Semester 1</option>
-      <option value="1">A Student's Journey: Semester 2</option>
-    </select>
+        <option value="-99">Select A Class</option>
+        {{#each classes}}
+          <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+        {{/each}}
+      </select>
     <br/>
     <button type="submit" name="add">Add</button>
   </div>
@@ -22,26 +23,19 @@
   <table id="admin-students" class="table table-responsive table-bordered table-striped">
     <tbody>
       <tr>
-        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>
+        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Current Week</th><th>Current Frame</th><th>Actions</th>
       </tr>
+      {{#each students}}
       <tr>
-        <td>Student 1</td>
-        <td>student1@school.edu</td>
-        <td>Math 101</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
+        <td>{{this.last}}, {{this.first}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.classes}}</td>
+        <td>{{this.currentClass}}</td>
+        <td>{{this.currentWeek}}</td>
+        <td>{{this.currentFrame}}</td>
+        <td><button>EDIT</button></td>
       </tr>
-      <tr>
-        <td>Student 2</td>
-        <td>student2@school.edu</td>
-        <td>Math 103</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
-      </tr>
-      <tr>
-        <td>Student 3</td>
-        <td>student3@school.edu</td>
-        <td>Math 102</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

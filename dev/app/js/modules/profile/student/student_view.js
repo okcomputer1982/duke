@@ -267,16 +267,17 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 	    handleJournalClick:function(e) {
 	    	e.preventDefault();
-	    	var direction = e.currentTarget.getAttribute("data-direction");
 
+	    	var direction = e.currentTarget.getAttribute("data-direction");
 			this.trigger("studentProfile:incrementJournal", direction);
 	    },
 
 	    handleWeekClick:function(e) {
 	    	e.preventDefault();
 	    	var direction = e.currentTarget.getAttribute("data-direction");
-	    	var t = $(e.currentTarget).parent().prev().text().toLowerCase();
+	    	var t = $(e.currentTarget).parent().parent().parent().prev().text().toLowerCase();
 
+	    	
 	    	this.trigger("studentProfile:incrementWeek", direction, t);
 	    },
 

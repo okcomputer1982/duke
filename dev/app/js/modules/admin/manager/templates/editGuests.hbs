@@ -4,15 +4,15 @@
   <hr/>
   <h4>Add Guest</h4>
   <div class="admin-top">
-    <input type="text" placeholder="First Name">
-    <input type="text" placeholder="Last Name">
     <input type="text" placeholder="Username">
     <input type="text" placeholder="Email">
     <select class="combobox">
-      <option>Select Class</option>
-      <option value="0">A Student's Journey: Semester 1</option>
-      <option value="1">A Student's Journey: Semester 2</option>
+      <option value="-99">Select A Class</option>
+      {{#each classes}}
+        <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+      {{/each}}
     </select>
+
     <br/>
     <button type="submit" name="add">Add</button>
   </div>
@@ -24,24 +24,14 @@
       <tr>
         <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>
       </tr>
+      {{#each guests}}
       <tr>
-        <td>Student 1</td>
-        <td>student1@school.edu</td>
-        <td>Math 101</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
+        <td>{{this.username}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.class}}</td>
+        <td><button>Edit</button></td>
       </tr>
-      <tr>
-        <td>Student 2</td>
-        <td>student2@school.edu</td>
-        <td>Math 103</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
-      </tr>
-      <tr>
-        <td>Student 3</td>
-        <td>student3@school.edu</td>
-        <td>Math 102</td>
-        <td><button>Edit</button><button>Reset Password</button><button>Delete</button></td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

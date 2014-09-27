@@ -31,7 +31,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 		onShow:function() {
 			var id = this.model.get('content').id;
 			var weekitem = ".weekitem" + this.model.get("weekItem");
-
 			
 			$("section" + weekitem +  " .articleItem").hide();
 			$("section" + weekitem +  " .articleItem[data-id=" + id + "]").show();

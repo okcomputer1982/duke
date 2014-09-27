@@ -2,12 +2,12 @@
     {
         "content": {
             "objectives": [
-                "Review course goals, objectives, and syllabus for both Semesters.", 
+                "Review course goals, objectives, and syllabus for both Semesters", 
                 "Understand WHO you are: What are your interests? What are your \u201clikes? What is your personality profile?", 
-                "Understand WHAT you are: Identify your academic and extra-curricular strengths.", 
-                "Identify objectives for future college study."
+                "Understand WHAT you are: Identify your academic and extra-curricular strengths", 
+                "Identify objectives for future college study"
             ], 
-            "overview": "<p>Knowing yourself: Who are you and what are you equals knowing yourself. This lesson will help you to identify your personality, personal strengths and interests.</p> <p>Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. You will develop your character profile, which will help you create a plan for what you might want to study in high school and college.</p>", 
+            "overview": "<p>Knowing yourself: Who are you and what are you equals knowing yourself. This lesson will help you to identify your personality, personal strengths and interests.</p> <p>Knowing who and what you are will help you develop your high school plan for academics and extracurricular activities. You will develop your character profile, which will help you create a plan for what you might want to study in high school and college and help you choose the college/university that is the best fit for you.</p>", 
             "title": "Week One: Who and What Are You?"
         }, 
         "index": 0, 
@@ -24,7 +24,7 @@
         "content": {
             "heading": "Welcome and Overview", 
             "synopsis": "<p>This video will teach you a bit about the course and what you will be learning.</p>", 
-            "video": "/week1/welcome"
+            "video": "week1/welcome"
         }, 
         "index": 1, 
         "name": "video", 
@@ -49,10 +49,10 @@
                     "correct": 3, 
                     "id": 0, 
                     "responses": [
-                        "To help the student have fun in the U.S.", 
-                        "To please the students\u2019 parents.", 
-                        "To help the student become an American.", 
-                        "To help the student apply and adjust to a U.S. University."
+                        "To help the student have fun in the U.S", 
+                        "To please the students\u2019 parents", 
+                        "To help the student become an American", 
+                        "To help the student apply and adjust to a U.S. University"
                     ], 
                     "title": "What is the primary goal of A Student\u2019s Journey?"
                 }, 
@@ -74,7 +74,7 @@
                         "Quizzes", 
                         "Journals and Discussion Fourms", 
                         "Successful completion of tasks", 
-                        "All of the above."
+                        "All of the above"
                     ], 
                     "title": "The assessments include:"
                 }
@@ -109,7 +109,7 @@
                         "Parent", 
                         "Roommate"
                     ], 
-                    "title": "Who is the best source to use for academic advice and guidance at a U.S. University?"
+                    "title": "According to the article, who is the best source to use for academic advice and guidance at a U.S. University?"
                 }, 
                 {
                     "correct": 0, 
@@ -120,7 +120,7 @@
                         "B2 and J1", 
                         "B1 and B2"
                     ], 
-                    "title": "Which type of Visa allows an international student to attend a U.S. University?"
+                    "title": "According to the article, which type of Visa allows an international student to attend a U.S. University?"
                 }, 
                 {
                     "correct": 2, 
@@ -131,7 +131,7 @@
                         "A Teacher or Counselor", 
                         "A BFF"
                     ], 
-                    "title": "Letters of Recommendation are most often written by:"
+                    "title": "According to the article, letters of Recommendation are most often written by:"
                 }
             ], 
             "title": "Quiz 2"
@@ -182,18 +182,18 @@
                         "Intelligence", 
                         "All of the above"
                     ], 
-                    "title": "Personality questionnaires do not measure:"
+                    "title": "According to the article, personality questionnaires do not measure:"
                 }, 
                 {
                     "correct": 0, 
                     "id": 1, 
                     "responses": [
-                        "This can help me chose a college or major that is a good fit for my personality.", 
-                        "It\u2019s fun to learn about myself.", 
-                        "Colleges will ask for my personality profile.", 
-                        "Test scores are important to college applications."
+                        "This can help me chose a college or major that is a good fit for my personality", 
+                        "It\u2019s fun to learn about myself", 
+                        "Colleges will ask for my personality profile", 
+                        "Test scores are important to college applications"
                     ], 
-                    "title": "It is important for me to know my personality profile when considering which colleges to apply for because:"
+                    "title": "According to the article, it is important for me to know my personality profile when considering which colleges to apply for because:"
                 }, 
                 {
                     "correct": 3, 
@@ -204,7 +204,7 @@
                         "3", 
                         "4"
                     ], 
-                    "title": "How many codes does the personality type codes have?"
+                    "title": "According to the article, how many codes does the personality type codes have?"
                 }, 
                 {
                     "correct": 2, 
@@ -214,7 +214,7 @@
                         "Thoughts and Actions or Emotions and Words", 
                         "Thoughts and Emotions or Actions and Words"
                     ], 
-                    "title": "The first letter of your personality type code describes where you use your favorite mental muscle. In the inner world of ______ and ______ or the outer world of ______ and ______:"
+                    "title": "According to the article, the first letter of your personality type code describes where you use your favorite mental muscle. In the inner world of ______ and ______ or the outer world of ______ and ______:"
                 }, 
                 {
                     "correct": 1, 
@@ -224,7 +224,7 @@
                         "Sensing/Intuition/Thinking/Feeling", 
                         "Speaking/Saying/Hearing/Listening"
                     ], 
-                    "title": "You have four mental muscles at your disposal, which you use to process information and make decisions. They are ______:"
+                    "title": "According to the article, you have four mental muscles at your disposal, which you use to process information and make decisions. They are ______:"
                 }, 
                 {
                     "correct": 2, 
@@ -234,7 +234,7 @@
                         "Seeks to promote and uphold personal values/Seeks to understand and apply universal principles", 
                         "Asks: \u201cIs it true and valid?\u201d/Asks: \u201cIs it important to me?\u201d"
                     ], 
-                    "title": "Thinking and Feeling are mental muscles used for making decisions or judgments. Thinking ______/Feeling ______:"
+                    "title": "According to the article, Thinking and Feeling are mental muscles used for making decisions or judgments. Thinking ______/Feeling ______:"
                 }, 
                 {
                     "correct": 0, 
@@ -244,7 +244,7 @@
                         "Sensing and Intuition", 
                         "Thinking or Feeling"
                     ], 
-                    "title": "Which of your preferred mental muscles do you use when dealing with people?"
+                    "title": "According to the article, which of your preferred mental muscles do you use when dealing with people?"
                 }, 
                 {
                     "correct": 0, 
@@ -254,7 +254,7 @@
                         "Changes what\u2019s there/Uses what\u2019s there", 
                         "Asks: \u201cIs it true and valid?\u201d/Asks: \u201cIs it important to me?\u201d"
                     ], 
-                    "title": "Sensing and Intuition are ways of perceiving or creating information. Sensing ______/Intuition ______:"
+                    "title": "According to the article, sensing and intuition are ways of perceiving or creating information. Sensing ______/Intuition ______:"
                 }, 
                 {
                     "correct": 2, 
@@ -265,18 +265,18 @@
                         "Think first, act later", 
                         "Express views"
                     ], 
-                    "title": "Introverts tend to:"
+                    "title": "According to the article, introverts tend to:"
                 }, 
                 {
                     "correct": 1, 
                     "id": 9, 
                     "responses": [
                         "Seek privacy", 
-                        "Develops ideas \u2018out loud\u2019", 
+                        "Develops ideas out loud\u2019", 
                         "Concentrate on thoughts", 
                         "Think things through"
                     ], 
-                    "title": "Extraverts tend to:"
+                    "title": "According to the article, extraverts tend to:"
                 }
             ], 
             "title": "Quiz 3"
@@ -289,7 +289,7 @@
     {
         "content": {
             "heading": "Take the Myers Briggs Personality Type Indicator (MBTI)", 
-            "instructions": "<p>Click on the following link and take the MBTI by following the instructions.</p>", 
+            "instructions": "<p>Click on the following link and take the MBTI by following the instructions. You will submit the questionnaire and once you receive an email with the results you will fill out your journal. If you would like to take the MBTI in Chinese, click on the drop down and change the language to Chinese.</p><ul><li>Step1: Click URL \u2013 http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d Arrive here\u2026</li><li>Step2: Click Language Drop-down.</li><li>Step3: Select \u201cChinese, Simplified\u201d. Page refreshes as\u2026 </li><li>Step4: Enter: <ul><li>First Name</li><li>Last name</li><li>Gender</li><li>Email</li></ul></li></ul><p><strong>WARNING! DO NOT ENTER CHINESE CHARACTERS IN THE NAME FIELDS. Step5: Answer all Qty. 93 questions and press at the bottom of the page. WARNING! DO NOT PRESS this button.</strong></p>", 
             "singleLinkHeading": "Go To Test", 
             "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d", 
             "synopsis": "<p>Now that you've learned about Myers Briggs, it is your turn to take it yourself.</p>"
@@ -323,7 +323,7 @@
             "heading": "The Interest Profile", 
             "instructions": "<p>You will take an Interest Profiler. Register with CFNC by creating your own account. Click on the link below and follow the instructions. Once logged in, click on \u201cPlan\u201d and scroll down to \u201cPlan for A Career\u201d and click on \u201cLearn About Yourself\u201d.</p> <p><em>Take the Interest Profiler by clicking on > Interest Profiler.</em> </p>", 
             "singleLinkHeading": "Take the Profile", 
-            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
+            "singleLinkhref": "https://www1.cfnc.org/Plan/For_A_Career/Learn_About_Yourself/Career_Cluster_Survey/Career_Cluster_Survey.aspx"
         }, 
         "index": 11, 
         "name": "links", 
@@ -335,7 +335,7 @@
             "heading": "The Career Profile", 
             "instructions": "<p>Now take the Career Cluster Survey about your strengths and interests. Click on \u201cPlan\u201d and scroll down to \u201cPlan for A Career\u201d and click on \u201cLearn About Yourself\u201d. Take the Career Cluster Survey by clicking on > Career Cluster Survey.</p> <p><em>Once complete, review your results and return to journal about your experience.</em></p>", 
             "singleLinkHeading": "Go To Profile", 
-            "singleLinkhref": "http://online.cpp.com/en/CPPLandingPage.aspx?projectId=40e8be42-dce5-4a0f-a9db-e68ce607ca2d"
+            "singleLinkhref": "https://www1.cfnc.org/Plan/For_A_Career/Learn_About_Yourself/Career_Cluster_Survey/Career_Cluster_Survey.aspx"
         }, 
         "index": 12, 
         "name": "links", 
@@ -365,12 +365,12 @@
         "content": {
             "synopsis": "<p>Knowing this information about yourself, you will now be able to use your high school years wisely by engaging in extracurricular activities of interest and will be able to use this information in future years when choosing a college.</p>", 
             "takeaways": [
-                "What the Course is about.", 
-                "Who you are: Your personality type, your interests and strengths.", 
-                "What you are: Your academic and extracurricular strengths.", 
-                "What college major you might enjoy.", 
-                "Knowing who and what you are will help you in finding the college that is the best fit for you.", 
-                "What career you might enjoy."
+                "What the Course is about", 
+                "Who you are: Your personality type, your interests and strengths", 
+                "What you are: Your academic and extracurricular strengths", 
+                "What college major you might enjoy", 
+                "Knowing who and what you are will help you in finding the college that is the best fit for you", 
+                "What career you might enjoy"
             ], 
             "title": "Knowing Yourself"
         }, 
@@ -382,8 +382,8 @@
     {
         "content": {
             "objectives": [
-                "Understand the differences between the U.S. and Chinese educational systems.", 
-                "Understand the \u201cbest-fit\u201d concept."
+                "Understand the differences between the U.S. and Chinese educational systems", 
+                "Understand the \u201cbest-fit\u201d concept"
             ], 
             "overview": "<p>Now that you understand about your personality type, let\u2019s explore the differences between the U.S. and Chinese educational systems and learn something about the \u201cbest fit\u201d concept.</p>", 
             "title": "Week Two: U.S. vs Chinese Educational Systems and \u201cBest Fit\u201d"
@@ -608,10 +608,10 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "In the U.S. they focus on homework and in China they focus on testing.", 
-                        "In the U.S. they focus on the individual and in China they focus on the group.", 
-                        "n the U.S. they focus on elementary school and in China they focus on college.", 
-                        "There is no difference."
+                        "In the U.S. they focus on homework and in China they focus on testing", 
+                        "In the U.S. they focus on the individual and in China they focus on the group", 
+                        "n the U.S. they focus on elementary school and in China they focus on college", 
+                        "There is no difference"
                     ], 
                     "title": "What is the main focus of teachers in the U.S. and in China?"
                 }, 
@@ -619,10 +619,10 @@
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects.", 
-                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help.", 
-                        "In the U.S., education focuses on the group more than an individual student.", 
-                        "Students in Chinese schools perceive their classroom environment to be competitive and teacher controlled."
+                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects", 
+                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help", 
+                        "In the U.S., education focuses on the group more than an individual student", 
+                        "Students in Chinese schools perceive their classroom environment to be competitive and teacher controlled"
                     ], 
                     "title": "Which of the following is NOT true?"
                 }
@@ -652,10 +652,10 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "They are used in the U.S. to select the best students and in China they are used to promote students.", 
-                        "Both countries use different systems and tests.", 
-                        "In the U.S. they are used to separate students into groups according to their ability level and in China they are used to measure learning.", 
-                        "There is no difference in how they are used."
+                        "They are used in the U.S. to select the best students and in China they are used to promote students", 
+                        "Both countries use different systems and tests", 
+                        "In the U.S. they are used to separate students into groups according to their ability level and in China they are used to measure learning", 
+                        "There is no difference in how they are used"
                     ], 
                     "title": "What is the main difference between the tracking systems and high stakes tests used in China and in the U.S.?"
                 }, 
@@ -664,9 +664,9 @@
                     "id": 1, 
                     "responses": [
                         "Student promotion", 
-                        "Placement in high ability classes.", 
+                        "Placement in high ability classes", 
                         "The school being labeled \u201csuccessful\u201d", 
-                        "All of the above."
+                        "All of the above"
                     ], 
                     "title": "High stakes tests used in the U.S. can achieve the following outcomes:"
                 }
@@ -696,10 +696,10 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "There is no difference.", 
-                        "Chinese parents are more involved.", 
-                        "U.S. parents are more involved.", 
-                        "The teachers are equally involved in both countries."
+                        "There is no difference", 
+                        "Chinese parents are more involved", 
+                        "U.S. parents are more involved", 
+                        "The teachers are equally involved in both countries"
                     ], 
                     "title": "Parental involvement is a critical component to a child's educational experience. What is the main difference between parents of U.S. and Chinese students?"
                 }, 
@@ -707,10 +707,10 @@
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects.", 
-                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help.", 
-                        "In the U.S., education focuses on the group more than an individual student.", 
-                        "Students in Chinese schools perceive their classroom environments to be competitive and teacher-controlled."
+                        "Chinese teachers and parents expect that all students have the ability to succeed in all subjects", 
+                        "A Chinese student will stay after class and work with the teacher one-on-one if he/she needs additional help", 
+                        "In the U.S., education focuses on the group more than an individual student", 
+                        "Students in Chinese schools perceive their classroom environments to be competitive and teacher-controlled"
                     ], 
                     "title": "Which of the following is NOT true?"
                 }
@@ -741,9 +741,9 @@
                     "id": 0, 
                     "responses": [
                         "Chinese students achieve the best reading scores in the world", 
-                        "U.S. students show potential to win the next International Mathematics and Science Study.", 
-                        "U.S. students often score high on science tests.", 
-                        "U.S. students need to practice their math."
+                        "U.S. students show potential to win the next International Mathematics and Science Study", 
+                        "U.S. students often score high on science tests", 
+                        "U.S. students need to practice their math"
                     ], 
                     "title": "The Stedman study shows:"
                 }, 
@@ -752,9 +752,9 @@
                     "id": 1, 
                     "responses": [
                         "U.S.: Math/China: Reading", 
-                        "China: International Studies/U.S.: Social Studies.", 
-                        "U.S.: Reading and Science/China: Math and Science.", 
-                        "They stand out in the same areas."
+                        "China: International Studies/U.S.: Social Studies", 
+                        "U.S.: Reading and Science/China: Math and Science", 
+                        "They stand out in the same areas"
                     ], 
                     "title": "U.S. and Chinese students standout in which of the following areas?"
                 }
@@ -785,9 +785,9 @@
                     "id": 0, 
                     "responses": [
                         "Chinese teachers are not given more respect than U.S. teachers", 
-                        "Chinese schools do not have a hard work ethic, resulting in student failure.", 
-                        "Chinese schools segregate high achieving students from lower achieving students through tracking levels.", 
-                        "Chinese schools help students pass high stakes tests, however, those who fail often drop out."
+                        "Chinese schools do not have a hard work ethic, resulting in student failure", 
+                        "Chinese schools segregate high achieving students from lower achieving students through tracking levels", 
+                        "Chinese schools help students pass high stakes tests, however, those who fail often drop out"
                     ], 
                     "title": "Which of the following is a benefit of the Chinese educational system?"
                 }, 
@@ -795,10 +795,10 @@
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Better pay for teachers, more school activities, fewer tests.", 
-                        "Longer school day, larger schools, more class choices.", 
-                        "More respect for teachers, strong work ethic, belief in student potential.", 
-                        "Better textbooks, holidays for teachers, more student effort."
+                        "Better pay for teachers, more school activities, fewer tests", 
+                        "Longer school day, larger schools, more class choices", 
+                        "More respect for teachers, strong work ethic, belief in student potential", 
+                        "Better textbooks, holidays for teachers, more student effort"
                     ], 
                     "title": "What are some of the strengths of the Chinese educational system in comparison to the U.S. system?"
                 }
@@ -828,9 +828,9 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "Your favorite movie.", 
-                        "The college/university that is the \u201cbest fit\u201d for you.", 
-                        "The clothes that \u201cbest fits\u201d your personality."
+                        "Your favorite movie", 
+                        "The college/university that is the \u201cbest fit\u201d for you", 
+                        "The clothes that \u201cbest fits\u201d your personality"
                     ], 
                     "title": "What does \u201cBest Fit\u201d mean in the video?"
                 }, 
@@ -838,10 +838,10 @@
                     "correct": 3, 
                     "id": 1, 
                     "responses": [
-                        "The size of the school.", 
-                        "If the school offers a strong program in a major that interests you.", 
-                        "If the school offers financial aid.", 
-                        "All of the above."
+                        "The size of the school", 
+                        "If the school offers a strong program in a major that interests you", 
+                        "If the school offers financial aid", 
+                        "All of the above"
                     ], 
                     "title": "What should you consider when developing your school list?"
                 }
@@ -872,9 +872,9 @@
                     "id": 0, 
                     "responses": [
                         "Ask a neighbor", 
-                        "Contact the school directly or visit their website.", 
-                        "Talk to your friends.", 
-                        "Watch the news."
+                        "Contact the school directly or visit their website", 
+                        "Talk to your friends", 
+                        "Watch the news"
                     ], 
                     "title": "When gathering information, what is the best way to find out about a specific college or university?"
                 }, 
@@ -882,10 +882,10 @@
                     "correct": 3, 
                     "id": 1, 
                     "responses": [
-                        "You prefer to live at home or on campus.", 
-                        "Tuition, financial aid and scholarships available.", 
-                        "You prefer to attend a large university or a smaller private college.", 
-                        "All of the above."
+                        "You prefer to live at home or on campus", 
+                        "Tuition, financial aid and scholarships available", 
+                        "You prefer to attend a large university or a smaller private college", 
+                        "All of the above"
                     ], 
                     "title": "What are some of the aspects you should consider when choosing the \u2018right\u2019 college/university?"
                 }, 
@@ -893,11 +893,11 @@
                     "correct": 4, 
                     "id": 2, 
                     "responses": [
-                        "It\u2019s located near the beach.", 
-                        "Your friends will be going there.", 
-                        "The tuition is affordable.", 
-                        "The school offers a strong program in a major which interests you.", 
-                        "The \u201cbest\u201d reason comes down to what\u2019s most important to you."
+                        "It\u2019s located near the beach", 
+                        "Your friends will be going there", 
+                        "The tuition is affordable", 
+                        "The school offers a strong program in a major which interests you", 
+                        "The \u201cbest\u201d reason comes down to what\u2019s most important to you"
                     ], 
                     "title": "What is the best reason to choose one school over another?"
                 }
@@ -980,15 +980,15 @@
     {
         "content": {
             "objectives": [
-                "Review the concepts of \u201cfit\u201d vs. name or ranking.", 
-                "Understand what \u201cselective\u201d and \u201chighly selective\u201d means.", 
-                "Assess your own chances of admission at a variety of colleges. \u00a0\u00a0", 
-                "Research application numbers and acceptance rates for international students as well as other important admissions application data.", 
+                "Review the concepts of \u201cfit\u201d vs. name or ranking", 
+                "Understand what \u201cselective\u201d and \u201chighly selective\u201d means", 
+                "Assess your own chances of admission at a variety of colleges", 
+                "Research application numbers and acceptance rates for international students as well as other important admissions application data", 
                 "Understand the current college admissions landscape for elite schools in the U.S.", 
-                "Begin developing your School List.."
+                "Begin developing your School List"
             ], 
-            "overview": "<p>Now that you have learned some interesting things about your personality, strengths and interests and how that relates to the \u201cbest fit\u201d concept, let\u2019s take a bit of time to review the \u201cbest fit\u201d concept and then explore the reality of the college admissions landscape in the United States.</p>", 
-            "title": "Week 3: The Reality of  U.S. College Admissions:"
+            "overview": "<p>Now that you have learned some interesting things about your personality, strengths and interests and how that relates to choosing a college/university. Let\u2019s take a bit of time to review the \u201cbest fit\u201d concept and then explore the reality of the college admissions landscape in the United States.</p>", 
+            "title": "Week Three: Reality of College Admissions in the U.S."
         }, 
         "index": 45, 
         "name": "overview", 
@@ -998,12 +998,12 @@
     {
         "content": {
             "heading": "Reviewing Best Fit School", 
-            "instruction": "<p>Clink on the links and find three videos that help you understand how to find a university or college that is a good fit for you.</p>", 
+            "instruction": "<p>Click on the links and find three videos that help you understand how to find a university or college that is a good fit for you.</p>", 
             "links": [
                 "https://bigfuture.collegeboard.org/get-started/video-gallery", 
                 "https://bigfuture.collegeboard.org/find-colleges/how-find-your-college-fit"
             ], 
-            "synopsis": "<p>Review the concept of \u201cBest Fit\u201d by choosing three videos provided from the two links below.  Choose videos in which people talk about their experience in choosing a college or university  which is a good fit for them.  After you watch the three videos you chose, you will then journal about things to consider while looking for a \u201cbest fit\u201d school. There are many videos on the websites which may be of interest to you, so you might want to spend even more time exploring videos of interest.</p>"
+            "synopsis": "<p>Review  the concept of \u201cBest Fit\u201d by choosing three videos provided from the two links below.  Choose videos in which people talk about their experience in choosing a college/university  which is a good fit for them.  After you watch the three videos you chose, you will then journal about things to consider while looking for a \u201cbest fit\u201d school. There are many videos on the websites which may be of interest to you, so you might want to spend even more time exploring videos of interest.</p>"
         }, 
         "index": 46, 
         "name": "video", 
@@ -1017,9 +1017,10 @@
         "content": {
             "heading": "Reviewing Best Fit School", 
             "instructionList": [
-                "Write a brief explanation of what you think \u201cbest-fit school\u201d means to you. ", 
+                "Write a brief explanation of what you think \u201cbest fit\u201d school means to you.", 
                 "Describe what types of issues you are worried about as you begin your college planning.  For example, is there pressure to get into a \u201ctop\u201d school?", 
-                "If you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?", 
+                "Determine if you have concerns about finding the right major and fitting in with your new friends.", 
+                "f you do have some concerns, what can you do to make yourself more educated about these concerns and less anxious?", 
                 "What types of things do you think you should consider as you develop your school list?"
             ]
         }, 
@@ -1067,30 +1068,29 @@
                         "decreased/increased", 
                         "decreased/decreased"
                     ], 
-                    "title": "In recent years, prestigious schools have had a(n) ______ amount of college applications and a(n) ______ percentage of admission rate."
+                    "title": "According to the article, prestigious schools have had a(n) ______ amount of college applications and a(n) ______ percentage of admission rate."
                 }, 
                 {
-                    "correct": 3, 
+                    "correct": 1, 
                     "id": 1, 
                     "responses": [
-                        "Students are sending out more college applications than ever AND Elite colleges are offering 20 percent less admission seats than a generation ago.", 
-                        "College outreach programs nowadays advertise increasingly aggressive to prospective students.", 
-                        "College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier AND Elite colleges are offering 20 percent less admission seats than a generation ago.", 
-                        "Students are sending out more college applications than ever AND College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier.", 
-                        "College outreach programs nowadays advertise increasingly aggressive to prospective students."
+                        "Students are sending out more college applications than ever AND Elite colleges are offering 20 percent less admission seats than a generation ago", 
+                        "College outreach programs nowadays advertise increasingly aggressive to prospective students", 
+                        "College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier AND Elite colleges are offering 20 percent less admission seats than a generation ago", 
+                        "Students are sending out more college applications than ever AND College applications are becoming more similar and uniform which makes the attempt to apply for multiple schools easier"
                     ], 
                     "title": "Choose the cause(s) for the new low college acceptance rate among elite universities:"
                 }, 
                 {
-                    "correct": 4, 
+                    "correct": 3, 
                     "id": 2, 
                     "responses": [
-                        "Most of the students these elite colleges turn down are indistinguishable from those who get in.", 
-                        "20% more students are applying to 7 or more colleges in 2011 compared to the percentage of the applicant pool in 1990.", 
-                        "Every school seems local to most college applicants because they have access to so much information online.", 
-                        "Several universities had admission rates this year that were more than half of those from a decade ago."
+                        "Most of the students these elite colleges turn down are indistinguishable from those who get in", 
+                        "20% more students are applying to 7 or more colleges in 2011 compared to the percentage of the applicant pool in 1990", 
+                        "Every school seems local to most college applicants because they have access to so much information online", 
+                        "Several universities had admission rates this year that were more than half of those from a decade ago"
                     ], 
-                    "title": "Which of the following statement is false?"
+                    "title": "According to the article, which of the following statement is false?"
                 }
             ], 
             "title": "Elite School Admissions"
@@ -1104,7 +1104,7 @@
         "content": {
             "heading": "The Reality of College Admissions", 
             "instruction": "<p>Click on the link below, watch the video and take a quiz to check for understanding.</p>", 
-            "synopsis": "<p>There are many perspectives about college admissions and the probability of getting into a school of your choice.  Let\u2019s listen to John Katzman\u2019s presentation about his unique perspective of the U.S. College Admissions landscape.</p>", 
+            "synopsis": "<p>There are many perspectives about the college admissions process and the probability of getting into a school of your choice.  Let\u2019s listen to John Katzman\u2019s as he offers his unique perspective of the U.S. College Admissions landscape.</p>", 
             "video": "week3/John_Katzman"
         }, 
         "index": 51, 
@@ -1119,34 +1119,34 @@
                     "correct": 0, 
                     "id": 0, 
                     "responses": [
-                        "Top universities are offering a higher rate of added seats compared to the lower rate of increased number of applicants.", 
-                        "State schools are getting more popular which leaves fewer college applicants to apply for elite schools.", 
-                        "High school graduates are better educated and can easily go into any schools they want.", 
-                        "Elite schools are trying to raise their ranking by increasing admission rate."
+                        "Top universities are offering a higher rate of added seats compared to the lower rate of increased number of applicants", 
+                        "State schools are getting more popular which leaves fewer college applicants to apply for elite schools", 
+                        "High school graduates are better educated and can easily go into any schools they want", 
+                        "Elite schools are trying to raise their ranking by increasing admission rate"
                     ], 
-                    "title": "What is the reason that getting into an elite university is easier than it used to be?"
+                    "title": "According to the video, what is the reason that getting into an elite college/university is easier than it used to be?"
                 }, 
                 {
-                    "correct": 0, 
+                    "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "Admission rate equal the total number of students admitted minus the total number of applications.", 
-                        "Admission rate equal the total number of students admitted times the total number of applications.", 
-                        "Admission rate equal the total number of students admitted divided by the total number of applications.", 
-                        "Admission rate equal the total number of students admitted."
+                        "Admissions rates equal the total number of students admitted minus the total number of applications", 
+                        "Admissions rates equal the total number of students admitted times the total number of applications", 
+                        "Admissions rates equal the total number of students admitted divided by the total number of applications", 
+                        "Admissions rates equal the total number of students admitted"
                     ], 
-                    "title": "How is the admission rate calculated?"
+                    "title": "According to the video, how are the admissions rates calculated?"
                 }, 
                 {
-                    "correct": 4, 
+                    "correct": 3, 
                     "id": 2, 
                     "responses": [
-                        "An applicant should pick from 10 great schools that he/she is indifferent.", 
-                        "An applicant should use early options.", 
-                        "An applicant should harden his/her heart, ignore bad advice, and be his/her best self.", 
-                        "An applicant should simply apply to as many school as he/she can."
+                        "An applicant should pick from 10 great schools that he/she is indifferent", 
+                        "An applicant should use early options", 
+                        "An applicant should harden his/her heart, ignore bad advice, and be his/her best self", 
+                        "An applicant should simply apply to as many school as he/she can"
                     ], 
-                    "title": "Which of the following is NOT suggested from the video to increase one\u2019s chance to get into a great school?"
+                    "title": "According to the video, which of the following is NOT suggested from the video to increase one\u2019s chance to get into a great school?"
                 }
             ], 
             "title": "Elite School Admissions"
@@ -1174,23 +1174,23 @@
                     "correct": 3, 
                     "id": 0, 
                     "responses": [
-                        "Being overwhelmed by the volume of admissions, officials simply ran out of time.", 
-                        "The admissions process is a complicated one.", 
-                        "Admission officials are hedging their bets by waiting to see how many of the students selected say yes.", 
-                        "All of the Above."
+                        "Being overwhelmed by the volume of admissions, officials simply ran out of time", 
+                        "The admissions process is a complicated one", 
+                        "Admissions officials are hedging their bets by waiting to see how many of the students selected say yes", 
+                        "All of the Above"
                     ], 
-                    "title": "Waiting list increases are a result of ________________________."
+                    "title": "According to the article, longer waiting lists are a result of _____________________."
                 }, 
                 {
                     "correct": 1, 
                     "id": 1, 
                     "responses": [
-                        "The strength of  their college essay.", 
-                        "What the admissions office perceives as deficiencies in the next freshman class.", 
-                        "Their college major.", 
-                        "Their application date."
+                        "The strength of their college essay", 
+                        "What the admissions office perceives as deficiencies in the next freshman class", 
+                        "Their college major", 
+                        "Their application date"
                     ], 
-                    "title": "Students are ranked on the waiting list according to _________________."
+                    "title": "According to the article, students are ranked on the waiting list according to _________________."
                 }
             ], 
             "title": "Elite School Admissions"
@@ -1203,8 +1203,8 @@
     {
         "content": {
             "id": 4, 
-            "synopsis": "<p>In this article, we will explore the college admission rates for the class of 2018. As you will see, while imperfect, this metric is closely watched.</p> <p>Read the article for more information. Afterward, you will take a quiz to test your understanding.</p>", 
-            "title": "College Admission Rates: An Imperfect Metric"
+            "synopsis": "<p>In this article, we will explore the college admissions rates for the class of 2018. As you will see, while imperfect, this metric is closely watched.</p> <p>Read the article for more information. Afterward, you will take a quiz to test your understanding.</p>", 
+            "title": "College Admissions Rates: An Imperfect Metric"
         }, 
         "index": 55, 
         "name": "article", 
@@ -1221,7 +1221,7 @@
                         "True", 
                         "False"
                     ], 
-                    "title": "True or False: \u00a0Admissions rates don\u2019t really convey the chances for any one applicant."
+                    "title": "According to the article, admissions rates don\u2019t really convey the chances for any one applicant. True or False:"
                 }, 
                 {
                     "correct": 1, 
@@ -1232,29 +1232,29 @@
                         "33%", 
                         "2%"
                     ], 
-                    "title": "Duke University\u2019s admission rate for the class of 2018 is ______?"
+                    "title": "According to the article, Duke University\u2019s admissions rate for the class of 2018 is _________?"
                 }, 
                 {
                     "correct": 3, 
                     "id": 2, 
                     "responses": [
-                        "15%", 
-                        "81%", 
+                        "25%", 
+                        "85%", 
                         "1%", 
                         "6%"
                     ], 
-                    "title": "Harvard\u2019s admission rate for the class of 2018 is ________?"
+                    "title": "According to the article, Harvard\u2019s admissions rate for the class of 2018 is ________?"
                 }, 
                 {
                     "correct": 3, 
                     "id": 3, 
                     "responses": [
-                        "The number of applicants accepted through early decision.", 
-                        "If the college requires a supplemental essay.", 
-                        "If the college counts anyone who starts the process and pays a fee or if they count applications in some other way.", 
-                        "All of the above."
+                        "The number of applicants accepted through early decision", 
+                        "If the college requires a supplemental essay", 
+                        "If the college counts anyone who starts the process and pays a fee or if they count applications in some other way", 
+                        "All of the above"
                     ], 
-                    "title": "The total number of applications rise and fall based on which of the following?"
+                    "title": "According to the article, the total number of applications rise and fall based on which of the following?"
                 }
             ], 
             "title": "Admissions Rates"
@@ -1287,7 +1287,7 @@
                         "Tufts University", 
                         "Williams College"
                     ], 
-                    "title": "In 2009, which school encouraged student to submit a short video as a part of the undergraduate application process?"
+                    "title": "According to the article, in 2009, which school encouraged students to submit a short video as a part of the undergraduate application process?"
                 }, 
                 {
                     "correct": 1, 
@@ -1298,7 +1298,7 @@
                         "Middlebury College", 
                         "Pomona College"
                     ], 
-                    "title": "Which school admits 100% of their applicants?"
+                    "title": "According to the article, which school admits 100% of their applicants?"
                 }, 
                 {
                     "correct": 3, 
@@ -1309,7 +1309,7 @@
                         "Stanford University", 
                         "New York University"
                     ], 
-                    "title": "In 2012, which school was the most selective public university in the U.S.?"
+                    "title": "According to the article, in 2012, which school was the most selective public university in the U.S.?"
                 }
             ], 
             "title": "Admissions Rates Pt. 2"
@@ -1358,31 +1358,12 @@
         "week": 2
     }, 
     {
-        "attributes": [
-            3
-        ], 
-        "content": {
-            "forumLink": "http://littlebirdgames.proboards.com/thread/3/asynchronous-discussion", 
-            "instruction": "<p>You will enter the DISCUSSION FORUM and write your response to the following discussion prompts:</p>", 
-            "instructionList": [
-                "The most important thing I learned about admission rates for international students is:", 
-                "What are the most important aspects to choosing a college or university which will be a good fit for you?  For example, is the ranking or \u201cname\u201d of the college or university your guiding principle, or are you more interested in finding a college or university which offers the strongest program in your area of interest?  Is cost an issue when putting a college on your list?  Will it make a difference to you if your friends are applying to some of the schools on your list?  You will begin placing schools on your college list at the end of this lesson and continue adjusting your list as you learn more in the following lessons.", 
-                "What do you think schools consider when selecting you for admission?", 
-                "Which perspective about admission rates of colleges and universities do you agree with the most?"
-            ]
-        }, 
-        "index": 61, 
-        "name": "discussion", 
-        "type": "discussion", 
-        "week": 2
-    }, 
-    {
         "content": {
             "heading": "Interview with an Admissions Counselor", 
             "synopsis": "<p>Let\u2019s listen to an interview with Anne Sjostrom, Associate Director, Undergraduate Admissions at Duke University as she talks about the liberal arts program and choosing majors, undergraduate research support, and combining studies and sports / athletics at Duke.</p>", 
             "video": "week3/Anne_Sjostrom"
         }, 
-        "index": 62, 
+        "index": 61, 
         "name": "video", 
         "type": "video", 
         "week": 2
@@ -1393,7 +1374,7 @@
             "synopsis": "<p>Let\u2019s listen to an interview with Maxine Mendoza, an Admissions Officer at UPenn.  She gives advice about applying to college and she discusses opportunities for international students, such as research opportunities for undergraduate students and study abroad programs at the University of Pennsylvania.</p>", 
             "video": "week3/Maxine_Mendoza"
         }, 
-        "index": 63, 
+        "index": 62, 
         "name": "video", 
         "type": "video", 
         "week": 2
@@ -1404,7 +1385,7 @@
             "synopsis": "<p>Listen to Lauren Sutton, Associate Director of Admissions for Rhodes College in Memphis Tennessee share her thoughts on International Admissions.</p>", 
             "video": "week3/Lauren_Sutton"
         }, 
-        "index": 64, 
+        "index": 63, 
         "name": "video", 
         "type": "video", 
         "week": 2
@@ -1414,8 +1395,27 @@
             3
         ], 
         "content": {
+            "forumLink": "http://littlebirdgames.proboards.com/thread/3/asynchronous-discussion", 
+            "instruction": "<p>You will enter the DISCUSSION FORUM and write your response to the following discussion prompts:</p>", 
+            "instructionList": [
+                "The most important thing I learned about admissions rates for international students is:", 
+                "What are the most important aspects when choosing a college/university which will be a good fit for you?  For example, is the ranking or \u201cname\u201d of the college/university your guiding principle, or are you more interested in finding a college/university which offers the strongest program in your area of interest?  Is cost an issue when putting a college on your list?  Will it make a difference to you if your friends are applying to some of the schools on your list?  You will begin placing schools on your college/university list at the end of this lesson and continue adjusting your list as you learn more in the following lessons.", 
+                "What do you think schools consider when selecting you for admission?", 
+                "Which perspective about admissions rates of colleges/universities do you agree with the most?"
+            ]
+        }, 
+        "index": 64, 
+        "name": "discussion", 
+        "type": "discussion", 
+        "week": 2
+    }, 
+    {
+        "attributes": [
+            3
+        ], 
+        "content": {
             "heading": "Selective Vs. Highly Selective", 
-            "instructions": "<p>Now that you have had a chance to hear from a few college admissions counselors, please write about what you think the terms \u201cselective\u201d and \u201chighly selective\u201d mean.  You have learned a lot in this lesson about the reality of admissions rates in U.S. colleges and universities.  Assess your own chances of admission at a variety of colleges.</p> <p>Finally, let\u2019s start creating your School List!</p><p>Use your understanding of yourself, the \u201cbest fit\u201d concept, and the reality of the U.S. college admissions, please indicate your top FIVE colleges or universities to which you are most interested in applying.  You will continue to refine this list as you learn more in the following lessons.</p>"
+            "instructions": "<p>You have learned a lot in this lesson about the reality of admissions rates in U.S. colleges/universities.  Assess your own chances of admission at a variety of colleges.</p><p>Finally, let\u2019s start creating your School List! </p><p>Use your understanding of yourself, the \u201cbest fit\u201d concept, and the reality of the U.S. college admissions, please indicate your top FIVE colleges/universities to which you are most interested in applying.  You will continue to refine this list as you learn more in the following lessons.</p>"
         }, 
         "index": 65, 
         "name": "journal", 
@@ -1424,12 +1424,11 @@
     }, 
     {
         "content": {
-            "synopsis": "<p>After this lesson, you will have a firm understanding of the reality of admissions in U.S. colleges and universities.</p>", 
+            "synopsis": "<p>After this lesson, you now have a firm understanding of the reality of admissions in U.S. colleges and universities.</p>", 
             "takeaways": [
-                "You have explored application numbers and acceptance rates specific to international students.", 
-                "You have learned a lot of information about admission rates for top colleges and universities.", 
-                "You have heard from different people regarding the admissions landscape in the United States.", 
-                "Hearing from college admissions counselors has increased your understanding of how to find schools that are the best fit for you.", 
+                "The application numbers and acceptance rates specific to international students", 
+                "Information about admissions rates for top colleges and universities", 
+                "The admissions landscape in the U.S.", 
                 "You have started your School List!"
             ], 
             "title": "Admissions and Selectivity"
@@ -1442,13 +1441,13 @@
     {
         "content": {
             "objectives": [
-                "Explore the different geographic regions in the U.S. (Northeast, South, Midwest, and West).", 
-                "Locate major U.S. cities and urban centers.", 
-                "Learn about the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities.", 
-                "Continue to increase the number of colleges and universities on your College List."
+                "Explore the different geographic regions in the U.S. (Northeast, South, Midwest, and West)", 
+                "Locate major U.S. cities and urban centers", 
+                "Learn about the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities", 
+                "Continue to increase the number of colleges and universities on your College List"
             ], 
-            "overview": "<p>You have learned a bit about yourself (Week One), the differences between U.S. and Chinese educational systems and the \u201cbest fit\u201d concept (Weeks Two & Three), and the reality of U.S. college admissions (Week Three).  Now in Week Four you will explore the different regions in the U.S. and understand the type of culture, climate and location of the colleges and universities on your list.</p>", 
-            "title": "Week 4: Getting to Know the Regions of the U.S."
+            "overview": "<p>You have learned a bit about yourself (Week One), the differences between U.S. and Chinese educational systems and the \u201cbest fit\u201d concept (Weeks Two & Three), and the reality of U.S. college admissions (Week Three). Now in Week Four you will explore the different regions in the U.S. and understand the type of culture, climate and location of the colleges and universities on your list.</p>", 
+            "title": "Week Four: Getting to Know the Regions of the U.S."
         }, 
         "index": 67, 
         "name": "overview", 
@@ -1462,8 +1461,8 @@
             3
         ], 
         "content": {
-            "heading": "Getting to Know the U.S. and Different U.S. Colleges and Universities", 
-            "synopsis": "<p>It is important to know where colleges and universities are located in the U.S. as you develop your College List.  Some students are surprised by the climate or culture of a location and we want you to choose colleges in locations where you will be comfortable and happy when attending your college or university.</p>", 
+            "heading": "Getting to Know the Regions of the U.S.", 
+            "synopsis": "<p>It is important to know where colleges/universities are located in the U.S. as you develop your School List.  Some students are surprised by the climate or culture of a location and we want you to choose colleges/universities in locations where you will be comfortable and happy.</p>", 
             "video": "week4/Regions_of_US"
         }, 
         "index": 68, 
@@ -1474,7 +1473,7 @@
     {
         "content": {
             "heading": "Getting to Know the Geography and Culture of the U.S. ", 
-            "instructions": "<p>Click on the links and practice learning the names and location of the different states, regions and lakes of the U.S.. Practice until you master it.</p><p>Happy exploring!</p>", 
+            "instructions": "<p>Click on the links and practice learning the names and location of the different states, regions and lakes of the U.S. Practice until you master it.</p> <p>Happy exploring!</p>", 
             "linkList": [
                 {
                     "link": "http://www.sheppardsoftware.com/USA_Geography/USA_China_game_states.swf", 
@@ -1489,7 +1488,7 @@
                     "name": "Identify U.S. Lakes"
                 }
             ], 
-            "synopsis": "<p>Let\u2019s learn a bit about the geography of the U.S. by playing this fun game to learn the names of the various states and where they are located. After you learn the names and location of the states, click on the U. S. regions link to learn about the culture and history of each region. In this game, there are eight regions. \u00a0It explains how the geography, politics and history of each region can be quite different.</p><p>Now that you have learned about how to find your best fit and how the admissions process works in the United States, it\u2019s time to start looking for a school that will be the best for you!</p><p>One of the first steps into finding your best fit is deciding where you will be most happy.  The United States is a large country with several different regions.  Next, you will have the opportunity to explore the geography of the United States.</p>"
+            "synopsis": "<p>Let\u2019s learn a bit about the geography of the U.S. by playing this fun game to learn the names of the various states and where they are located. After you learn the names and location of the states, click on the U. S. regions link to learn about the culture and history of each region. In this game, there are eight regions. \u00a0It explains how the geography, politics and history of each region can be quite different.</p><p>Now that you have learned about how to find your \u201cbest fit\u201d school and how the admissions process works in the U.S., it\u2019s time to start looking for a school that will be the best fit for you!</p><p>One of the first steps in finding your best fit school is deciding where you will be most happy.  The U.S. is a large country with several different regions.  Next, you will have the opportunity to explore the geography of the U.S.</p>"
         }, 
         "index": 69, 
         "name": "links", 
@@ -1513,7 +1512,7 @@
         "content": {
             "id": 6, 
             "synopsis": "<p>You will read the article written by Samuel Arbesman in small portions and answer questions to check for understanding. Samuel Arbesman  is\u00a0an applied mathematician and network scientist. He is a senior scholar at the Kauffman Foundation and a fellow at the Institute for Quantitative Social Science at\u00a0Harvard University. His writing has appeared in\u00a0The New York Times,\u00a0The Atlantic,\u00a0Wired,\u00a0New Scientist, and\u00a0The Boston Globe.</p>", 
-            "title": "Invisible Borders Pt. 2"
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 71, 
         "name": "article", 
@@ -1527,23 +1526,23 @@
                     "correct": 2, 
                     "id": 0, 
                     "responses": [
-                        "Diplomatic decisions.", 
-                        "Rivers, mountain ranges.", 
-                        "How we speak.", 
-                        "Political decisions."
+                        "Diplomatic decisions", 
+                        "Rivers, mountain ranges", 
+                        "How we speak", 
+                        "Political decisions"
                     ], 
-                    "title": "Which one of these is not an administrative border?"
+                    "title": "According to the article, which one of these is not an administrative border?"
                 }, 
                 {
                     "correct": 2, 
                     "id": 1, 
                     "responses": [
-                        "How we speak.", 
-                        "What sports teams we follow.", 
-                        "Diplomatic decisions.", 
-                        "Where we move."
+                        "How we speak", 
+                        "What sports teams we follow", 
+                        "Diplomatic decisions", 
+                        "Where we move"
                     ], 
-                    "title": "Which of these is not an organic border?"
+                    "title": "According to the article, which of these is not an organic border?"
                 }
             ], 
             "title": "Invisible Borders Pt. 1 Quiz"
@@ -1556,8 +1555,8 @@
     {
         "content": {
             "id": 7, 
-            "synopsis": "<p>You will read the article written by Samuel Arbesman in small portions and answer questions to check for understanding. Samuel Arbesman  is\u00a0an applied mathematician and network scientist. He is a senior scholar at the Kauffman Foundation and a fellow at the Institute for Quantitative Social Science at\u00a0Harvard University. His writing has appeared in\u00a0The New York Times,\u00a0The Atlantic,\u00a0Wired,\u00a0New Scientist, and\u00a0The Boston Globe.</p>", 
-            "title": "Invisible Borders Pt. 2"
+            "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 73, 
         "name": "article", 
@@ -1571,10 +1570,10 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "To find out where people move.", 
-                        "To find out how we create cultural and social borders.", 
-                        "To find out a region\u2019s favorite sports team.", 
-                        "To find out how we speak."
+                        "To find out where people move", 
+                        "To find out how we create cultural and social borders", 
+                        "To find out a region\u2019s favorite sports team", 
+                        "To find out how we speak"
                     ], 
                     "title": "What was the purpose of the research conducted by the writer of the article?"
                 }, 
@@ -1582,10 +1581,10 @@
                     "correct": 0, 
                     "id": 1, 
                     "responses": [
-                        "That sometimes political boundaries and social boundaries do not coincide.", 
-                        "That political boundaries are more important than social boundaries.", 
-                        "That social boundaries are more important than political boundaries.", 
-                        "That there is no difference between political and social boundaries."
+                        "That sometimes political boundaries and social boundaries do not coincide", 
+                        "That political boundaries are more important than social boundaries", 
+                        "That social boundaries are more important than political boundaries", 
+                        "That there is no difference between political and social boundaries"
                     ], 
                     "title": "What did the writer discover in his research?"
                 }
@@ -1601,7 +1600,7 @@
         "content": {
             "id": 8, 
             "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
-            "title": "Invisible Borders Pt. 3"
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 75, 
         "name": "article", 
@@ -1615,23 +1614,23 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "Sports and borders.", 
-                        "Migration and communication.", 
-                        "Diplomatic and political.", 
-                        "Cell phone and text use."
+                        "Sports and borders", 
+                        "Migration and communication", 
+                        "Diplomatic and political", 
+                        "Cell phone and text use"
                     ], 
-                    "title": "What kind of data did the researchers collect for their study?"
+                    "title": "According to the article, what kind of data was collected for the study?"
                 }, 
                 {
                     "correct": 1, 
                     "id": 1, 
                     "responses": [
-                        "That when people move, they don\u2019t speak to people they used to know.", 
-                        "That when people move, they continue speaking to people they used to know.", 
-                        "That people don\u2019t move far away from their home state. ", 
-                        "That people don\u2019t speak to people in other states."
+                        "That when people move, they don\u2019t speak to people they used to know", 
+                        "That when people move, they continue speaking to people they used to know", 
+                        "That people don\u2019t move far away from their home state", 
+                        "That people don\u2019t speak to people in other states"
                     ], 
-                    "title": "What did they conclude after analyzing this data?"
+                    "title": "According to the article, what was concluded after analyzing the data?"
                 }
             ], 
             "title": "Invisible Borders Pt. 3 Quiz"
@@ -1645,7 +1644,7 @@
         "content": {
             "id": 9, 
             "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
-            "title": "Invisible Borders: Language"
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 77, 
         "name": "article", 
@@ -1656,7 +1655,7 @@
         "content": {
             "id": 10, 
             "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
-            "title": "Invisible Borders: Voting"
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 78, 
         "name": "article", 
@@ -1667,7 +1666,7 @@
         "content": {
             "id": 11, 
             "synopsis": "<p>Continue reading the article written by Samuel Arbesman in small portions and answer questions to check for understanding.</p>", 
-            "title": "Invisible Borders: Sports"
+            "title": "The Invisible Borders That Define American Culture"
         }, 
         "index": 79, 
         "name": "article", 
@@ -1681,12 +1680,12 @@
                     "correct": 1, 
                     "id": 0, 
                     "responses": [
-                        "Shopping for soft drinks, playing baseball, voting Democrat.", 
-                        "Words for soft drinks, voting, sports.", 
-                        "Drinking Coke, being a Yankees fan, being a Republican.", 
-                        "They did not find any other connections."
+                        "Shopping for soft drinks, playing baseball, voting Democrat", 
+                        "Words for soft drinks, voting, sports", 
+                        "Drinking Coke, being a Yankees fan, being a Republican", 
+                        "They did not find any other connections"
                     ], 
-                    "title": "The researchers also found connections between where we live and\u2026"
+                    "title": "According to the article, connections were found between where we live and:"
                 }, 
                 {
                     "correct": 1, 
@@ -1697,7 +1696,7 @@
                         "New York, New England, and New Jersey.", 
                         "They did not find any natural borders."
                     ], 
-                    "title": "Where are the natural borders that the researchers found located?"
+                    "title": "According to the article, where are the natural borders located?"
                 }
             ], 
             "title": "Invisible Borders Quiz"
@@ -1725,10 +1724,10 @@
                     "correct": 0, 
                     "id": 0, 
                     "responses": [
-                        "That our cultural similarities influence how we behave, how we communicate, and who we communicate with.", 
+                        "That our cultural similarities influence how we behave, how we communicate, and who we communicate with", 
                         "That our cultural similarities don\u2019t matter when we live in a complex society", 
-                        "That we need to learn more about other cultures.", 
-                        "That we don\u2019t communicate well with other cultures."
+                        "That we need to learn more about other cultures", 
+                        "That we don\u2019t communicate well with other cultures"
                     ], 
                     "title": "What does the author conclude from his research?"
                 }
@@ -1814,8 +1813,9 @@
         "content": {
             "heading": "Updating Your College List", 
             "instructionList": [
-                "Are there any schools you want to remove from your list because the location doesn\u2019t appeal to you?", 
-                "What are some great schools within your favorite region that you will add to your school List?"
+                "Are there any schools you want to remove from your School List because the location doesn\u2019t appeal to you?", 
+                "What are some great schools within your favorite region that you will add to your School List?", 
+                "You will continue adding to this list in the following weeks."
             ], 
             "instructions": "<p>Now that you know more about the culture, climate and geography and have a bit more information about building your School List, take some time to update your list.</p>"
         }, 
@@ -1828,9 +1828,9 @@
         "content": {
             "synopsis": "<p>In this lesson, you learned about the culture, climate, and geographical regions of the U.S.  Having a good understanding of this information will help you to better choose colleges and universities in locations that are a good fit for you.</p>", 
             "takeaways": [
-                "You explored the different geographic regions in the U.S. (Northeast, South, Midwest, and West) and familiarized yourself with the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities.", 
-                "You increased your vocabulary by defining several important terms.", 
-                "You can now locate major U.S. cities and urban centers.", 
+                "The different geographic regions in the U.S. (Northeast, South, Midwest, and West) and familiarized yourself with the different cultures of the various parts of the U.S., e.g. weather, food, language, customs, activities.", 
+                "To increase your vocabulary by defining several important terms.", 
+                "How to locate major U.S. cities and urban centers.", 
                 "Your School list is growing!"
             ], 
             "title": "Exploring the United States"

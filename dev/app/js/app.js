@@ -20,7 +20,13 @@ DukeApp.currentView = undefined;
 
 //initializer
 DukeApp.on("initialize:after", function() {
-	Parse.initialize("0GUnrQeUHPGhfJNLDzssuTUqUbJtvk1bib3mbas0", "zV8yxUl1QUs1efsUbhOU2LLiwTIN2bWfTK7GlxPN");
+	var dbSetting = "production";
+	var dbKeys = {
+		"production":{		application:"oqfx3hFXuJLI1cUYva3GLZIp8WYCOaYbVoJSiEHq", javascript:"2XRJ21wm7o4BzWn0kCXjPr6ofHZtenPmPWwUaJD5"},
+		"test":{			application:"0GUnrQeUHPGhfJNLDzssuTUqUbJtvk1bib3mbas0", javascript:"zV8yxUl1QUs1efsUbhOU2LLiwTIN2bWfTK7GlxPN"},
+	};
+
+	Parse.initialize(dbKeys[dbSetting].application, dbKeys[dbSetting].javascript);
 
 	if (!DukeApp.utils.isLoggedIn) {
 		DukeApp.utils.initUserSettings();

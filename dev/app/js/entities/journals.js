@@ -13,7 +13,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				var journals = [];
 				_.map(results, function(obj, id) {
 					journals.push({
-						"frameID":obj.get('frameID'),
+						"frameIndex":obj.get('frameIndex'),
 						"text":obj.get('text')
 					});
 				});
@@ -29,7 +29,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				JournalTable = Parse.Object.extend("Journals"),
 				query = new Parse.Query(JournalTable);
 
-			query.equalTo("frameID", journalObj.frameID);
+			query.equalTo("frameIndex", journalObj.frameIndex);
 			query.equalTo("userID", journalObj.userID);
 
 			query.find(function(results){

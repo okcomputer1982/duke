@@ -7,23 +7,26 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			DukeApp.utils.loadCommonViews();
 
 						//get data
-			var classesPromise = DukeApp.request("all:class:entities");
-			var classTemplatePromise = DukeApp.request("all:classTemplates:entities");
-			var teacherPromise = DukeApp.request("all:user:teacherModel:entities");
-			
+			var classesPromise = DukeApp.request("all:class:entities"),
+				classTemplatePromise = DukeApp.request("all:classTemplates:entities"),
+				teacherPromise = DukeApp.request("all:user:teacherModel:entities"),
+				studentPromise = DukeApp.request("all:user:studentModel:entities"),
+				guestPromise = DukeApp.request("all:user:guestModel:entities");		
 				
-			$.when(classesPromise, classTemplatePromise, teacherPromise).done(function(cResults, ctResults, tResults){
+			$.when(classesPromise, classTemplatePromise, teacherPromise, studentPromise, guestPromise).done(function(cResults, ctResults, tResults, sResults, gResults) {
 				Manager.Controller.data = {}; 
 				Manager.Controller.data.classes = cResults;
 				Manager.Controller.data.classTemplates = ctResults;
 				Manager.Controller.data.teachers = tResults;
+				Manager.Controller.data.students = sResults;
+				Manager.Controller.data.guests = gResults;
 
-				that.loadDisplay(cResults, ctResults, tResults);
+				that.loadDisplay();
 			});
 			
 		},
 
-		loadDisplay:function(cResults, ctResults, tResults) {
+		loadDisplay:function() {
 			var layout = new Manager.LayoutView();
 			
 			DukeApp.content.show(layout);
@@ -45,13 +48,24 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					"guests": Manager.EditGuestsView
 				},
 				layout = Manager.Controller.layout,
-				M = Backbone.Model.extend({}),
-				m = new M(Manager.Controller.data),
+				ManageModelTable = Backbone.Model.extend({}),
+				manageModel = new ManageModelTable(Manager.Controller.data),
 				contentView = new contentViewMap[type]({
-					model:m
+					model:manageModel
 				});
 
+			contentView.on("managerView:createClass", this.handleClassCreate);
 			layout.content.show(contentView);
+		},
+
+		handleClassCreate:function(obj) {
+			if (obj.classTemplate === -99) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a class template."});
+			} else if (obj.teacherTemplate === -99) {
+				Manager.Controller.layout.handleMessage({msg:"Please select an instructor for the class."});
+			} else {
+				DukeApp.request("create:class:entities", obj);
+			}
 		}
 	};
 });

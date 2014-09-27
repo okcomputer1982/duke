@@ -45,3 +45,8 @@ Handlebars.registerHelper('getResponseIndex', function(options) {
   quizResponseIndex += 1;
   return(quizResponseIndex);
 });
+
+Handlebars.registerHelper('inClass', function() {
+  quizResponseIndex += 1;
+  return(quizResponseIndex);
+});

@@ -13,7 +13,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				var quizes = [];
 				_.map(results, function(obj, id) {
 					quizes.push({
-						"frameID":obj.get('frameID'),
+						"frameIndex":obj.get('frameIndex'),
 						"response":obj.get('response')
 					});
 				});
@@ -29,7 +29,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				QuizTable = Parse.Object.extend("Quizes"),
 				query = new Parse.Query(QuizTable);
 
-			query.equalTo("frameID", quizObj.frameID);
+			query.equalTo("frameIndex", quizObj.frameIndex);
 			query.equalTo("userID", quizObj.userID);
 
 			query.find(function(results){

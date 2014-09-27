@@ -24,7 +24,10 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		},
 
 		clickGuest:function(e) {
-			this.trigger("loginView:doGuestLogin");
+			var user = $("#username_input").val();
+			var password = $("#password_input").val();
+			
+			this.trigger("loginView:doGuestLogin", {username:user, password:password});
 		},
 
 		showAlert:function(e) {

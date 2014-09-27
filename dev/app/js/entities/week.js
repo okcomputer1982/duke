@@ -129,6 +129,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			results.map(function(obj, id){
 				frameObjectList.push({
 					"id": 			obj.id,
+					"index": 		obj.get('index'),
 					"content": 		obj.get('content'),
 					"name": 		obj.get('name'),
 					"type": 		obj.get('type'),
@@ -183,6 +184,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		query.first(function(frame) {
 			def.resolve({
 				"id": 			frame.id,
+				"index": 		frame.get('index'),
 				"content": 		frame.get('content'),
 				"name": 		frame.get('name'),
 				"type": 		frame.get('type'),
@@ -343,6 +345,43 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
+		},
+
+		createClass:function(data) {
+			var def = $.Deferred(),
+				ClassTable = Parse.Object.extend("Classes"),
+				newClass = new ClassTable();
+			
+			newClass.set("template", data.classTemplate);
+			DukeApp.utils.findNextIndex("Classes").done(function(classId){
+				newClass.set("index", classId);
+				newClass.save(null, {
+					success:function(classObj) {
+						var TeacherTable = Parse.Object.extend("Teacher"),
+							query = new Parse.Query(TeacherTable);
+
+						query.equalTo("index", data.teacherTemplate);
+
+						query.first({
+							success:function(teacher) {
+								teacher.addUnique("classes", classId);
+								teacher.save(null, {
+									success:function(){
+										def.resolve({status:true, object:classObj});
+									}
+								});
+							}
+						});
+					},
+					error: function(obj, e) {
+						def.resolve({status:false, object:e});
+					}
+				});
+					
+			});
+		
+
+			return(def.promise());
 		}
 	};
 
@@ -373,5 +412,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("all:classTemplates:entities", function(){
 		return API.getAllClassTemplatesModel();
+	});
+
+	DukeApp.reqres.setHandler("create:class:entities", function(obj) {	
+		return API.createClass(obj);
 	});
 });
