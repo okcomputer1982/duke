@@ -59,7 +59,9 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n          <option value=\"this.index\">"
+  buffer += "\n          <option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + " - "
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -70,11 +72,26 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n          <tr>\n            <td>"
+  buffer += "\n          <tr class=\"teacherRow\" data-index="
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ">\n            <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ", "
     + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n            <td>-</td>\n            <td><button>Add to Class</button><button>Remove from Class</button></td>\n          </tr>\n          ";
+    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button></td>\n          </tr>\n          ";
+  return buffer;
+  }
+
+function program9(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n          <tr class=\"studentRow\" data-index="
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ">\n            <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ", "
+    + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button></td>\n          </tr>\n          ";
   return buffer;
   }
 
@@ -84,14 +101,14 @@ function program7(depth0,data) {
   buffer += "\n    </select>\n\n    <select class=\"combobox\" id=\"instructorCombo\">\n      <option value=\"-99\">Select A Instructor</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.teachers), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n\n    <button type=\"submit\" id=\"createBtn\" name=\"add\">Create</button>\n  </div>\n  \n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h4>Edit Classes</h4>\n      <select class=\"combobox\">\n        <option value=\"-99\">Select A Class</option>\n        ";
+  buffer += "\n    </select>\n\n    <button type=\"submit\" id=\"createBtn\" name=\"add\">Create</button>\n  </div>\n  \n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h4>Edit Classes</h4>\n      <select class=\"combobox\" id=\"classCombo\">\n        <option value=\"-99\">Select A Class</option>\n        ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </select>\n    </div>\n    <div class=\"col-md-6\">\n      <h5>Class Created:       <span>------</span></h5>\n      <h5>Class Last Viewed:   <span>------</span></h5>\n      <h5>Total Instructors:   <span>-</span></h5>\n      <h5>Total Students:      <span>-</span></h5>\n      <h5>Current Module:      <span>-</span></h5>\n      <button type=\"submit\" name=\"add\">Delete Class</button>\n    </div>\n  </div> \n  \n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h5>Teachers</h5>\n      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>In Class</th><th>Actions</th>\n          </tr>\n          ";
+  buffer += "\n      </select>\n      <button type=\"submit\" name=\"add\">Delete Class</button>\n    </div>\n    <div class=\"col-md-6\">\n      <h5>Class Created:       <span id=\"classCreatedField\">------</span></h5>\n      <h5>Class Last Edited:   <span id=\"classEditedField\">------</span></h5>\n      <h5>Total Instructors:   <span id=\"instructorsField\">-</span></h5>\n      <h5>Total Students:      <span id=\"studentsField\">-</span></h5>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h5><strong>Teachers</strong></h5>\n      <table id=\"admin-teachers\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>In Class</th><th>Actions</th>\n          </tr>\n          ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.teachers), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"col-md-6\">\n      <h5>Students</h5>\n      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>In Class</th><th>Actions</th>\n          </tr>\n          ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.students), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  buffer += "\n        </tbody>\n      </table>\n    </div>\n\n    <div class=\"col-md-6\">\n      <h5><strong>Students</strong></h5>\n      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>In Class</th><th>Actions</th>\n          </tr>\n          ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.students), {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>";
   return buffer;

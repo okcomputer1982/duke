@@ -355,13 +355,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			newClass.set("template", data.classTemplate);
 			DukeApp.utils.findNextIndex("Classes").done(function(classId){
 				newClass.set("index", classId);
+				newClass.addUnique("teachers", data.teacherTemplate);
 				newClass.save(null, {
 					success:function(classObj) {
 						var TeacherTable = Parse.Object.extend("Teacher"),
 							query = new Parse.Query(TeacherTable);
 
 						query.equalTo("index", data.teacherTemplate);
-
 						query.first({
 							success:function(teacher) {
 								teacher.addUnique("classes", classId);
@@ -382,6 +382,30 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		
 
 			return(def.promise());
+		},
+
+		getClassByIndex:function(obj){
+			var def = $.Deferred(),
+				ClassTable = Parse.Object.extend("Classes"),
+				query = new Parse.Query(ClassTable);
+
+			query.equalTo("index", obj.index);
+			query.first({
+				success:function(c) {
+					var classObj = {
+						students:c.get('students'),
+						teachers:c.get('teachers'),
+						index:c.get('index'),
+						template:c.get('template'),
+						createdAt:c.createdAt,
+						lastEdited:c.updatedAt
+					};
+
+					def.resolve(classObj);
+				}
+			});
+
+			return(def.promise());
 		}
 	};
 
@@ -400,6 +424,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("week:entities", function(){
 		return API.getWeekModels();
+	});
+
+	DukeApp.reqres.setHandler("classByIndex:entities", function(id){	
+		return API.getClassByIndex(id);
 	});
 
 	DukeApp.reqres.setHandler("class:entities", function(id){	

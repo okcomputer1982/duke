@@ -25,37 +25,35 @@
   <div class="row">
     <div class="col-md-6">
       <h4>Edit Classes</h4>
-      <select class="combobox">
+      <select class="combobox" id="classCombo">
         <option value="-99">Select A Class</option>
         {{#each classes}}
-          <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+          <option value="{{this.index}}">{{this.index}} - {{this.template.title}}</option>
         {{/each}}
       </select>
-    </div>
-    <div class="col-md-6">
-      <h5>Class Created:       <span>------</span></h5>
-      <h5>Class Last Viewed:   <span>------</span></h5>
-      <h5>Total Instructors:   <span>-</span></h5>
-      <h5>Total Students:      <span>-</span></h5>
-      <h5>Current Module:      <span>-</span></h5>
       <button type="submit" name="add">Delete Class</button>
     </div>
-  </div> 
-  
-  <hr/>
+    <div class="col-md-6">
+      <h5>Class Created:       <span id="classCreatedField">------</span></h5>
+      <h5>Class Last Edited:   <span id="classEditedField">------</span></h5>
+      <h5>Total Instructors:   <span id="instructorsField">-</span></h5>
+      <h5>Total Students:      <span id="studentsField">-</span></h5>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-6">
-      <h5>Teachers</h5>
-      <table id="admin-students" class="table table-responsive table-bordered table-striped">
+      <h5><strong>Teachers</strong></h5>
+      <table id="admin-teachers" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
             <th>Name</th><th>In Class</th><th>Actions</th>
           </tr>
           {{#each teachers}}
-          <tr>
+          <tr class="teacherRow" data-index={{this.index}}>
             <td>{{this.last}}, {{this.first}}</td>
-            <td>-</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
+            <td class="inClass">-</td>
+            <td><button hidden class="addToClassBtn">Add to Class</button><button hidden class="removeFromClassBtn">Remove from Class</button></td>
           </tr>
           {{/each}}
         </tbody>
@@ -63,17 +61,17 @@
     </div>
 
     <div class="col-md-6">
-      <h5>Students</h5>
+      <h5><strong>Students</strong></h5>
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
         <tbody>
           <tr>
             <th>Name</th><th>In Class</th><th>Actions</th>
           </tr>
           {{#each students}}
-          <tr>
+          <tr class="studentRow" data-index={{this.index}}>
             <td>{{this.last}}, {{this.first}}</td>
-            <td>-</td>
-            <td><button>Add to Class</button><button>Remove from Class</button></td>
+            <td class="inClass">-</td>
+            <td><button hidden class="addToClassBtn">Add to Class</button><button hidden class="removeFromClassBtn">Remove from Class</button></td>
           </tr>
           {{/each}}
         </tbody>

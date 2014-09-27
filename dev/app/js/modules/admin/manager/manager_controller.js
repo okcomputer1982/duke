@@ -54,18 +54,32 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					model:manageModel
 				});
 
-			contentView.on("managerView:createClass", this.handleClassCreate);
+			contentView.on("managerView:createClass", this.handleCreateClass);
+			contentView.on("managerView:changeSelectedClass", this.handleChangeClass);
+			
+			Manager.Controller.content = contentView;
+
 			layout.content.show(contentView);
 		},
 
-		handleClassCreate:function(obj) {
+		handleCreateClass:function(obj) {
 			if (obj.classTemplate === -99) {
 				Manager.Controller.layout.handleMessage({msg:"Please select a class template."});
 			} else if (obj.teacherTemplate === -99) {
 				Manager.Controller.layout.handleMessage({msg:"Please select an instructor for the class."});
 			} else {
-				DukeApp.request("create:class:entities", obj);
+				DukeApp.request("create:class:entities", obj).done(function(){
+					alert("Created New Class");
+					location.reload();
+					this.handleMenuClick("classes");
+				});
 			}
+		},
+
+		handleChangeClass:function(obj) {
+			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
+				Manager.Controller.content.updateClassData(classObj);
+			});
 		}
 	};
 });
