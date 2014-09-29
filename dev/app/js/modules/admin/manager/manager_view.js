@@ -125,15 +125,33 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		}
 	});
 
-	Manager.EditGuestsView = Marionette.ItemView.extend({
-		template:templates["admin/manager/editGuests"]
+	Manager.EditTeachersView = Marionette.ItemView.extend({
+		template:templates["admin/manager/editTeachers"],
+		events:{
+			"click #createTeacher": "handleTeacherAdd"
+		},
+
+		handleTeacherAdd:function(e) {
+			var dataObj = {
+					firstname: $("#firstName").val(),
+					lastname: $("#lastName").val(),
+					username: $("#userName").val(),
+					email: $("#email").val(),
+					password: $('#password').val(),
+					classIndex: Number($('#classIdx').val())
+			};
+
+			Manager.Controller.layout.trigger("managerView:addTeacher", dataObj);
+		}
 	});
 
 	Manager.EditStudentsView = Marionette.ItemView.extend({
 		template:templates["admin/manager/editStudents"]
 	});
 
-	Manager.EditTeachersView = Marionette.ItemView.extend({
-		template:templates["admin/manager/editTeachers"]
+	Manager.EditGuestsView = Marionette.ItemView.extend({
+		template:templates["admin/manager/editGuests"]
 	});
+
+
 });

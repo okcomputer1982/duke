@@ -208,7 +208,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n        <option value=\"this.index\">"
+  buffer += "\n        <option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + " - "
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -229,11 +231,11 @@ function program3(depth0,data) {
     + escapeExpression(((stack1 = (depth0 && depth0.classes)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.currentClass)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n        <td><button>EDIT</button></td>\n      </tr>\n      ";
+    + "</td>\n        <td><button id=\"editTeacher\">Edit</button></td>\n      </tr>\n      ";
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Teachers</h4>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option value=\"-99\">Select A Class</option>\n      ";
+  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Teachers</h4>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"firstName\" placeholder=\"First Name\">\n    <input type=\"text\" id=\"lastName\" placeholder=\"Last Name\">\n    <input type=\"text\" id=\"userName\" placeholder=\"Username\">\n    <input type=\"text\" id=\"email\" placeholder=\"Email\">\n    <input type=\"text\" id=\"password\" placeholder=\"Password\">\n\n    <select class=\"combobox\" id=\"classIdx\">\n      <option value=\"-99\">Select A Class</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </select>\n    <br/>\n    <button type=\"submit\" id=\"createTeacher\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Actions</th>\n      </tr>\n      ";

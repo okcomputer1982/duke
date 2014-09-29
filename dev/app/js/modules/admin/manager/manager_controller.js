@@ -38,10 +38,13 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			this.handleMenuClick("classes");
 
 			Manager.Controller.layout.on("managerView:createClass", this.handleCreateClass);
+			Manager.Controller.layout.on("managerView:addTeacher", this.handleCreateTeacher);
+
 			Manager.Controller.layout.on("managerView:deleteClass", this.handleDeleteClass);
 			Manager.Controller.layout.on("managerView:changeSelectedClass", this.handleChangeClass);
 			Manager.Controller.layout.on("managerView:editClassList", this.handleEditClass);
 			Manager.Controller.layout.on("managerView:changeDefaultClass", this.handleDefaultClass);
+
 
 
 			layout.on("managerView:clickLink", this.handleMenuClick);
@@ -64,16 +67,9 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			Manager.Controller.content = contentView;
 
 			layout.content.show(contentView);
-
-
-			// contentView.on("managerView:createClass", this.handleCreateClass);
-			// contentView.on("managerView:deleteClass", this.handleDeleteClass);
-			// contentView.on("managerView:changeSelectedClass", this.handleChangeClass);
-			// contentView.on("managerView:editClassList", this.handleEditClass);
-			// contentView.on("managerView:changeDefaultClass", this.handleDefaultClass);
-			
 		},
 
+		//class methods
 		handleCreateClass:function(obj) {
 			if (obj.classTemplate === -99) {
 				Manager.Controller.layout.handleMessage({msg:"Please select a class template."});
@@ -131,6 +127,29 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 				this.handleMenuClick("classes");
 				this.handleChangeClass(Manager.Controller.currentClass);
 			});
-		}
+		},
+
+		//teacher methods
+		handleCreateTeacher:function(obj) {
+			if (!obj.firstname) {
+				Manager.Controller.layout.handleMessage({msg:"Please enter a first name."});
+			} else if (!obj.lastname) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a last name."});
+			} else if (!obj.email) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a email."});
+			} else if (!obj.username) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a username."});
+			} else if (!obj.password) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a password."});
+			} else if (obj.classIndex === -99) {
+				Manager.Controller.layout.handleMessage({msg:"Please select an initial class for the teacher."});
+			} else {
+				DukeApp.request("create:user:teacher:entities", obj).done(function(){
+					alert("Created Teacher Class");
+					location.reload();
+					this.handleMenuClick("teachers");
+				});
+			}
+		},
 	};
 });

@@ -4,14 +4,16 @@
   <hr/>
   <h4>Add Teacher</h4>
   <div class="admin-top">
-    <input type="text" placeholder="First Name">
-    <input type="text" placeholder="Last Name">
-    <input type="text" placeholder="Username">
-    <input type="text" placeholder="Email">
-    <select class="combobox">
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="text" id="userName" placeholder="Username">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="password" placeholder="Password">
+
+    <select class="combobox" id="classIdx">
       <option value="-99">Select A Class</option>
       {{#each classes}}
-        <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+        <option value="{{this.index}}">{{this.index}} - {{this.template.title}}</option>
       {{/each}}
     </select>
     <br/>
@@ -31,7 +33,7 @@
         <td>{{this.email}}</td>
         <td>{{this.classes}}</td>
         <td>{{this.currentClass}}</td>
-        <td><button>EDIT</button></td>
+        <td><button id="editTeacher">Edit</button></td>
       </tr>
       {{/each}}
     </tbody>

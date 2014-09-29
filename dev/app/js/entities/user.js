@@ -303,6 +303,43 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
+		},
+
+		createTeacher:function(obj) {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				user = new Parse.User(),
+				teacher = new TeacherTable();
+
+			DukeApp.utils.findNextIndex("Teacher").done(function(idx){
+				user.set("username", obj.username);
+
+				user.set("firstName", obj.firstname);
+				user.set("lastName", obj.firstname);
+				
+				user.set("password", obj.password);
+				user.set("email", obj.email);
+				user.set("type", "teacher");
+				user.set("profileImage", 0);
+				user.set("type", "teacher");
+				user.set("teacherAccount", teacher);
+
+				teacher.set("index", idx);
+				teacher.add("classes", obj.classIndex);
+				teacher.set("currentClass", obj.classIndex);
+
+				user.save(null, {
+					success:function(){
+						teacher.set("user", user);
+						teacher.save();
+						console.log(teacher);
+					}
+				});
+				
+			});
+			
+
+			return(def.promise());
 		}
 	};
 
@@ -344,5 +381,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("user:getStudentFromId:entities", function(id){
 		return API.getStudentFromId(id);
+	});
+
+	DukeApp.reqres.setHandler("create:user:teacher:entities", function(obj){
+		return API.createTeacher(obj);
 	});
 });
