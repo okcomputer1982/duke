@@ -55,7 +55,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 				});
 
 			contentView.on("managerView:createClass", this.handleCreateClass);
+			contentView.on("managerView:deleteClass", this.handleDeleteClass);
 			contentView.on("managerView:changeSelectedClass", this.handleChangeClass);
+			contentView.on("managerView:editClassList", this.handleEditClass);
+			
 			
 			Manager.Controller.content = contentView;
 
@@ -76,9 +79,38 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			}
 		},
 
+		handleDeleteClass:function(obj) {
+			if (!confirm("Are you sure you want to delete class " + obj.classIndex + "?"))
+				return;
+
+			if (obj.classIndex === -99) {
+				Manager.Controller.layout.handleMessage({msg:"Please select a class."});
+			} else {
+				DukeApp.request("delete:class:entities", obj).done(function(){
+					alert("Deleted Current Class");
+					location.reload();
+					this.handleMenuClick("classes");
+				});
+			}
+		},
+
 		handleChangeClass:function(obj) {
 			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
+				Manager.Controller.currentClass = classObj;
 				Manager.Controller.content.updateClassData(classObj);
+			});
+		},
+
+		handleEditClass:function(obj) {
+			var eventTrigger = obj.action + ":class:" + obj.type + ":entities";
+			
+			obj = _.extend(obj, {classIndex:Manager.Controller.currentClass.index});
+
+			DukeApp.request(eventTrigger, obj).done(function(classObj) {
+				Manager.Controller.layout.handleMessage({msg:obj.action + "ed a " + obj.type + " to the current class"});
+				location.reload();
+				this.handleMenuClick("classes");
+				this.handleChangeClass(Manager.Controller.currentClass);
 			});
 		}
 	};

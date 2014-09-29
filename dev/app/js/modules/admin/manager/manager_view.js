@@ -26,7 +26,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		template:templates["admin/manager/editClasses"],
 		events:{
 			"click #createBtn": "handleCreateClass",
-			"change #classCombo": "handleChangeClass"
+			"click #deleteBtn": "handleDeleteClass",
+			"change #classCombo": "handleChangeClass",
+			"click .addToClassBtn": "handleAddToClass",
+			"click .removeFromClassBtn": "handleRemoveFromClass",
 		},
 		handleCreateClass:function(e) {
 			var classTemplate = Number($('#templateCombo').val()),
@@ -34,6 +37,12 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 			this.trigger("managerView:createClass", {classTemplate:classTemplate, teacherTemplate:teacherTemplate});
 		},
+
+		handleDeleteClass:function(e) {
+			var classIndex = Number($('#classCombo').val());
+			this.trigger("managerView:deleteClass", {classIndex:classIndex});
+		},
+
 		handleChangeClass:function(e) {
 			var classVal = Number($("#classCombo").val());
 			this.trigger("managerView:changeSelectedClass", {index:classVal});
@@ -78,6 +87,24 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					removeButton.hide();
 				}
 			});
+		},
+
+		handleAddToClass:function(e) {
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				type = (row.hasClass("studentRow")?"student":"teacher"),
+				index = Number(row.attr("data-index"));
+
+			this.trigger("managerView:editClassList", {action:"add", type:type, index:index});
+		},
+
+		handleRemoveFromClass:function(e) {
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				type = (row.hasClass("studentRow")?"student":"teacher"),
+				index = Number(row.attr("data-index"));
+
+			this.trigger("managerView:editClassList", {action:"remove", type:type, index:index});
 		}
 	});
 

@@ -384,6 +384,55 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			return(def.promise());
 		},
 
+		deleteClass:function(data) {
+			var def = $.Deferred(),
+				ClassTable = Parse.Object.extend("Classes"),
+				StudentTable = Parse.Object.extend("Student"),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				cQuery = new Parse.Query(ClassTable);
+
+			//find the class and kill it
+			cQuery.equalTo("index", data.classIndex);
+			cQuery.first({
+				success:function(classObj) {
+					classObj.destroy({
+						success: function(classObj) {
+							console.log("here1");
+							//remove all references from all students
+							var sQuery = new Parse.Query(StudentTable);
+							sQuery.equalTo("classes", data.classIndex);
+							sQuery.find({
+								success:function(students) {
+									console.log("here2");
+									_.each(students, function(obj, idx) {
+										obj.remove("classes", data.classIndex);
+										obj.save();
+									});
+								}
+							});
+
+							//remove all references from all teachers
+							var tQuery = new Parse.Query(TeacherTable);
+							tQuery.equalTo("classes", data.classIndex);
+							tQuery.find({
+								success:function(teachers) {
+									console.log("here3");
+									_.each(teachers, function(obj, idx){
+										obj.remove("classes", data.classIndex);
+										obj.save();
+									});
+								}
+							});
+
+							def.resolve();
+						}
+					});
+				}
+			});
+			
+			return(def.promise());
+		},
+
 		getClassByIndex:function(obj){
 			var def = $.Deferred(),
 				ClassTable = Parse.Object.extend("Classes"),
@@ -405,6 +454,155 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				}
 			});
 
+			return(def.promise());
+		},
+
+		addStudentToClass:function(obj) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				ClassTable = Parse.Object.extend("Classes"),
+				sQuery = new Parse.Query(StudentTable),
+				cQuery = new Parse.Query(ClassTable);
+
+			console.log(obj.index);
+			sQuery.equalTo("index", obj.index);
+			cQuery.equalTo("index", obj.classIndex);
+			//find student
+			sQuery.first({
+				success:function(s) {
+					//remove class from student
+					s.add("classes", obj.classIndex);
+					s.save(null, {
+						success: function(){
+							cQuery.first({
+								success:function(c){
+									//remove teacher from class	
+									c.add("students", obj.index);
+									c.save(null, {
+										success:function() {
+											def.resolve();
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+
+
+			return(def.promise());
+		},
+
+		addTeacherToClass:function(obj) {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				ClassTable = Parse.Object.extend("Classes"),
+				tQuery = new Parse.Query(TeacherTable),
+				cQuery = new Parse.Query(ClassTable);
+
+			tQuery.equalTo("index", obj.index);
+			cQuery.equalTo("index", obj.classIndex);
+			//find teacher
+			tQuery.first({
+				success:function(t) {
+					//remove class from teacher
+					t.add("classes", obj.classIndex);
+					t.save(null, {
+						success: function(){
+							cQuery.first({
+								success:function(c){
+									//remove teacher from class	
+									c.add("teachers", obj.index);
+									c.save(null, {
+										success:function() {
+											def.resolve();
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+
+
+			return(def.promise());
+		},
+
+		removeStudentFromClass:function(obj) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				ClassTable = Parse.Object.extend("Classes"),
+				sQuery = new Parse.Query(StudentTable),
+				cQuery = new Parse.Query(ClassTable);
+
+			sQuery.equalTo("index", obj.index);
+			cQuery.equalTo("index", obj.classIndex);
+			//find teacher
+			sQuery.first({
+				success:function(s) {
+					//remove class from student
+					s.remove("classes", obj.classIndex);
+					s.save(null, {
+						success: function(){
+							cQuery.first({
+								success:function(c){
+									//remove student from class	
+									c.remove("students", obj.index);
+									c.save(null, {
+										success:function() {
+											def.resolve();
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+
+
+			return(def.promise());
+		},
+
+		removeTeacherFromClass:function(obj) {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				ClassTable = Parse.Object.extend("Classes"),
+				tQuery = new Parse.Query(TeacherTable),
+				cQuery = new Parse.Query(ClassTable);
+
+			tQuery.equalTo("index", obj.index);
+			cQuery.equalTo("index", obj.classIndex);
+			//find teacher
+			tQuery.first({
+				success:function(t) {
+					//remove class from teacher
+					t.remove("classes", obj.classIndex);
+					console.log("here2");
+					t.save(null, {
+						success: function(){
+							cQuery.first({
+								success:function(c){
+									//remove teacher from class	
+									console.log("here3");
+									c.remove("teachers", obj.index);
+									c.save(null, { 
+
+										success:function() {
+											console.log("here4");
+											def.resolve();
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+
+			
 			return(def.promise());
 		}
 	};
@@ -444,5 +642,25 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("create:class:entities", function(obj) {	
 		return API.createClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("delete:class:entities", function(obj) {	
+		return API.deleteClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("add:class:student:entities", function(obj) {	
+		return API.addStudentToClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("add:class:teacher:entities", function(obj) {	
+		return API.addTeacherToClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("remove:class:student:entities", function(obj) {	
+		return API.removeStudentFromClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("remove:class:teacher:entities", function(obj) {	
+		return API.removeTeacherFromClass(obj);
 	});
 });
