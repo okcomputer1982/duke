@@ -37,6 +37,13 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 			this.handleMenuClick("classes");
 
+			Manager.Controller.layout.on("managerView:createClass", this.handleCreateClass);
+			Manager.Controller.layout.on("managerView:deleteClass", this.handleDeleteClass);
+			Manager.Controller.layout.on("managerView:changeSelectedClass", this.handleChangeClass);
+			Manager.Controller.layout.on("managerView:editClassList", this.handleEditClass);
+			Manager.Controller.layout.on("managerView:changeDefaultClass", this.handleDefaultClass);
+
+
 			layout.on("managerView:clickLink", this.handleMenuClick);
 		},
 
@@ -53,16 +60,18 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 				contentView = new contentViewMap[type]({
 					model:manageModel
 				});
-
-			contentView.on("managerView:createClass", this.handleCreateClass);
-			contentView.on("managerView:deleteClass", this.handleDeleteClass);
-			contentView.on("managerView:changeSelectedClass", this.handleChangeClass);
-			contentView.on("managerView:editClassList", this.handleEditClass);
-			
 			
 			Manager.Controller.content = contentView;
 
 			layout.content.show(contentView);
+
+
+			// contentView.on("managerView:createClass", this.handleCreateClass);
+			// contentView.on("managerView:deleteClass", this.handleDeleteClass);
+			// contentView.on("managerView:changeSelectedClass", this.handleChangeClass);
+			// contentView.on("managerView:editClassList", this.handleEditClass);
+			// contentView.on("managerView:changeDefaultClass", this.handleDefaultClass);
+			
 		},
 
 		handleCreateClass:function(obj) {
@@ -98,6 +107,16 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
 				Manager.Controller.currentClass = classObj;
 				Manager.Controller.content.updateClassData(classObj);
+			});
+		},
+
+		handleDefaultClass:function(obj){
+			var endpoint = "set:defaultclass:" + obj.type + ":entities";
+			
+			DukeApp.request(endpoint, obj).done(function(classObj){
+				Manager.Controller.layout.handleMessage({msg:obj.type + " " + obj.index + " default is set to class " + obj.classIndex});
+				location.reload();
+				this.handleMenuClick("classes");
 			});
 		},
 

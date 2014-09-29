@@ -74,6 +74,23 @@ DukeApp.utils.getCurrentAdminType = function() {
 	return((DukeApp.utils.isGuest())?false:Parse.User.current().get('type'));
 };
 
+DukeApp.utils.getCurrentAdminObject = function() {
+	var aObj;
+	if (DukeApp.utils.isGuest()) {
+		//get guest obj
+	}
+	switch(DukeApp.utils.getCurrentAdminType()) {
+		case("teacher"):
+			break;
+		case("admin"):
+			break;
+
+		case("student"):
+			break;
+	}
+	return(aObj);
+};
+
 DukeApp.utils.getCurrentAdminID = function() {
 	return((DukeApp.utils.isGuest())?DukeApp.utils.AdminTypes.guest:Parse.User.current().get('typeID'));
 };

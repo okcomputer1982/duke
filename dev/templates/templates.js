@@ -24,7 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      \n      <div id=\"user_id\">\n        Welcome\n        <span id=\"username\">\n          <a href=\"#profile/student\"></a>\n        </span>\n      </div>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin/teacher\">Dashboard</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
+  return "<div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid inner-wrap\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-right\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-haspopup=\"true\" aria-hidden=\"true\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n\n      <a class=\"navbar-brand logo replace hidden-phone\" href=\"#\">Duke University</a>\n      \n    </div>\n\n    <div class=\"navbar-collapse collapse\" role=\"navigation\">\n      \n      <div id=\"user_id\">\n        Welcome\n        <span id=\"username\">\n          <a href=\"#profile/student\"></a>\n        </span>\n      </div>\n\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a id=\"dashboard_link\" class=\"header_link\" href=\"#profile/student\">Dashboard</a></li>\n        <li><a id=\"admin_link\" class=\"header_link\" href=\"#admin\">Dashboard</a></li>\n        <li><a id=\"coursework_link\" class=\"header_link\" href=\"#week\">Coursework</a></li>\n        <li><a id=\"logout_link\" class=\"header_link\" href=\"#\" class=\"logout_button\">Logout</a></li>\n      </ul>\n    </div><!--/.nav-collapse -->\n  </div>\n</div>";
   });
 
 this["templates"]["admin/manager/editClasses"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -78,7 +78,7 @@ function program7(depth0,data) {
     + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ", "
     + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button></td>\n          </tr>\n          ";
+    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button><button hidden class=\"defaultClassBtn\">Make Default Class</button></td>\n          </tr>\n          ";
   return buffer;
   }
 
@@ -91,7 +91,7 @@ function program9(depth0,data) {
     + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ", "
     + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button></td>\n          </tr>\n          ";
+    + "</td>\n            <td class=\"inClass\">-</td>\n            <td><button hidden class=\"addToClassBtn\">Add to Class</button><button hidden class=\"removeFromClassBtn\">Remove from Class</button><button hidden class=\"defaultClassBtn\">Make Default Class</button></td>\n          </tr>\n          ";
   return buffer;
   }
 
@@ -227,6 +227,8 @@ function program3(depth0,data) {
     + escapeExpression(((stack1 = (depth0 && depth0.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.classes)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n        <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.currentClass)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td><button>EDIT</button></td>\n      </tr>\n      ";
   return buffer;
   }
@@ -234,8 +236,8 @@ function program3(depth0,data) {
   buffer += "<div class=\"container-fluid\">\n  <h4>Manage Teachers</h4>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option value=\"-99\">Select A Class</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Actions</th>\n      </tr>\n      ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.students), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  buffer += "\n    </select>\n    <br/>\n    <button type=\"submit\" id=\"createTeacher\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Actions</th>\n      </tr>\n      ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.teachers), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </tbody>\n  </table>\n</div>";
   return buffer;

@@ -580,7 +580,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				success:function(t) {
 					//remove class from teacher
 					t.remove("classes", obj.classIndex);
-					console.log("here2");
 					t.save(null, {
 						success: function(){
 							cQuery.first({
@@ -603,6 +602,44 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			
+			return(def.promise());
+		},
+
+		setTeacherDefaultClass:function(obj) {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				query = new Parse.Query(TeacherTable);
+
+			query.equalTo("index", obj.index);
+			query.first({
+				success:function(teacher){
+					teacher.set("currentClass", obj.classIndex);
+					teacher.save(null, {
+						success:function(obj){
+							def.resolve();
+						}
+					});
+				}
+			});
+			return(def.promise());
+		},
+
+		setStudentDefaultClass:function(obj) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				query = new Parse.Query(StudentTable);
+
+			query.equalTo("index", obj.index);
+			query.first({
+				success:function(student){
+					student.set("currentClass", obj.classIndex);
+					student.save(null, {
+						success:function(obj){
+							def.resolve();
+						}
+					});
+				}
+			});
 			return(def.promise());
 		}
 	};
@@ -663,4 +700,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	DukeApp.reqres.setHandler("remove:class:teacher:entities", function(obj) {	
 		return API.removeTeacherFromClass(obj);
 	});
+
+	DukeApp.reqres.setHandler("set:defaultclass:teacher:entities", function(obj) {	
+		return API.setTeacherDefaultClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("set:defaultclass:student:entities", function(obj) {	
+		return API.setStudentDefaultClass(obj);
+	});
+
 });

@@ -26,12 +26,12 @@ DukeApp.module("Components.Header", function(Header, DukeApp, Backbone, Marionet
     handleHeaderLink:function(e){
         e.preventDefault();
         var type = $(e.currentTarget).attr('id');
-
+        
         var links = {
             "coursework_link":"weekExplorer:week",
             "dashboard_link":"profile:student",
             "logout_link":"home:login",
-            "admin_link":"admin:teacher",
+            "admin_link":"admin:dashboard",
         };
 
         if (type === "coursework_link")

@@ -15,7 +15,7 @@
       {{/each}}
     </select>
     <br/>
-    <button type="submit" name="add">Add</button>
+    <button type="submit" id="createTeacher" name="add">Add</button>
   </div>
 
   <hr/>
@@ -23,13 +23,14 @@
   <table id="admin-students" class="table table-responsive table-bordered table-striped">
     <tbody>
       <tr>
-        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Actions</th>
+        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Actions</th>
       </tr>
-      {{#each students}}
+      {{#each teachers}}
       <tr>
         <td>{{this.last}}, {{this.first}}</td>
         <td>{{this.email}}</td>
         <td>{{this.classes}}</td>
+        <td>{{this.currentClass}}</td>
         <td><button>EDIT</button></td>
       </tr>
       {{/each}}
