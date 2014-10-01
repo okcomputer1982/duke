@@ -287,6 +287,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						//need to convert to a model
 						var classModel = new Entities.Class({
 							index: 		result.get('index'),
+							name: 		result.get('name'),
 							students: 	result.get('students'),
 							template: 	makeClassTemplateObjectById(result.get('template')),
 						});
@@ -314,6 +315,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						results.map(function(obj, id){
 							cObjectList.push({
 								index: 		obj.get('index'),
+								name: 		obj.get('name'),
 								students: 	obj.get('students'),
 								template: 	makeClassTemplateObjectById(obj.get('template')),
 							});
@@ -354,6 +356,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			
 			newClass.set("template", data.classTemplate);
 			DukeApp.utils.findNextIndex("Classes").done(function(classId){
+				newClass.set("name", data.name);
 				newClass.set("index", classId);
 				newClass.addUnique("teachers", data.teacherTemplate);
 				newClass.save(null, {
@@ -397,13 +400,11 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				success:function(classObj) {
 					classObj.destroy({
 						success: function(classObj) {
-							console.log("here1");
 							//remove all references from all students
 							var sQuery = new Parse.Query(StudentTable);
 							sQuery.equalTo("classes", data.classIndex);
 							sQuery.find({
 								success:function(students) {
-									console.log("here2");
 									_.each(students, function(obj, idx) {
 										obj.remove("classes", data.classIndex);
 										obj.save();
@@ -416,7 +417,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							tQuery.equalTo("classes", data.classIndex);
 							tQuery.find({
 								success:function(teachers) {
-									console.log("here3");
 									_.each(teachers, function(obj, idx){
 										obj.remove("classes", data.classIndex);
 										obj.save();
@@ -464,12 +464,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				sQuery = new Parse.Query(StudentTable),
 				cQuery = new Parse.Query(ClassTable);
 
-			console.log(obj.index);
 			sQuery.equalTo("index", obj.index);
 			cQuery.equalTo("index", obj.classIndex);
 			//find student
 			sQuery.first({
 				success:function(s) {
+					console.log(s);
 					//remove class from student
 					s.add("classes", obj.classIndex);
 					s.save(null, {

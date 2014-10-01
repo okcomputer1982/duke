@@ -1,20 +1,22 @@
 <div class="container-fluid">
-  <h4>Manage Guests</h4>
+  <h3>Manage Guests</h3>
 
   <hr/>
   <h4>Add Guest</h4>
   <div class="admin-top">
-    <input type="text" placeholder="Username">
-    <input type="text" placeholder="Email">
-    <select class="combobox">
+    <input type="text" id="userName" placeholder="Username">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="password" placeholder="Password">
+
+    <select class="combobox" id="classIndex">
       <option value="-99">Select A Class</option>
       {{#each classes}}
-        <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+        <option value="{{this.index}}">{{this.name}}</option>
       {{/each}}
     </select>
 
     <br/>
-    <button type="submit" name="add">Add</button>
+    <button type="submit" id="createGuest" name="add">Add</button>
   </div>
 
   <hr/>
@@ -25,13 +27,40 @@
         <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>
       </tr>
       {{#each guests}}
-      <tr>
+      <tr data-index="{{this.index}}">
         <td>{{this.username}}</td>
         <td>{{this.email}}</td>
         <td>{{this.class}}</td>
-        <td><button>Edit</button></td>
+        <td><button id="editGuest">Edit</button><button id="deleteGuest">Delete</button></td>
       </tr>
       {{/each}}
     </tbody>
   </table>
 </div>
+
+<div class="modal fade" id="editModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Edit Guest</h4>
+      </div>
+
+      <div class="modal-body">
+          <select class="combobox" id="classIdx_edit">
+            <option value="-99">Select Default Class</option>
+            {{#each classes}}
+              <option value="{{this.index}}">{{this.name}}</option>
+            {{/each}}
+          </select><br/><br/>
+          
+          <input type="hidden" id="guestIdx_edit"><br/>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitEditBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -62,9 +62,7 @@ function program5(depth0,data) {
   buffer += "\n          <option value=\""
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " - "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</option>\n        ";
   return buffer;
   }
@@ -95,13 +93,13 @@ function program9(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Classes</h4>\n\n  <hr/>\n  <h4>Create A Class</h4>\n  <div class=\"admin-top\">\n    <select class=\"combobox\" id=\"templateCombo\">\n      <option value=\"-99\">Select Class Template</option>\n      ";
+  buffer += "<div class=\"container-fluid\">\n  <h3>Manage Classes</h3>\n\n  <hr/>\n  <h4>Create A Class</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"name\" placeholder=\"Class Name\">\n    <select class=\"combobox\" id=\"templateCombo\">\n      <option value=\"-99\">Select Class Template</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classTemplates), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </select>\n\n    <select class=\"combobox\" id=\"instructorCombo\">\n      <option value=\"-99\">Select A Instructor</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.teachers), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n\n    <button type=\"submit\" id=\"createBtn\" name=\"add\">Create</button>\n  </div>\n  \n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h4>Edit Classes</h4>\n      <select class=\"combobox\" id=\"classCombo\">\n        <option value=\"-99\">Select A Class</option>\n        ";
+  buffer += "\n    </select>\n\n    <button type=\"submit\" id=\"createBtn\" name=\"add\">Create</button>\n  </div>\n  \n  <hr/>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h4>Edit Classes</h4>\n      <h4 id=\"currentClass\"></h4>\n      \n      <select class=\"combobox\" id=\"classCombo\">\n        <option value=\"-99\">Select A Class</option>\n        ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n      </select>\n      <button type=\"submit\" id=\"deleteBtn\" name=\"add\">Delete Class</button>\n    </div>\n    <div class=\"col-md-6\">\n      <h5>Class Created:       <span id=\"classCreatedField\">------</span></h5>\n      <h5>Class Last Edited:   <span id=\"classEditedField\">------</span></h5>\n      <h5>Total Instructors:   <span id=\"instructorsField\">-</span></h5>\n      <h5>Total Students:      <span id=\"studentsField\">-</span></h5>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h5><strong>Teachers</strong></h5>\n      <table id=\"admin-teachers\" class=\"table table-responsive table-bordered table-striped\">\n        <tbody>\n          <tr>\n            <th>Name</th><th>In Class</th><th>Actions</th>\n          </tr>\n          ";
@@ -122,10 +120,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n        <option value=\"this.index\">"
+  buffer += "\n        <option value=\""
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " - "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</option>\n      ";
   return buffer;
   }
@@ -133,23 +131,39 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n      <tr>\n        <td>"
+  buffer += "\n      <tr data-index=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.username)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0['class'])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n        <td><button>Edit</button></td>\n      </tr>\n      ";
+    + "</td>\n        <td><button id=\"editGuest\">Edit</button><button id=\"deleteGuest\">Delete</button></td>\n      </tr>\n      ";
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Guests</h4>\n\n  <hr/>\n  <h4>Add Guest</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n      <option value=\"-99\">Select A Class</option>\n      ";
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n              <option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</option>\n            ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"container-fluid\">\n  <h3>Manage Guests</h3>\n\n  <hr/>\n  <h4>Add Guest</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"userName\" placeholder=\"Username\">\n    <input type=\"text\" id=\"email\" placeholder=\"Email\">\n    <input type=\"text\" id=\"password\" placeholder=\"Password\">\n\n    <select class=\"combobox\" id=\"classIndex\">\n      <option value=\"-99\">Select A Class</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Guests</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>\n      </tr>\n      ";
+  buffer += "\n    </select>\n\n    <br/>\n    <button type=\"submit\" id=\"createGuest\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Guests</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>Class</th><th>Actions</th>\n      </tr>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.guests), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </tbody>\n  </table>\n</div>";
+  buffer += "\n    </tbody>\n  </table>\n</div>\n\n<div class=\"modal fade\" id=\"editModal\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>\n        <h4 class=\"modal-title\">Edit Guest</h4>\n      </div>\n\n      <div class=\"modal-body\">\n          <select class=\"combobox\" id=\"classIdx_edit\">\n            <option value=\"-99\">Select Default Class</option>\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n          </select><br/><br/>\n          \n          <input type=\"hidden\" id=\"guestIdx_edit\"><br/>\n        \n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        <button type=\"button\" id=\"submitEditBtn\" class=\"btn btn-primary\">Save Changes</button>\n      </div>\n    </div><!-- /.modal-content -->\n  </div><!-- /.modal-dialog -->\n</div><!-- /.modal -->";
   return buffer;
   });
 
@@ -161,10 +175,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n          <option value=\"this.index\">"
+  buffer += "\n          <option value=\""
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " - "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</option>\n        ";
   return buffer;
   }
@@ -172,31 +186,49 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n      <tr>\n        <td>"
+  buffer += "\n      <tr data-index=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ", "
     + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.username)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n        <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.mb)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.classes)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.currentClass)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.currentWeek)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n        <td>"
-    + escapeExpression(((stack1 = (depth0 && depth0.currentFrame)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n        <td><button>EDIT</button></td>\n      </tr>\n      ";
+    + "</td>\n        <td><button id=\"editStudent\">Edit</button><button id=\"deleteStudent\">Delete</button></td>\n      </tr>\n      ";
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Students</h4>\n\n  <hr/>\n  <h4>Add Student</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" placeholder=\"First Name\">\n    <input type=\"text\" placeholder=\"Last Name\">\n    <input type=\"text\" placeholder=\"Username\">\n    <input type=\"text\" placeholder=\"Email\">\n    <select class=\"combobox\">\n        <option value=\"-99\">Select A Class</option>\n        ";
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n              <option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</option>\n            ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"container-fluid\">\n  <h3>Manage Students</h3>\n\n  <hr/>\n  <h4>Add Student</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"firstName\" placeholder=\"First Name\">\n    <input type=\"text\" id=\"lastName\" placeholder=\"Last Name\">\n    <input type=\"text\" id=\"userName\" placeholder=\"Username\">\n    <input type=\"text\" id=\"email\" placeholder=\"Email\">\n    <input type=\"text\" id=\"password\" placeholder=\"Password\">\n\n    <select class=\"combobox\" id=\"classIdx\">\n        <option value=\"-99\">Select A Class</option>\n        ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      </select>\n    <br/>\n    <button type=\"submit\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Students</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Current Week</th><th>Current Frame</th><th>Actions</th>\n      </tr>\n      ";
+  buffer += "\n      </select>\n    <br/>\n    <button type=\"submit\" id=\"createStudent\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Students</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Username</th><th>Email Address</th><th>Myer Briggs</th><th>In Classes</th><th>Current Class</th><th>Current Week</th><th>Actions</th>\n      </tr>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.students), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </tbody>\n  </table>\n</div>";
+  buffer += "\n    </tbody>\n  </table>\n</div>\n\n<div class=\"modal fade\" id=\"editModal\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>\n        <h4 class=\"modal-title\">Edit Student</h4>\n      </div>\n\n      <div class=\"modal-body\">\n          <select class=\"combobox\" id=\"classIdx_edit\">\n            <option value=\"-99\">Select Default Class</option>\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n          </select><br/><br/>\n          <br/>\n          \n          <select class=\"combobox\" id=\"myersBriggsIdx_edit\">\n            <option value=\"\">Select New Myers Briggs Value</option>\n            <option value=\"ENFJ\">ENFJ</option>\n            <option value=\"ENFP\">ENFP</option>\n            <option value=\"ENTJ\">ENTJ</option>\n            <option value=\"ENTP\">ENTP</option>\n            <option value=\"ESFJ\">ESFJ</option>\n            <option value=\"ESFP\">ESFP</option>\n            <option value=\"ESTJ\">ESTJ</option>\n            <option value=\"ESTP\">ESTP</option>\n            <option value=\"INFJ\">INFJ</option>\n            <option value=\"INFP\">INFP</option>\n            <option value=\"INTJ\">INTJ</option>\n            <option value=\"INTP\">INTP</option>\n            <option value=\"ISFJ\">ISFJ</option>\n            <option value=\"ISFP\">ISFP</option>\n            <option value=\"ISTJ\">ISTJ</option>\n            <option value=\"ISTP\">ISTP</option>\n          </select><br/><br/>\n          \n          <input type=\"hidden\" id=\"studentIdx_edit\"><br/>\n        \n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        <button type=\"button\" id=\"submitEditBtn\" class=\"btn btn-primary\">Save Changes</button>\n      </div>\n    </div><!-- /.modal-content -->\n  </div><!-- /.modal-dialog -->\n</div><!-- /.modal -->";
   return buffer;
   });
 
@@ -211,9 +243,7 @@ function program1(depth0,data) {
   buffer += "\n        <option value=\""
     + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " - "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</option>\n      ";
   return buffer;
   }
@@ -221,27 +251,47 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n      <tr>\n        <td>"
+  buffer += "\n      <tr data-index=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ", "
     + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n        <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.username)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.classes)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</td>\n        <td>"
     + escapeExpression(((stack1 = (depth0 && depth0.currentClass)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</td>\n        <td><button id=\"editTeacher\">Edit</button></td>\n      </tr>\n      ";
+    + "</td>\n        <td><button id=\"editTeacher\">Edit</button><button id=\"deleteTeacher\">Delete</button></td>\n      </tr>\n      ";
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n  <h4>Manage Teachers</h4>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"firstName\" placeholder=\"First Name\">\n    <input type=\"text\" id=\"lastName\" placeholder=\"Last Name\">\n    <input type=\"text\" id=\"userName\" placeholder=\"Username\">\n    <input type=\"text\" id=\"email\" placeholder=\"Email\">\n    <input type=\"text\" id=\"password\" placeholder=\"Password\">\n\n    <select class=\"combobox\" id=\"classIdx\">\n      <option value=\"-99\">Select A Class</option>\n      ";
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n              <option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " - "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</option>\n            ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"container-fluid\">\n  <h3>Manage Teachers</h3>\n\n  <hr/>\n  <h4>Add Teacher</h4>\n  <div class=\"admin-top\">\n    <input type=\"text\" id=\"firstName\" placeholder=\"First Name\">\n    <input type=\"text\" id=\"lastName\" placeholder=\"Last Name\">\n    <input type=\"text\" id=\"userName\" placeholder=\"Username\">\n    <input type=\"text\" id=\"email\" placeholder=\"Email\">\n    <input type=\"text\" id=\"password\" placeholder=\"Password\">\n\n    <select class=\"combobox\" id=\"classIdx\">\n      <option value=\"-99\">Select A Class</option>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </select>\n    <br/>\n    <button type=\"submit\" id=\"createTeacher\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Actions</th>\n      </tr>\n      ";
+  buffer += "\n    </select>\n    <br/>\n    <button type=\"submit\" id=\"createTeacher\" name=\"add\">Add</button>\n  </div>\n\n  <hr/>\n  <h4>Edit Teachers</h4>\n  <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n    <tbody>\n      <tr>\n        <th>Name</th><th>Username</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Actions</th>\n      </tr>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.teachers), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </tbody>\n  </table>\n</div>";
+  buffer += "\n    </tbody>\n  </table>\n</div>\n\n<div class=\"modal fade\" id=\"editModal\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>\n        <h4 class=\"modal-title\">Edit Teacher</h4>\n      </div>\n      <div class=\"modal-body\">        \n          <!-- <input type=\"text\" id=\"firstName_edit\" placeholder=\"Change First Name\">\n          <br/>\n          \n          <input type=\"text\" id=\"lastName_edit\" placeholder=\"Change Last Name\"><br/>\n\n          <input type=\"text\" id=\"userName_edit\" placeholder=\"Change Username\"><br/>\n\n          <input type=\"text\" id=\"email_edit\" placeholder=\"Change Email\"><br/>\n          \n          <input type=\"text\" id=\"password_edit\" placeholder=\"Change Password\"><br/>\n           -->\n          <input type=\"hidden\" id=\"teacherIdx_edit\"><br/>\n\n          <select class=\"combobox\" id=\"classIdx_edit\">\n            <option value=\"-99\">Select Default Class</option>\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n          </select><br/><br/>\n        \n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        <button type=\"button\" id=\"submitEditBtn\" class=\"btn btn-primary\">Save Changes</button>\n      </div>\n    </div><!-- /.modal-content -->\n  </div><!-- /.modal-dialog -->\n</div><!-- /.modal -->";
   return buffer;
   });
 

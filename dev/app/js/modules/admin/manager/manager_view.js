@@ -32,11 +32,15 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click .removeFromClassBtn": "handleRemoveFromClass",
 			"click .defaultClassBtn": "handleDefaultClass"
 		},
-		handleCreateClass:function(e) {
-			var classTemplate = Number($('#templateCombo').val()),
-				teacherTemplate = Number($('#instructorCombo').val());
 
-			Manager.Controller.layout.trigger("managerView:createClass", {classTemplate:classTemplate, teacherTemplate:teacherTemplate});
+		handleCreateClass:function(e) {
+			var dataObj = {
+				classTemplate:Number($('#templateCombo').val()),
+				teacherTemplate:Number($('#instructorCombo').val()),
+				name:$('#name').val()
+			};
+
+			Manager.Controller.layout.trigger("managerView:createClass", dataObj);
 		},
 
 		handleDeleteClass:function(e) {
@@ -74,6 +78,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					defaultButton = $(this).find(".defaultClassBtn");
 
 				inClassField.html( (inClass?"yes":"no") );
+
 				if (inClass) {
 					addButton.hide();
 					removeButton.show();
@@ -128,7 +133,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 	Manager.EditTeachersView = Marionette.ItemView.extend({
 		template:templates["admin/manager/editTeachers"],
 		events:{
-			"click #createTeacher": "handleTeacherAdd"
+			"click #createTeacher": "handleTeacherAdd",
+			"click #deleteTeacher": "handleTeacherDelete",
+			"click #editTeacher": 	"handleTeacherModal",
+			"click #submitEditBtn": "handleSubmitTeacherEdit"
 		},
 
 		handleTeacherAdd:function(e) {
@@ -142,15 +150,136 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			};
 
 			Manager.Controller.layout.trigger("managerView:addTeacher", dataObj);
+		},
+
+		handleTeacherDelete:function(e) {
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			Manager.Controller.layout.trigger("managerView:deleteTeacher", {index:index});
+		},
+
+		handleTeacherModal:function(e){
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			$('#teacherIdx_edit').val(index);
+			$("#editModal").modal();
+		},
+
+		handleSubmitTeacherEdit:function(e){
+			var dataObj = {
+				teacherIndex: Number($('#teacherIdx_edit').val()),
+				classIndex: Number($('#classIdx_edit').val())
+			};
+
+			$("#editModal").modal('hide');
+
+			Manager.Controller.layout.trigger("managerView:editTeacher", dataObj);
 		}
 	});
 
 	Manager.EditStudentsView = Marionette.ItemView.extend({
-		template:templates["admin/manager/editStudents"]
+		template:templates["admin/manager/editStudents"],
+		events:{
+			"click #createStudent": "handleStudentAdd",
+			"click #deleteStudent": "handleStudentDelete",
+			"click #editStudent": 	"handleStudentModal",
+			"click #submitEditBtn": "handleSubmitStudentEdit"
+		},
+
+		handleStudentAdd:function(e) {
+			var dataObj = {
+					firstname: $("#firstName").val(),
+					lastname: $("#lastName").val(),
+					username: $("#userName").val(),
+					email: $("#email").val(),
+					password: $('#password').val(),
+					classIndex: Number($('#classIdx').val())
+			};
+
+			Manager.Controller.layout.trigger("managerView:addStudent", dataObj);
+		},
+
+		handleStudentDelete:function(e) {
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			Manager.Controller.layout.trigger("managerView:deleteStudent", {index:index});
+		},
+
+		handleStudentModal:function(e){
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			$('#studentIdx_edit').val(index);
+			$("#editModal").modal();
+		},
+
+		handleSubmitStudentEdit:function(e){
+			var dataObj = {
+				studentIndex: Number($('#studentIdx_edit').val()),
+				classIndex: Number($('#classIdx_edit').val()),
+				mb: $('#myersBriggsIdx_edit').val()
+			};
+
+			$("#editModal").modal('hide');
+			Manager.Controller.layout.trigger("managerView:editStudent", dataObj);
+		}
+
 	});
 
 	Manager.EditGuestsView = Marionette.ItemView.extend({
-		template:templates["admin/manager/editGuests"]
+		template:templates["admin/manager/editGuests"],
+		events:{
+			"click #createGuest": "handleGuestAdd",
+			"click #deleteGuest": "handleGuestDelete",
+			"click #editGuest": 	"handleGuestModal",
+			"click #submitEditBtn": "handleSubmitGuestEdit"
+		},
+
+		handleGuestAdd:function(e) {
+			var dataObj = {
+					username: $("#userName").val(),
+					email: $("#email").val(),
+					password: $('#password').val(),
+					classIndex: Number($('#classIndex').val())
+			};
+
+			Manager.Controller.layout.trigger("managerView:addGuest", dataObj);
+		},
+
+		handleGuestDelete:function(e) {
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			Manager.Controller.layout.trigger("managerView:deleteGuest", {index:index});
+		},
+
+		handleGuestModal:function(e){
+			var target = $(e.currentTarget),
+				row = target.closest("tr"),
+				index = Number(row.attr("data-index"));
+
+			$('#guestIdx_edit').val(index);
+			$("#editModal").modal();
+		},
+
+		handleSubmitGuestEdit:function(e){
+			var dataObj = {
+				guestIndex: Number($('#guestIdx_edit').val()),
+				classIndex: Number($('#classIdx_edit').val()),
+			};
+
+			$("#editModal").modal('hide');
+			Manager.Controller.layout.trigger("managerView:editGuest", dataObj);
+		}
+
 	});
 
 

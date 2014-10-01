@@ -1,21 +1,23 @@
 <div class="container-fluid">
-  <h4>Manage Students</h4>
+  <h3>Manage Students</h3>
 
   <hr/>
   <h4>Add Student</h4>
   <div class="admin-top">
-    <input type="text" placeholder="First Name">
-    <input type="text" placeholder="Last Name">
-    <input type="text" placeholder="Username">
-    <input type="text" placeholder="Email">
-    <select class="combobox">
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="text" id="userName" placeholder="Username">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="password" placeholder="Password">
+
+    <select class="combobox" id="classIdx">
         <option value="-99">Select A Class</option>
         {{#each classes}}
-          <option value="this.index">{{this.index}} - {{this.template.title}}</option>
+          <option value="{{this.index}}">{{this.name}}</option>
         {{/each}}
       </select>
     <br/>
-    <button type="submit" name="add">Add</button>
+    <button type="submit" id="createStudent" name="add">Add</button>
   </div>
 
   <hr/>
@@ -23,19 +25,68 @@
   <table id="admin-students" class="table table-responsive table-bordered table-striped">
     <tbody>
       <tr>
-        <th>Name</th><th>Email Address</th><th>In Classes</th><th>Current Class</th><th>Current Week</th><th>Current Frame</th><th>Actions</th>
+        <th>Name</th><th>Username</th><th>Email Address</th><th>Myer Briggs</th><th>In Classes</th><th>Current Class</th><th>Current Week</th><th>Actions</th>
       </tr>
       {{#each students}}
-      <tr>
+      <tr data-index="{{this.index}}">
         <td>{{this.last}}, {{this.first}}</td>
+        <td>{{this.username}}</td>
         <td>{{this.email}}</td>
+        <td>{{this.mb}}</td>
         <td>{{this.classes}}</td>
         <td>{{this.currentClass}}</td>
         <td>{{this.currentWeek}}</td>
-        <td>{{this.currentFrame}}</td>
-        <td><button>EDIT</button></td>
+        <td><button id="editStudent">Edit</button><button id="deleteStudent">Delete</button></td>
       </tr>
       {{/each}}
     </tbody>
   </table>
 </div>
+
+<div class="modal fade" id="editModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Edit Student</h4>
+      </div>
+
+      <div class="modal-body">
+          <select class="combobox" id="classIdx_edit">
+            <option value="-99">Select Default Class</option>
+            {{#each classes}}
+              <option value="{{this.index}}">{{this.name}}</option>
+            {{/each}}
+          </select><br/><br/>
+          <br/>
+          
+          <select class="combobox" id="myersBriggsIdx_edit">
+            <option value="">Select New Myers Briggs Value</option>
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENTJ">ENTJ</option>
+            <option value="ENTP">ENTP</option>
+            <option value="ESFJ">ESFJ</option>
+            <option value="ESFP">ESFP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESTP">ESTP</option>
+            <option value="INFJ">INFJ</option>
+            <option value="INFP">INFP</option>
+            <option value="INTJ">INTJ</option>
+            <option value="INTP">INTP</option>
+            <option value="ISFJ">ISFJ</option>
+            <option value="ISFP">ISFP</option>
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISTP">ISTP</option>
+          </select><br/><br/>
+          
+          <input type="hidden" id="studentIdx_edit"><br/>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitEditBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

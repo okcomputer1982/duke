@@ -46,6 +46,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						"classes": 		student.get('classes'),
 						"first": 		curUser.get('firstName'),
 						"last": 		curUser.get('lastName'),
+						"username": 	curUser.get("username"),
 						"currentClass": student.get('currentClass'),
 						"currentWeek": 	student.get('currentWeek'),
 						"currentFrame": student.get('currentFrame'),
@@ -71,6 +72,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"class": 		student.get('class'),
 					"first": 		curUser.get('firstName'),
 					"last": 		curUser.get('lastName'),
+					"username": 	curUser.get("username"),
 					"currentClass": student.get('currentClass'),
 					"currentWeek": 	student.get('currentWeek'),
 					"currentFrame": student.get('currentFrame'),
@@ -119,14 +121,15 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						obj.get('user').fetch({
 							success:function(user) {
 								tObjectList.push({
-									"classes": obj.get('classes'),
-									"first": user.get("firstName"),
-									"last": user.get("lastName"),
-									"email": user.get("email"),
+									"classes": 		obj.get('classes'),
+									"first": 		user.get("firstName"),
+									"last": 		user.get("lastName"),
+									"username": 	user.get("username"),
+									"email": 		user.get("email"),
 									"currentClass": obj.get('currentClass'),
-									"index": idx,
-									"id": obj.id,
-									"userId": user.id,
+									"index": 		obj.get("index"),
+									"id": 			obj.id,
+									"userId": 		user.id,
 									"profileImage": user.get("profileImage")
 								});
 
@@ -163,16 +166,18 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						obj.get('user').fetch({
 							success:function(user) {
 								sObjectList.push({
-									"classes": obj.get('classes'),
-									"first": user.get("firstName"),
-									"last": user.get("lastName"),
-									"email": user.get("email"),
-									"index": idx,
-									"id": obj.id,
-									"userId": user.id,
+									"classes": 		obj.get('classes'),
+									"first": 		user.get("firstName"),
+									"last": 		user.get("lastName"),
+									"username": 	user.get("username"),
+									"email": 		user.get("email"),
+									"index": 		obj.get("index"),
+									"mb": 			obj.get("myersBriggs"),
+									"id": 			obj.id,
+									"userId": 		user.id,
 									"profileImage": user.get("profileImage"),
 									"currentClass": obj.get('currentClass'),
-									"currentWeek": obj.get('currentWeek'),
+									"currentWeek": 	obj.get('currentWeek'),
 									"currentFrame": obj.get('currentFrame')
 								});
 
@@ -209,14 +214,14 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						obj.get('user').fetch({
 							success:function(user) {
 								gObjectList.push({
-									"class": obj.get('class'),
-									"username": user.get("username"),
-									"first": user.get("firstName"),
-									"last": user.get("lastName"),
-									"email": user.get("email"),
-									"index": idx,
-									"id": obj.id,
-									"userId": user.id,
+									"class": 		obj.get('class'),
+									"username": 	user.get("username"),
+									"first": 		user.get("firstName"),
+									"last": 		user.get("lastName"),
+									"email": 		user.get("email"),
+									"index": 		obj.get("index"),
+									"id": 			obj.id,
+									"userId": 		user.id,
 									"profileImage": user.get("profileImage")
 								});
 
@@ -241,7 +246,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var user = DukeApp.utils.getCurrentUser();
 
 			var userModel = new Entities.UserModel({
-				"name":user.get('username'),
+				"username":user.get('username'),
 				"first": user.get('firstName'),
 				"last": user.get('lastName'),
 				"email":user.get('email'),
@@ -291,6 +296,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							currentWeek: 	result.get('currentWeek'),
 							currentFrame: 	result.get('currentFrame'),
 							lastLesson: 	result.get('lastLesson'),
+							index: 			result.get('index'),
+							mb: 			result.get('myersBriggs'),
 							first: 			result.get('user').get('firstName'),
 							last: 			result.get('user').get('lastName'),
 							profileImage: 	result.get('user').get('profileImage'),
@@ -308,36 +315,303 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		createTeacher:function(obj) {
 			var def = $.Deferred(),
 				TeacherTable = Parse.Object.extend("Teacher"),
-				user = new Parse.User(),
-				teacher = new TeacherTable();
+				teacher = new TeacherTable(),
+				user = new Parse.User();
 
 			DukeApp.utils.findNextIndex("Teacher").done(function(idx){
 				user.set("username", obj.username);
 
 				user.set("firstName", obj.firstname);
-				user.set("lastName", obj.firstname);
+				user.set("lastName", obj.lastname);
 				
 				user.set("password", obj.password);
 				user.set("email", obj.email);
-				user.set("type", "teacher");
 				user.set("profileImage", 0);
 				user.set("type", "teacher");
 				user.set("teacherAccount", teacher);
 
-				teacher.set("index", idx);
-				teacher.add("classes", obj.classIndex);
-				teacher.set("currentClass", obj.classIndex);
-
 				user.save(null, {
 					success:function(){
-						teacher.set("user", user);
+						
+						teacher.set("user", 		user);						
+						teacher.set("index", 		idx);
+						teacher.add("classes", 		obj.classIndex);
+						teacher.set("currentClass", obj.classIndex);
+
 						teacher.save();
-						console.log(teacher);
+						
+						var ClassTable = Parse.Object.extend("Classes"),
+							cQuery = new Parse.Query(ClassTable);
+							
+						cQuery.equalTo("index", obj.classIndex);
+
+						cQuery.first(function(classObj){
+							classObj.add("teachers", idx);
+							classObj.save(null, {
+								success:function(){
+									def.resolve(true);
+								}
+							});
+
+						});
+					},
+					error: function(obj, e) {
+						def.resolve(false, e);
 					}
 				});
 				
 			});
 			
+			return(def.promise());
+		},
+
+		deleteTeacher:function(obj){
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				ClassTable = Parse.Object.extend("Classes"),
+				tQuery = new Parse.Query(TeacherTable);
+
+			tQuery.equalTo("index", obj.index);
+			tQuery.first(function(teacherObj){
+				teacherObj.get('user').fetch({
+					success:function(user) {
+						teacherObj.destroy({
+							success:function() {
+								//remove all class references to teacher
+								var cQuery = new Parse.Query(ClassTable);
+								cQuery.equalTo("teachers", obj.index);
+								cQuery.find({
+									success:function(classes) {
+										_.each(classes, function(cObj, idx) {
+											console.log(cObj);
+											cObj.remove('teachers', obj.index);
+											cObj.save();
+										});
+										def.resolve();
+									}
+								});
+							}
+						});
+					}
+				});
+			});
+			
+			return(def.promise());
+		},
+
+		editTeacher:function(obj) {
+			var def = $.Deferred(),
+				TeacherTable = Parse.Object.extend("Teacher"),
+				tQuery = new Parse.Query(TeacherTable);
+
+			tQuery.equalTo("index", obj.teacherIndex);
+			tQuery.first(function(teacher) {
+				teacher.get("user").fetch({
+					success:function(user){
+						def.resolve();
+					}
+				});
+			});
+
+			return(def.promise());
+		},
+
+
+		createStudent:function(obj) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				student = new StudentTable(),
+				user = new Parse.User();
+
+			DukeApp.utils.findNextIndex("Student").done(function(idx){
+				user.set("username", obj.username);
+
+				user.set("firstName", obj.firstname);
+				user.set("lastName", obj.lastname);
+				
+				user.set("password", obj.password);
+				user.set("email", obj.email);
+				user.set("profileImage", 0);
+				user.set("type", "student");
+				user.set("studentAccount", student);
+
+				user.save(null, {
+					success:function(){
+						
+						student.set("user", user);						
+						student.set("index", idx);
+						student.set("mb", "----");
+						student.add("classes", obj.classIndex);
+						student.set("currentClass", obj.classIndex);
+						student.set("currentWeek", 0);
+						student.set("attributes", [1,1,1,1,1,1,1,1,1,1]);
+						student.save();
+						
+
+						var ClassTable = Parse.Object.extend("Classes"),
+							cQuery = new Parse.Query(ClassTable);
+						
+						cQuery.equalTo("index", obj.classIndex);
+						cQuery.first(function(classObj){
+							classObj.add("students", idx);
+							classObj.save(null, {
+								success:function(){
+									def.resolve(true);
+								}
+							});
+
+						});
+					},
+					error: function(obj, e) {
+						def.resolve(false, e);
+					}
+				});
+				
+			});
+			
+			return(def.promise());
+		},
+
+		deleteStudent:function(obj){
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				ClassTable = Parse.Object.extend("Classes"),
+				sQuery = new Parse.Query(StudentTable);
+
+			sQuery.equalTo("index", obj.index);
+			sQuery.first(function(studentObj){
+				studentObj.get('user').fetch({
+					success:function(user) {
+						studentObj.destroy({
+							success:function() {
+								var cQuery = new Parse.Query(ClassTable);
+								cQuery.equalTo("students", obj.index);
+								cQuery.find({
+									success:function(classes) {
+										_.each(classes, function(cObj, idx) {
+											console.log(cObj);
+											cObj.remove('students', obj.index);
+											cObj.save();
+										});
+										def.resolve();
+									}
+								});
+							}
+						});
+					}
+				});
+			});
+			
+			return(def.promise());
+		},
+
+		editStudent:function(obj) {
+			var def = $.Deferred(),
+				StudentTable = Parse.Object.extend("Student"),
+				sQuery = new Parse.Query(StudentTable);
+
+			sQuery.equalTo("index", obj.studentIndex);
+			sQuery.first({
+				success:function(student) {
+					var save = false;
+					console.log(student);
+					if (obj.classIndex !== -99) {
+						student.set('currentClass', obj.classIndex);
+						save  = true;
+					}
+
+					if (obj.mb !== "") {
+						student.set('myersBriggs', obj.mb);
+						save  = true;
+					}
+					
+					if (save) {
+						student.save({
+							success:function(){
+								def.resolve();
+							}
+						});
+					} else {
+						def.resolve();
+					}
+				}
+			});
+
+			return(def.promise());
+		},
+
+		createGuest:function(obj) {
+			var def = $.Deferred(),
+				GuestTable = Parse.Object.extend("Guests"),
+				guest = new GuestTable(),
+				user = new Parse.User();
+
+			DukeApp.utils.findNextIndex("Guests").done(function(idx){
+				user.set("username", obj.username);
+				user.set("firstName", "guest");
+				user.set("lastName", String(idx));
+				
+				user.set("password", obj.password);
+				user.set("email", obj.email);
+				user.set("profileImage", 0);
+				user.set("type", "guest");
+				user.set("guestAccount", guest);
+
+				user.save(null, {
+					success:function(){
+						
+						guest.set("user", user);						
+						guest.set("index", idx);
+						guest.set("class", obj.classIndex);
+						guest.save();
+						def.resolve(true);
+					},
+					error: function(obj, e) {
+						def.resolve(false, e);
+					}
+				});
+			});
+			
+			return(def.promise());
+		},
+
+		deleteGuest:function(obj){
+			var def = $.Deferred(),
+				GuestTable = Parse.Object.extend("Guests"),
+				gQuery = new Parse.Query(GuestTable);
+
+			gQuery.equalTo("index", obj.index);
+			gQuery.first({
+				success:function(guestObj){
+					guestObj.destroy({
+						success:function(){
+							def.resolve();
+						}
+					});
+				}
+			});
+			
+			return(def.promise());
+		},
+
+		editGuest:function(obj) {
+			var def = $.Deferred(),
+				GuestTable = Parse.Object.extend("Guests"),
+				gQuery = new Parse.Query(GuestTable);
+
+			gQuery.equalTo("index", obj.guestIndex);
+			gQuery.first({
+				success:function(guest) {
+					if (obj.classIndex !== -99) {
+						guest.set('class', obj.classIndex);
+						guest.save({
+							success:function() {
+								def.resolve();
+							}
+						});
+					}
+				}
+			});
 
 			return(def.promise());
 		}
@@ -385,5 +659,37 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("create:user:teacher:entities", function(obj){
 		return API.createTeacher(obj);
+	});
+
+	DukeApp.reqres.setHandler("delete:user:teacher:entities", function(obj){
+		return API.deleteTeacher(obj);
+	});
+
+	DukeApp.reqres.setHandler("edit:user:teacher:entities", function(obj){
+		return API.editTeacher(obj);
+	});
+
+	DukeApp.reqres.setHandler("create:user:student:entities", function(obj){
+		return API.createStudent(obj);
+	});
+
+	DukeApp.reqres.setHandler("delete:user:student:entities", function(obj){
+		return API.deleteStudent(obj);
+	});
+
+	DukeApp.reqres.setHandler("edit:user:student:entities", function(obj){
+		return API.editStudent(obj);
+	});
+
+	DukeApp.reqres.setHandler("create:user:guest:entities", function(obj){
+		return API.createGuest(obj);
+	});
+
+	DukeApp.reqres.setHandler("delete:user:guest:entities", function(obj){
+		return API.deleteGuest(obj);
+	});
+
+	DukeApp.reqres.setHandler("edit:user:guest:entities", function(obj){
+		return API.editGuest(obj);
 	});
 });
