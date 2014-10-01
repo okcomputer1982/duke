@@ -229,7 +229,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 		handleEditStudent:function(obj) {
 			DukeApp.request("edit:user:student:entities", obj).done(function(){
-				Manager.Controller.layout.handleMessage({msg:"Edited Teacher " + obj.studentIndex});
+				Manager.Controller.layout.handleMessage({msg:"Edited Student " + obj.studentIndex});
 				location.reload();
 				this.handleMenuClick("students");
 			});

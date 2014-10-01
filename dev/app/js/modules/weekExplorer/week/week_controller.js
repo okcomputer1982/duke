@@ -1,16 +1,28 @@
 DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette, $, _) {
 	Week.Controller = {
 		init:function(id) {
-			var startingClass = 0,
-				that = this;
+			var that = this;
+			
+			DukeApp.utils.getCurrentAccount().done(function(obj){
+				var currentClass;
 
-			//get data
-			var classPromise = DukeApp.request("class:entities", startingClass),
-				weeksPromise = DukeApp.request("week:entities");
+				if (DukeApp.utils.isGuest()) {
+					currentClass = obj.get("class");
+				} else {
+					currentClass = obj.get('currentClass');
+				}
 
-			$.when(classPromise, weeksPromise).done(function(cResults, wResults){
-				that.loadDisplay(cResults, wResults, id);
+				
+
+				//get data
+				var classPromise = DukeApp.request("class:entities", currentClass),
+					weeksPromise = DukeApp.request("week:entities");
+
+				$.when(classPromise, weeksPromise).done(function(cResults, wResults){
+					that.loadDisplay(cResults, wResults, id);
+				});
 			});
+
 		},
 
 		loadDisplay:function(classResults, weekResults, weekId) {

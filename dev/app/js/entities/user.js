@@ -614,6 +614,43 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 
 			return(def.promise());
+		},
+
+		getCurrentClass:function(obj){
+			//so we will need to know the index and the account type
+			//depending on the account type, we will have a different field name and table name
+			//then we just run on that generic table and field, get the value and return it.
+			var def = $.Deferred(),
+				accountMap = {
+				"student":{
+					"table": "Student",
+					"field": "currentClass"
+				},
+				"guest":{
+					"table": "Guests",
+					"field": "class"
+				},
+				"teacher":{
+					"table": "Teacher",
+					"field": "currentClass"
+				}
+			};
+
+			var Table = Parse.Object.extend(accountMap[obj.type]),
+				query = new Parse.Query(Table);
+
+			query.equalTo("index", obj.index);
+			query.find({
+				success:function(field){
+					var currentVal = field.get(accountMap[obj.type]);
+					def.resolve({status:true, currentClass:currentVal});
+				},
+				error:function(field, e){
+					def.resolve({status:false, msg:e.message});	
+				}
+			});
+			
+			return(def.promise());
 		}
 	};
 
@@ -691,5 +728,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("edit:user:guest:entities", function(obj){
 		return API.editGuest(obj);
+	});
+
+	DukeApp.reqres.setHandler("user:getCurrentClass:entities", function(obj){
+		return API.getCurrentClass(obj);
 	});
 });

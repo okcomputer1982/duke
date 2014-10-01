@@ -74,26 +74,29 @@ DukeApp.utils.getCurrentAdminType = function() {
 	return((DukeApp.utils.isGuest())?false:Parse.User.current().get('type'));
 };
 
-DukeApp.utils.getCurrentAdminObject = function() {
-	var aObj;
+DukeApp.utils.getCurrentAccount = function() {
 	if (DukeApp.utils.isGuest()) {
-		//get guest obj
-	}
-	switch(DukeApp.utils.getCurrentAdminType()) {
-		case("teacher"):
-			break;
-		case("admin"):
-			break;
+		return(DukeApp.utils.getCurrentGuestAccount());
+	} else {
+		switch(DukeApp.utils.getCurrentAdminType()) {
+			case("teacher"):
+				return(DukeApp.utils.getCurrentTeacherAccount());
+				break;
+			case("admin"):
+				return(DukeApp.utils.getCurrentAdminAccount());
+				break;
 
-		case("student"):
-			break;
+			case("student"):
+				return(DukeApp.utils.getCurrentStudentAccount());
+				break;
+		}
 	}
-	return(aObj);
 };
 
 DukeApp.utils.getCurrentAdminID = function() {
 	return((DukeApp.utils.isGuest())?DukeApp.utils.AdminTypes.guest:Parse.User.current().get('typeID'));
 };
+
 
 DukeApp.utils.getCurrentStudentAccount = function() {
 	var def = $.Deferred();
@@ -141,6 +144,25 @@ DukeApp.utils.getCurrentAdminAccount = function() {
 		adminAccount.fetch({
 			success:function(admin){
 				def.resolve(admin);
+			}
+		});
+
+	} else {
+		def.resolve(false);
+	}
+
+	return(def.promise());
+};
+
+
+DukeApp.utils.getCurrentGuestAccount = function() {
+	var def = $.Deferred();
+
+	if (!DukeApp.utils.getCurrentAdminType()) {
+		var guestAccount = Parse.User.current().get('guestAccount');
+		guestAccount.fetch({
+			success:function(guest){
+				def.resolve(guest);
 			}
 		});
 
