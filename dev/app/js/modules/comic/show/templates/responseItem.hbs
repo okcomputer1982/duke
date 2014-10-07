@@ -2,31 +2,31 @@
 	<div class="question_test">{{{question.prompt}}}</div>
 
 	{{#if question.choice_0}}
-		<button class="answer" data-ansIndex="0" id="answer_0">{{{question.choice_0.text}}}</button>
+		<a class="answer articlebtn btn btn-large btn-primary" id="answer_0" data-ansIndex="0">{{{question.choice_0.text}}}</a>
 	{{/if}}
 
 	{{#if question.choice_1}}
-		<button class="answer" data-ansIndex="1" id="answer_1">{{{question.choice_1.text}}}</button>
+		<a class="answer articlebtn btn btn-large btn-primary" id="answer_1" data-ansIndex="1">{{{question.choice_1.text}}}</a>
 	{{/if}}
 
 	{{#if question.choice_2}}
-		<button class="answer" data-ansIndex="2" id="answer_2">{{{question.choice_2.text}}}</button>
+		<a class="answer articlebtn btn btn-large btn-primary" id="answer_2" data-ansIndex="2">{{{question.choice_2.text}}}</a>
 	{{/if}}
 
 	{{#if question.choice_3}}
-		<button class="answer" data-ansIndex="3" id="answer_3">{{{question.choice_3.text}}}</button>
+		<a class="answer articlebtn btn btn-large btn-primary" id="answer_3" data-ansIndex="3">{{{question.choice_3.text}}}</a>
 	{{/if}}
 	
-	{{#if question.choice_4}}s
-		<button class="answer" data-ansIndex="4" id="answer_4">{{{question.choice_4.text}}}</button>
+	{{#if question.choice_4}}
+		<a class="answer articlebtn btn btn-large btn-primary" id="answer_4" data-ansIndex="4">{{{question.choice_4.text}}}</a>
 	{{/if}}
 </div>
 
 <div id="continue_panel">
-	<button id="continue">Click to Continue</button>
+	<a class="articlebtn btn btn-large btn-primary" id="continue">Click to Continue</a>
 </div>
 
 
 <div id="close_panel">
-	<button id="close" data-dismiss="modal" >Click to Close</button>
+	<a class="articlebtn btn btn-large btn-primary" id="close"  data-dismiss="modal">Click to Close</a>
 </div>

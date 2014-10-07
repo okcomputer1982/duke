@@ -1,24 +1,28 @@
 <div class="modal fade" id="comic_modal">
-  <a href="" data-dismiss="modal" class="modal_close"><span aria-hidden=
-  "true">&times;</span></a>
-	
-	<h1 id="comic_title">{{{title}}}</h1>
+	<div class="row">
+		<div class="col-md-9 col1">
+			<h1 id="comic_title">{{{title}}}</h1>
+		</div>
+		<div class="col-md-3 col2">
+			 <a href="" data-dismiss="modal" class="modal_close"><span aria-hidden="true">&times;</span></a>
+		</div>
+	</div>
 
 	<div class="container" style="height:100%">		
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div class="col-md-12" id="comicBook"></div>
 
 				<div id="navigation">
-					<a href="#" class="comic-sliders inactive" id="slide-left" data-direction="left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+					<a href="#" class="comic-sliders inactive" id="slide-left" data-direction="left"><i class="fa fa-caret-left"></i></a>
 
-					<a href="#" class="comic-refresh"><span class="icomoon icon-refresh"></span></a>
+					<a href="#" class="comic-refresh"><i class="fa fa-refresh"></i></span></a>
 
-					<a href="#" class="comic-sliders inactive" id="slide-right" data-direction="right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+					<a href="#" class="comic-sliders inactive" id="slide-right" data-direction="right"><i class="fa fa-caret-right"></i></a>
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div id="response_panel"></div>
 			</div>
 		</div>

@@ -5,9 +5,21 @@
 
 <div class="inner-wrap">
 	<div class="comic-wrap">
-		<h2 class="subheading">{{{content.synopsis}}}</h2>
-		<h2 class="instructions">{{{content.instructions}}}</h2>
+		{{#if content.synopsis}}
+		<h2 class="subheading">Summary:</h2>
+		<div class="textblock">
+			<p>{{content.synopsis}}</p>
+		</div>
+		{{/if}}
 		
-		<a class="moreButton show-comic attributeTarget eventTarget" data-id="{{{content.id}}}" href="#">Read</a>
+		{{#if content.instructions}}
+		<h2 class="subheading">instructions:</h2>
+		<div class="textblock">
+	        <p>{{{content.instructions}}}</p>
+	    </div>
+	    {{/if}}
+		
+		<!-- <a class="moreButton show-comic attributeTarget eventTarget"  href="#">Read</a> -->
+		<a class="articlebtn show-comic btn btn-large btn-primary attributeTarget eventTarget" data-id="{{{content.id}}}">View Comic</a>
 	</div>
 </div>

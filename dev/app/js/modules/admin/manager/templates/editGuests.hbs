@@ -30,7 +30,7 @@
       <tr data-index="{{this.index}}">
         <td>{{this.username}}</td>
         <td>{{this.email}}</td>
-        <td>{{this.class}}</td>
+        <td>{{this.className}}</td>
         <td><button id="editGuest">Edit</button><button id="deleteGuest">Delete</button></td>
       </tr>
       {{/each}}
@@ -48,7 +48,7 @@
 
       <div class="modal-body">
           <select class="combobox" id="classIdx_edit">
-            <option value="-99">Select Default Class</option>
+            <option value="-99">Select Current Class</option>
             {{#each classes}}
               <option value="{{this.index}}">{{this.name}}</option>
             {{/each}}

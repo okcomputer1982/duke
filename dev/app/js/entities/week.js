@@ -151,9 +151,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		var def = $.Deferred(),
 			FrameTable = Parse.Object.extend("Frames"),
 			query = new Parse.Query(FrameTable);
-			query.ascending("index");
+			query.equalTo("index", id);
 			
-		query.get(id, {
+		query.first({
 			success:function(frame) {
 				def.resolve({
 					"id": 			frame.id,
@@ -585,12 +585,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							cQuery.first({
 								success:function(c){
 									//remove teacher from class	
-									console.log("here3");
 									c.remove("teachers", obj.index);
 									c.save(null, { 
 
 										success:function() {
-											console.log("here4");
 											def.resolve();
 										}
 									});

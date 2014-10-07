@@ -373,11 +373,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	
 	    	if (currentScrollPos === this.lastPos) {
 	    		this.isScrolling = false;
-	    		clearInterval(this.scrollCheck);
+	    		clearInterval(that.scrollCheck);
 
 	    		this.setScrollPosition();
-	    	} else {
-	    		_.throttle(this.setScrollPosition, 5)();
 	    	}
 
 	    	this.lastPos = currentScrollPos;
@@ -424,6 +422,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	
 	    	tinymce.init({
 	    		selector:'textarea',
+	    		theme_advanced_statusbar_location : "none",
 	    		plugins: [
 				     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
 				     "visualblocks visualchars",

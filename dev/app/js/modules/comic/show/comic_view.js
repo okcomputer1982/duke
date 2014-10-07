@@ -141,10 +141,12 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
                 }
             }
 
-            $('#response_panel').slideDown(500, function(){
-                deferred.resolve();
-            });
-
+            _.debounce(function(){
+                $('#response_panel').fadeIn(1000, function(){
+                    deferred.resolve();
+                });
+            }, 2000)();
+            
             return(deferred.promise());
         },
 

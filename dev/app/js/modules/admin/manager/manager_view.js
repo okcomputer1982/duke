@@ -30,7 +30,8 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"change #classCombo": "handleChangeClass",
 			"click .addToClassBtn": "handleAddToClass",
 			"click .removeFromClassBtn": "handleRemoveFromClass",
-			"click .defaultClassBtn": "handleDefaultClass"
+			"click .defaultClassBtn": "handleDefaultClass",
+			"click #import": "handleImport"
 		},
 
 		handleCreateClass:function(e) {
@@ -63,19 +64,21 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			Manager.Controller.layout.trigger("managerView:changeDefaultClass", {index:index, type:type, classIndex:classIndex});
 		},
 
-		updateClassData:function(classObj){
+		updateClassData:function(classObj, teachers, students, classes){
 			$("#classCreatedField").html(moment(classObj.createdAt).fromNow());
 			$("#classEditedField").html(moment(classObj.lastEdited).fromNow());
 			$("#instructorsField").html(((classObj.teachers)?classObj.teachers.length:0));
 			$("#studentsField").html(((classObj.students)?classObj.students.length:0));
+			var currentClass = _.where(teachers, {index:classObj.index});
 
 			$(".teacherRow").each(function() {
 				var index = Number(this.getAttribute("data-index")),
 					inClassField = $(this).find(".inClass"),
-					inClass = (classObj.teachers && classObj.teachers.indexOf(index) >= 0),
+					inClass = (classObj.teachers && classObj.teachers.indexOf(index) >= 0),					
 					addButton = $(this).find(".addToClassBtn"),
 					removeButton = $(this).find(".removeFromClassBtn"),
-					defaultButton = $(this).find(".defaultClassBtn");
+					defaultButton = $(this).find(".defaultClassBtn"),
+					currentClassField = $(this).find(".isCurrentClass");
 
 				inClassField.html( (inClass?"yes":"no") );
 
@@ -95,10 +98,16 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					inClassField = $(this).find(".inClass"),
 					inClass = (classObj.students && classObj.students.indexOf(index) >= 0),
 					addButton = $(this).find(".addToClassBtn"),
-					removeButton = $(this).find(".removeFromClassBtn");
-					defaultButton = $(this).find(".defaultClassBtn");
+					removeButton = $(this).find(".removeFromClassBtn"),
+					defaultButton = $(this).find(".defaultClassBtn"),
+					currentClassField = $(this).find(".isCurrentClass");
 
+				var currentStudent = _.where(students, {index:index})[0];
+				var studentClass = _.where(classes, {index:currentStudent.currentClass})[0];
+
+				currentClassField.html(studentClass.name);
 				inClassField.html( (inClass?"yes":"no") );
+
 				if (inClass) {
 					addButton.hide();
 					defaultButton.show();
@@ -176,7 +185,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			};
 
 			$("#editModal").modal('hide');
-
+			
 			Manager.Controller.layout.trigger("managerView:editTeacher", dataObj);
 		}
 	});
@@ -187,7 +196,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #createStudent": "handleStudentAdd",
 			"click #deleteStudent": "handleStudentDelete",
 			"click #editStudent": 	"handleStudentModal",
-			"click #submitEditBtn": "handleSubmitStudentEdit"
+			"click #submitEditBtn": "handleSubmitStudentEdit",
 		},
 
 		handleStudentAdd:function(e) {
@@ -200,7 +209,11 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					classIndex: Number($('#classIdx').val())
 			};
 
-			Manager.Controller.layout.trigger("managerView:addStudent", dataObj);
+			this.addStudent(dataObj);
+		},
+
+		addStudent:function(obj) {
+			Manager.Controller.layout.trigger("managerView:addStudent", obj);
 		},
 
 		handleStudentDelete:function(e) {
@@ -223,14 +236,12 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		handleSubmitStudentEdit:function(e){
 			var dataObj = {
 				studentIndex: Number($('#studentIdx_edit').val()),
-				classIndex: Number($('#classIdx_edit').val()),
-				mb: $('#myersBriggsIdx_edit').val()
+				classIndex: Number($('#classIdx_edit').val())
 			};
 
 			$("#editModal").modal('hide');
 			Manager.Controller.layout.trigger("managerView:editStudent", dataObj);
 		}
-
 	});
 
 	Manager.EditGuestsView = Marionette.ItemView.extend({

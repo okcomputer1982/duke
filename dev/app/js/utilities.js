@@ -81,14 +81,13 @@ DukeApp.utils.getCurrentAccount = function() {
 		switch(DukeApp.utils.getCurrentAdminType()) {
 			case("teacher"):
 				return(DukeApp.utils.getCurrentTeacherAccount());
-				break;
+				
 			case("admin"):
 				return(DukeApp.utils.getCurrentAdminAccount());
-				break;
-
+				
 			case("student"):
 				return(DukeApp.utils.getCurrentStudentAccount());
-				break;
+				
 		}
 	}
 };
@@ -246,7 +245,11 @@ DukeApp.utils.findNextIndex = function(tableName) {
 	query.descending("index");
 	query.first({
 		success: function(result){
-			def.resolve(result.get('index') + 1);
+			if (result === undefined) {
+				def.resolve(0);	
+			} else {
+				def.resolve(result.get('index') + 1);
+			}
 		}
 	});
 

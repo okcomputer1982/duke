@@ -8,7 +8,8 @@
 
   border: 2px solid rgba(0,0,0,1);
   float: left;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
   text-align: center;
   width:100%;
 
@@ -41,7 +42,6 @@
     }
   }
 
-
   .inner-wrap {
     height:100%;
     padding-left:30px;
@@ -60,6 +60,7 @@
     .inputtext {
       font-size: 10pt;
     }
+
     .textblock {
       background: white;
       padding: 10px;
@@ -67,8 +68,21 @@
       -moz-border-radius: 5px;
       border-radius: 5px;
       border-bottom:solid 2px #87ac3c;
+      margin-bottom:20px;
     }
     
+    .journal h2.subheading {
+      padding-top: 0px;
+    }
+
+    .quizItem {
+      padding-bottom: 25px;
+    }
+
+    .sideImage {
+      max-width: 100%;
+    }
+
     ul.textblock {
       padding-left: 30px;
     }
@@ -125,10 +139,6 @@
       padding-bottom:10px;
     }
 
-    h2:not(:first-child) {
-      padding-top:20px;
-    }
-    
     p {
       font-family: 'Open Sans',sans-serif;
       font-size: 10pt;

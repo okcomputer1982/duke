@@ -13,7 +13,18 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		
 		events:{
 			'click #user_login':"clickLogin",
-			'click #guest_login':"clickGuest"
+			'click #guest_login':"clickGuest",
+			'click #passReset': "handlePasswordReset"
+		},
+		onShow:function() {
+			var that = this;
+
+			$(document).keypress(function(event) {
+			    var keycode = (event.keyCode ? event.keyCode : event.which);
+			    if (keycode == '13') {
+					that.clickLogin();    	
+			    }
+			});
 		},
 
 		clickLogin:function(e) {
@@ -32,6 +43,11 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 
 		showAlert:function(e) {
 			$("#login_alert").fadeIn(1000);
+		},
+
+		handlePasswordReset:function(e) {
+			e.preventDefault();
+			
 		}
 	});
 });

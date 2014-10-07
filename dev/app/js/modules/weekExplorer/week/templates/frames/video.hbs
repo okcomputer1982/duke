@@ -1,5 +1,5 @@
 <div class="headingContainer">
-	<h1 class="title">video</h1>
+	<h1 class="title">{{{name}}}</h1>
 	<h1 class="subtitle">{{{content.heading}}}</h1>
 </div>
 
@@ -9,7 +9,16 @@
 		<div class="col-md-3 textblock">
 			<h2 class="subheading">Summary:</h2>
 			{{{content.synopsis}}}
+			
+			{{#if content.instruction}}
+		  	<h2 class="subheading">Instructions:</h2>
+		  	<div class="textblock">
+		  		{{{content.instruction}}}
+		  	</div>
+		  	{{/if}}
 		</div>
+
+
 		<div class="col-md-9">
 			<video id="video" class="attributeTarget eventTarget" controls>
 				<source src="videos/{{content.video}}.webm" type="video/webm">

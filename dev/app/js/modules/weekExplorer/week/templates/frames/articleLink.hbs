@@ -4,21 +4,33 @@
 </div>
 
 <div class="inner-wrap">
-	{{#if content.instructions}}
-	<h2 class="subheading">Instructions:</h2>
-	<div class="textblock">
-		{{{content.instructions}}}
-	</div>
-	{{/if}}
-	
-	{{#if content.instructionList}}
-	<h2 class="subheading">Instructions:</h2>
-	<ol class="objectives">
-      {{#each content.instructionList}}
-        <li>{{{this}}}</li>
-      {{/each}}
-    </ol>
-    {{/if}}
+{{#if content.image}}
+  <div class="row">
+    <div class="col-md-4">
+      <img class="sideImage" src="../images/frame_images/{{content.image}}" alt="">
+    </div>
+    <div class="col-md-8">
+{{/if}}
 
-	<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.link}}}">View Article</a
+		{{#if content.instructions}}
+		<h2 class="subheading">Instructions:</h2>
+		<div class="textblock">
+			{{{content.instructions}}}
+		</div>
+		{{/if}}
+		
+		{{#if content.instructionList}}
+		<h2 class="subheading">Instructions:</h2>
+		<ol class="objectives">
+	      {{#each content.instructionList}}
+	        <li>{{{this}}}</li>
+	      {{/each}}
+	    </ol>
+	    {{/if}}
+
+		<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.link}}}">View Article</a>
+{{#if image}}
+    </div>
+  </div>
+{{/if}}	
 </div>

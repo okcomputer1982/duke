@@ -3,21 +3,32 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		init:function() {
 			var that = this;
 
-			//get student Account
-			var studentObjectPromise = DukeApp.request("user:studentObject:entities"),
-				journalObjectPromise = DukeApp.request("journals:entities", DukeApp.utils.getCurrentUser().id),
-				assignmentObjectPromise = DukeApp.request("assignments:entities", DukeApp.utils.getCurrentUser().id),
-				quizObjectPromise = DukeApp.request("quizes:entities", DukeApp.utils.getCurrentUser().id);
+			DukeApp.utils.getCurrentAccount().done(function(obj){
+				var currentClass;
 
-			//load all student related data objects for display
-			$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise).done(function(studentObject, journals, assignments, quizes) {
-				studentObject.journals = journals;
-				studentObject.assignments = assignments;
-				studentObject.quizes = quizes;
+				if (DukeApp.utils.isGuest()) {
+					currentClass = obj.get("class");
+				} else {
+					currentClass = obj.get('currentClass');
+				}
 
-				that.loadDisplay(studentObject);
+				Student.Controller.currentClass = currentClass;
+
+				//get student Account
+				var studentObjectPromise = DukeApp.request("user:studentObject:entities"),
+					journalObjectPromise = DukeApp.request("journals:entities", DukeApp.utils.getCurrentUser().id),
+					assignmentObjectPromise = DukeApp.request("assignments:entities", DukeApp.utils.getCurrentUser().id),
+					quizObjectPromise = DukeApp.request("quizes:entities", DukeApp.utils.getCurrentUser().id);
+
+				//load all student related data objects for display
+				$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise).done(function(studentObject, journals, assignments, quizes) {
+					studentObject.journals = journals;
+					studentObject.assignments = assignments;
+					studentObject.quizes = quizes;
+
+					that.loadDisplay(studentObject);
+				});
 			});
-
 		},
 
 		loadDisplay:function(studentObject) {
@@ -34,8 +45,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				{index:1, type:"progress", 		name:"progress", 		glyph:"chart2", userData: studentObject},
 				{index:2, type:"badge", 		name:"badges", 			glyph:"badge2", userData: studentObject},
 				{index:3, type:"attribute", 	name:"attributes", 		glyph:"badge2", userData: studentObject},
-				{index:4, type:"grades", 		name:"grades", 			glyph:"file", userData: studentObject},
-				{index:5, type:"journals", 		name:"journals", 		glyph:"wallet", userData: studentObject}
+				{index:4, type:"journals", 		name:"journals", 		glyph:"wallet", userData: studentObject}
 			]);
 
 			var layout = new Student.LayoutView();
@@ -239,6 +249,11 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 						contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
 						Student.Controller.displayGrades();
 						break;
+					case("progress"):
+						Student.Controller.currentGradeWeekIndex = weeks[index];
+						contentView.setWeekIndex(Student.Controller.currentGradeWeekIndex, type);
+						Student.Controller.displayProgress();
+						break;
 			}
 		},
 
@@ -343,6 +358,10 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	        	qListView.render();
 	        	$("#quizes").html(qListView.el);
 	      }
+		},
+
+		displayProgress:function() {
+			console.log("display Progress");
 		},
 
 		toggleHelp:function() {

@@ -118,26 +118,29 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 					results.map(function(obj, idx) {
 						var p = $.Deferred();
-						obj.get('user').fetch({
-							success:function(user) {
-								tObjectList.push({
-									"classes": 		obj.get('classes'),
-									"first": 		user.get("firstName"),
-									"last": 		user.get("lastName"),
-									"username": 	user.get("username"),
-									"email": 		user.get("email"),
-									"currentClass": obj.get('currentClass'),
-									"index": 		obj.get("index"),
-									"id": 			obj.id,
-									"userId": 		user.id,
-									"profileImage": user.get("profileImage")
-								});
 
-								p.resolve();
-							}
-						});
+						if (obj.get('user')) {
+							obj.get('user').fetch({
+								success:function(user) {
+									tObjectList.push({
+										"classes": 		obj.get('classes'),
+										"first": 		user.get("firstName"),
+										"last": 		user.get("lastName"),
+										"username": 	user.get("username"),
+										"email": 		user.get("email"),
+										"currentClass": obj.get('currentClass'),
+										"index": 		obj.get("index"),
+										"id": 			obj.id,
+										"userId": 		user.id,
+										"profileImage": user.get("profileImage")
+									});
 
-						tpromises.push(p);
+									p.resolve();
+								}
+							});
+
+							tpromises.push(p);
+						}
 					});
 					
 					$.when.apply($, tpromises).done(function(){
@@ -163,29 +166,32 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 					results.map(function(obj, idx) {
 						var p = $.Deferred();
-						obj.get('user').fetch({
-							success:function(user) {
-								sObjectList.push({
-									"classes": 		obj.get('classes'),
-									"first": 		user.get("firstName"),
-									"last": 		user.get("lastName"),
-									"username": 	user.get("username"),
-									"email": 		user.get("email"),
-									"index": 		obj.get("index"),
-									"mb": 			obj.get("myersBriggs"),
-									"id": 			obj.id,
-									"userId": 		user.id,
-									"profileImage": user.get("profileImage"),
-									"currentClass": obj.get('currentClass'),
-									"currentWeek": 	obj.get('currentWeek'),
-									"currentFrame": obj.get('currentFrame')
-								});
+						
+						if (obj.get('user')) {
+							obj.get('user').fetch({
+								success:function(user) {
+									sObjectList.push({
+										"classes": 		obj.get('classes'),
+										"first": 		user.get("firstName"),
+										"last": 		user.get("lastName"),
+										"username": 	user.get("username"),
+										"email": 		user.get("email"),
+										"index": 		obj.get("index"),
+										"mb": 			obj.get("myersBriggs"),
+										"id": 			obj.id,
+										"userId": 		user.id,
+										"profileImage": user.get("profileImage"),
+										"currentClass": obj.get('currentClass'),
+										"currentWeek": 	obj.get('currentWeek'),
+										"currentFrame": obj.get('currentFrame')
+									});
 
-								p.resolve();
-							}
-						});
+									p.resolve();
+								}
+							});
 
-						spromises.push(p);
+							spromises.push(p);
+						}
 					});
 					
 					$.when.apply($, spromises).done(function(){
@@ -211,25 +217,28 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 					results.map(function(obj, idx) {
 						var p = $.Deferred();
-						obj.get('user').fetch({
-							success:function(user) {
-								gObjectList.push({
-									"class": 		obj.get('class'),
-									"username": 	user.get("username"),
-									"first": 		user.get("firstName"),
-									"last": 		user.get("lastName"),
-									"email": 		user.get("email"),
-									"index": 		obj.get("index"),
-									"id": 			obj.id,
-									"userId": 		user.id,
-									"profileImage": user.get("profileImage")
-								});
+						if (obj.get('user')) {
+							obj.get('user').fetch({
+								success:function(user) {
+									gObjectList.push({
+										"class": 		obj.get('class'),
+										"username": 	user.get("username"),
+										"first": 		user.get("firstName"),
+										"last": 		user.get("lastName"),
+										"email": 		user.get("email"),
+										"password": 	user.get("password"),
+										"index": 		obj.get("index"),
+										"id": 			obj.id,
+										"userId": 		user.id,
+										"profileImage": user.get("profileImage")
+									});
 
-								p.resolve();
-							}
-						});
+									p.resolve();
+								}
+							});
 
-						gpromises.push(p);
+							gpromises.push(p);
+						}
 					});
 					
 					$.when.apply($, gpromises).done(function(){
@@ -246,11 +255,12 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var user = DukeApp.utils.getCurrentUser();
 
 			var userModel = new Entities.UserModel({
-				"username":user.get('username'),
-				"first": user.get('firstName'),
-				"last": user.get('lastName'),
-				"email":user.get('email'),
-				"type":user.get('type')
+				"username": user.get('username'),
+				"first": 	user.get('firstName'),
+				"last": 	user.get('lastName'),
+				"email": 	user.get('email'),
+				"password": user.get('password'),
+				"type": 	user.get('type')
 			});
 			
 			return(userModel);
@@ -302,6 +312,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							last: 			result.get('user').get('lastName'),
 							profileImage: 	result.get('user').get('profileImage'),
 							username: 		result.get('user').get('username'),
+							password: 		result.get('user').get('password'),
 							email: 			result.get('user').get('email')
 						};
 						def.resolve(studentModel);
@@ -383,7 +394,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 								cQuery.find({
 									success:function(classes) {
 										_.each(classes, function(cObj, idx) {
-											console.log(cObj);
 											cObj.remove('teachers', obj.index);
 											cObj.save();
 										});
@@ -489,7 +499,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 								cQuery.find({
 									success:function(classes) {
 										_.each(classes, function(cObj, idx) {
-											console.log(cObj);
 											cObj.remove('students', obj.index);
 											cObj.save();
 										});
@@ -514,7 +523,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			sQuery.first({
 				success:function(student) {
 					var save = false;
-					console.log(student);
 					if (obj.classIndex !== -99) {
 						student.set('currentClass', obj.classIndex);
 						save  = true;
@@ -550,8 +558,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				user.set("username", obj.username);
 				user.set("firstName", "guest");
 				user.set("lastName", String(idx));
-				
-				user.set("password", obj.password);
 				user.set("email", obj.email);
 				user.set("profileImage", 0);
 				user.set("type", "guest");

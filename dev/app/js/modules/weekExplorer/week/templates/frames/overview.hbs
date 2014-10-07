@@ -4,29 +4,31 @@
 </div> 
 
 <div class="inner-wrap attributeTarget">
-  
-  <h2 class="heading">Overview:</h2>
-  {{#if content.overview}}
-    <div class="textblock">
-      {{{content.overview}}}
+{{#if content.image}}
+  <div class="row">
+    <div class="col-md-4">
+      <img class="sideImage" src="../images/frame_images/{{content.image}}" alt="">
     </div>
-  {{/if}}
+    <div class="col-md-8">
+{{/if}}
+      <h2 class="heading">Overview:</h2>
+      {{#if content.overview}}
+        <div class="textblock">
+          {{{content.overview}}}
+        </div>
+      {{/if}}
 
-  <h2 class="heading">You Will:</h2>
-    <div class="textblock">
-      <ul class="objectives">
-        {{#each content.objectives}}
-          <li>{{{this}}}</li>
-        {{/each}}
-      </ul>
+      <h2 class="heading">You Will:</h2>
+        <div class="textblock">
+          <ul class="objectives">
+            {{#each content.objectives}}
+              <li>{{{this}}}</li>
+            {{/each}}
+          </ul>
 
+        </div>
+{{#if image}}
     </div>
-  {{#if content.attributes}}
-  <h2 class="heading">Attributes Available:</h2>
-  <p class="textblock">
-    {{#each content.attributes}}
-      {{{this}}}
-    {{/each}}
-  </p>
-  {{/if}}
+  </div>
+{{/if}}
 </div>

@@ -14,7 +14,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				_.map(results, function(obj, id) {
 					quizes.push({
 						"frameIndex":obj.get('frameIndex'),
-						"response":obj.get('response')
+						"response":obj.get('response'),
+						"classIndex":obj.get('classIndex')
 					});
 				});
 
@@ -30,7 +31,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				query = new Parse.Query(QuizTable);
 
 			query.equalTo("frameIndex", quizObj.frameIndex);
-			query.equalTo("userID", quizObj.userID);
+			query.equalTo("classIndex", quizObj.classIndex);
+			query.equalTo("userID", 	quizObj.userID);
 
 			query.find(function(results){
 				var quiz;
@@ -63,8 +65,4 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	DukeApp.reqres.setHandler("save:quizes:entities", function(quizObj) {
 		return API.setQuiz(quizObj);
 	});
-
-	// DukeApp.reqres.setHandler("save:assignmentGrade:entities", function(assignmentObj) {
-	// 	return API.setAssignmentGrade(assignmentObj);
-	// });
 });

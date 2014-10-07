@@ -12,9 +12,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 					currentClass = obj.get('currentClass');
 				}
 
-				
+				Week.Controller.currentClass = currentClass;
 
-				//get data
 				var classPromise = DukeApp.request("class:entities", currentClass),
 					weeksPromise = DukeApp.request("week:entities");
 
@@ -41,6 +40,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				}),
 				content = new Week.ContentListView(),
 				sidebar = new Week.SidebarListView();
+
 
 			//show views
 			DukeApp.content.show(weekView);
@@ -138,7 +138,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
  				var cframe = Week.Controller.frames.models[obj.linkId];
 
  				if(cframe.get('template').attrTarget === "visit") {
- 					Week.Controller.saveAttributeEvent({id:Week.Controller.currentFrame});
+ 					Week.Controller.saveAttributeEvent({id:Week.Controller.currentFrame, status:"added"});
  				}
 			}
   		},
@@ -162,7 +162,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			var saveJournalPromise = DukeApp.request("save:journals:entities", {
   				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
-  				text:options.text
+  				text:options.text,
+  				classIndex:Week.Controller.currentClass
   			}).done(function() {
   				alert("Journal Saved.");
   			});
@@ -179,7 +180,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			var saveAssignmentPromise = DukeApp.request("save:assignments:entities", {
   				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
-  				text:options.text
+  				text:options.text,
+  				classIndex:Week.Controller.currentClass
   			}).done(function() {
   				alert("Assignment Saved.");
   			});
@@ -195,7 +197,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			var saveQuizPromise = DukeApp.request("save:quizes:entities", {
   				frameIndex:frameIndex,
   				userID:DukeApp.utils.getCurrentUserID(),
-  				response:options.response
+  				response:options.response,
+  				classIndex:Week.Controller.currentClass
   			}).done(function() {
   				alert("Quiz Submitted.");
   			});
@@ -209,13 +212,15 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			var frameID = Week.Controller.getFrameIndex(options.id);
 
   			DukeApp.request("frameById:entities", frameID).done(function(frame) {  			
+
   				var eventLogData = {
   					studentId:DukeApp.utils.getCurrentUserID(),
   					eventType:frame.type,
-  					contentIndex:frameIndex,
+  					contentIndex:frameID,
   					contentStatus:options.status,
   					contentData:options.data,
-  					allowRepeat:options.allowRepeat
+  					allowRepeat:options.allowRepeat,
+  					classIndex:Week.Controller.currentClass
   				};
 
   				DukeApp.request("eventLog:entities", eventLogData);
@@ -233,13 +238,18 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   				var eventLogData = {
   					studentId:DukeApp.utils.getCurrentUserID(),
   					eventType:"attribute",
-  					contentIndex:frameIndex,
+  					contentIndex:frameID,
   					contentStatus:"added",
   					contentData:{attributes:frame.attributes},
-  					allowRepeat:false
+  					allowRepeat:false,
+  					classIndex:Week.Controller.currentClass
   				};
 
+  				console.log("********");
+  				
   				DukeApp.request("eventLog:entities", eventLogData).done(function(resp) {
+  					console.log(resp);
+
   					if (resp && !resp.hasOwnProperty("warning")) {
   						var attrs = frame.attributes;
   						DukeApp.request("user:saveAttributes:entities", attrs);

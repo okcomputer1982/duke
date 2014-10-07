@@ -251,6 +251,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    		case("grades"):
 	    			$(".grades .week_number").text(week + 1);
 	    			break;
+	    		case("progress"):
+	    			$(".progress .week_number").text(week + 1);
+	    			break;
 	    	} 
 	    	
 	    },
@@ -277,7 +280,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	var direction = e.currentTarget.getAttribute("data-direction");
 	    	var t = $(e.currentTarget).parent().parent().parent().prev().text().toLowerCase();
 
-	    	
+
 	    	this.trigger("studentProfile:incrementWeek", direction, t);
 	    },
 

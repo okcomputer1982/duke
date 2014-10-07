@@ -4,15 +4,26 @@
 </div>
 
 <div class="inner-wrap">
-	<h2 class="heading">Take Aways:</h2>	
-	<div class="textblock">
-    	{{{content.synopsis}}}
+{{#if content.image}}
+  <div class="row">
+    <div class="col-md-4">
+      <img class="sideImage" src="../images/frame_images/{{content.image}}" alt="">
     </div>
+    <div class="col-md-8">
+{{/if}}
+    	<h2 class="heading">Take Aways:</h2>	
+    	<div class="textblock">
+        	{{{content.synopsis}}}
+        </div>
 
-    <h2 class="heading">In this lesson, you have learned:</h2>
-    <ul class="textblock">
-    {{#each content.takeaways}}
-    	<li>{{{this}}}</li>
-    {{/each}}
-    </ul>
+        <h2 class="heading">In this lesson, you have learned:</h2>
+        <ul class="textblock">
+        {{#each content.takeaways}}
+        	<li>{{{this}}}</li>
+        {{/each}}
+        </ul>
+{{#if image}}
+    </div>
+  </div>
+{{/if}}
 </div>

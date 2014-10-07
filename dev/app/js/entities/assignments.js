@@ -17,7 +17,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						"text":obj.get('text'),
 						"isGraded":obj.get('isGraded'),
 						"grade":obj.get('grade'),
-						"feedback":obj.get('feedback')
+						"feedback":obj.get('feedback'),
+						"classIndex":obj.get('classIndex')
 					});
 				});
 
@@ -35,7 +36,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			assignmentObj.isGraded = false;
 			
 			query.equalTo("frameIndex", assignmentObj.frameIndex);
-			query.equalTo("userID", assignmentObj.userID);
+			query.equalTo("userID", 	assignmentObj.userID);
+			query.equalTo("classIndex", assignmentObj.classIndex);
 
 			query.find(function(results){
 				var assignment;
@@ -68,8 +70,4 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	DukeApp.reqres.setHandler("save:assignments:entities", function(assignmentObj) {
 		return API.setAssignment(assignmentObj);
 	});
-
-	// DukeApp.reqres.setHandler("save:assignmentGrade:entities", function(assignmentObj) {
-	// 	return API.setAssignmentGrade(assignmentObj);
-	// });
 });

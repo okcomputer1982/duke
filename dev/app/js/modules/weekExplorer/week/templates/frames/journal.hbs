@@ -1,39 +1,34 @@
 <div class="headingContainer">
-	<!-- <h1 class="title">Journal</h1>
-	<h1 class="subtitle">{{{content.heading}}}</h1> -->
 	<h1 class="title"> </h1>
 	<h1 class="subtitle">Journal</h1>
 </div>
 
 <div class="inner-wrap">
 	
-	<div class="row">
-		<div class="col-md-3 textblock">
-			<h2 class="subheading">
-				<h2 class="subheading">Using Journals:</h2>
-				<p>
-				As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. Your journal will be graded on a scale of 0-5. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters.
-				</p>
-			</h2>
+	<div class="col-md-3 textblock" style="padding: 2px">
+		<h2 class="subheading">Using Journals:</h2>
+		<p>
+		As a part of your learning experience, you are being asked to keep a learning journal. Share your opinions, reflect on what you have learned and answer the questions below. We will be looking for completeness, understanding of topic, self reflection and depth of thought when assessing your journal. It is expected that your journal entries are grammatically correct and contain no spelling errors. Your entries should be succinct and should be less than 4000 characters.
+		</p>
+	
 
-			{{#if content.instructions}}
-				<h2 class="subheading">Instructions:</h2>
-				{{{content.instructions}}}
-			{{/if}}
+		{{#if content.instructions}}
+			<h2 class="subheading">Instructions:</h2>
+			{{{content.instructions}}}
+		{{/if}}
 
-			{{#if content.instructionList}}
-			<h2 class="subheading">Address the following:</h2>
-			<ul class="objectives">
-		  	{{#each content.instructionList}}
-		    	<li>{{{this}}}</li>
-		  	{{/each}}
-			</ul>
-			{{/if}}		
-		</div>
-		<div class="col-md-9">
-			<textarea name="" id="" cols="20" rows="13"></textarea>
-			<a type="submit" class="submitbtn btn btn-large btn-primary attributeTarget eventTarget">Submit</a>
-		</div>
+		{{#if content.instructionList}}
+		<h2 class="subheading">Address the following:</h2>
+		<ul class="objectives">
+	  	{{#each content.instructionList}}
+	    	<li>{{{this}}}</li>
+	  	{{/each}}
+		</ul>
+		{{/if}}		
+	</div>
+	<div class="col-md-9" style="padding-top:12px;">
+		<textarea name="" id="" cols="20" rows="13" style="margin-top: 12px;"></textarea>
+		<a type="submit" class="submitbtn btn btn-large btn-primary attributeTarget eventTarget">Submit</a>
 	</div>
 
 </div>

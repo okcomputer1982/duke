@@ -4,30 +4,41 @@
 </div>
 
 <div class="inner-wrap attributeTarget">
+{{#if content.image}}
+  <div class="row">
+    <div class="col-md-4">
+      <img class="sideImage" src="../images/frame_images/{{content.image}}" alt="">
+    </div>
+    <div class="col-md-8">
+{{/if}}
+		{{#if content.synopsis}}
+		<h2 class="heading">Summary:</h2>
+		<div class="textblock">
+			{{{content.synopsis}}}
+		</div>
+		{{/if}}
+		
+		{{#if content.instructions}}
+		<h2 class="heading">Instructions:</h2>
+		<div class="textblock">
+			{{{content.instructions}}}
+		</div>
+		{{/if}}
 
-	{{#if content.synopsis}}
-	<h2 class="heading">Summary:</h2>
-	<div class="textblock">
-		{{{content.synopsis}}}
-	</div>
-	{{/if}}
-	
-	{{#if content.instructions}}
-	<h2 class="heading">Instructions:</h2>
-	<div class="textblock">
-		{{{content.instructions}}}
-	</div>
-	{{/if}}
+		{{#if content.singleLinkHeading}}
+			<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.singleLinkhref}}}">{{{content.singleLinkHeading}}}</a>
+		{{/if}}
 
-	{{#if content.singleLinkHeading}}
-		<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.singleLinkhref}}}">{{{content.singleLinkHeading}}}</a>
-	{{/if}}
+		{{#if content.linkList}}
+		<ul class="linklist">
+			{{#each content.linkList}}
+			<li><a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this.link}}}">{{{this.name}}}</a></li>
+			{{/each}}
+		</ul>
+		{{/if}}
 
-	{{#if content.linkList}}
-	<ul class="linklist">
-		{{#each content.linkList}}
-		<li><a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this.link}}}">{{{this.name}}}</a></li>
-		{{/each}}
-	</ul>
-	{{/if}}
+{{#if image}}
+    </div>
+  </div>
+{{/if}}	
 </div>

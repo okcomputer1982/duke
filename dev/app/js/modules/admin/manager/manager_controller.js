@@ -14,6 +14,31 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 				guestPromise = DukeApp.request("all:user:guestModel:entities");		
 				
 			$.when(classesPromise, classTemplatePromise, teacherPromise, studentPromise, guestPromise).done(function(cResults, ctResults, tResults, sResults, gResults) {
+				_.each(tResults, function(obj, idx){
+					var classNames = [];
+					_.each(obj.classes, function(idx){
+						classNames.push(_.where(cResults,{index:idx})[0].name);
+					});
+					
+					tResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
+					tResults[idx].classNames = classNames;
+				});
+
+				_.each(sResults, function(obj,idx){
+					var classNames = [];
+					_.each(obj.classes, function(idx){
+						classNames.push(_.where(cResults,{index:idx})[0].name);
+					});
+
+					sResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
+					sResults[idx].classNames = classNames;
+				});
+
+				_.each(gResults, function(obj,idx){
+					gResults[idx].className = _.where(cResults, {index:obj.class})[0].name;
+				});
+
+
 				Manager.Controller.data = {}; 
 				Manager.Controller.data.classes = cResults;
 				Manager.Controller.data.classTemplates = ctResults;
@@ -45,6 +70,9 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			Manager.Controller.layout.on("managerView:addStudent", this.handleCreateStudent);
 			Manager.Controller.layout.on("managerView:deleteStudent", this.handleDeleteStudent);
 			Manager.Controller.layout.on("managerView:editStudent", this.handleEditStudent);
+
+			Manager.Controller.layout.on("managerView:resetPassword", this.handleResetPassword);
+			
 
 			Manager.Controller.layout.on("managerView:addGuest", this.handleCreateGuest);
 			Manager.Controller.layout.on("managerView:deleteGuest", this.handleDeleteGuest);
@@ -115,7 +143,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		handleChangeClass:function(obj) {
 			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
 				Manager.Controller.currentClass = classObj;
-				Manager.Controller.content.updateClassData(classObj);
+				Manager.Controller.content.updateClassData(classObj, Manager.Controller.data.teachers, Manager.Controller.data.students, Manager.Controller.data.classes);
 			});
 		},
 
@@ -189,6 +217,8 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 		//student methods
 		handleCreateStudent:function(obj) {
+			var that = this;
+
 			if (!obj.firstname) {
 				Manager.Controller.layout.handleMessage({msg:"Please enter a first name."});
 			} else if (!obj.lastname) {
@@ -207,7 +237,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					if (success) {
 						Manager.Controller.layout.handleMessage({msg:"Created Student"});
 						location.reload();
-						this.handleMenuClick("student");	
+						that.handleMenuClick("students");
 					} else {
 						Manager.Controller.layout.handleMessage({msg:e.message});	
 					}
@@ -228,13 +258,14 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		},
 
 		handleEditStudent:function(obj) {
+			var that = this;
 			DukeApp.request("edit:user:student:entities", obj).done(function(){
 				Manager.Controller.layout.handleMessage({msg:"Edited Student " + obj.studentIndex});
 				location.reload();
-				this.handleMenuClick("students");
+				Manager.Controller.handleMenuClick("students");
 			});
 		},
-
+		
 		//student methods
 		handleCreateGuest:function(obj) {
 			if (!obj.email) {

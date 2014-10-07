@@ -29,13 +29,15 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			if (!data.allowRepeat) {
 				var query = new Parse.Query(EventLogTable);
-				query.equalTo("contentId", 		data.contentId);
+
+				query.equalTo("contentIndex", 	data.contentIndex);
 				query.equalTo("contentStatus", 	data.contentStatus);
 				query.equalTo("studentId", 		data.studentId);
 				query.equalTo("eventType", 		data.eventType);
+				query.equalTo("classIndex", 	data.classIndex);
 
 				query.find(function(results) {
-					
+
 					if (results.length > 0) {
 						def.resolve({success:false, warning:"noRepeat"});
 						return;
@@ -46,6 +48,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			} else {
 				saveEventLog(data, def);
 			}
+
 			return def.promise();
 		}
 	};
