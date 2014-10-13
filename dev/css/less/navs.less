@@ -38,7 +38,7 @@
   li {
     display: inline;
 
-    a {
+    a, span {
       color: black;
       font-weight: bold;
       margin-right:5px;
@@ -49,12 +49,22 @@
       position:relative;
       top:5px;
     }
+  
+    span {
+      cursor:default;
+    }
 
     &.active, &:hover {
       
       a {
         background: white;
         color: black;
+      }
+    }
+
+    &.inactive {
+      span {
+        color:#C4C2C2;
       }
     }
   }

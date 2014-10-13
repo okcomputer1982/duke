@@ -30,7 +30,101 @@ DukeApp.utils.Attributes = [
 ];
 
 
+DukeApp.utils.AttributeTotals = {
+	0:{
+		week:{
+			0:4,
+			1:0,
+			2:10,
+			3:3,
+			"total":17
+		}
+	},
+	1:{
+		week:{
+			0:6,
+			1:5,
+			2:8,
+			3:10,
+			"total":27
+		}
+	},
+	2:{
+		week:{
+			0:2,
+			1:19,
+			2:9,
+			3:4,
+			"total":7
+		}
+	},
+	3:{
+		week:{
+			0:10,
+			1:27,
+			2:17,
+			3:17,
+			"total":71
+		}
+	},
+	4:{
+		week:{
+			0:4,
+			1:0,
+			2:5,
+			3:3,
+			"total":13
+		}
+	},
+	5:{
+		week:{
+			0:0,
+			1:22,
+			2:0,
+			3:0,
+			"total":22
+		}
+	},
+	6:{
+		week:{
+			0:12,
+			1:3,
+			2:19,
+			3:11,
+			"total":45
+		}
+	},
+	7:{
+		week:{
+			0:7,
+			1:26,
+			2:17,
+			3:15,
+			"total":65
+		}
+	},
+	8:{
+		week:{
+			0:5,
+			1:23,
+			2:13,
+			3:5,
+			"total":46
+		}
+	},
+	9:{
+		week:{
+			0:6,
+			1:25,
+			2:11,
+			3:4,
+			"total":46
+		}
+	}
+};
 
+
+DukeApp.utils.AttributeWeekTotals = [56,148,109,72];
 
 DukeApp.utils.initUserSettings = function() {
 	localStorage.setItem("isGuest", "false");
@@ -216,6 +310,20 @@ DukeApp.utils.loginAsGuest = function(obj) {
 	return(def);
 };
 
+DukeApp.utils.passwordReset = function(email) {
+	var def = $.Deferred();
+
+	Parse.User.requestPasswordReset(email, {
+  		success: function() {
+    		def.resolve({status:true});
+  		},
+  		error: function(error) {
+    		def.resolve({status:true, e:e});
+  		}
+	});
+
+	return(def.promise());
+};
 
 DukeApp.utils.logout = function() {
 	if (!DukeApp.utils.isGuest()) {
@@ -241,7 +349,7 @@ DukeApp.utils.findNextIndex = function(tableName) {
 	var Table = Parse.Object.extend(tableName),
 		query = new Parse.Query(Table),
 		def = $.Deferred();
-
+		
 	query.descending("index");
 	query.first({
 		success: function(result){

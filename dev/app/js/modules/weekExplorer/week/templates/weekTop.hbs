@@ -1,9 +1,16 @@
 <div class="topnav full">
     <ul class="horiz-nav" role="navigation" aria-label="week links">
       {{#each template.weeks}}
-        <li class="week-link-listitem" data-weekId="{{{getWeekLabel}}}">
-          <a class="week-link" data-week="{{{this}}}" href="#">{{{getWeekLabel}}}</a>
-        </li>
+    	{{#isActiveWeek this}}
+    		<li class="week-link-listitem" data-weekId="{{{getWeekLabel}}}">
+      			<a class="week-link" data-week="{{{this.index}}}" href="#">{{{getWeekLabel}}}</a>
+      		</li>
+    	{{else}}
+    		<li class="week-link-listitem inactive">
+      			<span class="week-link" data-week="{{{this.index}}}">{{{getWeekLabel}}}</span>
+      	</li>
+   		{{/isActiveWeek}}
+        
       {{/each}}
     </ul>
 

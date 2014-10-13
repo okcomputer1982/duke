@@ -35,7 +35,34 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 	});
 
 	Teacher.EditScheduleView = Marionette.Layout.extend({
-		template:templates['admin/teacher/editSchedule']
+		template:templates['admin/teacher/editSchedule'],
+		regions: {
+			classContainer: "#class"
+		},
+		events:{
+			'change #classCombo': "handleClassCombo"
+		},
+
+		handleClassCombo:function(e){
+			var classVal = Number($(e.currentTarget).val());
+			Teacher.Controller.layout.trigger("teacherView:changeScheduleCombo", classVal);
+		}
+	});
+
+	Teacher.EditScheduleClassView = Marionette.ItemView.extend({
+		template:templates['admin/teacher/editScheduleClass'],
+		events:{
+			"click .scheduleCheckbox": "handleScheduleClick"
+		},
+
+		handleScheduleClick:function(e) {
+			var target = $(e.currentTarget),
+				classIdx = Number($("#classCombo").val()),
+				index = Number(target.attr("data-index")),
+				status = (target.is(":checked") === true);
+
+			Teacher.Controller.layout.trigger("teacherView:changeScheduleCheckbox", {classIdx:classIdx, dayIdx:index, status:status});
+		}
 	});
 
 	Teacher.GradeJournalView = Marionette.ItemView.extend({

@@ -1,14 +1,18 @@
 DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, _) {
 	var API = {
 		
-		getQuizes: function(userID){
+		getQuizes: function(obj){
 			var def = $.Deferred();
 
 			var QuizTable = Parse.Object.extend("Quizes"),
 				query = new Parse.Query(QuizTable);
+							
+			query.equalTo("userID", 	obj.id);
+			query.equalTo("classIndex", obj.classId);
 
-			query.equalTo("userID", userID);
-
+			if (obj.hasOwnProperty("frameIndex")) {
+				query.equalTo("frameIndex", obj.frameIndex);
+			}
 			query.find(function(results) {
 				var quizes = [];
 				_.map(results, function(obj, id) {
@@ -58,8 +62,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		}
 	};
 
-	DukeApp.reqres.setHandler("quizes:entities", function(userID) {
-		return API.getQuizes(userID);
+
+	DukeApp.reqres.setHandler("quizes:entities", function(obj) {
+		return API.getQuizes(obj);
 	});
 
 	DukeApp.reqres.setHandler("save:quizes:entities", function(quizObj) {

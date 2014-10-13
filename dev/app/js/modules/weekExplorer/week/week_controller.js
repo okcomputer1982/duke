@@ -2,8 +2,12 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	Week.Controller = {
 		init:function(id) {
 			var that = this;
-			
-			DukeApp.utils.getCurrentAccount().done(function(obj){
+
+			if (!id) {
+				id = 0;
+			}
+
+			DukeApp.utils.getCurrentAccount().done(function(obj) {
 				var currentClass;
 
 				if (DukeApp.utils.isGuest()) {
@@ -18,6 +22,19 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 					weeksPromise = DukeApp.request("week:entities");
 
 				$.when(classPromise, weeksPromise).done(function(cResults, wResults){
+					_.each(cResults.get("template").weeks, function(index, idx){
+						if (_.isObject(index)) {
+							index = index.index;
+						}
+
+						var obj = {index:index, active:(DukeApp.utils.isStudent()?cResults.get('scheduling')[idx]:true)};
+						cResults.get("template").weeks[idx] = obj;		
+					});
+
+					_.each(wResults.models, function(obj, idx){
+						obj.set('active', cResults.get("scheduling")[idx]);
+					});
+
 					that.loadDisplay(cResults, wResults, id);
 				});
 			});
@@ -50,8 +67,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 			
 			top.init();
 			
-			//may need to get cleaned up on destruction
-			//there is a better way to do this
 			Week.Controller.views = {
 				weekView:weekView,
 				sidebar:sidebar,
@@ -59,7 +74,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				top:top
 			};
 
-			this.refreshWeek(Week.Controller.curclass.get('template').weeks[Week.Controller.curweek]);
+			var idx = Week.Controller.curclass.get('template').weeks[Week.Controller.curweek].index;
+			this.refreshWeek(idx);
 
 			//set events
 			top.on("weekView:loadWeek", Week.Controller.setWeekContent);
@@ -109,6 +125,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 				views.content.on("weekView:saveJournal", Week.Controller.saveJournal);
 				views.content.on("weekView:saveAssignment", Week.Controller.saveAssignment);
 				views.content.on("weekView:saveQuiz", Week.Controller.saveQuiz);
+				views.content.on("weekView:checkQuizAnswer", Week.Controller.saveQuizRepsonse);
 
 				views.content.on("weekView:logFrameEvent", Week.Controller.saveFrameEvent);
 				views.content.on("weekView:logAttributeEvent", Week.Controller.saveAttributeEvent);
@@ -204,6 +221,19 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   			});
   		},
 
+  		saveQuizRepsonse:function(obj) {
+  			var frameID = Week.Controller.getFrameIndex(obj.frameIndex);
+
+  			DukeApp.request("frameById:entities", frameID).done(function(quiz){
+  				var question = quiz.content.questions[obj.questionIdx],
+  					correctResp = question.correct;
+
+  				if (correctResp !== obj.responseIdx) {
+  					Week.Controller.views.content.handleIncorrectResponse(obj);
+  				}
+  			});
+  		},
+
   		saveFrameEvent:function(options) {  	
   			if (!DukeApp.utils.isStudent())
   				return;
@@ -223,7 +253,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   					classIndex:Week.Controller.currentClass
   				};
 
-  				DukeApp.request("eventLog:entities", eventLogData);
+  				DukeApp.request("set:eventLog:entities", eventLogData);
   			});
   		},
 
@@ -245,10 +275,8 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
   					classIndex:Week.Controller.currentClass
   				};
 
-  				console.log("********");
-  				
-  				DukeApp.request("eventLog:entities", eventLogData).done(function(resp) {
-  					console.log(resp);
+
+  				DukeApp.request("set:eventLog:entities", eventLogData).done(function(resp) {
 
   					if (resp && !resp.hasOwnProperty("warning")) {
   						var attrs = frame.attributes;

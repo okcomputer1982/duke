@@ -239,7 +239,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	Week.TopView = Marionette.ItemView.extend({
 		template:templates["weekExplorer/week/weekTop"],
 		events:{
-			"click .week-link":"handleWeekLink"
+			"click a.week-link":"handleWeekLink"
 		},
 		
 		init:function(w){
@@ -296,6 +296,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	"click .journal .submitbtn": 		"handleJournalSubmit",
 	    	"click .assignment .submitbtn": 	"handleAssignmentSubmit",
 	    	"click .quiz .submitbtn": 			"handleQuizSubmit",
+	    	"click .quiz .response": 			"handleQuizResponse",
 	    	"click .eventTarget":				"handleEvents",
 	    },
 	   	/******************SCROLLING EVENTS***********************/
@@ -512,6 +513,25 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    		this.trigger("weekView:saveQuiz", {id:target.closest("section").attr("data-index"), response:responses});
 	    	}
+	    },
+
+	    handleQuizResponse:function(e) {
+	    	var target = $(e.currentTarget),
+	    		responseIdx = Number(target.attr("data-index")) - 1,
+	    		quizQuestionIdx = Number(target.closest(".quizItem").attr("data-index")),
+	    		quizFrameIdx = Number(target.closest(".section").attr("data-index"));
+
+	    	this.trigger("weekView:checkQuizAnswer", {questionIdx:quizQuestionIdx, frameIndex:quizFrameIdx, responseIdx:responseIdx});
+	    },
+
+	    handleIncorrectResponse:function(obj) {
+	    	alert("Incorrect Answer. Try Again?");
+	    	var quiz = $(".quiz[data-index=" + obj.frameIndex + "]"),
+	    		quizItem = quiz.find(".quizItem[data-index=" + obj.questionIdx + "] .textblock");
+	    		quizAns = quizItem.find(".response:checked");
+
+	    	quizAns.attr('checked', false);
+
 	    },
 
 	   	handleEvents:function(e) {

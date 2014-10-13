@@ -32,7 +32,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"currentFrame": 0,
 					"mb": "",
 					"attributes": [0,0,0,0,0,0,0,0,0,0],
-					"profileImage": 0
+					"profileImage": 0,
+					"index": 0
+
 				};
 
 				def.resolve(studentObject);
@@ -52,9 +54,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						"currentFrame": student.get('currentFrame'),
 						"mb": 			student.get('myersBriggs'),
 						"attributes": 	student.get('attributes'),
-						"profileImage": curUser.get('profileImage'),
+						"profileImage": student.get('profileImage'),
 						"createdAt": 	moment(curUser.createdAt),
-						"daysCreated": 	days + ((days === 1)?" day":" days")
+						"daysCreated": 	days + ((days === 1)?" day":" days"),
+						"index": 		student.get('index')
 					};
 
 					def.resolve(studentObject);
@@ -79,7 +82,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					"lastLesson": 	student.get('lastLesson'),
 					"mb": 			student.get('myersBriggs'),
 					"attributes": 	student.get('attributes'),
-					"profileImage": curUser.get('profileImage')
+					"profileImage": student.get('profileImage')
 				});
 
 				def.resolve(studentModel);
@@ -180,7 +183,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 										"mb": 			obj.get("myersBriggs"),
 										"id": 			obj.id,
 										"userId": 		user.id,
-										"profileImage": user.get("profileImage"),
+										"profileImage": obj.get("profileImage"),
 										"currentClass": obj.get('currentClass'),
 										"currentWeek": 	obj.get('currentWeek'),
 										"currentFrame": obj.get('currentFrame')
@@ -310,7 +313,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							mb: 			result.get('myersBriggs'),
 							first: 			result.get('user').get('firstName'),
 							last: 			result.get('user').get('lastName'),
-							profileImage: 	result.get('user').get('profileImage'),
+							profileImage: 	result.get('profileImage'),
 							username: 		result.get('user').get('username'),
 							password: 		result.get('user').get('password'),
 							email: 			result.get('user').get('email')
@@ -329,7 +332,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				teacher = new TeacherTable(),
 				user = new Parse.User();
 
-			DukeApp.utils.findNextIndex("Teacher").done(function(idx){
+			DukeApp.utils.findNextIndex("Teacher").done(function(idx) {
 				user.set("username", obj.username);
 
 				user.set("firstName", obj.firstname);
@@ -428,57 +431,69 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 
 		createStudent:function(obj) {
+			var that = this;
+			
+			if (!obj.hasOwnProperty("index")) {
+				DukeApp.utils.findNextIndex("Student").done(function(idx) {
+					return that.createStudentLeaf(obj, idx);
+				});
+
+			} else {
+				var idx = obj.index;
+				delete obj.index;
+				return this.createStudentLeaf(obj, idx);
+
+			}
+		},
+
+		createStudentLeaf:function(obj, idx) {
 			var def = $.Deferred(),
 				StudentTable = Parse.Object.extend("Student"),
 				student = new StudentTable(),
 				user = new Parse.User();
 
-			DukeApp.utils.findNextIndex("Student").done(function(idx){
-				user.set("username", obj.username);
+			user.set("username", obj.username);
 
-				user.set("firstName", obj.firstname);
-				user.set("lastName", obj.lastname);
-				
-				user.set("password", obj.password);
-				user.set("email", obj.email);
-				user.set("profileImage", 0);
-				user.set("type", "student");
-				user.set("studentAccount", student);
-
-				user.save(null, {
-					success:function(){
-						
-						student.set("user", user);						
-						student.set("index", idx);
-						student.set("mb", "----");
-						student.add("classes", obj.classIndex);
-						student.set("currentClass", obj.classIndex);
-						student.set("currentWeek", 0);
-						student.set("attributes", [1,1,1,1,1,1,1,1,1,1]);
-						student.save();
-						
-
-						var ClassTable = Parse.Object.extend("Classes"),
-							cQuery = new Parse.Query(ClassTable);
-						
-						cQuery.equalTo("index", obj.classIndex);
-						cQuery.first(function(classObj){
-							classObj.add("students", idx);
-							classObj.save(null, {
-								success:function(){
-									def.resolve(true);
-								}
-							});
-
-						});
-					},
-					error: function(obj, e) {
-						def.resolve(false, e);
-					}
-				});
-				
-			});
+			user.set("firstName", obj.firstname);
+			user.set("lastName", obj.lastname);
 			
+			user.set("password", obj.password);
+			user.set("email", obj.email);
+			user.set("profileImage", 0);
+			user.set("type", "student");
+			user.set("studentAccount", student);
+
+			user.save(null, {
+				success:function() {
+					student.set("user", user);						
+					student.set("index", idx);
+					student.set("mb", "----");
+					student.add("classes", obj.classIndex);
+					student.set("currentClass", obj.classIndex);
+					student.set("currentWeek", 0);
+					student.set("attributes", [1,1,1,1,1,1,1,1,1,1]);
+					student.save();
+					
+
+					var ClassTable = Parse.Object.extend("Classes"),
+						cQuery = new Parse.Query(ClassTable);
+					
+					cQuery.equalTo("index", obj.classIndex);
+					cQuery.first(function(classObj){
+						classObj.add("students", idx);
+						classObj.save(null, {
+							success:function(){
+								def.resolve(true);
+							}
+						});
+
+					});
+				},
+				error: function(obj, e) {
+					def.resolve(false, e);
+				}
+			});
+		
 			return(def.promise());
 		},
 
@@ -523,16 +538,23 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			sQuery.first({
 				success:function(student) {
 					var save = false;
-					if (obj.classIndex !== -99) {
+					if (obj.hasOwnProperty("classIndex") && obj.classIndex !== -99) {
 						student.set('currentClass', obj.classIndex);
 						save  = true;
 					}
 
-					if (obj.mb !== "") {
+					if (obj.hasOwnProperty("mb") && obj.mb !== "") {
 						student.set('myersBriggs', obj.mb);
 						save  = true;
 					}
 					
+					if (obj.hasOwnProperty("profileImage")) {
+						student.set('profileImage', obj.profileImage);
+						save  = true;
+					}
+
+					console.log(student);
+
 					if (save) {
 						student.save({
 							success:function(){

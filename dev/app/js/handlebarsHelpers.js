@@ -14,8 +14,34 @@ Handlebars.registerHelper('getAttributeVal', function(id) {
   return this.userData.attributes[Number(id)];
 });
 
-Handlebars.registerHelper('getWeekLabel', function() {
-  	return this + 1;
+Handlebars.counter = 0;
+Handlebars.registerHelper('resetCounter', function() {
+    Handlebars.counter = 0;
+});
+
+Handlebars.registerHelper('incCounter', function() {
+    Handlebars.counter += 1;
+});
+
+Handlebars.registerHelper('getCounter', function(add) {
+    return Handlebars.counter;
+});
+
+Handlebars.registerHelper('getWeekLabel', function() { 
+  	return this.index + 1;
+});
+
+Handlebars.registerHelper('isActiveWeekCheckBox', function(context) {
+    return ((String(this) === "true")?"checked":"");
+});
+
+//week explorer
+Handlebars.registerHelper('isActiveWeek', function(context, options) {
+    if (this.active) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
 });
 
 //student dashboard

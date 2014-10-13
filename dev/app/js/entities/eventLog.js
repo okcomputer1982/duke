@@ -50,10 +50,45 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			}
 
 			return def.promise();
+		},
+
+		getEventLogs:function(obj) {
+			var def = $.Deferred(),
+				EventLogTable = Parse.Object.extend("EventLog"),
+				query = new Parse.Query(EventLogTable);
+
+			query.equalTo("studentId", obj.studentId);
+			query.equalTo("classIndex", obj.classIndex);
+			query.equalTo("eventType", obj.eventType);
+
+			query.find({
+				success:function(logs) {
+					var logObjList  = [];
+					_.each(logs, function(obj, idx){
+						var eObj = {
+							"frameIndex": 	obj.get('contentIndex'),
+							"status": 		obj.get('contentStatus'),
+							"eventType": 	obj.get('eventType'),
+							"classIndex": 	obj.get('classIndex'),
+							"studentId": 	obj.get('studentId'),
+							"data": 		obj.get('contentData')
+						};
+						logObjList.push(eObj);
+					});
+
+					def.resolve(logObjList);
+				}
+			});
+
+			return def.promise();
 		}
 	};
 
-	DukeApp.reqres.setHandler("eventLog:entities", function(data){
+	DukeApp.reqres.setHandler("eventLogs:entities", function(obj){
+		return API.getEventLogs(obj);
+	});
+
+	DukeApp.reqres.setHandler("set:eventLog:entities", function(data){
 		return API.setEventLog(data);
 	});
 });

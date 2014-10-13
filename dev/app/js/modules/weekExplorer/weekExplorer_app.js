@@ -23,7 +23,7 @@ DukeApp.module("WeekExplorer", function(WeekExplorer, DukeApp, Backbone, Marione
 		if (!id) {
 			id = 1;
 		}
-
+		
 		DukeApp.navigate("week/"+id);
 
 		if (reRender) {

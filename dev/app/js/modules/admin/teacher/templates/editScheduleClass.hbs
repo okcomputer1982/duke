@@ -1,0 +1,11 @@
+
+<ul id="classScheduleList">
+	{{resetCounter}}
+	{{#each this.scheduling}}
+	<li>
+		<p><span class="weekLabel">Week {{getCounter}}</span><input data-index="{{getCounter}}" class="scheduleCheckbox" type="checkbox" name="active" {{isActiveWeekCheckBox}}></p>
+		
+		{{incCounter}}
+	</li>
+	{{/each}}
+</ul>

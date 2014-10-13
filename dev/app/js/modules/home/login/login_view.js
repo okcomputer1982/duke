@@ -5,6 +5,19 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		regions: {
 			footer: "#footer",
 			content: "#content"
+		},
+		events:{
+			'click #submitResetBtn': 	"handleSubmitPasswordReset"
+		},
+		handleSubmitPasswordReset:function(e) {
+			var email = $("#email").val();
+
+			if (!email) {
+				alert("Please enter email of account needed to reset.");
+			} else {
+				this.trigger("loginView:doPasswordReset", {email:email});
+				$("#resetModal").modal('hide');	
+			}
 		}
 	});
 
@@ -12,10 +25,11 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 		template:templates["home/login/content"],
 		
 		events:{
-			'click #user_login':"clickLogin",
-			'click #guest_login':"clickGuest",
-			'click #passReset': "handlePasswordReset"
+			'click #user_login': 		"clickLogin",
+			'click #guest_login': 		"clickGuest",
+			'click #passReset': 		"handlePasswordReset"
 		},
+
 		onShow:function() {
 			var that = this;
 
@@ -47,7 +61,7 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 
 		handlePasswordReset:function(e) {
 			e.preventDefault();
-			
+			$("#resetModal").modal();
 		}
 	});
 });

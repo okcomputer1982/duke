@@ -1,13 +1,14 @@
 DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, _) {
 	var API = {
 		
-		getJournals: function(userID){
+		getJournals: function(obj){
 			var def = $.Deferred();
 
 			var JournalTable = Parse.Object.extend("Journals"),
 				query = new Parse.Query(JournalTable);
 
-			query.equalTo("userID", userID);
+			query.equalTo("userID", 	obj.id);
+			query.equalTo("classIndex", obj.classId);
 
 			query.find(function(results) {
 				var journals = [];
@@ -54,8 +55,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		}
 	};
 
-	DukeApp.reqres.setHandler("journals:entities", function(userID) {
-		return API.getJournals(userID);
+	DukeApp.reqres.setHandler("journals:entities", function(obj) {
+		return API.getJournals(obj);
 	});
 
 	DukeApp.reqres.setHandler("save:journals:entities", function(journalObj) {

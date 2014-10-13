@@ -1,3 +1,21 @@
 <div id="header"></div>
 <div id="content"></div>
 <div id="footer"></div>
+
+<div class="modal fade" id="resetModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Reset Password</h4>
+      </div>
+      <div class="modal-body">        
+          <input type="text" id="email" placeholder="Enter Your Email">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitResetBtn" class="btn btn-primary">Send Reset</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

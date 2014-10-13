@@ -289,6 +289,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							index: 		result.get('index'),
 							name: 		result.get('name'),
 							students: 	result.get('students'),
+							scheduling: result.get('scheduling'),
 							template: 	makeClassTemplateObjectById(result.get('template')),
 						});
 
@@ -317,6 +318,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 								index: 		obj.get('index'),
 								name: 		obj.get('name'),
 								students: 	obj.get('students'),
+								scheduling: obj.get('scheduling'),
 								template: 	makeClassTemplateObjectById(obj.get('template')),
 							});
 						});
@@ -333,7 +335,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var def = $.Deferred();
 
 			initializeClassTemplates().done(function(){
-				//console.log(classTemplates.models);
 				var ctObjectList = [];
 				classTemplates.models.map(function(obj){
 					ctObjectList.push({
@@ -445,6 +446,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						students:c.get('students'),
 						teachers:c.get('teachers'),
 						index:c.get('index'),
+						scheduling:c.get('scheduling'),
 						template:c.get('template'),
 						createdAt:c.createdAt,
 						lastEdited:c.updatedAt
@@ -469,7 +471,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			//find student
 			sQuery.first({
 				success:function(s) {
-					console.log(s);
 					//remove class from student
 					s.add("classes", obj.classIndex);
 					s.save(null, {
@@ -639,6 +640,33 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				}
 			});
 			return(def.promise());
+		},
+		setScheduleDayClass:function(obj) {
+			var def = $.Deferred(),
+				ClassTable = Parse.Object.extend('Classes'),
+				query = new Parse.Query(ClassTable);
+
+			query.equalTo("index", obj.classIdx);
+			query.first({
+				success:function(c){
+					var scheduling = c.get('scheduling');
+
+					scheduling[obj.dayIdx] = obj.status;
+
+					c.set('scheduling', scheduling);
+
+					c.save(null, {
+						success:function(){
+							def.resolve({status:true});
+						},
+						error:function(result, e) {
+							def.resolve({status:false, error:e});
+						}
+					});
+				}
+			});
+			
+			return(def.resolve());
 		}
 	};
 
@@ -660,7 +688,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	});
 
 	DukeApp.reqres.setHandler("classByIndex:entities", function(id){	
-		return API.getClassByIndex(id);
+		return API.getClassByIndex({index:id});
 	});
 
 	DukeApp.reqres.setHandler("class:entities", function(id){	
@@ -707,4 +735,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return API.setStudentDefaultClass(obj);
 	});
 
+	DukeApp.reqres.setHandler("set:scheduleDay:class:entities", function(obj) {	
+		return API.setScheduleDayClass(obj);
+	});
 });

@@ -14,6 +14,7 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 
 			content.on("loginView:doLogin", this.doLogin);
 			content.on("loginView:doGuestLogin", this.doGuestLogin);
+			loginView.on("loginView:doPasswordReset", this.doPasswordReset);
 		},
 
 		doGuestLogin:function(obj){
@@ -41,7 +42,16 @@ DukeApp.module("Home.Login", function(Login, DukeApp, Backbone, Marionette, $, _
 					Login.Controller.contentView.showAlert();
 				}
 			});
+		},
 
+		doPasswordReset:function(obj){	
+			DukeApp.utils.passwordReset(obj.email).done(function(result){
+				if (result.status) {
+					alert("Reset instructions have been sent to your email account.");
+				} else {
+					alert(result.e.message);
+				}
+			});
 		}
 	};
 });

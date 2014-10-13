@@ -1,4 +1,9 @@
 <div class="container-fluid">
-  <h2>Edit Schedule</h2>
-  
+ 	<h2>Edit Schedule</h2>
+ 	<select id="classCombo" class="combobox">
+      	<option>Select Class</option>
+      	{{#each this.classes}}
+  		<option value="{{this.index}}">{{this.name}}</option>
+  		{{/each}}
+	</select>
 </div>

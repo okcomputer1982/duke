@@ -38,7 +38,6 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					gResults[idx].className = _.where(cResults, {index:obj.class})[0].name;
 				});
 
-
 				Manager.Controller.data = {}; 
 				Manager.Controller.data.classes = cResults;
 				Manager.Controller.data.classTemplates = ctResults;
@@ -239,6 +238,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 						location.reload();
 						that.handleMenuClick("students");
 					} else {
+						console.log(e);
 						Manager.Controller.layout.handleMessage({msg:e.message});	
 					}
 					

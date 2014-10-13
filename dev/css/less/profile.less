@@ -6,10 +6,6 @@
 		margin-bottom: 0;
 	}
 
-	h1.subtitle {
-		
-	}
-
 	#main-content {
 		margin-top: 0;
 	}
@@ -36,7 +32,24 @@
 			font-size: 21px;
 		}
 	}
-	
+
+	.avatars {
+		a:hover img{
+			border: black 2px solid;
+			height:100%
+		}
+
+		img {
+			width:80%;
+			padding:5px;
+		}
+
+		.active {
+			border: black 2px solid;
+			background: green;
+		}
+	}
+
 	.week_title_box {
 		display:inline-block;
 		height:100px;
@@ -233,7 +246,7 @@
 				top: 45px;
 			}
 
-			.edit-icon {
+			.edit-avatar {
 				z-index: 1000;
 				position: absolute;
 				left: 178px;
@@ -297,6 +310,7 @@
 		.attribute_section {
 			margin-top:100px;
 			
+
 			.attr_icon img{
 				width: 40px;
 				padding-right: 10px
@@ -321,18 +335,30 @@
 				list-style: none;
 				padding: 0;
 				margin: 0 20px;
+
+				li {
+					color:black;
+					width:100%;
+					border-top: 1px solid #e7e8e9;
+					padding: 5px 0;
+					text-align:left;
+				}
+				
+				li:last-child {
+					border-top: 1px solid #e7e8e9;
+				}
 			}
 
-			ul li {
-				color:black;
-				width:100%;
-				border-top: 1px solid #e7e8e9;
-				padding:25px 0;
+			.content_name {
+				color:#94999f;
+				position: relative;
+				right: 10px;
 			}
 
-			ul li:last-child
-			{
-				border-bottom: 1px solid #e7e8e9;
+			.content_amount {
+				float: right;
+				color:#99417b;
+				font-size: 18px;
 			}
 		}
 		
@@ -375,48 +401,6 @@
 				font-size: 18px;
 			}			
 
-		}
-
-		.other_section {
-			margin-left: 20px;
-			margin-top: 100px;
-
-			ul {
-				list-style: none;
-				padding:0 20px;
-			}
-
-			ul li {
-				color:black;
-				width:100%;
-				border-top: 1px solid #e7e8e9;
-				padding:25px 0;
-			}
-
-			ul li:last-child
-			{
-				border-bottom: 1px solid #e7e8e9;
-			}
-
-			.content_name {
-				color:#94999f;
-				text-transform: uppercase;
-				font-weight: bold;
-				font-size: 16px;
-			}
-
-			.content_amount {
-				position: absolute;
-				right: 0px;
-				padding-right: 40px;
-				color: #99417b;
-				font-size: 18px;
-
-				img {
-					position:relative;
-					top:-10px;
-				}
-			}
 		}
 	}
 	
@@ -694,4 +678,8 @@
 		}	
 	}
 	
+	#attributes {
+		overflow: scroll;
+		height: 250px;
+	}
 }

@@ -28,7 +28,49 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			return("row-fluid section profile " + this.options.profileitemClass);
 		},
 		id: 'profile-top',
-		tagName:"section"
+		tagName:"section",
+		events:{
+			"click .profile_button": 		"handleContentClick",
+			"click .edit-avatar": 			"handleAvatarSelect",
+			"click .edit-mb": 				"handleMBSelect",
+			"click #submitMBBtn": 			"handleMBSave",
+			"click .avatarLink": 			"handleAvatarItemSelect"
+		},
+
+		handleContentClick:function(e){
+			e.preventDefault();
+			DukeApp.trigger("weekExplorer:week", this.model.get('userData').currentWeek, true);
+		},
+
+		handleAvatarSelect:function(e){
+			$('#avatarModal').modal();
+			$('a.avatarLink img[data-index=' + this.model.get('userData').profileImage + ']').addClass('active');
+		},
+
+		handleMBSelect:function(e){
+			$('#mbModal').modal();
+		},
+
+	    handleMBSave:function(e) {
+	    	var mb = $("#mbCombo").val();
+	    	
+	    	if (mb !== -99) {
+	    		Student.Controller.content.trigger("studentProfile:setMB", mb);
+	    	}
+
+	    	$('#mbModal').modal('hide');
+	    },
+
+	    handleAvatarItemSelect:function(e) {
+	    	e.preventDefault();
+
+	    	var target = $(e.currentTarget),
+	    		index = Number(target.find('img').attr('data-index'));
+
+	    	Student.Controller.content.trigger("studentProfile:setAvatar", index);
+	    	$('#avatarModal').modal('hide');
+	    }
+
 	});
 
 	Student.ProgressItemView = Marionette.ItemView.extend({
@@ -61,6 +103,17 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			return("row-fluid section assignment grades " + this.options.profileitemClass);
 		},
 		tagName:"section"
+	});
+
+	Student.AttributesItemView = Marionette.ItemView.extend({
+		template:templates['profile/student/frames/attributeItem'],
+		tagName: 'li'
+	});
+
+	Student.AttributesListView = Marionette.CompositeView.extend({
+		template:templates['profile/student/frames/attributeList'],
+		itemViewContainer:"#attributeList",
+		itemView:Student.AttributesItemView
 	});
 
 	Student.GradesAssignmentItemView = Marionette.ItemView.extend({
@@ -153,7 +206,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 		events:{
 			"click .journal_object .arrow": "handleJournalClick",
-			"click .week_object .arrow": "handleWeekClick"
+			"click .week_object .arrow": 	"handleWeekClick"
 		},
 
 	    scrollHandler: function(e) {
@@ -282,14 +335,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 
 	    	this.trigger("studentProfile:incrementWeek", direction, t);
-	    },
-
-	    /******************GRADE FRAMES***********************/
-		handleContentClick:function(e){
-			e.preventDefault();
-			DukeApp.trigger("weekExplorer:week");
-		}
-		
+	    }
 	});
 
 	//Other	

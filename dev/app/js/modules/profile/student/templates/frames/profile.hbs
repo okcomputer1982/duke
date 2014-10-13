@@ -5,12 +5,12 @@
     <div class="profile_pic">
       <img src="../images/avatars/avatar{{{userData.profileImage}}}.png" alt="">
       
-      <a class="edit-icon" html="#"><i class="fa fa-pencil-square-o"></i></a>
+      <a class="edit-avatar" html="#"><i class="fa fa-pencil-square-o"></i></a>
 
       <p class="name">{{{userData.first}}} {{{userData.last}}}</p>
-      <p class="mb">{{{userData.mb}}} <a html="#"><i class="fa fa-pencil-square-o"></i></a></p>
+      <p class="mb">{{{userData.mb}}} <a class="edit-mb" html="#"><i class="fa fa-pencil-square-o"></i></a></p>
       
-      <a class="profile_button" href="#week/{{{userData.currentWeek}}}">Go to Class <i class="fa fa-caret-right"></i></a>
+      <a class="profile_button">Go to Class <i class="fa fa-caret-right"></i></a>
     </div>
   </div>
 
@@ -24,10 +24,14 @@
         <p class="week_label">Week <span class="class_number">1</span></p>
 
         <div class="progress">
-          <div class="progress-bargru active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+          <div class="progress-bar" id="weekProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
           </div>
         </div>
-
+<!--         <div class="progress">
+          <div class="progress-bargru active"  id="weekProgress" role="progressbar" aria-valuenow="50" aria-valuemin="1" aria-valuemax="100" style="width:50%">
+          </div>
+        </div>
+ -->
         <p class="time_label">Time Spent: <span class="class_number">{{{userData.daysCreated}}}</span></p>
       </div>
   </div>
@@ -39,13 +43,80 @@
 
       <div class="metrics_copy">
         <hr/>
-        <p class="grade_label"><span class="l">GRADES:</span> <span class="number">80%</span></p>
+        <p class="grade_label"><span class="l">QUIZ AVERAGE:</span> <span class="number">0%</span></p>
         <hr/>
-        <p class="badge_label"><span class="l">BADGES:</span> <span class="number">6/10</span></p>
+        <p class="badge_label"><span class="l">BADGES:</span> <span class="number">0/10</span></p>
         <hr/>
-        <p class="badge_label"><span class="l">ATTRIBUTES:</span> <span class="number">34%</span></p>
+        <p class="attr_label"><span class="l">ATTRIBUTES:</span> <span class="number">0%</span></p>
         <hr/>
       </div>
   </div>
   </div>
 </div>
+
+<div class="modal fade" id="avatarModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Pick Avatar</h4>
+      </div>
+
+      <div class="modal-body">
+          <div class="avatars">
+            <div class="row">
+              <div class="col-md-4"><a class="avatarLink"><img data-index="0" src="../images/avatars/avatar0.png" alt=""></a></div>
+              <div class="col-md-4"><a class="avatarLink"><img data-index="1" src="../images/avatars/avatar1.png" alt=""></a></div>
+              <div class="col-md-4"><a class="avatarLink"><img data-index="2" src="../images/avatars/avatar2.png" alt=""></a></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><a class="avatarLink"><img data-index="3" src="../images/avatars/avatar3.png" alt=""></a></div>
+              <div class="col-md-4"><a class="avatarLink"><img data-index="4" src="../images/avatars/avatar4.png" alt=""></a></div>
+              <div class="col-md-4"><a class="avatarLink"><img data-index="5" src="../images/avatars/avatar5.png" alt=""></a></div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="mbModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Pick Myers Briggs</h4>
+      </div>
+      <div class="modal-body">
+          <select class="combobox" id="mbCombo">
+            <option value="-99">Select Myers Briggs</option>
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISFJ">ISFJ</option>
+            <option value="INFJ">INFJ</option>
+            <option value="INTJ">INTJ</option>
+            <option value="ISTP">ISTP</option>
+            <option value="ISFP">ISFP</option>
+            <option value="INFP">INFP</option>
+            <option value="INFP">INTP</option>
+            <option value="INFP">ESTP</option>
+            <option value="INFP">ESFP</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENTP">ENTP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESFJ">ESFJ</option>
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENTJ">ENTJ</option>            
+          </select>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitMBBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

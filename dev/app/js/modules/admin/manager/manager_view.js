@@ -197,6 +197,17 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #deleteStudent": "handleStudentDelete",
 			"click #editStudent": 	"handleStudentModal",
 			"click #submitEditBtn": "handleSubmitStudentEdit",
+			"click #import": 		"handleImport"
+		},
+		
+		handleImport:function() {
+			
+			var that = this;
+
+			_.each(students, function(obj){
+				console.log("sent");
+				that.addStudent(obj);
+			});
 		},
 
 		handleStudentAdd:function(e) {

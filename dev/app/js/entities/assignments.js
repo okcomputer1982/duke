@@ -1,13 +1,14 @@
 DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, _) {
 	var API = {
 		
-		getAssignments: function(userID){
+		getAssignments: function(obj){
 			var def = $.Deferred();
 
 			var AssignmentTable = Parse.Object.extend("Assignments"),
 				query = new Parse.Query(AssignmentTable);
 
-			query.equalTo("userID", userID);
+			query.equalTo("userID", 	obj.id);
+			query.equalTo("classIndex", obj.classId);
 
 			query.find(function(results) {
 				var assignments = [];
@@ -63,8 +64,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		}
 	};
 
-	DukeApp.reqres.setHandler("assignments:entities", function(userID) {
-		return API.getAssignments(userID);
+	DukeApp.reqres.setHandler("assignments:entities", function(obj) {
+		return API.getAssignments(obj);
 	});
 
 	DukeApp.reqres.setHandler("save:assignments:entities", function(assignmentObj) {

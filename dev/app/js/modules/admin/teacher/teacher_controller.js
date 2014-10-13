@@ -1,13 +1,33 @@
 DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette, $, _){
 	Teacher.Controller = {
 		init:function() {
+			var that = this;
+
 			DukeApp.utils.setCurrentView("admin-teacher-view", Teacher.Controller);
 			DukeApp.utils.loadCommonViews();
-			this.loadDisplay();
-			//DukeApp.request("user:teacherModel:entities").done(this.loadDisplay);
+
+			var classPromise = DukeApp.request("all:class:entities"),
+				teacherAccountPromise = DukeApp.utils.getCurrentTeacherAccount();
+
+			$.when(classPromise, teacherAccountPromise).done(function(cResults, tAccount) {
+				var enrolledClasses = tAccount.get('classes'),
+					enrolledClassObjects = [];
+
+				_.each(cResults, function(obj){
+					if (_.contains(enrolledClasses, obj.index)){
+						enrolledClassObjects.push(obj);
+					}
+				});
+
+				Teacher.Controller.data = {};
+				Teacher.Controller.data.classes = enrolledClassObjects;
+				
+
+				that.loadDisplay(cResults);
+			});
 		},
 
-		loadDisplay:function(teacherModel) {	
+		loadDisplay:function(classResults) {
 			var layout = new Teacher.LayoutView();
 			Teacher.Controller.layout = layout;
 
@@ -15,9 +35,12 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 			layout.header.show(DukeApp.commonViews.header);			
 			DukeApp.commonViews.header.setUserName(DukeApp.utils.getCurrentUsername());
 			
-			this.handleMenuClick("class");
+			this.handleMenuClick("schedule");
 
 			layout.on("teacherView:clickLink", this.handleMenuClick);
+			layout.on("teacherView:changeScheduleCombo", this.handleChangeScheduleClass);
+			layout.on("teacherView:changeScheduleCheckbox", this.handleChangeScheduleDay);
+			
 		},
 
 		handleMenuClick:function(type) {
@@ -28,9 +51,13 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 				},
 
 				layout = Teacher.Controller.layout,
-				contentView = new contentViewMap[type]();
+				TeacherModelTable = Backbone.Model.extend({}),
+				teacherModel = new TeacherModelTable(Teacher.Controller.data),
+				contentView = new contentViewMap[type]({
+					model:teacherModel
+				});
 
-			console.log(type);
+			
 			Teacher.Controller.content = contentView;
 			layout.content.show(contentView);
 
@@ -53,6 +80,26 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 
 			$("#grading").show();
 			layout.grading.show(gradeView);
-		}
+		},
+
+		handleChangeScheduleClass:function(classIdx) {
+			var classPromise = DukeApp.request("class:entities", classIdx).done(function(cResult){
+
+				var layout = Teacher.Controller.layout,
+				classView = new Teacher.EditScheduleClassView({
+					model:cResult
+				});
+
+				$("#grading").show();
+				layout.grading.show(classView);
+			});
+		},
+
+		handleChangeScheduleDay:function(obj) {
+			var classPromise = DukeApp.request("set:scheduleDay:class:entities", obj).done(function(status){
+				console.log("updated");
+			});
+		},
+			
 	};
 });
