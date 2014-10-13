@@ -48,7 +48,7 @@
         "week": 0,
         "name": "quiz",
         "content": {
-            "title": "Introduction and Overview",
+            "title": "Quiz 1",
             "questions": [
                 {
                     "correct": 3,
@@ -439,7 +439,7 @@
         "content": {
             "objectives": [
                 "Understand the differences between the U.S. and Chinese educational systems",
-                "Understand the “best-fit” concept"
+                "Understand the “Best-Fit” concept"
             ],
             "image":"week2/Wk2_Overview_Frame.jpg",
             "overview": "<p>Now that you understand about your personality type, let’s explore the differences between the U.S. and Chinese educational systems and learn something about the “best fit” concept.</p>",
@@ -964,7 +964,7 @@
         "week": 1,
         "name": "quiz",
         "content": {
-            "title": "Quiz 4",
+            "title": "Quiz 5",
             "questions": [
                 {
                     "title": "According to the article, which of the following is a benefit of the Chinese educational system?",
@@ -1020,7 +1020,7 @@
         "week": 1,
         "name": "quiz",
         "content": {
-            "title": "Quiz 4",
+            "title": "Quiz 6",
             "questions": [
                 {
                     "title": "According to the video, what does “Best Fit” mean in the video?",
@@ -1071,7 +1071,7 @@
         "week": 1,
         "name": "quiz",
         "content": {
-            "title": "Quiz 4",
+            "title": "Quiz 7",
             "questions": [
                 {
                     "title": "According to the article, when gathering information, what is the best way to find out about a specific college/university?",
@@ -1299,7 +1299,7 @@
         "week": 2,
         "name": "quiz",
         "content": {
-            "title": "Elite School Admissions",
+            "title": "Quiz 1",
             "questions": [
                 {
                     "title": "According to the article, prestigious schools have had a(n) ______ amount of college applications and a(n) ______ percentage of admission rate.",
@@ -1345,14 +1345,13 @@
         ]
     },
     {
-        "type": "videoLink",
+        "type": "video",
         "week": 2,
         "name": "video",
         "content": {
-            "heading": "The Reality of College Admissions",
             "synopsis": "<p>There are many perspectives about the college admissions process and the probability of getting into a school of your choice.  Let’s listen to John Katzman as he offers his unique perspective of the U.S. College Admissions landscape.</p>",
             "instruction": "<p>Click on the link below, watch the video and take a quiz to check for understanding.</p>",
-            "link": "https://www.youtube.com/watch?v=le2dkeYnEzA"
+            "video": "week3/John_Katzman"
         },
         "attributes": [
             7,
@@ -1367,7 +1366,7 @@
         "week": 2,
         "name": "quiz",
         "content": {
-            "title": "Elite School Admissions",
+            "title": "Quiz 2",
             "questions": [
                 {
                     "title": "According to the video, what is the reason that getting into an elite college/university is easier than it used to be?",
@@ -1433,7 +1432,7 @@
         "week": 2,
         "name": "quiz",
         "content": {
-            "title": "Elite School Admissions",
+            "title": "Quiz 3",
             "questions": [
                 {
                     "title": "According to the article, longer waiting lists are a result of _____________________.",
@@ -1488,7 +1487,7 @@
         "week": 2,
         "name": "quiz",
         "content": {
-            "title": "Admissions Rates",
+            "title": "Quiz 4",
             "questions": [
                 {
                     "title": "According to the article, admissions rates don’t really convey the chances for any one applicant. True or False:",
@@ -1563,7 +1562,7 @@
         "week": 2,
         "name": "quiz",
         "content": {
-            "title": "Admissions Rates Pt. 2",
+            "title": "Quiz 5",
             "questions": [
                 {
                     "title": "According to the article, in 2009, which school encouraged students to submit a short video as a part of the undergraduate application process?",
@@ -1662,8 +1661,8 @@
         "week": 2,
         "name": "video",
         "content": {
-            "heading": "Interview with an Admissions Counselor",
-            "synopsis": "<p>Let’s listen to an interview with Anne Sjostrom, Associate Director, Undergraduate Admissions at Duke University as she talks about the liberal arts program and choosing majors, undergraduate research support, and combining studies and sports/athletics at Duke University.</p> <p>Citation: <a href='http://mycollegeguide.org/guru/19/picking-the-right-school'>mycollegeguide.org</a></p>",
+            "heading": "An Admissions Counselor is Interviewed",
+            "synopsis": "<p>Let’s listen to an interview with Anne Sjostrom, Associate Director, Undergraduate Admissions at Duke University as she talks about the liberal arts program and choosing majors, undergraduate research support, and combining studies and sports/athletics at Duke University.</p><p>Citation: <a href='https://www.youtube.com/watch?v=tzCzjIKfGuk'>youtube.com</a></p>",
             "video": "week3/Anne_Sjostrom"
         },
         "attributes": [
@@ -1677,8 +1676,8 @@
         "week": 2,
         "name": "video",
         "content": {
-            "heading": "Interview with an Admissions Counselor Pt. 2",
-            "synopsis": "<p>Let’s listen to an interview with Maxine Mendoza, an Admissions Officer at UPenn.  She gives advice about applying to college and she discusses opportunities for international students, such as research opportunities for undergraduate students and study abroad programs at the University of Pennsylvania.</p>",
+            "heading": "An Admissions Counselor is Interviewed",
+            "synopsis": "<p>Let’s listen to an interview with Maxine Mendoza, an Admissions Officer at UPenn.  She gives advice about applying to college and she discusses opportunities for international students, such as research opportunities for undergraduate students and study abroad programs at the University of Pennsylvania.</p><p>Citation: <a href='https://www.youtube.com/watch?v=EvHKgfpH9jw'>youtube.com</a></p>",
             "video": "week3/Maxine_Mendoza"
         },
         "attributes": [
@@ -1692,8 +1691,8 @@
         "week": 2,
         "name": "video",
         "content": {
-            "heading": "Interview with an Admissions Counselor Pt. 3",
-            "synopsis": "<p>Listen to Lauren Sutton, Associate Director of Admissions for Rhodes College in Memphis Tennessee share her thoughts on International Admissions.</p>",
+            "heading": "An Admissions Counselor is Interviewed",
+            "synopsis": "<p>Listen to Lauren Sutton, Associate Director of Admissions for Rhodes College in Memphis Tennessee share her thoughts on International Admissions.</p><p>Citation: <a href='https://class.coursera.org/usuniversities-02/lecture/95'>Understanding the Evaluation Process Rhodes College  Erick Hyde University Connection Counseling Specialist University of Pennsylvania</a></p>",
             "video": "week3/Lauren_Sutton"
         },
         "attributes": [
@@ -1714,7 +1713,7 @@
                 "What do you think schools consider when selecting you for admission?",
                 "Which perspective about admissions rates of colleges/universities do you agree with the most?"
             ],
-            "forumLink": "http://littlebirdgames.proboards.com/thread/3/asynchronous-discussion"
+            "forumLink": "https://astudentjourney.forums.net/thread/5/week-3-discussion"
         },
         "attributes": [
             2,
@@ -1855,7 +1854,7 @@
         "week": 3,
         "name": "quiz",
         "content": {
-            "title": "Invisible Borders Pt. 1 Quiz",
+            "title": "Quiz 1",
             "questions": [
                 {
                     "title": "According to the article, which one of these is not an administrative border?",
@@ -1907,7 +1906,7 @@
         "week": 3,
         "name": "quiz",
         "content": {
-            "title": "Invisible Borders Pt. 2 Quiz",
+            "title": "Quiz 2",
             "questions": [
                 {
                     "title": "What was the purpose of the research conducted by the writer of the article?",
@@ -1959,7 +1958,7 @@
         "week": 3,
         "name": "quiz",
         "content": {
-            "title": "Invisible Borders Pt. 3 Quiz",
+            "title": "Quiz 3",
             "questions": [
                 {
                     "title": "According to the article, what kind of data was collected for the study?",
@@ -2043,7 +2042,7 @@
         "week": 3,
         "name": "quiz",
         "content": {
-            "title": "Invisible Borders Quiz",
+            "title": "Quiz 4",
             "questions": [
                 {
                     "title": "According to the article, connections were found between where we live and:",
@@ -2095,7 +2094,7 @@
         "week": 3,
         "name": "quiz",
         "content": {
-            "title": "Invisible Borders Quiz",
+            "title": "Quiz 5",
             "questions": [
                 {
                     "title": "What does the author conclude from his research?",
@@ -2138,15 +2137,13 @@
         "week": 3,
         "name": "activity",
         "content": {
-            "heading": "U.S. Geography Internet Scavenger Hunt",
+            "heading": "Let’s Conduct Online Research by Doing a “Scavenger Hunt”",
             "instuctionsHeader": "<p>Let’s explore! Using the keywords and guiding questions, you will learn more details about each region of the U.S.  After learning specifics about each region or state of interest to you within a region, you will answer the following questions in your journal:</p>",
             "instructionsList": [
-                "<p>Describe which U.S. region you found most interesting.</p>",
-                "<p>In which region would you prefer to live? Why? </p>",
-                "<p>What is the climate of each region?</p>",
-                "<p>What kind of climate is most desirable to you?</p>",
-                "<p>How easy is it to get to the region you choose from China? and from each state?</p>",
-                "<p>What are the cultural nuances to this region?</p>"
+                "<p>Search on the internet using keywords: the regions of U.S.</p><p>Use the questions to guide your search.</p><p> What are some of the regions in the U.S.?</p>",
+                "<p>Search and using keywords: Climates of different U.S. regions</p><p>What is the climate characteristic of EACH region?</p><p>Think about which climate/weather of the region is the most similar to your home town?</p><p>For example:</p><ul><li>Does it snow?</li><li>Does it rain a lot?</li><li>Is it particularly hot in the summer?</li><li>How do you like the climate? Why, or why not?</li></ul>",
+                "<p>Based on your previous search results of the U.S. regional climate:</p><p>Which region suits you the best?</p><p>Which region suits you the best?</p><p>In which state of the region would you like to live?</p>",
+                "<p>Search for some different aspects of the region using the region or state as keywords (for example: Northeast or New York State)</p><p>What is most well known about this state or region?</p><p>What are some unique characteristics about the state?</p><p>Look for some unique cultural nuances of this state or region such as style of dress, type of music or dress in this region.</p><p>Is this region known for a particular type of food or cuisine?</p><p>What are some of the Colleges/universities in this state or region?</p><p>Think about which U.S. region you find most interesting.</p>"
             ]
         },
         "attributes": [
@@ -2188,7 +2185,7 @@
         "name": "video",
         "content": {
             "heading": "Getting to Know the U.S. and Different U.S. Colleges and Universities",
-            "synopsis": "<p>Let’s learn more about building your School List by watching the video.</p>",
+            "synopsis": "<p>Let’s learn more about building your School List by watching the video.</p><p>Citation: Coursera Course: Applying to U.S. Universities (August 4 - September 5, 2014) by Erick Hyde, University Connection Counseling Specialist, University of Pennsylvania English Language Programs (ELP)</p>",
             "video": "week4/Wk4_Fr20"
         },
         "attributes": [
