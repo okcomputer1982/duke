@@ -763,10 +763,42 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["profile/student/frames/badge"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1, helper;
+  buffer += "\n      <li><a  class=\"badge\" data-active=\"";
+  if (helper = helpers.isBadgeActiveLabel) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.isBadgeActiveLabel); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" data-type=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-toggle=\"popover\" data-placement=\"right\" title=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.popupname)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-content=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.popupdesc)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"><img src=\"../images/moz-badges/new/"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "_badge";
+  if (helper = helpers.isBadgeActiveImage) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.isBadgeActiveImage); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + ".png\" alt=\"\"></a></li>\n      ";
+  return buffer;
+  }
 
-
-  return "<h1 class=\"clearfix subtitle\">Badges</h1>\n\n<div class=\"inner-wrap row\">\n  <div class=\"row heading\">\n    <div class=\"col-md-4 col1\">\n      <img src=\"../images/trophy.png\" alt=\"\">  \n    </div>\n    \n    <div class=\"col-md-8 col2\">\n      <p>The badges below are goals in the course that represent milestones in your growth as a student. Earning all of the badges is a sign that you have mastered the course materials.</p>\n    </div>\n  </div>\n  \n  <div class=\"profile-categories badges\">\n    <ul>\n      <li class=\"accuracy\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Accuracy\" data-content=\"To complete this badge you must earn 90% of the Accuracy attribute.\"></a></li>\n      \n      <li class=\"analysis\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Analysis\" data-content=\"To complete this badge you must earn 90% of the Analysis attribute.\"></a></li>\n\n      <li class=\"application\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Application\" data-content=\"To complete this badge you must earn 90% of the Application attribute.  \"></a></li>\n\n      <li class=\"comprehension\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Comprehension\" data-content=\"To complete this badge you must earn 90% of the Comprehension attribute.\"></a></li>\n  </ul> <br/>\n  \n  <ul>\n      <li class=\"exploration\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Exploration\" data-content=\"To complete this badge you must earn 90% of the Exploration attribute.\"></a></li>\n\n      <li class=\"intercultural\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"Intercultural competence\" data-content=\"To complete this badge you must earn 90% of the Intercultural competence attribute.  \"></a></li>\n\n      <li class=\"introspection\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Introspection\" data-content=\"To complete this badge you must earn 90% of the Introspection attribute. \"></a></li>\n\n      <li class=\"knowledge\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Knowledge\" data-content=\"To complete this badge you must earn 90% of the Knowledge attribute.\"></a></li>\n  </ul> <br/>\n  <ul>\n      <li class=\"reflection\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Reflection\" data-content=\"To complete this badge you must earn 90% of the Reflection attribute.\"></a></li>\n\n      <li class=\"thoroughness\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Application\" data-content=\"To complete this badge you must earn 90% of the Application attribute.  \"></a></li>\n\n      <li class=\"quizes\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Quizes\" data-content=\"To complete this badge you must earn 90% of all Quizes.\"></a></li>\n\n      <li class=\"attributes\"><a href=\"\" class=\"badge\" data-toggle=\"popover\" data-placement=\"right\" title=\"All Application\" data-content=\"To complete this badge you must earn 90% of all attributes.\"></a></li>\n    </ul>\n  </div>\n</div>";
+  buffer += "<h1 class=\"clearfix subtitle\">Badges</h1>\n\n<div class=\"inner-wrap row\">\n  <div class=\"row heading\">\n    <div class=\"col-md-4 col1\">\n      <img src=\"../images/trophy.png\" alt=\"\">  \n    </div>\n    \n    <div class=\"col-md-8 col2\">\n      <p>The badges below are goals in the course that represent milestones in your growth as a student. Earning all of the badges is a sign that you have mastered the course materials.</p>\n    </div>\n  </div>\n\n  <div class=\"profile-categories badges\">\n    <ul>\n      ";
+  stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.badges)),stack1 == null || stack1 === false ? stack1 : stack1.group1), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </ul> <br/>\n  \n  <ul>\n      ";
+  stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.badges)),stack1 == null || stack1 === false ? stack1 : stack1.group2), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </ul> <br/>\n  <ul>\n      ";
+  stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.badges)),stack1 == null || stack1 === false ? stack1 : stack1.group3), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    </ul>\n  </div>\n</div>";
+  return buffer;
   });
 
 this["templates"]["profile/student/frames/grades"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

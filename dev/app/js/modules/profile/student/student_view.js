@@ -252,10 +252,19 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    		Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
 
+	    	$('.badge').hover(that.handleHover);
+
 	    	$('.badge').popover({
 				trigger: 'hover',
 				delay: {show:0,hide:50}
 			});
+	    },
+
+	    handleHover:function(e) {
+	    	e.preventDefault();
+
+	    	var target = e.currentTarget,
+	    		type = target.getAttribute("data-type");
 	    },
 
 	    //scrolls to a particuler frame

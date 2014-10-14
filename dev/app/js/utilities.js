@@ -126,6 +126,8 @@ DukeApp.utils.AttributeTotals = {
 
 DukeApp.utils.AttributeWeekTotals = [56,148,109,72];
 
+DukeApp.utils.QuizTotals = 96;
+
 DukeApp.utils.initUserSettings = function() {
 	localStorage.setItem("isGuest", "false");
 	localStorage.setItem("isLoggedIn", "false");

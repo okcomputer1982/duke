@@ -35,6 +35,14 @@ Handlebars.registerHelper('isActiveWeekCheckBox', function(context) {
     return ((String(this) === "true")?"checked":"");
 });
 
+Handlebars.registerHelper('isBadgeActiveLabel', function(context) {
+    return ((this.active)?"active":"");
+});
+
+Handlebars.registerHelper('isBadgeActiveImage', function(context) {
+    return ((!this.active)?"_BW":"");
+});
+
 //week explorer
 Handlebars.registerHelper('isActiveWeek', function(context, options) {
     if (this.active) {

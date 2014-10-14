@@ -10,35 +10,23 @@
       <p>The badges below are goals in the course that represent milestones in your growth as a student. Earning all of the badges is a sign that you have mastered the course materials.</p>
     </div>
   </div>
-  
+
   <div class="profile-categories badges">
     <ul>
-      <li class="accuracy"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Accuracy" data-content="To complete this badge you must earn 90% of the Accuracy attribute."></a></li>
-      
-      <li class="analysis"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Analysis" data-content="To complete this badge you must earn 90% of the Analysis attribute."></a></li>
-
-      <li class="application"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Application" data-content="To complete this badge you must earn 90% of the Application attribute.  "></a></li>
-
-      <li class="comprehension"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Comprehension" data-content="To complete this badge you must earn 90% of the Comprehension attribute."></a></li>
+      {{#each this.userData.badges.group1}}
+      <li><a  class="badge" data-active="{{isBadgeActiveLabel}}" data-type="{{this.name}}" data-toggle="popover" data-placement="right" title="{{this.popupname}}" data-content="{{this.popupdesc}}"><img src="../images/moz-badges/new/{{this.name}}_badge{{isBadgeActiveImage}}.png" alt=""></a></li>
+      {{/each}}
   </ul> <br/>
   
   <ul>
-      <li class="exploration"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Exploration" data-content="To complete this badge you must earn 90% of the Exploration attribute."></a></li>
-
-      <li class="intercultural"><a href="" class="badge" data-toggle="popover" data-placement="right" title="Intercultural competence" data-content="To complete this badge you must earn 90% of the Intercultural competence attribute.  "></a></li>
-
-      <li class="introspection"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Introspection" data-content="To complete this badge you must earn 90% of the Introspection attribute. "></a></li>
-
-      <li class="knowledge"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Knowledge" data-content="To complete this badge you must earn 90% of the Knowledge attribute."></a></li>
+      {{#each this.userData.badges.group2}}
+      <li><a  class="badge" data-active="{{isBadgeActiveLabel}}" data-type="{{this.name}}" data-toggle="popover" data-placement="right" title="{{this.popupname}}" data-content="{{this.popupdesc}}"><img src="../images/moz-badges/new/{{this.name}}_badge{{isBadgeActiveImage}}.png" alt=""></a></li>
+      {{/each}}
   </ul> <br/>
   <ul>
-      <li class="reflection"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Reflection" data-content="To complete this badge you must earn 90% of the Reflection attribute."></a></li>
-
-      <li class="thoroughness"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Application" data-content="To complete this badge you must earn 90% of the Application attribute.  "></a></li>
-
-      <li class="quizes"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Quizes" data-content="To complete this badge you must earn 90% of all Quizes."></a></li>
-
-      <li class="attributes"><a href="" class="badge" data-toggle="popover" data-placement="right" title="All Application" data-content="To complete this badge you must earn 90% of all attributes."></a></li>
+      {{#each this.userData.badges.group3}}
+      <li><a  class="badge" data-active="{{isBadgeActiveLabel}}" data-type="{{this.name}}" data-toggle="popover" data-placement="right" title="{{this.popupname}}" data-content="{{this.popupdesc}}"><img src="../images/moz-badges/new/{{this.name}}_badge{{isBadgeActiveImage}}.png" alt=""></a></li>
+      {{/each}}
     </ul>
   </div>
 </div>

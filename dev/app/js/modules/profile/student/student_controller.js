@@ -19,10 +19,15 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 					journalObjectPromise = DukeApp.request("journals:entities", {id:DukeApp.utils.getCurrentUser().id, classId:currentClass}),
 					assignmentObjectPromise = DukeApp.request("assignments:entities", {id:DukeApp.utils.getCurrentUser().id, classId:currentClass}),
 					quizObjectPromise = DukeApp.request("quizes:entities", {id:DukeApp.utils.getCurrentUser().id, classId:currentClass}),
-					eventLogPromise = DukeApp.request("eventLogs:entities", {studentId:DukeApp.utils.getCurrentUserID(), classIndex:currentClass, eventType:"attribute"});
+					eventLogPromise = DukeApp.request("eventLogs:entities", {studentId:DukeApp.utils.getCurrentUserID(), classIndex:currentClass, eventType:"attribute"}),
+					badgePromise = DukeApp.request("badges:entities");
 
 				//load all student related data objects for display
-				$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise, eventLogPromise).done(function(studentObject, journals, assignments, quizes, eventLogs) {
+				$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise, eventLogPromise, badgePromise).done(function(studentObject, journals, assignments, quizes, eventLogs, badges) {
+
+					badges = that.handleBadgeActivation(studentObject, badges, quizes);
+
+					studentObject.badges = badges;
 					studentObject.journals = journals;
 					studentObject.assignments = assignments;
 					studentObject.quizes = quizes;
@@ -91,7 +96,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 		handleMBChange:function(mb){
-			
 			DukeApp.request("edit:user:student:entities", {mb:mb, studentIndex:Student.Controller.studentObject.index}).done(function(){
 				location.reload();
 			});
@@ -101,6 +105,39 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 			DukeApp.request("edit:user:student:entities", {profileImage:avatarIdx, studentIndex:Student.Controller.studentObject.index}).done(function(){
 				location.reload();
 			});
+		},
+
+		handleBadgeActivation:function(student, badges, quizes) {
+			var attributes = student.attributes,
+				userAttributes = 0,
+				totalAttributes = 0;
+
+			_.each(badges.group1, function(obj, idx){
+				badges.group1[idx].active = ((attributes[idx]/DukeApp.utils.AttributeTotals[idx].week.total) > 0.9);
+				userAttributes += attributes[idx];
+				totalAttributes += DukeApp.utils.AttributeTotals[idx].week.total;
+			});
+
+			_.each(badges.group2, function(obj, idx){
+				badges.group2[idx].active = ((attributes[idx + 4]/DukeApp.utils.AttributeTotals[idx  + 4].week.total) > 0.9);
+				userAttributes += attributes[idx + 4];
+				totalAttributes += DukeApp.utils.AttributeTotals[idx].week.total;
+			});
+
+			_.each(badges.group3, function(obj, idx){
+				if (idx < 2) {
+					badges.group3[idx].active = ((attributes[idx + 8]/DukeApp.utils.AttributeTotals[idx  + 8].week.total) > 0.9);
+					userAttributes += attributes[idx + 8];
+					totalAttributes += DukeApp.utils.AttributeTotals[idx].week.total;
+				} else if (idx === 2) { //quizes
+					badges.group3[idx].active = ((quizes.length/DukeApp.utils.QuizTotals) > 0.9);
+				} else if (idx === 3) { //attributes
+					badges.group3[idx].active = ((userAttributes/totalAttributes) > 0.9);	
+				}
+				
+			});
+
+			return(badges);
 		},
 
 		scrollToFrame:function(obj){
@@ -386,7 +423,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				
 			currentQuizes = this.getGrades(currentQuizes);
 
-
 			if (_.isEmpty(currentQuizes)){
 	        	$("#quizes").html("<p class='heading'>Quizes</p> <p class='heading'>You have no quizes saved for this week.</p>");
 	      	} else {
@@ -428,7 +464,7 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	        	var attrListView = new Student.AttributesListView({
 	          		collection:attributes
 	        	});
-	        
+	        	
 	        	attrListView.render();
 	        	$("#attributes").html(attrListView.el);
 	      	}
@@ -436,7 +472,6 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 		},
 
 		displayOverall:function() {
-
 			var gradeList = Student.Controller.gradeList,
 				quizOverall = [],
 				attrOverall = [],

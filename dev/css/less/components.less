@@ -26,14 +26,14 @@
 		
 		li {
 			display: inline-block;
-			.rem(height,13.5);
+			.rem(height,11.5);
 			float: left;
 			margin:0;
 			position: relative;
 			text-align: center;
 			margin-right: 25px !important;
 
-			.rem(width,12);
+			.rem(width,11.5);
 			a.badge {
 				background-size: 100%;
 				background-repeat: no-repeat;
@@ -43,23 +43,16 @@
 				top: 0;
 				width: 100%;
 				z-index: 3;
+
+				img {
+					width:100%;
+					height:100%;
+				}
 			}
-			a.shadow {
-				background: url(../images/badge-bg.png);
-				background-repeat: no-repeat;
-				background-size: 100%;
-				content: '';
-				height: 100%;
-				position: absolute;
-				right: -8px;
-				top: 8px;
-				width: 100%;
-				z-index: 1;
-			}
+
 			a {
 				.rem(font-size,3);
 				padding:0;
-				.rem(padding-top,6);
 			}
 			span {
 				.rem(line-height,4.5);
