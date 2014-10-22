@@ -65,7 +65,6 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
         template:templates['comic/show/comicList'],
         itemViewContainer:"#comic_panels",
         itemView:Show.ComicPanelView,
-
         scrollToPanel:function(index) {
             var id = "#panel" + Show.Controller.activeSeries + index,
                 deferred = $.Deferred();
@@ -121,7 +120,7 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
         show:function(model) {
             var deferred = $.Deferred(),
                 question = model.get('question');
-
+                
             this.model = model;
             this.render();
 

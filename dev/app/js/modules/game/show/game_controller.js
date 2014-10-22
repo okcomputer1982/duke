@@ -15,10 +15,15 @@ DukeApp.module("Game.Show", function(Show, DukeApp, Backbone, Marionette, $, _) 
 	    		backdrop: "static",
 	    		show:true
 	    	});
-		},
 
-		restart:function(init) {
-			
-		}
+	    	var gameController;
+	    	switch(options.gameId) {
+	    		case(0):
+	    			gameController = DukeApp.Game.Show.Geography.Controller;
+	    			break;
+	    	}
+
+	    	gameController.init();
+	    }
 	};
 });

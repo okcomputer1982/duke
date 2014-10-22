@@ -98,10 +98,10 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 				results.map(function(obj, id){
 					ftObjectList.push({
-						"glyph": obj.get('glyph'),
-						"name": obj.get('name'),
-						"index": obj.get('index'),
-						"attrTarget": obj.get('attrTarget')
+						"glyph": 		obj.get('glyph'),
+						"name": 		obj.get('name'),
+						"index": 		obj.get('index'),
+						"attrTarget": 	obj.get('attrTarget')
 					});
 				});
 
@@ -290,6 +290,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							name: 		result.get('name'),
 							students: 	result.get('students'),
 							scheduling: result.get('scheduling'),
+							createdAt: 	moment(result.createdAt).fromNow(),
 							template: 	makeClassTemplateObjectById(result.get('template')),
 						});
 
@@ -319,6 +320,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 								name: 		obj.get('name'),
 								students: 	obj.get('students'),
 								scheduling: obj.get('scheduling'),
+								createdAt: 	moment(obj.createdAt).fromNow(),
 								template: 	makeClassTemplateObjectById(obj.get('template')),
 							});
 						});
@@ -443,13 +445,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			query.first({
 				success:function(c) {
 					var classObj = {
-						students:c.get('students'),
-						teachers:c.get('teachers'),
-						index:c.get('index'),
-						scheduling:c.get('scheduling'),
-						template:c.get('template'),
-						createdAt:c.createdAt,
-						lastEdited:c.updatedAt
+						students: 		c.get('students'),
+						teachers: 		c.get('teachers'),
+						index: 			c.get('index'),
+						scheduling: 	c.get('scheduling'),
+						template: 		c.get('template'),
+						createdAt: 		moment(c.createdAt).fromNow(),
+						lastEdited: 	c.updatedAt
 					};
 
 					def.resolve(classObj);
@@ -667,6 +669,26 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			});
 			
 			return(def.resolve());
+		},
+		getLastTimeClassViewed:function(obj) {
+			var def = $.Deferred(),
+				EventTable = Parse.Object.extend('EventLog'),
+				query = new Parse.Query(EventTable);
+
+			query.equalTo('classIndex', obj.classIndex);
+			query.descending('createdAt');
+
+			query.first({
+				success:function(c) {
+					var created = moment(c.createdAt).fromNow();
+					def.resolve({status:true, data:created});
+				},
+				error:function(c, e) {
+					def.resolve({status:false, error:e});
+				}
+			});
+
+			return(def.promise());
 		}
 	};
 
@@ -687,8 +709,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return API.getWeekModels();
 	});
 
-	DukeApp.reqres.setHandler("classByIndex:entities", function(id){	
-		return API.getClassByIndex({index:id});
+	DukeApp.reqres.setHandler("classByIndex:entities", function(obj){	
+		return API.getClassByIndex(obj);
 	});
 
 	DukeApp.reqres.setHandler("class:entities", function(id){	
@@ -737,5 +759,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 	DukeApp.reqres.setHandler("set:scheduleDay:class:entities", function(obj) {	
 		return API.setScheduleDayClass(obj);
+	});
+
+	DukeApp.reqres.setHandler("get:lastViewed:class:entities", function(obj) {	
+		return API.getLastTimeClassViewed(obj);
 	});
 });

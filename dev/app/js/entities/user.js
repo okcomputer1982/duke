@@ -156,12 +156,18 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			return(def.promise());
 		},
 
-		getAllStudentModel: function() {
+		getAllStudentModel: function(queryObj) {
 			var def = $.Deferred(),
 				StudentTable = Parse.Object.extend("Student"),
 				query = new Parse.Query(StudentTable);
 
 			query.ascending("lastName");
+			if (queryObj) {
+				_.each(queryObj, function(value, key) {
+					query.equalTo(key, value);
+				});
+			}
+
 			query.find({
 				success:function(results) {
 					var sObjectList = [],
@@ -186,7 +192,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 										"profileImage": obj.get("profileImage"),
 										"currentClass": obj.get('currentClass'),
 										"currentWeek": 	obj.get('currentWeek'),
-										"currentFrame": obj.get('currentFrame')
+										"currentFrame": obj.get('currentFrame'),
+										"attributes": 	obj.get('attributes')
 									});
 
 									p.resolve();
@@ -303,7 +310,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			query.first(function(result){
 				var user = result.get('user').fetch({
 					success:function(user) {
-						
 						var studentModel = {
 							currentClass: 	result.get('currentClass'),
 							currentWeek: 	result.get('currentWeek'),
@@ -315,8 +321,9 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 							last: 			result.get('user').get('lastName'),
 							profileImage: 	result.get('profileImage'),
 							username: 		result.get('user').get('username'),
-							password: 		result.get('user').get('password'),
-							email: 			result.get('user').get('email')
+							email: 			result.get('user').get('email'),
+							attributes: 	result.get('attributes'),
+							userID: 		user.id
 						};
 						def.resolve(studentModel);
 					}
@@ -698,8 +705,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 		return API.getAllTeacherModel();
 	});
 
-	DukeApp.reqres.setHandler("all:user:studentModel:entities", function(){
-		return API.getAllStudentModel();
+	DukeApp.reqres.setHandler("all:user:studentModel:entities", function(obj){
+		return API.getAllStudentModel(obj);
 	});
 
 	DukeApp.reqres.setHandler("all:user:guestModel:entities", function(){

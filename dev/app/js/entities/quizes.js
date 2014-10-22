@@ -6,13 +6,14 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			var QuizTable = Parse.Object.extend("Quizes"),
 				query = new Parse.Query(QuizTable);
-							
+				
 			query.equalTo("userID", 	obj.id);
 			query.equalTo("classIndex", obj.classId);
 
 			if (obj.hasOwnProperty("frameIndex")) {
 				query.equalTo("frameIndex", obj.frameIndex);
 			}
+			
 			query.find(function(results) {
 				var quizes = [];
 				_.map(results, function(obj, id) {

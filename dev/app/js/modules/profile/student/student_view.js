@@ -252,9 +252,10 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    		Student.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
 
-	    	$('.badge').hover(that.handleHover);
+	    	$('a.badge').hover(that.handleHover);
+	    	$('a.badge').mouseout(that.handleMouseout);
 
-	    	$('.badge').popover({
+	    	$('a.badge').popover({
 				trigger: 'hover',
 				delay: {show:0,hide:50}
 			});
@@ -264,7 +265,21 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	    	e.preventDefault();
 
 	    	var target = e.currentTarget,
-	    		type = target.getAttribute("data-type");
+	    		type = target.getAttribute("data-type"),
+	    		active = target.getAttribute("data-active");
+
+	    	if (active === "no")
+	    		$(target).find("img").attr("src","../images/moz-badges/new/" + type +  "_badge.png");
+	    },
+
+	    handleMouseout:function(e) {
+	    	e.preventDefault();
+	    	var target = e.currentTarget,
+	    		type = target.getAttribute("data-type"),
+	    		active = target.getAttribute("data-active");
+
+	    	if (active === "no")
+	    		$(target).find("img").attr("src","../images/moz-badges/new/" + type +  "_badge_B&W.png");
 	    },
 
 	    //scrolls to a particuler frame

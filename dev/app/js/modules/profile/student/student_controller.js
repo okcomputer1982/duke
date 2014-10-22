@@ -25,14 +25,14 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				//load all student related data objects for display
 				$.when(studentObjectPromise, journalObjectPromise, assignmentObjectPromise, quizObjectPromise, eventLogPromise, badgePromise).done(function(studentObject, journals, assignments, quizes, eventLogs, badges) {
 
-					badges = that.handleBadgeActivation(studentObject, badges, quizes);
-
+					badges = that.handleBadgeActivation(studentObject, badges, quizes);					
 					studentObject.badges = badges;
 					studentObject.journals = journals;
 					studentObject.assignments = assignments;
 					studentObject.quizes = quizes;
 					studentObject.attributeEvents = eventLogs;
-
+					studentObject.attributeEvents = eventLogs;
+					
 					that.loadDisplay(studentObject);
 				});
 			});
@@ -346,8 +346,9 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 				quizPromises = [],
 				assignmentComplete = $.Deferred(),
 				gradeComplete = $.Deferred(),
-				attributeEventComplete = $.Deferred();
-				gradeList = {};
+				attributeEventComplete = $.Deferred(),
+				gradeList = {},
+				totalList = {};
 
 	      	//then attributes
 	      	if (attrEvents && attrEvents.length > 0){
@@ -395,28 +396,41 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	  				}
 	  			});
 
+	  			_.each(gradeList, function(arr, key) {
+	  				totalList[key]= {};
+	  				totalList[key].user = 0;
+	  				totalList[key].total = DukeApp.utils.AttributeWeekTotals[key] + DukeApp.utils.QuizWeekTotals[key];
+	  				_.each(arr, function(obj){
+	  					switch(obj.type) {
+	  						case("quiz"):
+	  							totalList[key].user += 1;
+	  							break;
+	  						case("attributes"):
+	  							_.each(obj.attr, function(attr){
+	  								totalList[key].user += attr;
+	  							});
+	  							break;
+	  					}
+	  				});
+
+	  				totalList[key].percentage = Math.round(totalList[key].user/totalList[key].total*100);
+	  			});
+
 	        	var minWeek = _.min(_.keys(gradeList));
 	        	Student.Controller.gradeList = gradeList;
+	        	Student.Controller.totalList = totalList;
 	        	Student.Controller.currentGradeWeekIndex = Number(minWeek);
 
 	        	var contentView = Student.Controller.content;
-	        	
+
 	        	that.displayProgress();
 	        	that.displayOverall();
   			});
 		},
 
-		displayGrades:function() {
-			var curWeek = Student.Controller.currentGradeWeekIndex,
-				currentGrades = Student.Controller.gradeList[curWeek],
-				currentAssignments = _.where(currentGrades, {type:"assignment"}),
-				currentQuizes = _.where(currentGrades, {type:"quiz"});
-				currentQuizes = this.getGrades(currentQuizes);
-
-		},
-
 		displayProgress:function() {
 			var curWeek = Student.Controller.currentGradeWeekIndex,
+				weekTotals = Student.Controller.totalList[curWeek],
 				currentGrades = Student.Controller.gradeList[curWeek],
 				currentQuizes = _.where(currentGrades, {type:"quiz"}),
 				currentAttrs = _.where(currentGrades, {type:"attributes"});
@@ -469,6 +483,16 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 	        	$("#attributes").html(attrListView.el);
 	      	}
 
+	      	//and totals
+	      	$(".progress_amount").html(weekTotals.percentage + "% Complete");
+
+	      	var pie = $("span.pie").peity("pie", {
+	      		height:225,
+	      		width:225,
+	      	});
+
+
+	      	pie.text(weekTotals.percentage + "/100").change();
 		},
 
 		displayOverall:function() {
@@ -517,6 +541,18 @@ DukeApp.module("Profile.Student", function(Student, DukeApp, Backbone, Marionett
 
 			attrAvg = Math.round(attrSum/attrTotal*100);
 			$(".attr_label .number").html(attrAvg + "%");
+
+			//we still got those badges..
+			var badges = Student.Controller.studentObject.badges,
+				totalBadges = 0;
+
+			_.each(badges, function(group){
+				_.each(group, function(b){
+					totalBadges += ((b.active)?1:0);
+				});
+			});
+
+			$(".badge_label .number").html(totalBadges + "/12");
 
 			//now what about that bar graph... how about out of all weeks
 			//how many are open?

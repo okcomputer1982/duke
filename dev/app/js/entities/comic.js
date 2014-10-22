@@ -20,32 +20,32 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	var initializeComics = function() {
 		comics = new Entities.ComicCollection([{
 			seriesId:0,
-			title:"Introduction to Xin Xin",
+			title:"Xin Xin's Journey #1",
 			numPanels: 19
 		},
 		{
 			seriesId:1,
-			title:"Temperary title for thing 2",
-			numPanels: 5
+			title:"Xin Xin's Journey #2",
+			numPanels: 15
 		},
 		{
 			seriesId:2,
-			title:"Geography of the United States",
+			title:"Xin Xin's Journey #3",
 			numPanels: 5
 		},
 		{
 			seriesId:3,
-			title:"Finding The Right School",
+			title:"Xin Xin's Journey #4",
 			numPanels: 5
 		},
 		{
 			seriesId:4,
-			title:"Temperary title for thing 5",
+			title:"Xin Xin's Journey #5",
 			numPanels: 5
 		},
 		{
 			seriesId:5,
-			title:"Temperary title for thing 6",
+			title:"Xin Xin's Journey #6",
 			numPanels: 5
 		}
 		]);
@@ -73,11 +73,21 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			{seriesId:0, panelId:17, display:false, question:{show:false, 	close:true}},
 
 			{seriesId:1, panelId:0, display:false, question:{show:false, nextSlide:1}},
-			{seriesId:1, panelId:1, display:false, question:{show:true, prompt:"this 2 is where the prompt goes", choice_0:{text:"first choice", nextSlide:3}, choice_1:{text:"second choice", nextSlide:4}}},
+			{seriesId:1, panelId:1, display:false, question:{show:false, nextSlide:2}},
 			{seriesId:1, panelId:2, display:false, question:{show:false, nextSlide:3}},
 			{seriesId:1, panelId:3, display:false, question:{show:false, nextSlide:4}},
-			{seriesId:1, panelId:4, display:false, question:{show:false, close:true}},
-
+			{seriesId:1, panelId:4, display:false, question:{show:false, nextSlide:5}},
+			{seriesId:1, panelId:5, display:false, question:{show:false, nextSlide:6}},			
+			{seriesId:1, panelId:6, display:false, question:{show:false, nextSlide:7}},			
+			{seriesId:1, panelId:7, display:false, question:{show:false, nextSlide:8}},
+			{seriesId:1, panelId:8, display:false, question:{show:true, prompt:"Which region are you interested in Xin Xin?", choice_0:{text:"Northeast", nextSlide:9}, choice_1:{text:"Southeast", nextSlide:10}, choice_2:{text:"Midwest", nextSlide:11}, choice_3:{text:"Southwest", nextSlide:12},choice_4:{text:"West Coast", nextSlide:13}}},
+			{seriesId:1, panelId:9, display:false, question:{show:false, nextSlide:14}},
+			{seriesId:1, panelId:10, display:false, question:{show:false, nextSlide:14}},
+			{seriesId:1, panelId:11, display:false, question:{show:false, nextSlide:14}},
+			{seriesId:1, panelId:12, display:false, question:{show:false, nextSlide:14}},
+			{seriesId:1, panelId:13, display:false, question:{show:false, nextSlide:14}},
+			{seriesId:1, panelId:14, display:false, question:{show:false, close:true}},
+			
 			{seriesId:2, panelId:0, display:false, question:{show:false, nextSlide:1}},
 			{seriesId:2, panelId:1, display:false, question:{show:true, prompt:"this 3 is where the prompt goes", choice_0:{text:"first choice", nextSlide:3}, choice_1:{text:"second choice", nextSlide:4}}},
 			{seriesId:2, panelId:2, display:false, question:{show:false, nextSlide:3}},

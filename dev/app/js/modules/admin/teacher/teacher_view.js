@@ -31,7 +31,21 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 	});
 
 	Teacher.EditClassView = Marionette.Layout.extend({
-		template:templates['admin/teacher/editClass']
+		template:templates['admin/teacher/editClass'],
+		events:{
+			'change #classCombo': "handleClassCombo"
+		},
+
+		handleClassCombo:function(e) {
+			$("#grading").html("");
+			
+			var classVal = Number($(e.currentTarget).val());
+			Teacher.Controller.layout.trigger("teacherView:changeClassEditCombo", classVal);
+		}
+	});
+
+	Teacher.EditClassSingleView = Marionette.Layout.extend({
+		template:templates['admin/teacher/editClassSingle']
 	});
 
 	Teacher.EditScheduleView = Marionette.Layout.extend({

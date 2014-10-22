@@ -140,6 +140,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		},
 
 		handleChangeClass:function(obj) {
+			console.log(obj);
 			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
 				Manager.Controller.currentClass = classObj;
 				Manager.Controller.content.updateClassData(classObj, Manager.Controller.data.teachers, Manager.Controller.data.students, Manager.Controller.data.classes);

@@ -60,7 +60,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			query.equalTo("studentId", obj.studentId);
 			query.equalTo("classIndex", obj.classIndex);
 			query.equalTo("eventType", obj.eventType);
-
+			
 			query.find({
 				success:function(logs) {
 					var logObjList  = [];

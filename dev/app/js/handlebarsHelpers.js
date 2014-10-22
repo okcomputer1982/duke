@@ -36,11 +36,11 @@ Handlebars.registerHelper('isActiveWeekCheckBox', function(context) {
 });
 
 Handlebars.registerHelper('isBadgeActiveLabel', function(context) {
-    return ((this.active)?"active":"");
+    return ((this.active)?"yes":"no");
 });
 
 Handlebars.registerHelper('isBadgeActiveImage', function(context) {
-    return ((!this.active)?"_BW":"");
+    return ((!this.active)?"_B&W":"");
 });
 
 //week explorer

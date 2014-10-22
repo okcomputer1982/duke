@@ -2207,7 +2207,7 @@
         ], 
         "content": {
             "description": "Geography Game description", 
-            "id": 3, 
+            "id": 0, 
             "instructions": "<p>Geography game instructions</p>", 
             "title": "The Geography Matcher"
         }, 
@@ -2303,6 +2303,21 @@
     }, 
     {
         "attributes": [
+            3
+        ], 
+        "content": {
+            "id": 1, 
+            "instructions": "As you proceed through the comic, select the option that best fits the situation.", 
+            "synopsis": "Xin Xin learns about the U.S. university system and makes some critical decisions.", 
+            "title": "A Student's Journey Volume 1"
+        }, 
+        "index": 88, 
+        "name": "comic", 
+        "type": "comic", 
+        "week": 3
+    }, 
+    {
+        "attributes": [
             8
         ], 
         "content": {
@@ -2316,12 +2331,12 @@
             ], 
             "title": "Exploring the United States"
         }, 
-        "index": 88, 
+        "index": 89, 
         "name": "wrapup", 
         "type": "wrapup", 
         "week": 3
     }, 
     {
-        "index": 89
+        "index": 90
     }
 ]

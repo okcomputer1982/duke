@@ -4,25 +4,41 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
 			var comicModel = DukeApp.request("comic:entities", options.seriesId);
 
 			Show.Controller.activeSeries = comicModel.get('seriesId');
+
 	    	Show.Controller.activePanel = 0; //panel with last discision point
 	    	Show.Controller.onPanel = 0; //panel current viewing
 
 
-			var panels = DukeApp.request("panel:entities", Show.Controller.activeSeries);
+			var panels = DukeApp.request("panel:entities", Show.Controller.activeSeries),
+				finalPanels = [];
+
+			_.each(panels.models, function(obj) {
+				if (obj.get("seriesId") === Show.Controller.activeSeries)
+					finalPanels.push({
+						display:obj.get('display'),
+						panelId:obj.get('panelId'),
+						question:obj.get('question'),
+						seriesId:obj.get('seriesId')
+					});
+			});
+			
+			var FinalPanelCollection = Backbone.Collection.extend({}),
+				fCol = new FinalPanelCollection(finalPanels);
 
 			var layoutView = new Show.ComicLayout({
 					model: comicModel
 				}),
 				comicBookView = new Show.ComicBookView({
-					collection:panels
+					collection:fCol
 	    		});
 	    		responseView = new Show.ResponseView();
 
 	    	Show.Controller.comicModel = comicModel;
-	    	Show.Controller.comicPanels = panels;
+	    	Show.Controller.comicPanels = fCol;
 	    	Show.Controller.comicBookView = comicBookView;
 	    	Show.Controller.responseView = responseView;
 	    	Show.Controller.layoutView = layoutView;
+
 
 	    	DukeApp.modal.show(layoutView);
 	    	layoutView.comicBook.show(comicBookView);
@@ -110,7 +126,7 @@ DukeApp.module("Comic.Show", function(Show, DukeApp, Backbone, Marionette, $, _)
 				panels = Show.Controller.comicPanels.models,
 				model = panels[index];
 
-				responseView.hide();
+			responseView.hide();
 
 			if (!model.get('display')) {
 				model.set('display', true);

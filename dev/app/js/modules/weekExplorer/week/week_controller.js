@@ -79,6 +79,9 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 			//set events
 			top.on("weekView:loadWeek", Week.Controller.setWeekContent);
+
+			//debug
+			this.setGame({gameId:0});
 		},
 		
 		refreshWeek:function(id) {

@@ -305,10 +305,73 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["templates"]["admin/teacher/editClass"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "", stack1;
+  buffer += "\n  			<option value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</option>\n  			";
+  return buffer;
+  }
 
+  buffer += "<div class=\"container-fluid\">\n	<h4>View Class Info</h4>\n	<div class=\"admin-top\">\n	    <select id=\"classCombo\" class=\"combobox\">\n	      <option>Select Class</option>\n	      ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n	    </select>\n	</div>\n\n</div>";
+  return buffer;
+  });
 
-  return "<div class=\"container-fluid\">\n	<hr/>\n	<h4>Manage Classes</h4>\n	<div class=\"admin-top\">\n	    <select class=\"combobox\">\n	      <option>Select Class</option>\n	      <option value=\"0\">A Student's Journey: Semester 1</option>\n	      <option value=\"1\">A Student's Journey: Semester 2</option>\n	    </select>\n		\n		<h5>Class Created:       <span>March 3rd 2015</span><h5>\n		<h5>Class Last Viewed:   <span>March 3rd 2015</span><h5>\n		<h5>Total Students:      <span>5</span><h5>\n		<h5>Current Module:      <span>5</span><h5>\n		\n		<hr/>\n		<h4>Edit Students</h4>\n		<div class=\"row\">\n			<div class=\"col-md-6\">\n			      <table id=\"admin-students\" class=\"table table-responsive table-bordered table-striped\">\n			        <tbody>\n			          <tr>\n			            <th>Name</th><th>Actions</th>\n			          </tr>\n			          <tr>\n			            <td>Student 1</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n			          </tr>\n			          <tr>\n			            <td>Student 2</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n			          </tr>\n			          <tr>\n			            <td>Student 3</td>\n			            <td><button>Add to Class</button><button>Remove from Class</button></td>\n		    	      </tr>\n		    	    </tbody>\n		      	</table>\n			</div>\n			<div class=\"col-md-6\">\n			\n			</div>\n\n		</div>\n	</div>\n\n</div>";
+this["templates"]["admin/teacher/editClassSingle"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n	  <tr class=\"studentRow\" data-index="
+    + escapeExpression(((stack1 = (depth0 && depth0.index)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ">\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.username)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.last)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.first)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.mb)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.quizComplete)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "/"
+    + escapeExpression(((stack1 = (depth0 && depth0.quizTotal)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.attrPercentage)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "%</td>\n	    <td>"
+    + escapeExpression(((stack1 = (depth0 && depth0.badgeComplete)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "/"
+    + escapeExpression(((stack1 = (depth0 && depth0.badgeTotal)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</td>\n	  </tr>\n	  ";
+  return buffer;
+  }
+
+  buffer += "<h5>Class Created:		<span id=\"createdField\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.createdAt)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><h5>\n<h5>Class Last Viewed:	<span id=\"viewedField\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.lastViewed)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><h5>\n<h5>Class Template:		<span id=\"templateField\">"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.template)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><h5>\n<h5>Total Students:		<span id=\"totalStudentsField\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.numStudents)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><h5>\n\n<table id=\"student-list\" class=\"table table-responsive table-bordered table-striped\">\n	<tbody>\n	  <tr>\n	    <th>username</th><th>first name</th><th>lastname</th> <th>email</th><th>mb</th><th>quiz completion</th><th>attribute %</th><th>total badges</th>\n	  </tr>\n	  ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.students), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n	</tbody>\n</table>";
+  return buffer;
   });
 
 this["templates"]["admin/teacher/editSchedule"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -327,7 +390,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"container-fluid\">\n 	<h2>Edit Schedule</h2>\n 	<select id=\"classCombo\" class=\"combobox\">\n      	<option>Select Class</option>\n      	";
+  buffer += "<div class=\"container-fluid\">\n 	<h4>Edit Schedule</h4>\n 	<select id=\"classCombo\" class=\"combobox\">\n      	<option>Select Class</option>\n      	";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.classes), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n	</select>\n</div>";
@@ -415,7 +478,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<nav id=\"admin-nav\">\n		<!-- <a data-link=\"class\" class=\"nav-link manage-instructors\">Edit Class</a>\n	    <a data-link=\"students\" class=\"nav-link manage-students\">Edit Students</a> -->\n	    <a data-link=\"schedule\" class=\"nav-link manage-guests\">Edit Schedule</a>\n	</nav>\n	\n	<div id=\"content\">\n	</div>\n	\n	<div id=\"grading\">\n	</div>\n</div>";
+  return "<div id=\"header\"></div>\n<div class=\"container-fluid\">\n	<nav id=\"admin-nav\">\n		<a data-link=\"schedule\" class=\"nav-link manage-guests\">Edit Schedule</a>\n		<a data-link=\"class\" class=\"nav-link manage-instructors\">View Class Info</a>\n	    <!-- <a data-link=\"students\" class=\"nav-link manage-students\">Edit Students</a> -->\n	    \n	</nav>\n	\n	<div id=\"content\">\n	</div>\n	\n	<div id=\"grading\">\n	</div>\n</div>";
   });
 
 this["templates"]["comic/show/comicItem"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -429,9 +492,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   else { helper = (depth0 && depth0.seriesId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "/comic";
-  if (helper = helpers.seriesId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.seriesId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
   if (helper = helpers.panelId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.panelId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -551,15 +611,10 @@ function program9(depth0,data) {
 this["templates"]["game/show/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, functionType="function";
+  
 
 
-  buffer += "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">\n		<h1 id=\"game_title\">";
-  if (helper = helpers.title) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.title); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</h1>\n	\n		<canvas id=\"game_container\"></canvas>\n	</div>\n</div>";
-  return buffer;
+  return "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">	\n		<canvas id=\"game_container\" width=\"960\" height=\"565\">\n			Canvas not supported in this browser.\n		</canvas>\n	</div>\n</div>";
   });
 
 this["templates"]["home/login/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -788,7 +843,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<h1 class=\"clearfix subtitle\">Badges</h1>\n\n<div class=\"inner-wrap row\">\n  <div class=\"row heading\">\n    <div class=\"col-md-4 col1\">\n      <img src=\"../images/trophy.png\" alt=\"\">  \n    </div>\n    \n    <div class=\"col-md-8 col2\">\n      <p>The badges below are goals in the course that represent milestones in your growth as a student. Earning all of the badges is a sign that you have mastered the course materials.</p>\n    </div>\n  </div>\n\n  <div class=\"profile-categories badges\">\n    <ul>\n      ";
+  buffer += "<h1 class=\"clearfix subtitle\">Badges</h1>\n\n<div class=\"inner-wrap row\">\n  <div class=\"row heading\">\n    <div class=\"col-md-4 col1\">\n      <img src=\"../images/trophy.png\" alt=\"\">  \n    </div>\n    \n    <div class=\"col-md-8 col2\">\n      <p>The badges below are goals in the course that represent milestones in your growth as a student. Earning all of the badges is a sign that you have mastered the course materials.</p>\n    </div>\n  </div>\n\n\n  <div class=\"profile-categories badges\">\n  \n    <ul>\n      ";
   stack1 = helpers.each.call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.userData)),stack1 == null || stack1 === false ? stack1 : stack1.badges)),stack1 == null || stack1 === false ? stack1 : stack1.group1), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n  </ul> <br/>\n  \n  <ul>\n      ";
@@ -964,7 +1019,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<h1 class=\"subtitle\">Progress</h1>\n\n<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n      <p></p>\n\n      <div class=\"week_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n          Week <span class=\"week_number\">1</span>\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n      \n  </div>\n  \n  <div class=\"col-md-4 content_section\">\n    <div class=\"progress_container\">\n      <p class=\"progress_amount\">30% Complete</p>\n\n      <img src=\"../images/progress_chart.png\" alt=\"\">\n    </div>\n  </div>\n\n  <div class=\"col-md-4 attribute_section dashboard_box\">\n    <p class=\"heading\">Attributes</p>\n    <div id=\"attributes\"></div>\n  </div>\n  \n  <div class=\"col-md-4 quiz_section dashboard_box\">\n      <div id=\"quizes\"></div>\n  </div>\n\n  <!-- <div class=\"col-md-4 other_section dashboard_box\">\n    <p class=\"heading\">Grades</p>\n    <ul>\n      <li><span class=\"content_name\">Journal:</span> <span class=\"content_amount\">2/5</span></li>\n\n      <li> <span class=\"content_name\">Comic:</span> <span class=\"content_amount\"><img src=\"../images/check_circle.png\" alt=\"\"></span></li>\n\n\n      <li> <span class=\"content_name\">Game Score:</span> <span class=\"content_amount\">30/100</span></li>\n\n    </ul>\n  </div> -->\n</div>\n";
+  return "<h1 class=\"subtitle\">Progress</h1>\n\n<div class=\"inner-wrap\">\n  <div class=\"week_title_box\">\n      <p></p>\n\n      <div class=\"week_object\">\n        <a href=\"#\" class=\"arrow\" data-direction=\"left\"><i class=\"fa fa-caret-left\"></i></a>\n          Week <span class=\"week_number\">1</span>\n        <a href=\"#\" class=\"arrow\" data-direction=\"right\"><i class=\"fa fa-caret-right\"></i></a>\n      </div>\n      \n  </div>\n  \n  <div class=\"col-md-4 content_section\">\n    <div class=\"progress_container\">\n      <p class=\"progress_amount\">--% Complete</p>\n      \n      <div class=\"chart\">\n          <span class=\"pie\">0/100</span>  \n      </div>\n      \n      <!-- <img src=\"../images/progress_chart.png\" alt=\"\"> -->\n    </div>\n  </div>\n\n  <div class=\"col-md-4 attribute_section dashboard_box\">\n    <p class=\"heading\">Attributes</p>\n    <div id=\"attributes\"></div>\n  </div>\n  \n  <div class=\"col-md-4 quiz_section dashboard_box\">\n      <div id=\"quizes\"></div>\n  </div>\n\n  <!-- <div class=\"col-md-4 other_section dashboard_box\">\n    <p class=\"heading\">Grades</p>\n    <ul>\n      <li><span class=\"content_name\">Journal:</span> <span class=\"content_amount\">2/5</span></li>\n\n      <li> <span class=\"content_name\">Comic:</span> <span class=\"content_amount\"><img src=\"../images/check_circle.png\" alt=\"\"></span></li>\n\n\n      <li> <span class=\"content_name\">Game Score:</span> <span class=\"content_amount\">30/100</span></li>\n\n    </ul>\n  </div> -->\n</div>\n";
   });
 
 this["templates"]["profile/student/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1291,7 +1346,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   buffer += "</p>\n		</div>\n\n		<h2 class=\"subheading\">Instructions:</h2>\n		<div class=\"textblock\">\n			<p>";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.instructions)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</p>\n		</div>\n		\n		<a class=\"game-play submitbtn btn btn-large btn-primary attributeTarget eventTarget\" data-id=\"";
+  buffer += "</p>\n		</div>\n		\n		<a class=\"show-game submitbtn btn btn-large btn-primary attributeTarget eventTarget\" data-id=\"";
   stack1 = ((stack1 = ((stack1 = (depth0 && depth0.content)),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\" href=\"#\">Play</a>\n</div>";

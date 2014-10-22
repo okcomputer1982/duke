@@ -11,7 +11,9 @@
     </div>
   </div>
 
+
   <div class="profile-categories badges">
+  
     <ul>
       {{#each this.userData.badges.group1}}
       <li><a  class="badge" data-active="{{isBadgeActiveLabel}}" data-type="{{this.name}}" data-toggle="popover" data-placement="right" title="{{this.popupname}}" data-content="{{this.popupdesc}}"><img src="../images/moz-badges/new/{{this.name}}_badge{{isBadgeActiveImage}}.png" alt=""></a></li>

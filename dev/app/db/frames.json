@@ -2119,7 +2119,7 @@
         "week": 3,
         "name": "game",
         "content": {
-            "id": 3,
+            "id": 0,
             "title": "The Geography Matcher",
             "description": "Geography Game description",
             "instructions": "<p>Geography game instructions</p>"
@@ -2211,6 +2211,20 @@
             6,
             9,
             0
+        ]
+    },
+    {
+        "type": "comic",
+        "week": 3,
+        "name": "comic",
+        "content": {
+            "title": "A Student's Journey Volume 1",
+            "synopsis": "Xin Xin learns about the U.S. university system and makes some critical decisions.",
+            "instructions": "As you proceed through the comic, select the option that best fits the situation.",
+            "id": 1
+        },
+        "attributes": [
+            3
         ]
     },
     {
