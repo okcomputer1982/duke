@@ -7,23 +7,23 @@
 
 	<div class="row">
 		<div class="col-md-3 textblock">
-			<h2 class="subheading">Summary:</h2>
-			{{{content.synopsis}}}
-			
+			{{#if content.synopsis}}
+				<h2 class="subheading">Summary:</h2>
+				{{{content.synopsis}}}
+			{{/if}}
+
 			{{#if content.instruction}}
-		  	<h2 class="subheading">Instructions:</h2>
-		  	<div class="textblock">
-		  		{{{content.instruction}}}
-		  	</div>
+			  	<h2 class="subheading">Instructions:</h2>
+			  	{{{content.instruction}}}
 		  	{{/if}}
 		</div>
-
+	
 
 		<div class="col-md-9">
 			<video id="video" class="attributeTarget eventTarget" controls>
 				<source src="videos/{{content.video}}.webm" type="video/webm">
 				<source src="videos/{{content.video}}.ogv" type="video/ogv">
 			</video>
-		</div>	
+		</div>
 	</div>
 </div>

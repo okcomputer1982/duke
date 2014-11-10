@@ -161,7 +161,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				StudentTable = Parse.Object.extend("Student"),
 				query = new Parse.Query(StudentTable);
 
-			query.ascending("lastName");
+			query.limit(500);
+			query.ascending("currentClass");
 			if (queryObj) {
 				_.each(queryObj, function(value, key) {
 					query.equalTo(key, value);
@@ -438,13 +439,17 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 
 		createStudent:function(obj) {
-			var that = this;
+			var that = this,
+				def = $.Deferred();
 			
 			if (!obj.hasOwnProperty("index")) {
 				DukeApp.utils.findNextIndex("Student").done(function(idx) {
-					return that.createStudentLeaf(obj, idx);
+					that.createStudentLeaf(obj, idx).done(function(obj){
+						def.resolve(obj);
+					});
 				});
 
+				return def.promise();
 			} else {
 				var idx = obj.index;
 				delete obj.index;
@@ -458,6 +463,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				StudentTable = Parse.Object.extend("Student"),
 				student = new StudentTable(),
 				user = new Parse.User();
+
+			console.log("here");
 
 			user.set("username", obj.username);
 
@@ -500,7 +507,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					def.resolve(false, e);
 				}
 			});
-		
 			return(def.promise());
 		},
 
@@ -560,8 +566,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 						save  = true;
 					}
 
-					console.log(student);
-
 					if (save) {
 						student.save({
 							success:function(){
@@ -586,6 +590,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			DukeApp.utils.findNextIndex("Guests").done(function(idx){
 				user.set("username", obj.username);
 				user.set("firstName", "guest");
+				user.set("lastName", idx);
+				user.set("password", obj.password);
 				user.set("lastName", String(idx));
 				user.set("email", obj.email);
 				user.set("profileImage", 0);
@@ -618,6 +624,8 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			gQuery.equalTo("index", obj.index);
 			gQuery.first({
 				success:function(guestObj){
+					console.log(guestObj);
+					
 					guestObj.destroy({
 						success:function(){
 							def.resolve();

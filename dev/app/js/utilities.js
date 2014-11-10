@@ -367,3 +367,10 @@ DukeApp.utils.findNextIndex = function(tableName) {
 
 	return(def.promise());
 };
+
+//graphics utils
+DukeApp.utils.getColor = function(stage, x, y) {
+	var color = stage.canvas.getContext("2d").getImageData(x, y, 1, 1).data;
+
+	return({red:color[0], green:color[1], blue:color[2], alpha:color[3]});
+};

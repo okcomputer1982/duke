@@ -48,10 +48,12 @@
     <div class="col-md-6">
       <h5><strong>Teachers</strong></h5>
       <table id="admin-teachers" class="table table-responsive table-bordered table-striped">
-        <tbody>
+        <thead>
           <tr>
             <th>Name</th><th>In Class</th><th>Actions</th>
           </tr>
+        </thead>
+        <tbody>
           {{#each teachers}}
           <tr class="teacherRow" data-index={{this.index}}>
             <td>{{this.last}}, {{this.first}}</td>
@@ -66,10 +68,13 @@
     <div class="col-md-6">
       <h5><strong>Students</strong></h5>
       <table id="admin-students" class="table table-responsive table-bordered table-striped">
-        <tbody>
+        <thead>
           <tr>
             <th>Name</th><th>In Class</th><th>Current Class</th><th>Actions</th>
           </tr>
+        </thead>
+        <tbody>
+        
           {{#each students}}
           <tr class="studentRow" data-index={{this.index}}>
             <td>{{this.last}}, {{this.first}}</td>

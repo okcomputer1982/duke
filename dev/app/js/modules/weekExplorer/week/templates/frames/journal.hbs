@@ -13,6 +13,9 @@
 	
 
 		{{#if content.instructions}}
+			{{#if content.instructionHeading}}
+			{{{content.instructionHeading}}}
+			{{/if}}
 			<h2 class="subheading">Instructions:</h2>
 			{{{content.instructions}}}
 		{{/if}}
@@ -24,7 +27,11 @@
 	    	<li>{{{this}}}</li>
 	  	{{/each}}
 		</ul>
-		{{/if}}		
+		{{/if}}	
+
+		{{#if content.instructionsFooter}}
+			{{{content.instructionsFooter}}}
+		{{/if}}
 	</div>
 	<div class="col-md-9" style="padding-top:12px;">
 		<textarea name="" id="" cols="20" rows="13" style="margin-top: 12px;"></textarea>

@@ -4,18 +4,30 @@
 </div>
 
 <div class="inner-wrap attributeTarget">
-	<h2 class="heading">Summary:</h2>
+	{{#if content.instuctionsHeader}}
 	<div class="textblock">
+		<h2 class="heading">Summary:</h2>
 		{{{content.instuctionsHeader}}}
 	</div>
+	{{/if}}
 	 
-	<h2 class="heading">Instructions:</h2>
-	<ul class="textblock">
-	 	{{#each content.instructionsList}}
-	 		<li>{{{this}}}</li>
-	 	{{/each}}
-	</ul>
+	<div class="textblock">
+		<h2 class="heading">Instructions:</h2>
+		{{#if content.instructionListHeading}}
+		{{{content.instructionListHeading}}}
+		{{/if}}
+
+		{{#each content.instructionsList}}
+		<ul>
+	 		<li style="padding">{{{this}}}</li>	
+		</ul>
+		{{/each}}
 	
+		{{#if content.instructionListFooter}}
+		<p>{{{content.instructionListFooter}}}</p>
+		{{/if}}
+	</div>
+
 	{{#if content.questions}}
 	<h2 class="heading">Keep in the Mind the Following Questions:</h2>
 	<ul class="textblock">

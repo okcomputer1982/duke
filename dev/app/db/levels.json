@@ -1,0 +1,1122 @@
+levels:[
+	{	
+		index:0,
+		student:{
+			avatar:0,
+			climate:"Hot",
+			major:"Mechanical Engineering",
+			cost:"$15000-$20000 /semester",
+			extraCur:"Student Government",
+			size:"Small",
+			rep:"Highly ranked",
+			job:"95%",
+			grad:"Yes",
+			location:"southeast"
+		},
+		schools:[
+			{
+				index:0,
+				climate:"Hot",
+				major:"Available",
+				cost:"$18000 /semester",
+				extraCur:"Available",
+				size:"Medium",
+				rep:"Highly ranked",
+				job:"97%",
+				grad:"Yes",
+				location:"southeast",
+				x:100,
+				y:100,
+				sidebarType:"lefttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+				climate: "Hot",
+				major:"Available",
+				cost:"$16000 /semester",
+				extraCur: "Available",
+				size:"Medium",
+				rep:"Middle ranked",
+				job:"95%",
+				grad:"Yes",
+				location:"southeast",
+				x:200,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+				climate: "Hot",
+				major: "Mechanical Engineering",
+				cost: "$22000 /semester",
+				extraCur: "Not available",
+				size: "Small",
+				rep: "Highly ranked",
+				job: "95%",
+				grad: "Yes",
+				location:"southeast",
+				x:300,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:1,
+		student:{
+			avatar:0,
+			climate:"Seasons",
+			major:"Mathematics",
+			cost: "$15000-$20000 /semester",
+			extraCur: "Music",
+			size:"Medium",
+			rep:"Highly ranked",
+			job:"95%",
+			grad:"No",
+			location:"northeast"
+		},
+		schools:[
+			{
+				index:0,
+				climate: "Seasons",
+				major:"Available",
+				cost: "$17000 /semester",
+				extraCur: "Available",
+				size:"Medium",
+				rep: "Highly ranked",
+				job: "95%",
+				grad:"Yes",
+				location:"northeast",
+				x:100,
+				y:100,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+
+				index:1,
+				
+				climate: "Seasons",
+				major: "Available",
+				cost: "$21000 /semester",
+				extraCur: "Not Available",
+				size: "Medium",
+				rep:"Highly ranked",
+				job:"92%",
+				grad:"Yes",
+				location:"northeast",
+
+				x:200,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Seasons",
+				major: 	"Available",
+				cost: 	"$18000 /semester",
+				extraCur: "Not available",
+				size: 	"Medium",
+				rep: 	"Middle ranked",
+				job:  	"95%",
+				grad: 	"Yes",
+				location:"northeast",
+
+
+				x:300,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "9 out of 9 criteria."
+		}
+	},
+	{	
+		index:2,
+		student:{
+			avatar:3,
+			
+			climate: "Hot",
+			major: 	"Biology",
+			cost: "$15000-$20000 /semester",
+			extraCur: "Clubs",
+			size: "Small",
+			rep: "Highly ranked",
+			job: "95%",
+			grad: "No",
+			location: "southwest"
+		},
+		schools:[
+			{
+				index:0,
+				climate: "Cold",
+				major: "Available",
+				cost: "$20000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Highly ranked",
+				job: "100%",
+				grad: "Yes",
+				location: "midwest",
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major:"Not available",
+				cost: "$15000 /semester",
+				extraCur: "Not available",
+				size:"Large",
+				rep:"Highly ranked",
+				job:"85%",
+				grad:"Yes",
+				location:"midwest",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Cold",
+				major: "Available",
+				cost: "$17000 /semester",
+				extraCur: "Available",
+				size:"Medium",
+				rep: "Highly ranked",
+				job: "90%",
+				grad: "No",
+				location:"midwest",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:3,
+		student:{
+			avatar:3,
+			climate: "Hot",
+			major: "Biology",
+			cost: "$15000-$20000 /semester",
+			extraCur: "Clubs",
+			size: "Small",
+			rep: "Highly ranked",
+			job: "95%",
+			grad: "No",
+			location: "southwest"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$16000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Highly ranked",
+				job: "95%",
+				grad: "Yes",
+				location: "southwest",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$22000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Highly ranked",
+				job: "98%",
+				grad: "Yes",
+				location: "southwest",
+
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$15000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Middle ranked",
+				job: "96%",
+				grad: "Yes",
+				location: "southwest",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "9 out of 9 criteria."
+		}
+	},
+	{	
+		index:4,
+		student:{
+			avatar:3,
+			climate: "Seasons",
+			major: "Chinese Language and Literature",
+			cost: "$15000-$20000 /semester",
+			extraCur: "Sports",
+			size: "Medium",
+			rep: "Highly ranked",
+			job: "95%",
+			grad: "Yes",
+			location: "west coast"
+		},
+		schools:[
+			{
+				index:0,
+				climate: "Seasons",
+				major: "Available",
+				cost:"$20000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep:"Middle ranked",
+				job:"95%",
+				grad:"Yes",
+				location:"west coast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+				climate: "Seasons",
+				major: "Not available",
+				cost: "$15000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Highly ranked",
+				job: "95%",
+				grad:"Yes",
+				location:"west coast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Seasons",
+				major:"Not available",
+				cost: "$18000 /semester",
+				extraCur: "Not available",
+				size: "Medium",
+				rep: "Highly ranked",
+				job: "95%",
+				grad: "Yes",
+				location: "west coast",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:5,
+		student:{
+			avatar:3,
+
+			climate: "Seasons",
+			major: "Computer science",
+			cost: "$10000-$15000 /semester",
+			extraCur: "Student Government",
+			size: "Large",
+			rep: "Middle ranked",
+			job: "90%",
+			grad: "No",
+			location: "southeast",
+		},
+		schools:[
+			{
+				index:0,
+				climate: "Seasons",
+				major:"Available",
+				cost:"$14000 /semester",
+				extraCur: "Available",
+				size:"Large",
+				rep:"Middle ranked",
+				job:"89%",
+				grad:"Yes",
+				location:"southeast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+				climate: "Hot",
+				major:"Available",
+				cost:"$8000 /semester",
+				extraCur: "Available",
+				size:"Small",
+				rep:"Low ranked",
+				job:"90%",
+				grad:"Yes",
+				location:"southeast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$16000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Middle ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "southeast",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:6,
+		student:{
+			avatar:3,
+
+			climate: "Hot",
+			major: "Clinical Medicine",
+			cost: "$10000-$15000 /semester",
+			extraCur: "Music",
+			size: "Small",
+			rep: "Middle ranked",
+			job: "90%",
+			grad: "Yes",
+			location: "northeast"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$15000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "90%",
+				grad: "Yes",
+				location: "northeast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$11000 /semester",
+				extraCur: "Not available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "90%",
+				grad: "No",
+				location: "northeast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Seasons",
+				major: "Not available",
+				cost: "$12000/semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "90%",
+				grad: "Yes",
+				location: "northeast",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:7,
+		student:{
+			avatar:3,
+
+			climate: "Seasons",
+			major: "Economics",
+			cost: "$10000-$15000 /semester",
+			extraCur: "Volunteer Work",
+			size: "Medium",
+			rep: "Middle ranked",
+			job: "90%",
+			grad: "No",
+			location: "midwest"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$15000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Middle ranked",
+				job: "98%",
+				grad: "Yes",
+				location: "midwest",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "midwest",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+				climate: "Seasons",
+				major: "Not available",
+				cost: "$10000-$15000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "90%",
+				grad: "Yes",
+				location: "midwest",
+
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "9 out of 9 criteria."
+		}
+	},
+	{	
+		index:8,
+		student:{
+			avatar:3,
+
+			climate: "Hot",
+			major: "Business Administration",
+			cost: "$10000-$15000 /semester",
+			extraCur: "Clubs",
+			size:"Large",
+			rep:"Middle ranked",
+			job:"90%",
+			grad:"Yes",
+			location:"southwest"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$10500 /semester",
+				extraCur: "Available",
+				size:"Large",
+				rep:"Middle ranked",
+				job:"93%",
+				grad:"Yes",
+				location:"southwest",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+				climate: "Hot",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size:"Small",
+				rep:"Middle ranked",
+				job:"95%",
+				grad:"No",
+				location:"southwest",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+				climate: "Seasons",
+				major: "Available",
+				cost: "$11000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Middle ranked",
+				job: "90%",
+				grad: "No",
+				location: "southwest",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:9,
+		student:{
+			avatar:3,
+
+			climate: "Hot",
+			major: "Civil Engineering",
+			cost: "$10000-$15000 /semester",
+			extraCur: "Sports",
+			size: "Small",
+			rep: "Middle ranked",
+			job: "90%",
+			grad: "No",
+			location: "west coast",
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$15000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "96%",
+				grad: "Yes",
+				location: "west coast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$12000 /semester",
+				extraCur: "Not available",
+				size:"Small",
+				rep:"Low ranked",
+				job:"90%",
+				grad:"Yes",
+				location:"west coast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Cold",
+				major: "Available",
+				cost: "$11000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "90%",
+				grad: "Yes",
+				location: "west coast",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:10,
+		student:{
+			avatar:3,
+
+			climate: "Seasons",
+			major: "Architecture",
+			cost: "$5000-$10000 /semester",
+			extraCur: "Student Government",
+			size: "Medium",
+			rep: "Low ranked",
+			job: "85%",
+			grad: "Yes",
+			location: "southeast"
+		},
+		schools:[
+			{
+				index:0,
+				climate: "Seasons",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "southeast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+				
+				climate: "Hot",
+				major: "Available",
+				cost: "$6000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "No",
+				location: 'southeast',
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Seasons",
+				major: "Not available",
+				cost: "$12000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "southeast",
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "9 out of 9 criteria."
+		}
+	},
+	{	
+		index:11,
+		student:{
+			avatar:3,
+
+			climate: "Cold",
+			major: "Law",
+			cost: "$5000-$10000 /semester",
+			extraCur: "Music",
+			size: "Large",
+			rep: "Low ranked",
+			job: "85%",
+			grad: "No",
+			location: "northeast"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "northeast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major:"Available",
+				cost:"$15000 /semester",
+				extraCur: "Available",
+				size:"Large",
+				rep:"Low ranked",
+				job:"80%",
+				grad:"Yes",
+				location:"northeast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Cold",
+				major: "Not available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "northeast",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:12,
+		student:{
+			avatar:3,
+
+			climate: "Hot",
+			major: "Accounting",
+			cost: "$5000-$10000 /semester",
+			extraCur: "Volunteer Work",
+			size: "Small",
+			rep: "Low ranked",
+			job: "85%",
+			grad: "Yes",
+			location: "midwest"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$8000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Middle ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "midwest",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Middle ranked",
+				job: "85%",
+				grad: "No",
+				location: "midwest",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$13000 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Low ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "midwest",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:13,
+		student:{
+			avatar:3,
+
+			climate: "Seasons",
+			major: "Industrial engineering",
+			cost: "$5000-$10000 /semester",
+			extraCur: "Clubs",
+			size: "Medium",
+			rep: "Low ranked",
+			job: "85%",
+			grad: "No",
+			location: "southwest"
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$10000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Middle ranked",
+				job: "85%",
+				grad: "Yes",
+				location: "southwest",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Hot",
+				major: "Available",
+				cost: "$5000 /semester",
+				extraCur: "Available",
+				size: "Medium",
+				rep: "Low ranked",
+				job: "80%",
+				grad: "Yes",
+				location: "southwest",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Seasons",
+				major:"Available",
+				cost: "$6000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "75%",
+				grad: "Yes",
+				location: "southwest",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	},
+	{	
+		index:14,
+		student:{
+			avatar:3,
+
+			climate: "Cold",
+			major: "Game Development",
+			cost: "$5000-$10000 /semester",
+			extraCur: "Sports",
+			size: "Large",
+			rep: "Low ranked",
+			job:"85%",
+			grad:"Yes",
+			location:"west coast",
+		},
+		schools:[
+			{
+				index:0,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$8000 /semester",
+				extraCur: "Available",
+				size: "Large",
+				rep: "Low ranked",
+				job: "90%",
+				grad: "Yes",
+				location: "west coast",
+
+				x:150,
+				y:250,
+				sidebarType:"righttop",
+				name:"School 1"
+			},
+			{
+				index:1,
+
+				climate: "Seasons",
+				major: "Available",
+				cost: "$6500 /semester",
+				extraCur: "Available",
+				size: "Small",
+				rep: "Low ranked",
+				job: "87%",
+				grad: "No",
+				location: "west coast",
+
+				x:300,
+				y:300,
+				sidebarType:"righttop",
+				name:"School 2"
+			},
+			{
+				index:2,
+
+				climate: "Cold",
+				major: "Not available",
+				cost: "$7000 /semester",
+				extraCur: "Available",
+				size:"Large",
+				rep:"Low ranked",
+				job:"88%",
+				grad:"Yes",
+				location:"west coast",
+				
+				x:200,
+				y:200,
+				sidebarType:"righttop",
+				name:"School 3"
+			}
+		],
+		correct:{
+			index:0,
+			feedback: "8 out of 9 criteria."
+		}
+	}
+]

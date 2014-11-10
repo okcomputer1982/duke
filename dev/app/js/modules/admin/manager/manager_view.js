@@ -34,6 +34,9 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #import": "handleImport"
 		},
 
+		init:function() {
+		},
+
 		handleCreateClass:function(e) {
 			var dataObj = {
 				classTemplate:Number($('#templateCombo').val()),
@@ -148,6 +151,9 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #submitEditBtn": "handleSubmitTeacherEdit"
 		},
 
+		init:function() {
+		},
+
 		handleTeacherAdd:function(e) {
 			var dataObj = {
 					firstname: $("#firstName").val(),
@@ -164,9 +170,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		handleTeacherDelete:function(e) {
 			var target = $(e.currentTarget),
 				row = target.closest("tr"),
-				index = Number(row.attr("data-index"));
+				index = Number(row.attr("data-index")),
+				name = row.find("td")[0];
 
-			Manager.Controller.layout.trigger("managerView:deleteTeacher", {index:index});
+			Manager.Controller.layout.trigger("managerView:deleteTeacher", {index:index, name:name});
 		},
 
 		handleTeacherModal:function(e){
@@ -199,9 +206,12 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #submitEditBtn": "handleSubmitStudentEdit",
 			"click #import": 		"handleImport"
 		},
+
+		init:function() {
+
+		},
 		
-		handleImport:function() {
-			
+		handleImport:function() {			
 			var that = this;
 
 			_.each(students, function(obj){
@@ -262,6 +272,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			"click #deleteGuest": "handleGuestDelete",
 			"click #editGuest": 	"handleGuestModal",
 			"click #submitEditBtn": "handleSubmitGuestEdit"
+		},
+
+		init:function() {
+
 		},
 
 		handleGuestAdd:function(e) {

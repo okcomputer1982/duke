@@ -21,6 +21,9 @@ DukeApp.module("Game.Show", function(Show, DukeApp, Backbone, Marionette, $, _) 
 	    		case(0):
 	    			gameController = DukeApp.Game.Show.Geography.Controller;
 	    			break;
+	    		case(1):
+	    			gameController = DukeApp.Game.Show.Interview.Controller;
+	    			break;
 	    	}
 
 	    	gameController.init();

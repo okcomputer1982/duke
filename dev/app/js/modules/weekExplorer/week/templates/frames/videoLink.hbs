@@ -4,11 +4,13 @@
 </div>
 
 <div class="inner-wrap">
+  {{#if content.synopsis}}
 	<h2 class="subheading">Summary:</h2>
-	<div class="textblock">
+  	<div class="textblock">
       {{{content.synopsis}}}
     </div>
-  	
+  {{/if}}
+
   	<h2 class="subheading">Instructions:</h2>
   	{{#if content.instruction}}
   	<div class="textblock">
@@ -25,13 +27,13 @@
     {{/if}}
     
     {{#if content.link}}
-		<a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.link}}}">View Video</a>
+		<a class="submitbtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{content.link}}}">View Video</a>
 	{{/if}}
 
 	{{#if content.links}}
 	<ul class="linklist">
       {{#each content.links}}
-        <li><a class="articlebtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this}}}">View Video</a></li>
+        <li><a class="submitbtn btn btn-large btn-primary attributeTarget eventTarget" target="_blank" href="{{{this}}}">View Video</a></li>
       {{/each}}
     </ul>
 	{{/if}}
