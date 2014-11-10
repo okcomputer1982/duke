@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "_default": {
+            "link": "dukeAppProduction"
+        }, 
+        "dukeAppProduction": {
+            "applicationId": "oqfx3hFXuJLI1cUYva3GLZIp8WYCOaYbVoJSiEHq", 
+            "masterKey": "f22t1yCbs0r20jNm054GH04UlS4eaxs8MVu1h9Gx"
+        }
+    }
+}
