@@ -315,7 +315,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		handleDeleteStudent:function(obj) {			
 			if (!confirm("Are you sure you want to delete student " + obj.index + "?"))
 				return;
-
+			
 			DukeApp.request("delete:user:student:entities", obj).done(function(){
 				Manager.Controller.layout.handleMessage({msg:"Deleted Student"});
 				Manager.Controller.updateStudentData();
@@ -351,8 +351,6 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 		},
 
 		handleCreateGuest:function(obj) {
-			console.log(obj);
-
 			if (!obj.email) {
 				Manager.Controller.layout.handleMessage({msg:"Please select a email."});
 			} else if (!obj.username) {

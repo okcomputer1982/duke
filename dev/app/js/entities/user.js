@@ -19,6 +19,23 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 	});
 
 	var API = {
+
+		deleteUser:function(id) {
+			var def = $.Deferred();
+
+			Parse.Cloud.run('deleteUser', { id: id }, {
+				success: function(results) {
+					console.log(results);
+				    def.resolve();
+			  	},
+				  error: function(error) {
+				  	def.resolve();
+				}
+			});
+			
+			return(def.promise());
+		},
+		
 		getStudentObject: function() {
 			var def = $.Deferred(), studentObject;
 			
@@ -464,8 +481,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				student = new StudentTable(),
 				user = new Parse.User();
 
-			console.log("here");
-
 			user.set("username", obj.username);
 
 			user.set("firstName", obj.firstname);
@@ -514,26 +529,33 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			var def = $.Deferred(),
 				StudentTable = Parse.Object.extend("Student"),
 				ClassTable = Parse.Object.extend("Classes"),
-				sQuery = new Parse.Query(StudentTable);
+				sQuery = new Parse.Query(StudentTable),
+				that = this;
 
 			sQuery.equalTo("index", obj.index);
 			sQuery.first(function(studentObj){
 				studentObj.get('user').fetch({
 					success:function(user) {
-						studentObj.destroy({
-							success:function() {
-								var cQuery = new Parse.Query(ClassTable);
-								cQuery.equalTo("students", obj.index);
-								cQuery.find({
-									success:function(classes) {
-										_.each(classes, function(cObj, idx) {
-											cObj.remove('students', obj.index);
-											cObj.save();
-										});
-										def.resolve();
-									}
-								});
-							}
+						//delete user object	
+						that.deleteUser(user.id).done(function() {
+							//delete student object
+							studentObj.destroy({
+								success:function() {
+									var cQuery = new Parse.Query(ClassTable);
+									cQuery.equalTo("students", obj.index);
+									cQuery.find({
+										success:function(classes) {
+											//delete student from classes
+											_.each(classes, function(cObj, idx) {
+												cObj.remove('students', obj.index);
+												cObj.save();
+											});
+
+											def.resolve();
+										}
+									});
+								}
+							});
 						});
 					}
 				});
@@ -624,8 +646,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			gQuery.equalTo("index", obj.index);
 			gQuery.first({
 				success:function(guestObj){
-					console.log(guestObj);
-					
 					guestObj.destroy({
 						success:function(){
 							def.resolve();
