@@ -5,7 +5,27 @@ DukeApp.module("Game.Show.Geography", function(Geography, DukeApp, Backbone, Mar
 
 			gameData.levels = _.shuffle(gameData.levels).slice(0,10);
 			Geography.Controller.gameData = gameData;
-			Geography.Controller.loadResourses();
+			Geography.Controller.loadingScreen();
+		},
+
+		loadingScreen:function() {
+			var stage = new createjs.Stage("game_container"),
+				loadScreenCon = new createjs.Container(),
+				loadBkg = new createjs.Shape(),
+				loadText =  new createjs.Text("Loading...", "bold 20px Helvetica", "#000000");
+
+			loadBkg.graphics.beginFill("#97d5e8").drawRect(0,0,960,565);
+			loadScreenCon.addChild(loadBkg);
+			loadScreenCon.addChild(loadText);
+
+			loadText.x = 950/2 - loadText.getMeasuredWidth()/2;
+			loadText.y = 565/2;
+
+			stage.addChild(loadScreenCon);
+			stage.update();
+
+			Geography.Controller.stage = stage;
+			this.loadResourses();
 		},
 
 		loadResourses:function() {
@@ -49,7 +69,7 @@ DukeApp.module("Game.Show.Geography", function(Geography, DukeApp, Backbone, Mar
 		},
 
 		loadGame:function(e) {
-			var stage = new createjs.Stage("game_container"),
+			var stage = Geography.Controller.stage,
 				resources = Geography.Controller.gameResources;
 
 			var background = new createjs.Bitmap(resources.getResult("map")),
@@ -180,7 +200,6 @@ DukeApp.module("Game.Show.Geography", function(Geography, DukeApp, Backbone, Mar
 			createjs.Ticker.addEventListener("tick", stage);
 
 			//set globals
-			Geography.Controller.stage = stage;
 			Geography.Controller.selectionButton = {selection:-1, container:selectionButton, bkg:button, schoolText:button_text_2};
 			Geography.Controller.popup = {type:"next", container:popupContainer, shade:popupShade, button:popupButton, correctText:popupCorrectText, scoreText:popupScoreText, bkg:popupBkg};
 

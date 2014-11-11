@@ -7,8 +7,23 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 		},
 
 		loadingScreen:function() {
+			var stage = new createjs.Stage("game_container"),
+				loadScreenCon = new createjs.Container(),
+				loadBkg = new createjs.Shape(),
+				loadText =  new createjs.Text("Loading...", "bold 20px Helvetica", "#000000");
 
-			Interview.Controller.loadResourses();
+			loadBkg.graphics.beginFill("#97d5e8").drawRect(0,0,960,565);
+			loadScreenCon.addChild(loadBkg);
+			loadScreenCon.addChild(loadText);
+
+			loadText.x = 950/2 - loadText.getMeasuredWidth()/2;
+			loadText.y = 565/2;
+
+			stage.addChild(loadScreenCon);
+			stage.update();
+
+			Interview.Controller.stage = stage;
+			this.loadResourses();
 		},
 
 		loadResourses:function() {
@@ -20,21 +35,33 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 						{id:"screen1_talk_bubble", src:baseDir + "/interview/screen1/talk_bubble.png"},
 						{id:"talk_bubble", src:baseDir + "/interview/screen1/talk_bubble.png"},
 						{id:"type_area", src:baseDir + "/interview/screen1/type_area.png"}						
-				];
+				]
 
-			_.each(_.range(6), function(idx){
+			_.each(_.range(1), function(idx){
 				queueValues.push({id:"avatar" + idx, src:"../images/avatars/avatar" + idx + ".png"});
 			});
 
 			Interview.Controller.gameResources = queue;
+				
+			// queue.loadManifest(queueValues);
+			// queue.addEventListener("complete", this.loadGame);
+		},
 
-			queue.loadManifest(queueValues);
-			queue.addEventListener("complete", this.loadGame);
+		loadScreen:function(){
+			var stage = Interview.Controller.game;
+			var loadScreen = createjs.Container();
+
+			var loadBkg = new createjs.Shape();
+			loadBkg.graphics.beginFill("#ff0000").drawRect(0,0,200, 200);
+
+			loadScreen.addChild(loadBkg);
+			stage.addChild(loadScreen);
+			stage.update();
 		},
 
 		loadGame:function(e) {
-			// var stage = new createjs.Stage("game_container"),
-			// 	resources = Interview.Controller.gameResources;
+			//var resources = Interview.Controller.gameResources,
+			// 	stage = Interview.Controller.game;
 
 			// var background = new createjs.Bitmap(resources.getResult("map")),
 			// 	side_menu = new createjs.Bitmap(resources.getResult("side_menu")),
