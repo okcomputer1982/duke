@@ -25,7 +25,6 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 			Parse.Cloud.run('deleteUser', { id: id }, {
 				success: function(results) {
-					console.log(results);
 				    def.resolve();
 			  	},
 				  error: function(error) {
@@ -35,7 +34,7 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 			
 			return(def.promise());
 		},
-		
+
 		getStudentObject: function() {
 			var def = $.Deferred(), studentObject;
 			
@@ -406,33 +405,33 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 		deleteTeacher:function(obj){
 			var def = $.Deferred(),
+				that = this,
 				TeacherTable = Parse.Object.extend("Teacher"),
 				ClassTable = Parse.Object.extend("Classes"),
 				tQuery = new Parse.Query(TeacherTable);
 
 			tQuery.equalTo("index", obj.index);
 			tQuery.first(function(teacherObj){
-				teacherObj.get('user').fetch({
-					success:function(user) {
-						teacherObj.destroy({
-							success:function() {
-								//remove all class references to teacher
-								var cQuery = new Parse.Query(ClassTable);
-								cQuery.equalTo("teachers", obj.index);
-								cQuery.find({
-									success:function(classes) {
-										_.each(classes, function(cObj, idx) {
-											cObj.remove('teachers', obj.index);
-											cObj.save();
-										});
-										def.resolve();
-									}
-								});
-							}
-						});
-					}
+				that.deleteUser(teacherObj.get('user').id).done(function() {
+					teacherObj.destroy({
+						success:function() {
+							//remove all class references to teacher
+							var cQuery = new Parse.Query(ClassTable);
+							cQuery.equalTo("teachers", obj.index);
+							cQuery.find({
+								success:function(classes) {
+									_.each(classes, function(cObj, idx) {
+										cObj.remove('teachers', obj.index);
+										cObj.save();
+									});
+									def.resolve();
+								}
+							});
+						}
+					});
 				});
 			});
+			
 			
 			return(def.promise());
 		},
@@ -640,16 +639,19 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 
 		deleteGuest:function(obj){
 			var def = $.Deferred(),
+				that = this,
 				GuestTable = Parse.Object.extend("Guests"),
 				gQuery = new Parse.Query(GuestTable);
 
 			gQuery.equalTo("index", obj.index);
 			gQuery.first({
 				success:function(guestObj){
-					guestObj.destroy({
-						success:function(){
-							def.resolve();
-						}
+					that.deleteUser(guestObj.get('user').id).done(function() {
+						guestObj.destroy({
+							success:function(){
+								def.resolve();
+							}
+						});
 					});
 				}
 			});

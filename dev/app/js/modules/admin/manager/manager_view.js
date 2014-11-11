@@ -171,7 +171,7 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 			var target = $(e.currentTarget),
 				row = target.closest("tr"),
 				index = Number(row.attr("data-index")),
-				name = row.find("td")[0];
+				name = row.find("td")[0].val();
 
 			Manager.Controller.layout.trigger("managerView:deleteTeacher", {index:index, name:name});
 		},
