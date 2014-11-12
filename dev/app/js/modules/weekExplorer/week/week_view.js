@@ -422,7 +422,7 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 	    	Week.scrollPos = [];
 	    	
 	    	tinymce.init({
-	    		selector:'textarea',
+	    		selector:'textarea:not(#answer_input)',
 	    		theme_advanced_statusbar_location : "none",
 	    		plugins: [
 				     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
@@ -440,13 +440,6 @@ DukeApp.module("WeekExplorer.Week", function(Week, DukeApp, Backbone, Marionette
 
 	    		Week.scrollPos.push({linkId:linkId, classes:$(frame).attr('class').split(' '), pos:$(frame).offset().top});
 	    	});
-
-    		// var heading = $($('.headingContainer')[0]);
-    		// heading.scrollToFixed({
-      //       	marginTop: 110,
-      //       	limit:200,
-      //       	zIndex: 999
-      //   	});
 	    },
     	
     	//retrieves the itemView related to the frame

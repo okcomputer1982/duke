@@ -614,7 +614,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">	\n		<canvas id=\"game_container\" width=\"960\" height=\"565\">\n			Canvas not supported in this browser.\n		</canvas>\n	</div>\n</div>";
+  return "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">	\n		<textarea id='answer_input' placeholder=\"Enter your response\" rows=\"5\" type='text'></textarea>\n		<canvas id=\"game_container\" width=\"960\" height=\"565\">\n			Canvas not supported in this browser.\n		</canvas>\n	</div>\n</div>";
   });
 
 this["templates"]["home/login/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

@@ -5611,7 +5611,7 @@
             "id": 1,
             "title": "Interview Tryout",
             "description": "Test your conversational skills in this mock interview simulation",
-            "instructions": "<p>Instructions</p>"
+            "instructions": "<p>How will you do during a college interview? Answer each the questions provided as best as you can. You will be able to see and download your results at the end of the interview for later reference.</p>"
         },
         "attributes": [
             7,

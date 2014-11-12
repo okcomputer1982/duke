@@ -5849,7 +5849,7 @@
         "content": {
             "description": "Test your conversational skills in this mock interview simulation", 
             "id": 1, 
-            "instructions": "<p>Instructions</p>", 
+            "instructions": "<p>How will you do during a college interview? Answer each the questions provided as best as you can. You will be able to see and download your results at the end of the interview for later reference.</p>", 
             "title": "Interview Tryout"
         }, 
         "index": 235, 
