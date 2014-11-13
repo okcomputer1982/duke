@@ -178,13 +178,14 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 				query = new Parse.Query(StudentTable);
 
 			query.limit(500);
-			query.ascending("currentClass");
+
 			if (queryObj) {
 				_.each(queryObj, function(value, key) {
 					query.equalTo(key, value);
 				});
 			}
-
+			query.ascending("currentClass");
+			
 			query.find({
 				success:function(results) {
 					var sObjectList = [],

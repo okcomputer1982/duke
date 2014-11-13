@@ -22,6 +22,13 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 					
 					tResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
 					tResults[idx].classNames = classNames;
+
+					_.sortBy(tResults, function(t){
+						if (t.currentClassName === Manager.Controller.currentClass)
+							return "aaaaaaaaaaaaaa";
+						else 
+							return(t.currentClassName);
+					});
 				});
 
 				_.each(sResults, function(obj,idx){
@@ -32,6 +39,13 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 					sResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
 					sResults[idx].classNames = classNames;
+
+					_.sortBy(sResults, function(s){
+						if (s.currentClassName === Manager.Controller.currentClass)
+							return "aaaaaaaaaaaaaa";
+						else 
+							return(s.currentClassName);
+					});
 				});
 
 				_.each(gResults, function(obj,idx){
@@ -114,9 +128,8 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 				var ManageModelTable = Backbone.Model.extend({}),
 					manageModel = new ManageModelTable(Manager.Controller.data);
-				
-				Manager.Controller.content.model = manageModel;
 
+				Manager.Controller.content.model = manageModel;
 				Manager.Controller.content.render();	
 			});
 		},
@@ -156,6 +169,22 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 			DukeApp.request("classByIndex:entities", obj).done(function(classObj){
 				Manager.Controller.currentClass = classObj;
+
+				Manager.Controller.data.teachers = _.sortBy(Manager.Controller.data.teachers, function(t){
+					if (t.currentClass === Manager.Controller.currentClass.index)
+						return -1;
+					else 
+						return(t.currentClass);
+				});
+
+
+				Manager.Controller.data.students = _.sortBy(Manager.Controller.data.students, function(s){
+					if (s.currentClass === Manager.Controller.currentClass.index)
+						return -1;
+					else 
+						return(s.currentClass);
+				});
+				
 				Manager.Controller.content.updateClassData(classObj, Manager.Controller.data.teachers, Manager.Controller.data.students, Manager.Controller.data.classes);
 				def.resolve();
 			});
@@ -201,6 +230,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 					tResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
 					tResults[idx].classNames = classNames;
+				});
+
+				_.sortBy(tResults, function(t){
+					return(t.currentClassName);
 				});
 
 				Manager.Controller.data.teachers = tResults;
@@ -269,6 +302,10 @@ DukeApp.module("Admin.Manager", function(Manager, DukeApp, Backbone, Marionette,
 
 					sResults[idx].currentClassName = _.where(cResults,{index:obj.currentClass})[0].name;
 					sResults[idx].classNames = classNames;
+				});
+
+				_.sortBy(sResults, function(s){
+					return(s.currentClassName);
 				});
 
 				Manager.Controller.data.students = sResults;

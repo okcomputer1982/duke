@@ -120,9 +120,7 @@ DukeApp.module("Admin.Teacher", function(Teacher, DukeApp, Backbone, Marionette,
 				$.when.apply($, studentDetailPromises).done(function() {
 					results = arguments;
 
-
 					_.each(results, function(obj, idx) {
-						console.log(obj);
 						curClass.students[idx].quizTotal = obj.quizTotal;
 						curClass.students[idx].quizComplete = obj.quizComplete;
 						curClass.students[idx].badgeTotal = obj.badgeTotal;
