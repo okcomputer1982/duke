@@ -110,7 +110,6 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 			textInputElement.y = 250;
 
 			$("#answer_input").show();
-			
 
 			//add to stage
 			stage.addChild(background1);
@@ -133,7 +132,7 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 			Interview.Controller.avatar = avatar;
 
 			Interview.Controller.maxQuestions  = Interview.Controller.gameData.questions.length;
-			Interview.Controller.totalQuestions  = 10;
+			Interview.Controller.totalQuestions  = 1;
 			Interview.Controller.answerLog  = [];
 			Interview.Controller.currentLevel = 0;
 			Interview.Controller.state = "questions";
@@ -246,14 +245,34 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 			delete that.answerBox;
 
 			//add in the new
+			var QuestionModel = Backbone.Model.extend({});
+				questionModel = new QuestionModel({
+					questions:[
+						{id:1, question:"What major are you interested in and why?", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"},
+						{id:2, question:"Who has had the biggest influence on you and why?", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"},
+						{id:3, question:"Identify your greatest weakness and how you are working to overcome it.", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"},
+						{id:4, question:"Identify your greatest weakness and how you are working to overcome it.", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"},
+						{id:5, question:"Identify your greatest weakness and how you are working to overcome it.", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"},
+						{id:6, question:"Identify your greatest weakness and how you are working to overcome it.", answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+					]
+				});
+
 			var background2 = new createjs.Bitmap(resources.getResult("screen2_bg")),
-				reviewTitle = new createjs.Text("REVIEW", "bold 40px Helvetica", "#000000");
-				reviewOutline = new createjs.Text("REVIEW", "bold 40px Helvetica", "#97d5e8");
+				reviewTitle = new createjs.Text("REVIEW", "bold 40px Helvetica", "#000000"),
+				reviewOutline = new createjs.Text("REVIEW", "bold 40px Helvetica", "#97d5e8"),
+				interviewScrollerDom = new createjs.DOMElement(document.getElementById("interviewScroller"));
+				interviewScrollerView = new DukeApp.Game.Show.InterviewScrollerView({model:questionModel});
+
+			DukeApp.Game.Show.Controller.layoutView.interviewScroller.show(interviewScrollerView);
 
 			reviewTitle.x = reviewOutline.x = 960/2 - reviewTitle.getMeasuredWidth()/2;
 			reviewTitle.y = reviewOutline.y = 10;
 			reviewOutline.outline = 1;
 
+			interviewScrollerDom.x = 250;
+			interviewScrollerDom.y = 60;
+			$("#interviewScroller").show();
+			
 			that.sayButton.text.text = "DOWNLOAD";
 			that.sayButton.text.x = that.sayButton.container.getBounds().width/2 - that.sayButton.text.getMeasuredWidth()/2 - 10;
 
@@ -263,7 +282,8 @@ DukeApp.module("Game.Show.Interview", function(Interview, DukeApp, Backbone, Mar
 			stage.addChild(background2);
 			stage.addChild(reviewTitle);
 			stage.addChild(reviewOutline);
-			stage.setChildIndex(that.sayButton.container, stage.getNumChildren()-1)
+			stage.addChild(interviewScrollerDom);
+			stage.setChildIndex(that.sayButton.container, stage.getNumChildren()-1);
 
 			stage.update();
 		},

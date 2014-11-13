@@ -608,13 +608,38 @@ function program9(depth0,data) {
   return buffer;
   });
 
+this["templates"]["game/show/interviewScroller"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"row\">\n	<div class=\"col-md-6 questionBox\">\n		<h3>Question "
+    + escapeExpression(((stack1 = (depth0 && depth0.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</h3>\n		<p>"
+    + escapeExpression(((stack1 = (depth0 && depth0.question)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</p>\n	</div>\n\n	<div class=\"col-md-6 answerBox\">\n		<h3>Question "
+    + escapeExpression(((stack1 = (depth0 && depth0.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " Response</h3>\n		<p>"
+    + escapeExpression(((stack1 = (depth0 && depth0.answer)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</p>\n	</div>\n</div>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.questions), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  });
+
 this["templates"]["game/show/layout"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">	\n		<textarea id='answer_input' placeholder=\"Enter your response\" rows=\"5\" type='text'></textarea>\n		<canvas id=\"game_container\" width=\"960\" height=\"565\">\n			Canvas not supported in this browser.\n		</canvas>\n	</div>\n</div>";
+  return "<div class=\"modal fade\" id=\"game_modal\">\n  <a href=\"\" data-dismiss=\"modal\" class=\"modal_close\"><span aria-hidden=\n  \"true\">&times;</span></a>\n	\n	<div id=\"game_wrapper\">	\n		<div id='interviewScroller'></div>\n		<textarea id='answer_input' placeholder=\"Enter your response\" rows=\"5\" type='text'></textarea>\n		<canvas id=\"game_container\" width=\"960\" height=\"565\">\n			Canvas not supported in this browser.\n		</canvas>\n	</div>\n</div>";
   });
 
 this["templates"]["home/login/content"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

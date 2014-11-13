@@ -1158,7 +1158,13 @@ DukeApp.module("Entities", function(Entities, DukeApp, Backbone, Marionette, $, 
 					{id:14, text:"What has been your greatest achievement so far?"},
 					{id:15, text:"What have you disliked about school so far?"},
 					{id:16, text:"Who is your favorite teacher and why?"},
-					{id:17, text:"What questions do you have for me about our university?"}
+					{id:17, text:"What questions do you have for me about our university?"},
+					{id:18, text:"How do you define success?"},
+					{id:19, text:"Who do you admire the most?"},
+					{id:20, text:"What high school experience was most important to you?"},
+					{id:21, text:"Why do you want to attend our college?"},
+					{id:22, text:"What is your favorite book and why?"},
+					{id:23, text:"If you could change one thing about your school, what would it be?"}
 				]
 			}
 		},

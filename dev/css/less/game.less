@@ -43,3 +43,48 @@
 	opacity:0;
 	display:none;
 }
+
+#interviewScroller {
+	color:black;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 836px;
+	height:380px;
+	display:none;
+
+	.questionBox, .answerBox {
+		text-align: left;
+
+		p {
+			font-size:11pt;
+		}
+	}
+
+	.answerBox {
+		p {
+			background-color: white;
+			padding: 15px 40px;
+			border-radius: 5px;
+			border: black solid 1px;
+			width: 90%;
+			box-shadow: 2px 2px 0px 0 rgba(0,0,0,0.8);
+		}
+	}
+
+	.questionBox {
+		h3 {
+			padding-left: 20px;
+		}
+
+		p {
+			background-image: url(../images/game/interview/screen2/talk_bubble.png);
+			background-repeat: no-repeat;
+			height: 120px;
+			padding: 30px;
+			width: 300px;
+			text-align: center;
+
+			color:grey;
+		}
+	}
+}

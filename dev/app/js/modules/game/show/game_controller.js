@@ -3,7 +3,7 @@ DukeApp.module("Game.Show", function(Show, DukeApp, Backbone, Marionette, $, _) 
 		init:function(options) {
 			var gameModel = DukeApp.request("game:entities", options.gameId);
 
-			var layoutView = new Show.GameLayout({
+			var layoutView = new Show.GameLayoutView({
 					model: gameModel
 				});
 

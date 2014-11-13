@@ -1,0 +1,13 @@
+{{#each questions}}
+<div class="row">
+	<div class="col-md-6 questionBox">
+		<h3>Question {{this.id}}</h3>
+		<p>{{this.question}}</p>
+	</div>
+
+	<div class="col-md-6 answerBox">
+		<h3>Question {{this.id}} Response</h3>
+		<p>{{this.answer}}</p>
+	</div>
+</div>
+{{/each}}
